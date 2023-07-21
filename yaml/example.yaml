@@ -1,0 +1,37 @@
+example:
+  description: "Given a prompt, generate a landing page headline."
+  test_cases: [
+    {
+        'prompt': 'Promoting an innovative new fitness app, Smartly',
+    },
+    {
+        'prompt': 'Why a vegan diet is beneficial for your health',
+    },
+    {
+        'prompt': 'Introducing a new online course on digital marketing',
+    },
+    {
+        'prompt': 'Launching a new line of eco-friendly clothing',
+    },
+    {
+        'prompt': 'Promoting a new travel blog focusing on budget travel',
+    },
+    {
+        'prompt': 'Advertising a new software for efficient project management',
+    },
+    {
+        'prompt': 'Introducing a new book on mastering Python programming',
+    },
+    {
+        'prompt': 'Promoting a new online platform for learning languages',
+    },
+    {
+        'prompt': 'Advertising a new service for personalized meal plans',
+    },
+    {
+        'prompt': 'Launching a new app for mental health and mindfulness',
+    }
+    ]
+  number_of_prompts: 2
+  candidate_model: 'gpt-3.5-turbo'
+  generation_model: 'gpt-3.5-turbo'
