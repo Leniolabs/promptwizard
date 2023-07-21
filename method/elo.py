@@ -6,7 +6,7 @@ import itertools
 import wandb
 from tenacity import retry, stop_after_attempt, wait_exponential
 
-openai.api_key = "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" # enter your OpenAI API key here
+openai.api_key = "ADD YOUR KEY HERE" # enter your OpenAI API key here
 
 system_gen_system_prompt = """Your job is to generate system prompts for GPT-4, given a description of the use-case and some test cases.
 
