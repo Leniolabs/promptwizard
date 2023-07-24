@@ -1,12 +1,8 @@
 from prettytable import PrettyTable
-import time
 import openai
 from tqdm import tqdm
 import itertools
-import wandb
 from tenacity import retry, stop_after_attempt, wait_exponential
-
-openai.api_key = "ADD YOUR KEY HERE" # enter your OpenAI API key here
 
 system_gen_system_prompt = """Your job is to generate system prompts for GPT-4, given a description of the use-case and some test cases.
 
@@ -37,9 +33,6 @@ K = 32
 CANDIDATE_MODEL = 'gpt-4'
 CANDIDATE_MODEL_TEMPERATURE = 0.9
 
-GENERATION_MODEL_TEMPERATURE = 0.8
-GENERATION_MODEL_MAX_TOKENS = 60
-
 N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
 RANKING_MODEL = 'gpt-3.5-turbo'
 RANKING_MODEL_TEMPERATURE = 0.5
@@ -47,123 +40,133 @@ RANKING_MODEL_TEMPERATURE = 0.5
 WANDB_PROJECT_NAME = "gpt-prompt-eng" # used if use_wandb is True, Weights &| Biases project name
 WANDB_RUN_NAME = None # used if use_wandb is True, optionally set the Weights & Biases run name to identify this run
 
-def generate_candidate_prompts(description, test_cases, number_of_prompts):
-  outputs = openai.ChatCompletion.create(
-      model=CANDIDATE_MODEL, # change this to gpt-3.5-turbo if you don't have GPT-4 access
-      messages=[
-          {"role": "system", "content": system_gen_system_prompt},
-          {"role": "user", "content": f"Here are some test cases:`{test_cases}`\n\nHere is the description of the use-case: `{description.strip()}`\n\nRespond with your prompt, and nothing else. Be creative."}
-          ],
-      temperature=CANDIDATE_MODEL_TEMPERATURE,
-      n=number_of_prompts)
+class Elo:
+    def __init__(self, description, test_cases, number_of_prompts, generation_model, generation_model_temperature, generation_model_max_tokens, candidate_model):
+        self.description = description
+        self.test_cases = test_cases
+        self.number_of_prompts = number_of_prompts
+        self.generation_model = generation_model
+        self.generation_model_temperature = generation_model_temperature
+        self.generation_model_max_tokens = generation_model_max_tokens
+        self.candidate_model = candidate_model
 
-  prompts = []
-
-  for i in outputs.choices:
-    prompts.append(i.message.content)
-  return prompts
-
-def expected_score(r1, r2):
-    return 1 / (1 + 10**((r2 - r1) / 400))
-
-def update_elo(r1, r2, score1):
-    e1 = expected_score(r1, r2)
-    e2 = expected_score(r2, r1)
-    return r1 + K * (score1 - e1), r2 + K * ((1 - score1) - e2)
-
-# Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
-@retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
-def get_score(description, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature):    
-    score = openai.ChatCompletion.create(
-        model=ranking_model_name,
+    def generate_candidate_prompts(self):
+        outputs = openai.ChatCompletion.create(
+        model=self.candidate_model, # change this to gpt-3.5-turbo if you don't have GPT-4 access
         messages=[
-            {"role": "system", "content": ranking_system_prompt},
-            {"role": "user", "content": f"""Task: {description.strip()}
-Prompt: {test_case['prompt']}
-Generation A: {pos1}
-Generation B: {pos2}"""}
-        ],
-        logit_bias={
-              '32': 100,  # 'A' token
-              '33': 100,  # 'B' token
-        },
-        max_tokens=1,
-        temperature=ranking_model_temperature,
-    ).choices[0].message.content
-    return score
+            {"role": "system", "content": system_gen_system_prompt},
+            {"role": "user", "content": f"Here are some test cases:`{self.test_cases}`\n\nHere is the description of the use-case: `{self.description.strip()}`\n\nRespond with your prompt, and nothing else. Be creative."}
+            ],
+        temperature=CANDIDATE_MODEL_TEMPERATURE,
+        n=self.number_of_prompts)
 
-@retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
-def get_generation(prompt, test_case, generation_model):
-    generation = openai.ChatCompletion.create(
-        model=generation_model,
-        messages=[
-            {"role": "system", "content": prompt},
-            {"role": "user", "content": f"{test_case['prompt']}"}
-        ],
-        max_tokens=GENERATION_MODEL_MAX_TOKENS,
-        temperature=GENERATION_MODEL_TEMPERATURE,
-    ).choices[0].message.content
-    return generation
+        prompts = []
 
-def test_candidate_prompts(test_cases, description, prompts, generation_model):
-  # Initialize each prompt with an ELO rating of 1200
-  prompt_ratings = {prompt: 1200 for prompt in prompts}
+        for i in outputs.choices:
+            prompts.append(i.message.content)
+        return prompts
 
-  # Calculate total rounds for progress bar
-  total_rounds = len(test_cases) * len(prompts) * (len(prompts) - 1) // 2
+    def expected_score(self, r1, r2):
+        return 1 / (1 + 10**((r2 - r1) / 400))
 
-  # Initialize progress bar
-  pbar = tqdm(total=total_rounds, ncols=70)
+    def update_elo(self, r1, r2, score1):
+        e1 = self.expected_score(r1, r2)
+        e2 = self.expected_score(r2, r1)
+        return r1 + K * (score1 - e1), r2 + K * ((1 - score1) - e2)
 
-  # For each pair of prompts
-  for prompt1, prompt2 in itertools.combinations(prompts, 2):
-      # For each test case
-      for test_case in test_cases:
-          # Update progress bar
-          pbar.update()
+    # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
+    def get_score(self, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature):    
+        score = openai.ChatCompletion.create(
+            model=ranking_model_name,
+            messages=[
+                {"role": "system", "content": ranking_system_prompt},
+                {"role": "user", "content": f"""Task: {self.description.strip()}
+    Prompt: {test_case['prompt']}
+    Generation A: {pos1}
+    Generation B: {pos2}"""}
+            ],
+            logit_bias={
+                '32': 100,  # 'A' token
+                '33': 100,  # 'B' token
+            },
+            max_tokens=1,
+            temperature=ranking_model_temperature,
+        ).choices[0].message.content
+        return score
 
-          # Generate outputs for each prompt
-          generation1 = get_generation(prompt1, test_case, generation_model)
-          generation2 = get_generation(prompt2, test_case, generation_model)
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
+    def get_generation(self, prompt, test_case):
+        generation = openai.ChatCompletion.create(
+            model=self.generation_model,
+            messages=[
+                {"role": "system", "content": prompt},
+                {"role": "user", "content": f"{test_case['prompt']}"}
+            ],
+            max_tokens=self.generation_model_max_tokens,
+            temperature=self.generation_model_temperature,
+        ).choices[0].message.content
+        return generation
 
-          # Rank the outputs
-          score1 = get_score(description, test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
-          score2 = get_score(description, test_case, generation2, generation1, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
+    def test_candidate_prompts(self, prompts):
+    # Initialize each prompt with an ELO rating of 1200
+        prompt_ratings = {prompt: 1200 for prompt in prompts}
 
-          # Convert scores to numeric values
-          score1 = 1 if score1 == 'A' else 0 if score1 == 'B' else 0.5
-          score2 = 1 if score2 == 'B' else 0 if score2 == 'A' else 0.5
+        # Calculate total rounds for progress bar
+        total_rounds = len(self.test_cases) * len(prompts) * (len(prompts) - 1) // 2
 
-          # Average the scores
-          score = (score1 + score2) / 2
+        # Initialize progress bar
+        pbar = tqdm(total=total_rounds, ncols=70)
 
-          # Update ELO ratings
-          r1, r2 = prompt_ratings[prompt1], prompt_ratings[prompt2]
-          r1, r2 = update_elo(r1, r2, score)
-          prompt_ratings[prompt1], prompt_ratings[prompt2] = r1, r2
+        # For each pair of prompts
+        for prompt1, prompt2 in itertools.combinations(prompts, 2):
+            # For each test case
+            for test_case in self.test_cases:
+                # Update progress bar
+                pbar.update()
 
-          # Print the winner of this round
-          if score > 0.5:
-              print(f"Winner: {prompt1}")
-          elif score < 0.5:
-              print(f"Winner: {prompt2}")
-          else:
-              print("Draw")
+                # Generate outputs for each prompt
+                generation1 = self.get_generation(prompt1, test_case)
+                generation2 = self.get_generation(prompt2, test_case)
 
-  # Close progress bar
-  pbar.close()
+                # Rank the outputs
+                score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
+                score2 = self.get_score(test_case, generation2, generation1, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
 
-  return prompt_ratings
+                # Convert scores to numeric values
+                score1 = 1 if score1 == 'A' else 0 if score1 == 'B' else 0.5
+                score2 = 1 if score2 == 'B' else 0 if score2 == 'A' else 0.5
+
+                # Average the scores
+                score = (score1 + score2) / 2
+
+                # Update ELO ratings
+                r1, r2 = prompt_ratings[prompt1], prompt_ratings[prompt2]
+                r1, r2 = self.update_elo(r1, r2, score)
+                prompt_ratings[prompt1], prompt_ratings[prompt2] = r1, r2
+
+                # Print the winner of this round
+                if score > 0.5:
+                    print(f"Winner: {prompt1}")
+                elif score < 0.5:
+                    print(f"Winner: {prompt2}")
+                else:
+                    print("Draw")
+
+        # Close progress bar
+        pbar.close()
+
+        return prompt_ratings
 
 
-def generate_optimal_prompt(description, test_cases, number_of_prompts, generation_model): 
-  prompts = generate_candidate_prompts(description, test_cases, number_of_prompts)
-  prompt_ratings = test_candidate_prompts(test_cases, description, prompts, generation_model)
+    def generate_optimal_prompt(self): 
+        prompts = self.generate_candidate_prompts()
+        prompt_ratings = self.test_candidate_prompts(prompts)
 
-  # Print the final ELO ratings
-  table = PrettyTable()
-  table.field_names = ["Prompt", "Rating"]
-  for prompt, rating in sorted(prompt_ratings.items(), key=lambda item: item[1], reverse=True):
-      table.add_row([prompt, rating])
-  print(table)
-  return table
+        # Print the final ELO ratings
+        table = PrettyTable()
+        table.field_names = ["Prompt", "Rating"]
+        for prompt, rating in sorted(prompt_ratings.items(), key=lambda item: item[1], reverse=True):
+            table.add_row([prompt, rating])
+        print(table)
+        return table

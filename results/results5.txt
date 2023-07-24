@@ -1,0 +1,31 @@
++------------------------------------------------------------------------------------+----------+------------+------------+
+|                                       Prompt                                       | Expected | Prompt 1-1 | Prompt 1-2 |
++------------------------------------------------------------------------------------+----------+------------+------------+
+|                     Find the best contact email on this site.                      |   true   |     ❌     |     ❌     |
+|                           who is the current president?                            |   true   |     ❌     |     ❌     |
+|                                  order me a pizza                                  |  false   |     ✅     |     ✅     |
+|                what are some ways a doctor could use an assistant?                 |   true   |     ✅     |     ❌     |
+|                       write a speech on the danger of cults                        |  false   |     ✅     |     ✅     |
+|                      Make a reservation at The Accent for 9pm                      |  false   |     ✅     |     ✅     |
+|                              organize my google drive                              |  false   |     ✅     |     ✅     |
+|                 Find the highest-rated Italian restaurant near me.                 |   true   |     ❌     |     ❌     |
+|                         Explain the theory of relativity.                          |   true   |     ✅     |     ✅     |
+|    What are the main differences between Python and Java programming languages?    |   true   |     ✅     |     ✅     |
+| Translate the following English sentence to Spanish: "The weather today is great." |  false   |     ✅     |     ✅     |
+|              Create a new event on my calendar for tomorrow at 2 pm.               |  false   |     ✅     |     ✅     |
+|                     Write a short story about a lonely cowboy.                     |  false   |     ✅     |     ✅     |
+|                            Design a logo for a startup.                            |  false   |     ✅     |     ✅     |
+|                   Compose a catchy jingle for a new soda brand.                    |  false   |     ✅     |     ✅     |
+|                         Calculate the square root of 1999.                         |  false   |     ✅     |     ✅     |
+|                       What are the health benefits of yoga?                        |   true   |     ✅     |     ✅     |
+|               find me a source of meat that can be shipped to canada               |   true   |     ✅     |     ✅     |
+|                      Find the best-selling book of all time.                       |   true   |     ✅     |     ✅     |
+|                 What are the top 5 tourist attractions in Brazil?                  |   true   |     ✅     |     ✅     |
+|             List the main ingredients in a traditional lasagna recipe.             |   true   |     ❌     |     ❌     |
+|                      How does photosynthesis work in plants?                       |   true   |     ✅     |     ✅     |
+|                    Write a Python program to reverse a string.                     |  false   |     ✅     |     ✅     |
+|                      Create a workout routine for a beginner.                      |  false   |     ✅     |     ✅     |
+|             Edit my resume to highlight my project management skills.              |  false   |     ✅     |     ✅     |
+|               Draft an email to a client to discuss a new proposal.                |  false   |     ✅     |     ✅     |
+|                 Plan a surprise birthday party for my best friend.                 |  false   |     ✅     |     ✅     |
++------------------------------------------------------------------------------------+----------+------------+------------+

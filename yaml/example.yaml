@@ -35,3 +35,6 @@ example:
   number_of_prompts: 2
   candidate_model: 'gpt-3.5-turbo'
   generation_model: 'gpt-3.5-turbo'
+  generation_model_temperature: 0.8
+  generation_model_max_tokens: 60
+  method: elo.Elo
