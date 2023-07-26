@@ -109,9 +109,10 @@ select:
         'answer': 'Belarus'
     }]
   description: "Respond the country's name from the list with the largest territorial extension."
-  number_of_prompts: 5
-  candidate_model: 'gpt-3.5-turbo'
+  number_of_prompts: 2
+  candidate_model: 'gpt-4'
+  candidate_model_temperature: 0.9
   generation_model: 'gpt-3.5-turbo'
   generation_model_temperature: 0.8
   generation_model_max_tokens: 40
-  method: selection.Selection
+  method: equal.Equal

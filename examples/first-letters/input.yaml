@@ -1,0 +1,30 @@
+select:
+  test_cases: [
+    {
+        'prompt': 'The red acrobat closed the orange raft',
+        'answer': '<result>tractor</result>'
+    },
+    {
+        'prompt': 'Honey your daring rationale asserts typical ignorance or neglect.',
+        'answer': '<result>hydration</result>'
+    },
+    {
+        'prompt': 'Rare obnoxiousness searches elevation.',
+        'answer': '<result>rose</result>'
+    },
+    {
+        'prompt': 'Late into geometry he theorised.',
+        'answer': '<result>light</result>'
+    },
+    {
+        'prompt': 'Dear Elena find irregular new energies.',
+        'answer': '<result>define</result>'
+    }]
+  description: "What is the word that is formed by concatenating the first letters of each given word?"
+  number_of_prompts: 4
+  candidate_model: 'gpt-4'
+  candidate_model_temperature: 0.9
+  generation_model: 'gpt-3.5-turbo'
+  generation_model_temperature: 0.8
+  generation_model_max_tokens: 1000
+  method: includes.Includes

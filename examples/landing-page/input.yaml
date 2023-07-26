@@ -33,8 +33,10 @@ example:
     }
     ]
   number_of_prompts: 2
-  candidate_model: 'gpt-3.5-turbo'
+  candidate_model: 'gpt-4'
+  candidate_model_temperature: 0.9
   generation_model: 'gpt-3.5-turbo'
   generation_model_temperature: 0.8
   generation_model_max_tokens: 60
+  prompts: ["Imagine you're crafting a catchy, concise, and appealing headline for a landing page. You're given the product, service, or topic. Your goal is to entice prospective customers or users by highlighting its key advantages and uniqueness in a single line. The headline needs to grab attention instantly and should communicate the essence of the offering. Use persuasive language and engage your creativity to make the offering irresistible.", 'Given a brief description about a product, service, or topic, create an engaging and persuasive headline that could be used on a landing page. Your headline should be concise, attention-grabbing, and clearly communicate the essence of the provided information. Remember, your goal is to pique the interest of potential customers or audience members and prompt them to seek further information or take action.']
   method: elo.Elo
