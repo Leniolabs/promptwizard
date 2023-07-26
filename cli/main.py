@@ -6,7 +6,7 @@ import json
 import generation
 from evals import elo, classification, equal, includes
 import yaml
-openai.api_key = "ADD YOUR KEY HERE"
+openai.api_key = "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"
 
 # It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
 def read_yaml(file_name):
@@ -17,7 +17,7 @@ def read_yaml(file_name):
 def run_evaluation(file):
     # Extract the 'yaml_file' attribute from the input 'file' object
     yaml_file_path = os.path.abspath(file)
-    # Leer el contenido del archivo YAML
+    # Read the content of the YAML file
     yaml_content = read_yaml(yaml_file_path)
     # Extract the first key (block_name) from the YAML content
     block_name = list(yaml_content.keys())[0]
@@ -45,12 +45,12 @@ def run_evaluation(file):
     # Evaluate the prompts
     results = evaluable_object.evaluate_optimal_prompt()
     yaml_folder = os.path.dirname(file)
-    # Ruta completa del archivo output.json en la misma carpeta que el YAML
+    # Full path of the output.json file in the same folder as the YAML
     output_json_path = os.path.join(yaml_folder, "output.json")
-    # Convertir el resultado en formato JSON y guardarlo en el archivo output.json
+    # Convert the result to JSON format and save it to the output.json file
     with open(output_json_path, "w") as json_file:
         json.dump(results, json_file)
-    print(f"Resultado guardado en: {output_json_path}")
+    print(f"Result saved in: {output_json_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")

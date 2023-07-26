@@ -1,4 +1,4 @@
-select:
+equal:
   test_cases: [
     {
         'prompt': 'Russia, Canada, United States, Brazil',

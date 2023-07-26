@@ -1,4 +1,4 @@
-select:
+includes:
   test_cases: [
     {
         'prompt': 'The red acrobat closed the orange raft',

@@ -1,4 +1,3 @@
-import time
 import openai
 
 class Classification:
@@ -24,8 +23,10 @@ class Classification:
 
     def test_candidate_prompts(self):
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
-        for test_case in self.test_cases:
-            for prompt in self.prompts:
+        results = [{"description": self.description, "method": "Classification"}]
+        for prompt in self.prompts:
+            prompt_and_results = [{"prompt": prompt}]
+            for test_case in self.test_cases:
                 x = openai.ChatCompletion.create(
                     model=self.generation_model,
                     messages=[
@@ -43,6 +44,9 @@ class Classification:
                 if x == test_case['answer']:
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
+                prompt_and_results.append({"test": test_case['prompt'], "answer": x, "ideal": test_case['answer'], "result": x == test_case['answer']})
+            results.append(prompt_and_results)
+            prompt_and_results = []
 
         # Calculate and print the percentage of correct answers and average time for each model
         best_prompt = None
@@ -59,6 +63,7 @@ class Classification:
                 best_prompt = prompt
         
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
+        data_list.append(results)
         return data_list
     
     def evaluate_optimal_prompt(self):

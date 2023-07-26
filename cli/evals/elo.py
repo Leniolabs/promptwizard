@@ -94,10 +94,16 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         # Initialize progress bar
         pbar = tqdm(total=total_rounds, ncols=70)
 
+        battles = [{"description": self.description, "method": 'ELO'}]
+
         # For each pair of prompts
         for prompt1, prompt2 in itertools.combinations(self.prompts, 2):
             # For each test case
             for test_case in self.test_cases:
+
+                # Get the value of the "prompt" field as a string
+                prompt_content = test_case.get("prompt", "")
+
                 # Update progress bar
                 pbar.update()
 
@@ -121,23 +127,27 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 r1, r2 = self.update_elo(r1, r2, score)
                 prompt_ratings[prompt1], prompt_ratings[prompt2] = r1, r2
 
-                # Print the winner of this round
+                # Print the winner of this round and save the results
                 if score > 0.5:
+                    battles.append({"test": prompt_content, "prompt1": prompt1, "generation1": generation1, "prompt2": prompt2, "generation2": generation2, "winner": prompt1})
                     print(f"Winner: {prompt1}")
                 elif score < 0.5:
+                    battles.append({"test": prompt_content, "prompt1": prompt1, "generation1": generation1, "prompt2": prompt2, "generation2": generation2, "winner": prompt2})
                     print(f"Winner: {prompt2}")
                 else:
+                    battles.append({"test": prompt_content, "prompt1": prompt1, "generation1": generation1, "prompt2": prompt2, "generation2": generation2, "winner": 'Draw'})
                     print("Draw")
 
         # Close progress bar
         pbar.close()
 
-        return prompt_ratings
+        return prompt_ratings, battles
 
 
     def evaluate_optimal_prompt(self): 
         prompt_ratings = self.test_candidate_prompts()
         data_list = []
-        for prompt, rating in sorted(prompt_ratings.items(), key=lambda item: item[1], reverse=True):
+        for prompt, rating in sorted(prompt_ratings[0].items(), key=lambda item: item[1], reverse=True):
             data_list.append({"prompt": prompt, "rating": rating})
+        data_list.append(prompt_ratings[1])
         return data_list
