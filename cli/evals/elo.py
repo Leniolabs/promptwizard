@@ -95,6 +95,9 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         pbar = tqdm(total=total_rounds, ncols=70)
 
         battles = [{"description": self.description, "method": 'ELO'}]
+        elo_prompt = []
+        for prompt in self.prompts:
+            elo_prompt.append({"prompt": prompt, "elo": 1200})
 
         # For each pair of prompts
         for prompt1, prompt2 in itertools.combinations(self.prompts, 2):
@@ -125,6 +128,8 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 # Update ELO ratings
                 r1, r2 = prompt_ratings[prompt1], prompt_ratings[prompt2]
                 r1, r2 = self.update_elo(r1, r2, score)
+                elo_prompt.append({"prompt": prompt1, "elo": r1})
+                elo_prompt.append({"prompt": prompt2, "elo": r2})
                 prompt_ratings[prompt1], prompt_ratings[prompt2] = r1, r2
 
                 # Print the winner of this round and save the results
@@ -137,11 +142,11 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 else:
                     battles.append({"test": prompt_content, "prompt1": prompt1, "generation1": generation1, "prompt2": prompt2, "generation2": generation2, "winner": 'Draw'})
                     print("Draw")
-
+        elo_prompt_sorted = sorted(elo_prompt, key=lambda x: x["prompt"])
         # Close progress bar
         pbar.close()
 
-        return prompt_ratings, battles
+        return prompt_ratings, battles, elo_prompt_sorted
 
 
     def evaluate_optimal_prompt(self): 
@@ -150,4 +155,5 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         for prompt, rating in sorted(prompt_ratings[0].items(), key=lambda item: item[1], reverse=True):
             data_list.append({"prompt": prompt, "rating": rating})
         data_list.append(prompt_ratings[1])
+        data_list.append(prompt_ratings[2])
         return data_list
