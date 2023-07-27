@@ -1,0 +1,4 @@
+openai>=0.27.0
+PyYAML>=5.4
+matplotlib
+numpy

@@ -3,9 +3,13 @@ import os
 import sys
 import openai
 import json
-import generation
-from evals import elo, classification, equal, includes
+import matplotlib.pyplot as plt
+from . import generation
+from .evals import elo, classification, equal, includes
 import yaml
+import textwrap
+import numpy as np
+from collections import defaultdict
 openai.api_key = "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"
 
 # It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
@@ -51,6 +55,31 @@ def run_evaluation(file):
     with open(output_json_path, "w") as json_file:
         json.dump(results, json_file)
     print(f"Result saved in: {output_json_path}")
+    if method == 'elo.Elo':
+        # Group "elo" values by prompt using a dictionary
+        elos_by_prompt = defaultdict(list)
+        for item in results[number_of_prompts + 1]:
+            prompt = item["prompt"]
+            elo = item["elo"]
+            elos_by_prompt[prompt].append(elo)
+
+        # To create a scatter plot
+        for prompt, elos in elos_by_prompt.items():
+            prompt_truncated = textwrap.shorten(prompt, width=20, placeholder="...")
+            x = np.arange(1, len(elos) + 1)
+            y = np.array(elos)
+            x_smooth = np.linspace(x.min(), x.max(), 200)
+            y_smooth = np.interp(x_smooth, x, y)
+            plt.plot(x_smooth, y_smooth, linewidth=1.5, markersize=6, label=prompt_truncated)
+
+        plt.xlabel('Comparisons')
+        plt.ylabel('Elo')
+        plt.title('Scatter Plot: Elo by Prompt')
+        plt.legend()
+        plt.show()
+        output_plot_path = os.path.join(yaml_folder, "scatter_plot.png")
+        plt.savefig(output_plot_path)
+        print(f"Scatter plot saved in: {output_plot_path}")
 
 def main():
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")

@@ -1,0 +1,2 @@
+[console_scripts]
+lenio-ai-prompt-engineer = cli.main:main
