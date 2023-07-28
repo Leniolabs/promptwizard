@@ -37,10 +37,10 @@ class Includes:
                     temperature=self.generation_model_temperature,
                 ).choices[0].message.content
                 # Update model results
-                if test_case['answer'] in x:
+                if test_case['answer'].lower() in x.lower():
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case['prompt'], "answer": x, "ideal": test_case['answer'], "result": x == test_case['answer']})
+                prompt_and_results.append({"test": test_case['prompt'], "answer": x, "ideal": test_case['answer'], "result": x.lower() in test_case['answer'].lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
 

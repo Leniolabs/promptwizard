@@ -10,7 +10,7 @@ import yaml
 import textwrap
 import numpy as np
 from collections import defaultdict
-openai.api_key = "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"
+openai.api_key = "ADD YOUR KEY HERE"
 
 # It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
 def read_yaml(file_name):
@@ -63,7 +63,7 @@ def run_evaluation(file):
             elo = item["elo"]
             elos_by_prompt[prompt].append(elo)
 
-        # To create a scatter plot
+        # Create a scatter plot
         for prompt, elos in elos_by_prompt.items():
             prompt_truncated = textwrap.shorten(prompt, width=20, placeholder="...")
             x = np.arange(1, len(elos) + 1)
@@ -71,7 +71,6 @@ def run_evaluation(file):
             x_smooth = np.linspace(x.min(), x.max(), 200)
             y_smooth = np.interp(x_smooth, x, y)
             plt.plot(x_smooth, y_smooth, linewidth=1.5, markersize=6, label=prompt_truncated)
-
         plt.xlabel('Comparisons')
         plt.ylabel('Elo')
         plt.title('Scatter Plot: Elo by Prompt')
