@@ -45,6 +45,8 @@ lenio-ai-prompt-engineer YAML_FILE_PATH
 
 2. Run the package passing your YAML file as parameter:
 
+```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH
+```
 
 3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML folder. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file.

@@ -32,10 +32,11 @@ example:
         'prompt': 'Launching a new app for mental health and mindfulness',
     }
     ]
-  number_of_prompts: 5
+  number_of_prompts: 3
   candidate_model: 'gpt-4'
   candidate_model_temperature: 0.9
   generation_model: 'gpt-3.5-turbo'
   generation_model_temperature: 0.8
   generation_model_max_tokens: 60
   method: elo.Elo
+  prompts: ["Using the provided information, your task is to craft compelling, catchy, and attractive landing page headlines. The prompt might describe a new product, service, or concept. Your task is to summarize the main selling points or unique features of the product or service in a single, engaging line. You should try to make it as enticing as possible, encouraging the reader to delve further into the page and learn more about the offering. Remember, brevity is key to make it quick and easy for potential customers to understand the value proposition.", "Your task is to generate a catchy, compelling headline for a landing page based on the given prompt. The prompt will typically describe a product, service, blog, or any other topic that needs promotion. Your headline should be succinct, engaging, and reveal the core essence of the subject in a way that invites the audience to want to explore more.", "Your task is to generate catchy and appealing headlines for landing pages. You'll be given a brief description about a product, service, blog, book, app, course, or anything else that needs promotion. Your objective is to create a headline that succinctly highlights the key attribute of the subject and piques the interest of potential customers or users. Make sure your headline is engaging, easy to understand, and encourages people to learn more about the subject."]

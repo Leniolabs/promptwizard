@@ -1,6 +1,5 @@
 import argparse
 import os
-import sys
 import openai
 import json
 import matplotlib.pyplot as plt
