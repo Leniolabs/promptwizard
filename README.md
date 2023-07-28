@@ -21,7 +21,9 @@ To use Prompt Engineer, follow these steps:
 
 3. Install the required dependencies using pip:
 
+```bash
 pip install -r requires.txt
+```
 
 ## Usage
 
@@ -31,7 +33,9 @@ pip install -r requires.txt
 
 2. Run the package with the YAML file as an argument:
 
+```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH
+```
 
 3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file.
 
