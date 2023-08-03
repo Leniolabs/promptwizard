@@ -16,7 +16,7 @@ class Includes:
 
         You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
-        Specify in the prompts that you generate that they give a step-by-step response.
+        Specify in the prompts that you generate that they give a step-by-step response. Your final response has to be between <result></result> tags.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
         self.prompts = prompts

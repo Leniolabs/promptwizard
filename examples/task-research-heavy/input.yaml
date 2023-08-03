@@ -1,4 +1,4 @@
-classification:
+task-research-heavy:
   test_cases: [
     {
         'prompt': 'Find the best contact email on this site.',
@@ -118,3 +118,4 @@ classification:
   generation_model_temperature: 0
   generation_model_max_tokens: 1
   method: classification.Classification
+  prompt_change: 'no'

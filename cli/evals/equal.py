@@ -37,10 +37,10 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                     temperature=self.generation_model_temperature,
                 ).choices[0].message.content
                 # Update model results
-                if x == test_case['answer']:
+                if x.lower() == test_case['answer'].lower():
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case['prompt'], "answer": x, "ideal": test_case['answer'], "result": x == test_case['answer']})
+                prompt_and_results.append({"test": test_case['prompt'], "answer": x, "ideal": test_case['answer'], "result": x.lower() == test_case['answer'].lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
 

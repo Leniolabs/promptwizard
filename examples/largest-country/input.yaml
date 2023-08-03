@@ -1,4 +1,4 @@
-equal:
+largest-country:
   test_cases: [
     {
         'prompt': 'Russia, Canada, United States, Brazil',
@@ -109,10 +109,13 @@ equal:
         'answer': 'Belarus'
     }]
   description: "Respond the country's name from the list with the largest territorial extension."
-  number_of_prompts: 2
+  number_of_prompts: 5
   candidate_model: 'gpt-4'
   candidate_model_temperature: 0.9
   generation_model: 'gpt-3.5-turbo'
   generation_model_temperature: 0.8
-  generation_model_max_tokens: 40
+  generation_model_max_tokens: 1000
   method: equal.Equal
+  prompts: ['Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.', 'As an AI, your task is to identify the country with the largest territorial extension from a list of countries given to you. Analyze the list and provide a single output: the name of the country that covers the largest land area.', 'You will be provided with a list of country names. Your task is to identify and respond with the name of the country that has the largest land area from the given list. You should not provide any explanations or additional details, just the name of the country.', "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.", 'You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.']
+  prompt_change: 'yes'
+  change: 'synonymous_prompt'

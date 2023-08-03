@@ -1,24 +1,24 @@
-includes:
+first-letters:
   test_cases: [
     {
         'prompt': 'The red acrobat closed the orange raft',
-        'answer': '<result>tractor</result>'
+        'answer': 'tractor'
     },
     {
         'prompt': 'Honey your daring rationale asserts typical ignorance or neglect.',
-        'answer': '<result>hydration</result>'
+        'answer': 'hydration'
     },
     {
         'prompt': 'Rare obnoxiousness searches elevation.',
-        'answer': '<result>rose</result>'
+        'answer': 'rose'
     },
     {
         'prompt': 'Late into geometry he theorised.',
-        'answer': '<result>light</result>'
+        'answer': 'light'
     },
     {
         'prompt': 'Dear Elena find irregular new energies.',
-        'answer': '<result>define</result>'
+        'answer': 'define'
     }]
   description: "What is the word that is formed by concatenating the first letters of each given word?"
   number_of_prompts: 4
@@ -26,5 +26,8 @@ includes:
   candidate_model_temperature: 0.9
   generation_model: 'gpt-3.5-turbo'
   generation_model_temperature: 0.8
-  generation_model_max_tokens: 1000
-  method: includes.Includes
+  generation_model_max_tokens: 10
+  method: equal.Equal
+  prompts: ["You are an acronym decoder. You'll be given sentences or phrases, and your task is to form a word using the first letter of each word. You should ignore any punctuation, and only consider spaces as word separators. Return this word as your output.", 'You are to form a new word using only the first letter from each given word. Mind that the order is important: use the letters in the sequence they appear in the sentence you are given. Form a meaningful word from these letters, making sure each letter is used only once and in the given order.', 'Imagine you are playing a word game, where the goal is to form a new word using the initial letters of a series of words shared with you. When a sentence or phrase is shared with you, take the first letter of each word and put those letters together to form a new word. Make sure you keep the letters in the same order as the words appear in the original sentence or phrase.', 'Your task is to form a word by piecing together the initial letters of each word in the given sentence or phrase. The order of the letters should mirror the sequence of the words. No extra explanations or additions are permitted; simply provide the resulting word.']
+  prompt_change: 'yes'
+  change: 'synonymous_prompt'
