@@ -45,8 +45,10 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
             prompt_and_results = []
 
         # Calculate and print the percentage of correct answers and average time for each model
-        best_prompt = None
+        best_prompt = self.prompts[0]
+        second_best_prompt = self.prompts[1]
         best_percentage = 0
+        second_best_percentage = 0
         data_list = []
         for i, prompt in enumerate(self.prompts):
             correct = prompt_results[prompt]['correct']
@@ -54,13 +56,15 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
             percentage = (correct / total) * 100
             data_list.append({"prompt": prompt, "rating": percentage})
             print(f"Prompt {i+1} got {percentage:.2f}% correct.")
-            if percentage > best_percentage:
+            if percentage >= best_percentage:
+                second_best_percentage = best_percentage
+                second_best_prompt = best_prompt
                 best_percentage = percentage
                 best_prompt = prompt
-        
+        best_prompts = [{"prompt": best_prompt, "rating": best_percentage}, {"prompt": second_best_prompt, "rating": second_best_percentage}]
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
         data_list.append(results)
-        return data_list
+        return data_list, best_prompts
     
     def evaluate_optimal_prompt(self):
         return self.test_candidate_prompts()

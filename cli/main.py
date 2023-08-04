@@ -10,7 +10,6 @@ import yaml
 import textwrap
 import numpy as np
 from collections import defaultdict
-openai.api_key = "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"
 
 # It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
 def read_yaml(file_name):
@@ -39,8 +38,7 @@ def run_evaluation(file):
     generation_model_max_tokens = yaml_content[block_name]['generation_model_max_tokens']
     prompt_change = yaml_content[block_name]['prompt_change']
     method = yaml_content[block_name]['method']
-    #if 'iterations' in yaml_content[block_name]['iterations']:
-        #iterations = yaml_content[block_name]['iterations']
+    iterations = yaml_content[block_name]['iterations']
 
     if method == 'elovalue.Elo':
         class_method = elovalue.Elo
@@ -87,6 +85,33 @@ def run_evaluation(file):
     
     # Evaluate the prompts
     results = evaluable_object.evaluate_optimal_prompt()
+    iterations_prompts = results[1]
+    prompts_to_change = results[1]
+    print(iterations_prompts)
+
+    while iterations > 0:
+        new_prompts = []
+
+        # Iterar a través de la lista y extraer el contenido de la clave "prompt"
+        for item in prompts_to_change:
+            prompt_content = item["prompt"]
+            new_prompts.append(prompt_content)
+
+        candidate_prompts = []  # Nueva lista para almacenar los candidatos generados
+        for best_prompt in new_prompts:
+            candidates = generation.generate_candidate_prompts("Your job is to generate a prompt similar to a prompt you are going to receive. Generate a new one by modifying words or phrases but in such a way that the meaning of the prompt is preserved. It only returns the new prompt you created and nothing else.", best_prompt, description, candidate_model, candidate_model_temperature, 1, prompt_features=None)
+            candidate_prompts.extend(candidates)  # Utilizamos extend para agregar los elementos individuales a candidate_prompts
+
+        new_prompts.extend(candidate_prompts)  # Agregar los candidatos generados a new_prompts
+
+        print(new_prompts)
+
+        evaluable_object = class_method(description, test_cases, 4, generation_model, generation_model_temperature, generation_model_max_tokens, candidate_model, candidate_model_temperature, new_prompts)
+        prompts_to_change = evaluable_object.evaluate_optimal_prompt()[1]
+        iterations_prompts.append(prompts_to_change)
+        iterations = iterations - 1
+
+    #print(iterations_prompts)   
 
     
     yaml_folder = os.path.dirname(file)
