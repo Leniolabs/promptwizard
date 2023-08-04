@@ -40,4 +40,4 @@ landing-page:
   generation_model_max_tokens: 70
   method: elovalue.Elo
   prompt_change: 'no'
-  prompt_features: 'Generated prompts must be less than 70 characters in size.'
+  iterations: 1

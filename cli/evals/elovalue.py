@@ -156,4 +156,5 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             data_list.append({"prompt": prompt, "rating": rating})
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
-        return data_list
+        best_prompts = [data_list[0], data_list[0]]
+        return data_list, best_prompts

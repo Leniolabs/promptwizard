@@ -87,45 +87,12 @@ def run_evaluation(file):
     results = evaluable_object.evaluate_optimal_prompt()
     iterations_prompts = results[1]
     prompts_to_change = results[1]
-    print(iterations_prompts)
 
-    while iterations > 0:
-        new_prompts = []
-
-        # Iterar a través de la lista y extraer el contenido de la clave "prompt"
-        for item in prompts_to_change:
-            prompt_content = item["prompt"]
-            new_prompts.append(prompt_content)
-
-        candidate_prompts = []  # Nueva lista para almacenar los candidatos generados
-        for best_prompt in new_prompts:
-            candidates = generation.generate_candidate_prompts("Your job is to generate a prompt similar to a prompt you are going to receive. Generate a new one by modifying words or phrases but in such a way that the meaning of the prompt is preserved. It only returns the new prompt you created and nothing else.", best_prompt, description, candidate_model, candidate_model_temperature, 1, prompt_features=None)
-            candidate_prompts.extend(candidates)  # Utilizamos extend para agregar los elementos individuales a candidate_prompts
-
-        new_prompts.extend(candidate_prompts)  # Agregar los candidatos generados a new_prompts
-
-        print(new_prompts)
-
-        evaluable_object = class_method(description, test_cases, 4, generation_model, generation_model_temperature, generation_model_max_tokens, candidate_model, candidate_model_temperature, new_prompts)
-        prompts_to_change = evaluable_object.evaluate_optimal_prompt()[1]
-        iterations_prompts.append(prompts_to_change)
-        iterations = iterations - 1
-
-    #print(iterations_prompts)   
-
-    
     yaml_folder = os.path.dirname(file)
-    # Full path of the output.json file in the same folder as the YAML
-    output_json_path = os.path.join(yaml_folder, "output.json")
-    # Convert the result to JSON format and save it to the output.json file
-    with open(output_json_path, "w") as json_file:
-        json.dump(results, json_file)
-    print(f"Result saved in: {output_json_path}")
-    
     if method == 'elovalue.Elo':
         # Group "elo" values by prompt using a dictionary
         elos_by_prompt = defaultdict(list)
-        for item in results[number_of_prompts + 1]:
+        for item in results[0][number_of_prompts + 1]:
             prompt = item["prompt"]
             elo = item["elo"]
             elos_by_prompt[prompt].append(elo)
@@ -146,6 +113,33 @@ def run_evaluation(file):
         output_plot_path = os.path.join(yaml_folder, "scatter_plot.png")
         plt.savefig(output_plot_path)
         print(f"Scatter plot saved in: {output_plot_path}")
+
+    while iterations > 0:
+        new_prompts = []
+
+        for item in prompts_to_change:
+            prompt_content = item["prompt"]
+            new_prompts.append(prompt_content)
+
+        candidate_prompts = []
+        for best_prompt in new_prompts:
+            candidates = generation.generate_candidate_prompts("Your job is to generate a prompt similar to a prompt you are going to receive. Generate a new one by modifying words or phrases but in such a way that the meaning of the prompt is preserved. What you return has to be a reformulation of what you received and nothing more, no explanation is necessary. Don't return phrases like 'Here are some examples:', just say the prompt", best_prompt, description, candidate_model, candidate_model_temperature, 1, prompt_features=None)
+            candidate_prompts.extend(candidates)
+
+        new_prompts.extend(candidate_prompts)
+
+        evaluable_object = class_method(description, test_cases, 4, generation_model, generation_model_temperature, generation_model_max_tokens, candidate_model, candidate_model_temperature, new_prompts)
+        prompts_to_change = evaluable_object.evaluate_optimal_prompt()[1]
+        iterations_prompts.append(prompts_to_change)
+        iterations = iterations - 1 
+    
+    # Full path of the output.json file in the same folder as the YAML
+    output_json_path = os.path.join(yaml_folder, "output.json")
+    # Convert the result to JSON format and save it to the output.json file
+    with open(output_json_path, "w") as json_file:
+        json.dump(results, json_file)
+    print(f"Result saved in: {output_json_path}")
+    
 
 def main():
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")
