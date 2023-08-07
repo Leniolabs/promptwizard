@@ -1,0 +1,86 @@
+[
+    {
+        "prompt": "\"As an AI, your duty is to extract a singular word from a provided sentence. This extracted word is created by linking the initial letters of each word in the sentence. Ensure to process the sentence in sequence, from beginning to end. For instance, if the sentence is 'Good morning everyone', your output should be 'gme'.\"\n\n\"Your task as an AI is to discover a concealed word from a specified sentence. The concealed word is constructed by amalgamating the starting letters of each word in the sentence, in their original sequence. Essentially, you are to pick the first alphabet from each word in the sentence and join them to create one word. Please execute your response in an orderly fashion, illustrating your path to the final answer.\"",
+        "rating": 20.0
+    },
+    {
+        "prompt": "\"As an AI, it's your responsibility to create a distinct word from a provided sentence. This unique word is made by joining the initial letters of every word in the sentence. Be sure to handle the sentence exactly as it's given, from the beginning to the end. For instance, if the sentence is 'Live long and prosper', your result should be 'llap'.\"\n\n\"In your role as an AI, you're expected to decode a concealed word from a presented sentence. This word is compiled by merging the first characters of each word in the sentence, in the sequence they're provided. Essentially, you need to extract the initial letter from every word in the sentence and unite them to produce one word. Please present your answers systematically, explaining how you arrived at the final output.\"",
+        "rating": 0.0
+    },
+    [
+        {
+            "description": "What is the word that is formed by concatenating the first letters of each given word?",
+            "method": "Equal"
+        },
+        [
+            {
+                "prompt": "\"As an AI, your duty is to extract a singular word from a provided sentence. This extracted word is created by linking the initial letters of each word in the sentence. Ensure to process the sentence in sequence, from beginning to end. For instance, if the sentence is 'Good morning everyone', your output should be 'gme'.\"\n\n\"Your task as an AI is to discover a concealed word from a specified sentence. The concealed word is constructed by amalgamating the starting letters of each word in the sentence, in their original sequence. Essentially, you are to pick the first alphabet from each word in the sentence and join them to create one word. Please execute your response in an orderly fashion, illustrating your path to the final answer.\""
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "tactofr",
+                "ideal": "tractor",
+                "result": false
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "h",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "The sentence provided is \"Rare obnoxiousness searches",
+                "ideal": "rose",
+                "result": false
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "leight",
+                "ideal": "light",
+                "result": false
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "DEFINE",
+                "ideal": "define",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "\"As an AI, it's your responsibility to create a distinct word from a provided sentence. This unique word is made by joining the initial letters of every word in the sentence. Be sure to handle the sentence exactly as it's given, from the beginning to the end. For instance, if the sentence is 'Live long and prosper', your result should be 'llap'.\"\n\n\"In your role as an AI, you're expected to decode a concealed word from a presented sentence. This word is compiled by merging the first characters of each word in the sentence, in the sequence they're provided. Essentially, you need to extract the initial letter from every word in the sentence and unite them to produce one word. Please present your answers systematically, explaining how you arrived at the final output.\""
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "To create the distinct word from the sentence, we",
+                "ideal": "tractor",
+                "result": false
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "To create the distinct word from the sentence \"H",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "To create a distinct word from the sentence \"Rare",
+                "ideal": "rose",
+                "result": false
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "To create a unique word from the sentence \"Late",
+                "ideal": "light",
+                "result": false
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "The sentence \"Dear Elena find irregular new energies\"",
+                "ideal": "define",
+                "result": false
+            }
+        ]
+    ]
+]

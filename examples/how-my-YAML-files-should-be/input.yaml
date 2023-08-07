@@ -1,0 +1,42 @@
+# The following is the structure that your YAML files should have.
+
+test:
+
+    cases: """ Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the
+        Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
+        equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
+        second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
+        value is allowed as a response."""
+
+    description: """Here is the description of the type of task that summarizes the test cases."""
+    method: """Here, you select the evaluation method for your prompts."""
+
+    model:
+        name: """The name of the GPT model you will use to evaluate the prompts."""
+        temperature: """The temperature of the GPT model you will use to evaluate the prompts."""
+        max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate the response to the test."""
+
+prompts:
+
+    content: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.
+        Please provide a minimum number of 4 prompts"""
+    number: """The number of prompts you are going to evaluate. If you are going to provide the prompts yourself, please specify 
+        the corresponding quantity of prompts you inserted previously. If you are going to generate the prompts, indicate the 
+        quantity of prompts you want to generate. Please provide a minimum number of 4 prompts"""
+    change: """An optional feature that allows you to make changes to your prompts, whether you provide them or generate them. 
+        If you don't want to use it, simply put None. Otherwise, the options are: uppercase, lowercase, random_uppercase, 
+        random_lowercase, random_lowercase_word, random_uppercase_word, synonymous_prompt, grammatical_errors."""
+    features: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
+        prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
+        'Generate prompts with a maximum length of 50 characters.'"""
+
+generation:
+
+    model:
+
+        name: """The name of the GPT model you will use to generate the prompts."""
+        temperature: """The temperature of the GPT model you will use to generate the prompts."""
+
+iterations:
+    number: """The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
+        prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0."""

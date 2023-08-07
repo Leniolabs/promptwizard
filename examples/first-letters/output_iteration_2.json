@@ -1,0 +1,86 @@
+[
+    {
+        "prompt": "\"As an AI, your role is to formulate a unique word from a given sentence. The unique word is created by merging the first letters of every word in the sentence. It's crucial to analyze the sentence in a linear fashion, from the first word to the last. For instance, if the sentence is 'Make each day count', your reply should be 'medc'.\"\n\n\"Being an AI, your assignment is to uncover a hidden word within a certain sentence. This hidden word is synthesized by fusing the premier letters of all the words in the sentence, following their original order. Essentially, your task is to select the principal letter from each word and amalgamate them into a single word. Maintain a systematic approach while generating your output.\"\n\n\"As an AI, you're required to generate an individual word from a presented sentence. This individual word is created by combining the first letters of all the words in the sentence. Make sure to process the sentence sequentially, from the first to the final. For example, if the sentence is 'Better late than never', your answer should be 'bltn'.\"",
+        "rating": 40.0
+    },
+    {
+        "prompt": "\"Your role as an AI is to generate a unique word from a given sentence. This unique word is crafted by combining the initial letters of every word in the sentence. Ensure to proceed with the sentence from start to finish. For example, if the sentence given is 'Make every day count', your response should be 'medc'.\"\n\n\"As an AI, it's your responsibility to construct a single word from a designated sentence. The construction involves merging the beginning letters of each word in the sentence. Prioritize processing the sentence in the order it's presented, from the first word to the last. So, if the sentence is 'Life is beautiful', your return should be 'lib'.\"\n\n\"As an AI, you're required to form a solitary word from a prescribed sentence. This word is forged by fusing the first letters of each word in the sentence. Remember to handle the sentence in its original order, from the first to the last word. For instance, if the sentence is 'Keep calm and carry on', your result should be 'kcaco'.\"",
+        "rating": 20.0
+    },
+    [
+        {
+            "description": "What is the word that is formed by concatenating the first letters of each given word?",
+            "method": "Equal"
+        },
+        [
+            {
+                "prompt": "\"As an AI, your role is to formulate a unique word from a given sentence. The unique word is created by merging the first letters of every word in the sentence. It's crucial to analyze the sentence in a linear fashion, from the first word to the last. For instance, if the sentence is 'Make each day count', your reply should be 'medc'.\"\n\n\"Being an AI, your assignment is to uncover a hidden word within a certain sentence. This hidden word is synthesized by fusing the premier letters of all the words in the sentence, following their original order. Essentially, your task is to select the principal letter from each word and amalgamate them into a single word. Maintain a systematic approach while generating your output.\"\n\n\"As an AI, you're required to generate an individual word from a presented sentence. This individual word is created by combining the first letters of all the words in the sentence. Make sure to process the sentence sequentially, from the first to the final. For example, if the sentence is 'Better late than never', your answer should be 'bltn'.\""
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "tracor",
+                "ideal": "tractor",
+                "result": false
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "hydrating",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "roses",
+                "ideal": "rose",
+                "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "Light",
+                "ideal": "light",
+                "result": true
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "dfine",
+                "ideal": "define",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "\"Your role as an AI is to generate a unique word from a given sentence. This unique word is crafted by combining the initial letters of every word in the sentence. Ensure to proceed with the sentence from start to finish. For example, if the sentence given is 'Make every day count', your response should be 'medc'.\"\n\n\"As an AI, it's your responsibility to construct a single word from a designated sentence. The construction involves merging the beginning letters of each word in the sentence. Prioritize processing the sentence in the order it's presented, from the first word to the last. So, if the sentence is 'Life is beautiful', your return should be 'lib'.\"\n\n\"As an AI, you're required to form a solitary word from a prescribed sentence. This word is forged by fusing the first letters of each word in the sentence. Remember to handle the sentence in its original order, from the first to the last word. For instance, if the sentence is 'Keep calm and carry on', your result should be 'kcaco'.\""
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "tracotor",
+                "ideal": "tractor",
+                "result": false
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "hydrating",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "roses",
+                "ideal": "rose",
+                "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "ligt",
+                "ideal": "light",
+                "result": false
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "dfine",
+                "ideal": "define",
+                "result": false
+            }
+        ]
+    ]
+]

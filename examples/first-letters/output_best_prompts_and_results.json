@@ -1,0 +1,10 @@
+[
+    {
+        "prompt": "As an AI, you are to derive a single word from a given sentence. The derived word is formed by concatenating the first letters of each word in the sentence. You should provide this derived word as your output. Please remember to process the sentence in the order it's given, from left to right. For example, if the sentence is 'Have a great day', your response should be 'hagd'.",
+        "rating": 60.0
+    },
+    {
+        "prompt": "\"As an AI, your role is to formulate a unique word from a given sentence. The unique word is created by merging the first letters of every word in the sentence. It's crucial to analyze the sentence in a linear fashion, from the first word to the last. For instance, if the sentence is 'Make each day count', your reply should be 'medc'.\"\n\n\"Being an AI, your assignment is to uncover a hidden word within a certain sentence. This hidden word is synthesized by fusing the premier letters of all the words in the sentence, following their original order. Essentially, your task is to select the principal letter from each word and amalgamate them into a single word. Maintain a systematic approach while generating your output.\"\n\n\"As an AI, you're required to generate an individual word from a presented sentence. This individual word is created by combining the first letters of all the words in the sentence. Make sure to process the sentence sequentially, from the first to the final. For example, if the sentence is 'Better late than never', your answer should be 'bltn'.\"",
+        "rating": 40.0
+    }
+]

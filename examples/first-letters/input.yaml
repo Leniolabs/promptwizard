@@ -1,33 +1,34 @@
-first-letters:
-  test_cases: [
-    {
-        'prompt': 'The red acrobat closed the orange raft',
-        'answer': 'tractor'
-    },
-    {
-        'prompt': 'Honey your daring rationale asserts typical ignorance or neglect.',
-        'answer': 'hydration'
-    },
-    {
-        'prompt': 'Rare obnoxiousness searches elevation.',
-        'answer': 'rose'
-    },
-    {
-        'prompt': 'Late into geometry he theorised.',
-        'answer': 'light'
-    },
-    {
-        'prompt': 'Dear Elena find irregular new energies.',
-        'answer': 'define'
-    }]
-  description: "What is the word that is formed by concatenating the first letters of each given word?"
-  number_of_prompts: 3
-  candidate_model: 'gpt-4'
-  candidate_model_temperature: 0.9
-  generation_model: 'gpt-3.5-turbo'
-  generation_model_temperature: 0.8
-  generation_model_max_tokens: 10
-  method: equal.Equal
-  prompt_change: 'no'
-  change: 'synonymous_prompt'
-  iterations: 1
+test:
+
+    cases: [
+        ['The red acrobat closed the orange raft', 'tractor'],
+        ['Honey your daring rationale asserts typical ignorance or neglect.', 'hydration'],
+        ['Rare obnoxiousness searches elevation.', 'rose'],
+        ['Late into geometry he theorised.', 'light'],
+        ['Dear Elena find irregular new energies.', 'define']
+    ]
+
+    description: "What is the word that is formed by concatenating the first letters of each given word?"
+    method: includes.Includes
+
+    model:
+        name: 'gpt-3.5-turbo'
+        temperature: 0.8
+        max_tokens: 10
+
+prompts:
+
+    content: []
+    number: 4
+    change: 'None'
+    features: 'None'
+
+generation:
+
+    model:
+
+        name: 'gpt-4'
+        temperature: 0.9
+
+iterations:
+    number: 2

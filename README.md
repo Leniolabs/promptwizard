@@ -8,6 +8,7 @@ Prompt Engineer (lenio-ai-prompt-engineer) is a package for evaluating custom pr
 
 - Evaluate custom prompts using different evaluation methods.
 - Automatically generate prompts for evaluation.
+- Iterates over your best performing prompts to get better prompts.
 - Save the results obtained in a JSON file.
 
 
@@ -24,6 +25,9 @@ To use Prompt Engineer, follow these steps:
 ```bash
 pip install -r requires.txt
 ```
+## Setup
+
+To run evals, you will need to set up and specify your OpenAI API key. You can generate one at https://platform.openai.com/account/api-keys. After you obtain an API key, specify it using the OPENAI_API_KEY environment variable. Please be aware of the costs associated with using the API when running evals.
 
 ## Usage
 
@@ -50,3 +54,15 @@ lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
 
 3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML folder. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file.
+
+## Prompt Iteration
+
+If you want, you can also specify the number of iterations you want to perform on your provided prompts or the ones that will be generated automatically to obtain prompts that achieve optimal behavior for the language model.
+
+## YAML Files
+
+We provide you with a YAML file in the 'examples/how-my-YAML-files-should-be' folder where we explain the valid structure of your YAML files and certain limitations for some variables within it. We recommend that you read it carefully before running an evaluation.
+
+## Special features
+
+Remember that you can also make changes to your provided prompts or those you will generate. For example, you can convert the entire content of your prompts to uppercase or rephrase them with grammatical errors.

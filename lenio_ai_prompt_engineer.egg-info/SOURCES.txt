@@ -2,6 +2,7 @@ README.md
 setup.py
 cli/__init__.py
 cli/generation.py
+cli/iteration.py
 cli/main.py
 cli/evals/__init__.py
 cli/evals/classification.py

@@ -11,16 +11,16 @@ RANKING_MODEL = 'gpt-3.5-turbo'
 RANKING_MODEL_TEMPERATURE = 0.5
 
 class Elo:
-    def __init__(self, description, test_cases, number_of_prompts, generation_model, generation_model_temperature, generation_model_max_tokens, candidate_model, candidate_model_temperature, prompts):
+    def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
         self.description = description
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
-        self.generation_model = generation_model
-        self.generation_model_temperature = generation_model_temperature
-        self.generation_model_max_tokens = generation_model_max_tokens
-        self.candidate_model = candidate_model
-        self.candidate_model_temperature = candidate_model_temperature
-        self.system_gen_system_prompt = """Your job is to generate system prompts for GPT-4, given a description of the use-case and some test cases.
+        self.model_test = model_test
+        self.model_test_temperature = model_test_temperature
+        self.model_test_max_tokens = model_test_max_tokens
+        self.model_generation = model_generation
+        self.model_generation_temperature = model_generation_temperature
+        self.system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
 The prompts you will be generating will be for freeform tasks, such as generating a landing page headline, an intro paragraph, solving a math problem, etc.
 
@@ -58,7 +58,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             messages=[
                 {"role": "system", "content": self.ranking_system_prompt},
                 {"role": "user", "content": f"""Task: {self.description.strip()}
-    Prompt: {test_case['prompt']}
+    Prompt: {test_case}
     Generation A: {pos1}
     Generation B: {pos2}"""}
             ],
@@ -74,13 +74,13 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
     def get_generation(self, prompt, test_case):
         generation = openai.ChatCompletion.create(
-            model=self.generation_model,
+            model=self.model_test,
             messages=[
                 {"role": "system", "content": prompt},
-                {"role": "user", "content": f"{test_case['prompt']}"}
+                {"role": "user", "content": f"{test_case}"}
             ],
-            max_tokens=self.generation_model_max_tokens,
-            temperature=self.generation_model_temperature,
+            max_tokens=self.model_test_max_tokens,
+            temperature=self.model_test_temperature,
         ).choices[0].message.content
         return generation
 
@@ -105,7 +105,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             for test_case in self.test_cases:
 
                 # Get the value of the "prompt" field as a string
-                prompt_content = test_case.get("prompt", "")
+                prompt_content = test_case
 
                 # Update progress bar
                 pbar.update()
@@ -156,5 +156,6 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             data_list.append({"prompt": prompt, "rating": rating})
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
-        best_prompts = [data_list[0], data_list[0]]
+        best_prompts = [data_list[0], data_list[1]]
+        print(best_prompts)
         return data_list, best_prompts

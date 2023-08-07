@@ -1,43 +1,39 @@
-landing-page:
-  description: "Given a prompt, generate a landing page headline."
-  test_cases: [
-    {
-        'prompt': 'Promoting an innovative new fitness app, Smartly',
-    },
-    {
-        'prompt': 'Why a vegan diet is beneficial for your health',
-    },
-    {
-        'prompt': 'Introducing a new online course on digital marketing',
-    },
-    {
-        'prompt': 'Launching a new line of eco-friendly clothing',
-    },
-    {
-        'prompt': 'Promoting a new travel blog focusing on budget travel',
-    },
-    {
-        'prompt': 'Advertising a new software for efficient project management',
-    },
-    {
-        'prompt': 'Introducing a new book on mastering Python programming',
-    },
-    {
-        'prompt': 'Promoting a new online platform for learning languages',
-    },
-    {
-        'prompt': 'Advertising a new service for personalized meal plans',
-    },
-    {
-        'prompt': 'Launching a new app for mental health and mindfulness',
-    }
+test:
+
+    cases: [
+        'Promoting an innovative new fitness app, Smartly',
+        'Why a vegan diet is beneficial for your health',
+        'Introducing a new online course on digital marketing',
+        'Launching a new line of eco-friendly clothing',
+        'Promoting a new travel blog focusing on budget travel',
+        'Advertising a new software for efficient project management',
+        'Introducing a new book on mastering Python programming',
+        'Promoting a new online platform for learning languages',
+        'Advertising a new service for personalized meal plans',
+        'Launching a new app for mental health and mindfulness',
     ]
-  number_of_prompts: 2
-  candidate_model: 'gpt-4'
-  candidate_model_temperature: 0.9
-  generation_model: 'gpt-3.5-turbo'
-  generation_model_temperature: 0.8
-  generation_model_max_tokens: 70
-  method: elovalue.Elo
-  prompt_change: 'no'
-  iterations: 1
+
+    description: "Given a prompt, generate a landing page headline."
+    method: elovalue.Elo
+
+    model:
+        name: 'gpt-3.5-turbo'
+        temperature: 0.8
+        max_tokens: 70
+
+prompts:
+
+    content: []
+    number: 3
+    change: 'None'
+    features: 'None'
+
+generation:
+
+    model:
+
+        name: 'gpt-4'
+        temperature: 0.9
+
+iterations:
+    number: 1
