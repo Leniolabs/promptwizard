@@ -45,6 +45,7 @@ def run_evaluation(file):
     model_generation = yaml_content['generation']['model']['name']
     model_generation_temperature = yaml_content['generation']['model']['temperature']
     iterations = yaml_content['iterations']['number']
+    cost = 0
 
     if method == 'elovalue.Elo':
         class_method = elovalue.Elo
@@ -60,11 +61,13 @@ def run_evaluation(file):
     # Checks if the prompts to evaluate already exist and if not, creates them
     if prompts_value == []:
         if prompt_features != 'None':
-            
-            prompts_value = generation.generate_candidate_prompts(object_class.system_gen_system_prompt, object_class.test_cases, object_class.description, object_class.model_generation, object_class.model_generation_temperature, object_class.number_of_prompts, prompt_features)
+            prompts_generation_cost = generation.generate_candidate_prompts(object_class.system_gen_system_prompt, object_class.test_cases, object_class.description, object_class.model_generation, object_class.model_generation_temperature, object_class.number_of_prompts, prompt_features)
+            prompts_value = prompts_generation_cost[0]
+            cost = cost + prompts_generation_cost[1]
         else:
-            prompts_value = generation.generate_candidate_prompts(object_class.system_gen_system_prompt, object_class.test_cases, object_class.description, object_class.model_generation, object_class.model_generation_temperature, object_class.number_of_prompts)
-
+            prompts_generation_cost = generation.generate_candidate_prompts(object_class.system_gen_system_prompt, object_class.test_cases, object_class.description, object_class.model_generation, object_class.model_generation_temperature, object_class.number_of_prompts)
+            prompts_value = prompts_generation_cost[0]
+            cost = cost + prompts_generation_cost[1]
     
     if prompt_change != 'None':
         if prompt_change == 'uppercase':
@@ -80,15 +83,19 @@ def run_evaluation(file):
         elif prompt_change == 'random_uppercase_word':
             prompts_value = random_uppercase_word.convert_prompts(prompts_value)
         elif prompt_change == 'synonymous_prompt':
-            prompts_value = synonymous_prompt.convert_prompts(prompts_value)
+            prompts_value_cost = synonymous_prompt.convert_prompts(prompts_value)
+            prompts_value = prompts_value_cost[0]
+            cost = cost + prompts_value_cost[1]
         elif prompt_change == 'grammatical_errors':
-            prompts_value = grammatical_errors.convert_prompts(prompts_value)
+            prompts_value_cost = grammatical_errors.convert_prompts(prompts_value)
+            prompts_value = prompts_value_cost[0]
+            cost = cost + prompts_value_cost[1]
 
     evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value)
     
     # Evaluate the prompts
     results = evaluable_object.evaluate_optimal_prompt()
-
+    cost = cost + results[2]
     yaml_folder = os.path.dirname(file)
     if method == 'elovalue.Elo':
         # Group "elo" values by prompt using a dictionary
@@ -122,14 +129,15 @@ def run_evaluation(file):
         json.dump(results[0], json_file)
     print(f"Result saved in: {output_json_path}")
     old_prompts = results[1]
-    print(old_prompts)
     number_of_iteration = 1
     if method != 'elovalue.Elo':
         while iterations > 0:
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
-            new_results = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, old_prompts, method)
+            new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, old_prompts, method)
+            new_results = new_results_prompts_cost[0]
+            cost = cost + new_results_prompts_cost[1]
             with open(json_file_path, 'w') as file:
                 json.dump(new_results[0], file, indent=4)
             iterations = iterations - 1
@@ -145,8 +153,9 @@ def run_evaluation(file):
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
-            new_results = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompt_contents, method)
-            print(new_results[1])
+            new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompt_contents, method)
+            new_results = new_results_prompts_cost[0]
+            cost = cost + new_results_prompts_cost[1]
             with open(json_file_path, 'w') as file:
                 json.dump(new_results[0], file, indent=4)
 
@@ -181,6 +190,7 @@ def run_evaluation(file):
     json_file_path = os.path.join(yaml_folder, filename)
     with open(json_file_path, 'w') as file:
         json.dump(old_prompts, file, indent=4)
+    print(f"The cost of your evaluation was: {cost} dollars.")
     
 
 def main():

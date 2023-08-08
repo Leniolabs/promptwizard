@@ -2,6 +2,7 @@ import openai
 from tqdm import tqdm
 import itertools
 from tenacity import retry, stop_after_attempt, wait_exponential
+from ..cost import input, output
 
 # K is a constant factor that determines how much ratings change
 K = 32
@@ -52,7 +53,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
     # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
-    def get_score(self, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature):    
+    def get_score(self, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature):
         score = openai.ChatCompletion.create(
             model=ranking_model_name,
             messages=[
@@ -68,8 +69,13 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             },
             max_tokens=1,
             temperature=ranking_model_temperature,
-        ).choices[0].message.content
-        return score
+        )
+        tokens_input = score["usage"]["prompt_tokens"]
+        tokens_output = score["usage"]["completion_tokens"]
+        cost_input = input.cost(tokens_input, ranking_model_name)
+        cost_output = output.cost(tokens_output, ranking_model_name)
+        cost = cost_input + cost_output
+        return score.choices[0].message.content, cost
 
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
     def get_generation(self, prompt, test_case):
@@ -81,10 +87,16 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             ],
             max_tokens=self.model_test_max_tokens,
             temperature=self.model_test_temperature,
-        ).choices[0].message.content
-        return generation
+        )
+        tokens_input = generation["usage"]["prompt_tokens"]
+        tokens_output = generation["usage"]["completion_tokens"]
+        cost_input = input.cost(tokens_input, self.model_test)
+        cost_output = output.cost(tokens_output, self.model_test)
+        cost = cost_input + cost_output
+        return generation.choices[0].message.content, cost
 
     def test_candidate_prompts(self):
+        cost = 0
     # Initialize each prompt with an ELO rating of 1200
         prompt_ratings = {prompt: 1200 for prompt in self.prompts}
 
@@ -111,12 +123,16 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 pbar.update()
 
                 # Generate outputs for each prompt
-                generation1 = self.get_generation(prompt1, test_case)
-                generation2 = self.get_generation(prompt2, test_case)
+                generation1 = self.get_generation(prompt1, test_case)[0]
+                cost_generation1 = self.get_generation(prompt1, test_case)[1]
+                generation2 = self.get_generation(prompt2, test_case)[0]
+                cost_generation2 = self.get_generation(prompt2, test_case)[1]
 
                 # Rank the outputs
-                score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
-                score2 = self.get_score(test_case, generation2, generation1, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)
+                score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[0]
+                cost_score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[1]
+                score2 = self.get_score(test_case, generation2, generation1, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[0]
+                cost_score2 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[1]
 
                 # Convert scores to numeric values
                 score1 = 1 if score1 == 'A' else 0 if score1 == 'B' else 0.5
@@ -142,11 +158,13 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 else:
                     battles.append({"test": prompt_content, "prompt1": prompt1, "generation1": generation1, "prompt2": prompt2, "generation2": generation2, "winner": 'Draw'})
                     print("Draw")
+
+                cost = cost + cost_generation1 + cost_generation2 + cost_score1 + cost_score2
         elo_prompt_sorted = sorted(elo_prompt, key=lambda x: x["prompt"])
         # Close progress bar
         pbar.close()
 
-        return prompt_ratings, battles, elo_prompt_sorted
+        return prompt_ratings, battles, elo_prompt_sorted, cost
 
 
     def evaluate_optimal_prompt(self): 
@@ -157,5 +175,4 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
         best_prompts = [data_list[0], data_list[1]]
-        print(best_prompts)
-        return data_list, best_prompts
+        return data_list, best_prompts, prompt_ratings[3]

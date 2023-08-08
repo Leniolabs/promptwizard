@@ -1,4 +1,5 @@
 import openai
+from ..cost import input, output
 
 def synonym(string):
     x = openai.ChatCompletion.create(
@@ -10,12 +11,20 @@ def synonym(string):
                     ],
                     max_tokens=500,
                     temperature=0.8,
-                ).choices[0].message.content
-    return x
+                )
+    tokens_input = x["usage"]["prompt_tokens"]
+    tokens_output = x["usage"]["completion_tokens"]
+    cost_input = input.cost(tokens_input, 'gpt-3.5-turbo')
+    cost_output = output.cost(tokens_output, 'gpt-3.5-turbo')
+    cost = cost_input + cost_output
+    return x.choices[0].message.content, cost
     
 def convert_prompts(prompts):
     new_prompts = []
+    cost = 0
     for prompt in prompts:
-        new_prompt = synonym(prompt)
+        new_prompt_cost = synonym(prompt)
+        new_prompt = new_prompt_cost[0]
         new_prompts.append(new_prompt)
-    return new_prompts
+        cost = cost + new_prompt_cost[1]
+    return new_prompts, cost

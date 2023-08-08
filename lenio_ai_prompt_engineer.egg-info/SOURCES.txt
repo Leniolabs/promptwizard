@@ -4,6 +4,8 @@ cli/__init__.py
 cli/generation.py
 cli/iteration.py
 cli/main.py
+cli/cost/input.py
+cli/cost/output.py
 cli/evals/__init__.py
 cli/evals/classification.py
 cli/evals/elovalue.py

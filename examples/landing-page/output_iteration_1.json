@@ -1,15 +1,15 @@
 [
     {
-        "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-        "rating": 1225.1544128524324
+        "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+        "rating": 1221.940659490783
     },
     {
-        "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-        "rating": 1195.5600973583555
+        "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+        "rating": 1200.6728630855812
     },
     {
-        "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-        "rating": 1179.285489789212
+        "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+        "rating": 1177.3864774236358
     },
     [
         {
@@ -18,497 +18,497 @@
         },
         {
             "test": "Promoting an innovative new fitness app, Smartly",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Transform Your Fitness Journey with Smartly: The Revolutionary App That Makes Workouts Fun and Effective!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Revolutionize Your Fitness Routine with Smartly: Get Fit the Smart Way!\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Transform Your Fitness Journey with Smartly: The Ultimate Exercise Companion\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Get Fit the Smart Way with Smartly - Your Personalized Fitness Companion!\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
         },
         {
             "test": "Why a vegan diet is beneficial for your health",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock the Hidden Power of a Vegan Lifestyle: Discover the Transformative Health Benefits Today!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Unlock the Power of a Vibrant, Plant-Based Lifestyle for Optimal Health\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Introducing a new online course on digital marketing",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Master the Art of Digital Marketing:\nUnlock Your Online Success Today!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Master the Art of Digital Marketing with Our New Online Course\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
-        },
-        {
-            "test": "Launching a new line of eco-friendly clothing",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Step into Sustainable Style: Discover Our New Eco-Fashion Collection!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Step into Sustainability: Discover Our Stylish, Eco-Friendly Clothing Line!\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Promoting a new travel blog focusing on budget travel",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Wanderlust: Discover Budget Travel Secrets!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Discover the World on a Shoestring: Unleash Your Wanderlust with Our Budget Travel Blog!\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
-        },
-        {
-            "test": "Advertising a new software for efficient project management",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Revolutionize Your Project Management with Our Cutting-Edge Software!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Supercharge Your Projects with Cutting-Edge Project Management Software\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Introducing a new book on mastering Python programming",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock the Power of Python:\nMaster the Art of Programming with Our New Book!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Unlock Your Coding Potential: Master Python Programming with Our New Book\"",
-            "winner": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'"
-        },
-        {
-            "test": "Promoting a new online platform for learning languages",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock a World of Fluency: Discover Our Revolutionary Language Learning Platform\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Unlock Your Language Skills with Our Revolutionary Online Learning Platform!\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Advertising a new service for personalized meal plans",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Perfect Plate: Discover the Art of Personalized Meal Plans!\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Unlock Your Health Potential with Customized Meal Plans!\"",
-            "winner": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'"
-        },
-        {
-            "test": "Launching a new app for mental health and mindfulness",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Inner Peace: Introducing the Ultimate Mental Wellness App\"",
-            "prompt2": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation2": "\"Discover Serenity: Your Path to Mental Wellness Starts Here\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Promoting an innovative new fitness app, Smartly",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Transform your fitness routine with Smartly: The Future of Fitness at Your Fingertips\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unleash Your Full Fitness Potential with Smartly: The Ultimate App for Smarter Workouts & Faster Results!\"",
-            "winner": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'"
-        },
-        {
-            "test": "Why a vegan diet is beneficial for your health",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock the Power of a Plant-Based Lifestyle: Discover the Surprising Health Benefits of Going Vegan\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unleash the Power of Plants: Transform Your Health with a Vegan Diet!\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Introducing a new online course on digital marketing",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock the Secrets of Success: Master the Art of Digital Marketing with our Revolutionary Online Course!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock Your Digital Marketing Potential with Our Cutting-Edge Online Course!\"",
-            "winner": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'"
-        },
-        {
-            "test": "Launching a new line of eco-friendly clothing",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Step into a Sustainable Style Revolution: Unveiling our Eco-Fashion Collection!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Step into Sustainable Style: Discover our Eco-Chic Clothing Collection Today!\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Promoting a new travel blog focusing on budget travel",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Dream Destinations on a Shoestring Budget: Discover Our Thrifty Travel Tips!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the Secrets of Affordable Adventuring: Your Ultimate Guide to Budget Travel\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
-        },
-        {
-            "test": "Advertising a new software for efficient project management",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Team's Full Potential: Introducing the Ultimate Project Management Solution!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unleash Your Team's Potential with Our Revolutionary Project Management Software\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
-        },
-        {
-            "test": "Introducing a new book on mastering Python programming",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock the Secrets of Python Mastery: Dive into the Ultimate Programming Adventure!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the Secrets of Python Mastery: Level Up Your Programming Skills with our Game-Changing Book!\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Promoting a new online platform for learning languages",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock a world of languages: Discover, master, and connect with our innovative online language learning platform!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the World: Master Any Language with Our Cutting-Edge Online Learning Platform\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Advertising a new service for personalized meal plans",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Unlock Your Ultimate Wellness: Customized Meal Plans Just for You!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the Secret to Effortless Healthy Eating with Your Personalized Meal Plan\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Launching a new app for mental health and mindfulness",
-            "prompt1": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "generation1": "\"Discover Inner Peace: Introducing our groundbreaking mental health and mindfulness app\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock Inner Peace and Elevate Your Mind with Our Groundbreaking Mindfulness App\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
-        },
-        {
-            "test": "Promoting an innovative new fitness app, Smartly",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "Get Fit, Smartly: Revolutionize Your Fitness Journey with Our Innovative App!",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Transform Your Fitness Journey with Smartly: The Revolutionary App That Puts You Ahead of the Game\"",
-            "winner": "Draw"
-        },
-        {
-            "test": "Why a vegan diet is beneficial for your health",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
             "generation1": "\"Unlock the Power of a Plant-Based Lifestyle for Optimal Health\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the Secret to Vibrant Health: Embrace the Power of a Plant-Based Lifestyle\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Unlock the Power of Health with a Plant-Based Lifestyle: Discover the Benefits of a Vegan Diet Today!\"",
+            "winner": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt."
         },
         {
             "test": "Introducing a new online course on digital marketing",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Master the Art of Digital Marketing: Unlock Your Online Success Today!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Master the Art of Digital Marketing and Propel Your Business to New Heights\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Unlock Your Digital Marketing Potential: Join Our Online Course Today!\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Master the Art of Digital Marketing with Our Cutting-Edge Online Course!\"",
+            "winner": "Draw"
         },
         {
             "test": "Launching a new line of eco-friendly clothing",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Revolutionize Your Wardrobe with Sustainable Style\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Step into a Sustainable Future with Our Fashion Forward Eco-Friendly Clothing Line!\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Revolutionize your wardrobe with sustainable style: Introducing our eco-friendly clothing line\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Step into Sustainable Style: Discover Our New Eco-Friendly Clothing Line!\"",
+            "winner": "Draw"
         },
         {
             "test": "Promoting a new travel blog focusing on budget travel",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Unlock Your Dream Destinations on a Budget: Introducing the Ultimate Travel Blog!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock the Secrets of Thrifty Travel: Your Ultimate Guide to Budget Adventures!\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Explore the World on a Shoestring Budget: Discover the Ultimate Budget Travel Tips and Inspiring Destinations\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Unlock Your Travel Dreams on a Shoestring Budget: Discover the Ultimate Budget Travel Guide!\"",
+            "winner": "Draw"
         },
         {
             "test": "Advertising a new software for efficient project management",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Streamline Your Projects with Our Powerful New Software\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Revolutionize Your Project Management: Introducing the Ultimate Software Solution\"",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Revolutionize your project management with our game-changing software\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Revolutionize Your Project Management with Our Cutting-Edge Software Solution!\"",
             "winner": "Draw"
         },
         {
             "test": "Introducing a new book on mastering Python programming",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Unlock Your Coding Potential: Master Python Programming with Our New Book!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Unlock Your Potential: Master Python Programming with the Ultimate Guidebook\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Unlock the Power of Python: Master Programming with our New Book!\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Unlock Your Coding Potential: Master Python Programming with Our Game-Changing Book!\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
         },
         {
             "test": "Promoting a new online platform for learning languages",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Unlock a World of Languages: Discover our Innovative Online Learning Platform!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Master the World's Languages with our Revolutionary Online Learning Platform\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Master Any Language: Ignite Your Fluency with Our Innovative Online Platform\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Master Any Language with Ease: Discover Our Powerful Online Learning Platform Today!\"",
+            "winner": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt."
         },
         {
             "test": "Advertising a new service for personalized meal plans",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Revitalize Your Diet with Tailored Meal Plans Just for You!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Fuel Your Body, Ignite Your Health: Experience the Power of Personalized Meal Plans!\"",
-            "winner": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Transform Your Diet with Tailored Meal Plans: Discover the Ultimate Way to Reach Your Health Goals\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Transform Your Health and Tastebuds: Discover the Ultimate Personalized Meal Plans Today!\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
         },
         {
             "test": "Launching a new app for mental health and mindfulness",
-            "prompt1": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "generation1": "\"Find peace and wellness with our new mindfulness app!\"",
-            "prompt2": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "generation2": "\"Transform Your Mind, Transform Your Life: Introducing the Ultimate Mental Wellness App!\"",
-            "winner": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner."
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Discover Tranquility: Unveiling the Ultimate Mental Health and Mindfulness App\"",
+            "prompt2": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation2": "\"Unlock Inner Peace: Discover our Revolutionary Mental Health and Mindfulness App Today!\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
+        },
+        {
+            "test": "Promoting an innovative new fitness app, Smartly",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Sculpt Your Perfect Body with Smartly: The Ultimate Fitness App for Busy Professionals\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Transform Your Fitness Journey with Smartly: The Ultimate App for Achieving Your Health Goals\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
+        },
+        {
+            "test": "Why a vegan diet is beneficial for your health",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Elevate Your Health: Embrace the Benefits of a Vegan Diet\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Optimal Health: Embrace the Power of a Vegan Lifestyle\"",
+            "winner": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting."
+        },
+        {
+            "test": "Introducing a new online course on digital marketing",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Master the Art of Digital Marketing: Unlock Your Online Success Today\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Your Marketing Potential: Master the Digital Landscape with Our Online Course!\"",
+            "winner": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting."
+        },
+        {
+            "test": "Launching a new line of eco-friendly clothing",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Get Fashion Forward and Eco-Conscious with Our New Sustainable Clothing Line!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Revolutionize Your Wardrobe: Introducing Sustainable Style for the Future!\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Promoting a new travel blog focusing on budget travel",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Discover the Secrets to Affordable Adventures: The Ultimate Budget Travel Blog\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock the World: Discover Budget Travel Secrets on Our New Blog!\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
+        },
+        {
+            "test": "Advertising a new software for efficient project management",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Supercharge Your Productivity with Our Cutting-Edge Project Management Software\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Your Team's Full Potential with Our Revolutionary Project Management Software!\"",
+            "winner": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting."
+        },
+        {
+            "test": "Introducing a new book on mastering Python programming",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Unlock the Power of Python: Master the Art of Programming with our New Book!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Limitless Possibilities: Master Python Programming with Our Comprehensive Guide\"",
+            "winner": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\""
+        },
+        {
+            "test": "Promoting a new online platform for learning languages",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Unlock the World: Master Languages with Ease on our Revolutionary Online Platform\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock the World: Master Any Language with Ease on our Revolutionary Online Platform!\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Advertising a new service for personalized meal plans",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Unlock Your Healthiest Self with Tailored Meal Plans Designed Just for You\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Transform Your Health and Taste Buds with Customized Meal Plans\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Launching a new app for mental health and mindfulness",
+            "prompt1": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "generation1": "\"Discover Inner Peace: Introducing a Groundbreaking Mindfulness App\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Discover Inner Peace: Introducing the Ultimate Mental Health and Mindfulness App\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Promoting an innovative new fitness app, Smartly",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Transform Your Fitness Journey with Smartly: Your Ultimate Personal Trainer in Your Pocket!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unleash Your Potential with Smartly: The Ultimate Fitness App for Achieving Your Strongest, Healthiest Self\"",
+            "winner": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting."
+        },
+        {
+            "test": "Why a vegan diet is beneficial for your health",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Unlock the Power of Plants: Discover the Surprising Health Benefits of Going Vegan!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock the Power of Plants: Boost Your Health with a Nourishing Vegan Lifestyle\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Introducing a new online course on digital marketing",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Master the Art of Digital Marketing with Our Cutting-Edge Online Course!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Master the Art of Digital Marketing: Unlock Your Online Success Today!\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Launching a new line of eco-friendly clothing",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Step into Sustainable Style: Discover Our New Eco-Friendly Clothing Line!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Step into Sustainable Style: Introducing Our Eco-Friendly Clothing Collection!\"",
+            "winner": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting."
+        },
+        {
+            "test": "Promoting a new travel blog focusing on budget travel",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Unlocking the Secrets of Affordable Adventuring: Your Ultimate Guide to Budget Travel!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlocking the Secrets of Budget Travel: Your Ultimate Guide to Affordable Adventures\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Advertising a new software for efficient project management",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Revolutionize Your Project Management with Our Cutting-Edge Software!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Streamline Your Projects with our Cutting-Edge Software: Revolutionize Your Workflow Today!\"",
+            "winner": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt."
+        },
+        {
+            "test": "Introducing a new book on mastering Python programming",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Unlock the Power of Python: Master Programming with our Game-changing Book!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Your Coding Potential: Dive into Python Mastery with Our Cutting-Edge Guide\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Promoting a new online platform for learning languages",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Master a New Language with Ease: Discover Our Cutting-Edge Online Learning Platform Today!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock the World: Master Any Language with Ease on our Revolutionary Online Learning Platform!\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Advertising a new service for personalized meal plans",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Revolutionize Your Diet: Unlock Your Full Potential with Personalized Meal Plans!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Unlock Your Healthiest Self: Experience the Power of Personalized Meal Plans Today!\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Launching a new app for mental health and mindfulness",
+            "prompt1": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "generation1": "\"Discover a Happier You: Introducing Our Groundbreaking Mental Health and Mindfulness App!\"",
+            "prompt2": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "generation2": "\"Find Peace and Empowerment: Unleash the Power of Mindfulness with Our Revolutionary App!\"",
+            "winner": "Draw"
         }
     ],
     [
         {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
             "elo": 1200
         },
         {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1184.0
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1185.4695015289756
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1170.8046975081022
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1173.468650467304
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1159.8934541028955
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1163.5231418589076
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1182.8342639458572
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1184.410160880049
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1201.842195802699
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1201.6725296589016
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1217.5955074166657
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1216.0566951944304
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1230.658417897057
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1227.9383643042459
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1209.4622257559413
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1192.668397713476
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1193.420132205854
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1194.1027686127986
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1194.7226361296762
-        },
-        {
-            "prompt": "'Imagine you're tasked with crafting an enticing headline for a landing page. This can be related to any product, service, event, or just a broad topic. Your challenge is to make this headline brief, but alluring, successfully conveying the crux of the subject. It should spark curiosity and invite further exploration, all whilst carrying a hint of positivity.'\n\n'Provided with a short summary of a product, service, or theme, you are to formulate a captivating and persuasive headline for a landing page. The headline must be succinct and yet stimulate intrigue, prompting the prospective customer or reader to delve deeper. Note that the purpose of this headline is to immediately seize attention and set a striking first impression. Make sure to beautifully encapsulate the core of the subject or the offer.'",
-            "elo": 1179.285489789212
-        },
-        {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1200
-        },
-        {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
             "elo": 1216.0
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1214.5304984710244
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1198.5304984710244
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1229.1953024918978
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1198.6658413353916
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1226.531349532696
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1198.7887194736095
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1240.1065458971045
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1198.900280724978
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1236.4768581410924
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1199.0015672603233
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1217.1657360541428
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1215.0935253014827
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1215.589839119951
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1197.7068478617787
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1198.157804197301
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1213.918042712075
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1198.3274703410984
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1228.6388794198997
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1199.4336867696227
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1243.3229892468307
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1184.4384606395547
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1224.6762109487534
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1202.8081124127
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1207.7234456191295
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1219.5029767981905
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1208.330667345339
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1234.6614020900818
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1224.8820352540663
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1232.4373991582052
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1207.9103813677373
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1214.4146238740248
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1224.5004097780452
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1230.0409943369978
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1223.563779885938
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1244.235774010787
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1222.7131474805333
         },
         {
-            "prompt": "Consider the subject line as a hook for a landing page. Your task is to create a catchy, concise, and engaging headline that efficiently communicates the essence of the subject. This could relate to a product, service, event, or any other topic. Your headline should attract attention and provoke interest. It should be brief yet descriptive and have a positive tone to encourage visitors to explore further.",
-            "elo": 1225.1544128524324
+            "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
+            "elo": 1221.940659490783
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
             "elo": 1200
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1184.077022242236
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1184.0
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1185.6158344644712
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1201.4695015289756
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1171.0141117618446
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1201.3341586646084
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1173.7341653546557
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1201.2112805263905
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1192.2103039029603
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1201.099719275022
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1209.0041319454256
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1200.9984327396767
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1208.2523974530475
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1184.9064746985173
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1207.569761046103
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1202.2931521382213
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1206.9498935292254
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1186.081957287925
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1222.3870398696895
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1171.3611205801003
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1221.2808234411652
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1156.982865900919
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1236.2760495712332
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1159.901452589033
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1217.906397798088
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1162.5593977039578
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1201.2115334125974
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1148.9787048501362
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1186.0531081207062
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1152.6035365503528
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1188.2771110525828
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1171.9101865537548
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1206.2998863367632
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1173.4818647044165
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1190.6735158737902
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1174.9100591217982
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1176.4787362000009
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1176.2076671707043
         },
         {
-            "prompt": "Given a brief description about a product, service, or topic, your task is to create a catchy and persuasive landing page headline. The headline should be concise yet intriguing, encouraging the potential customer or reader to explore further. Remember, the goal of this headline is to instantly grab attention and make a powerful first impression. Make sure to encapsulate the essence of the offering or the topic in a compelling manner.",
-            "elo": 1195.5600973583555
+            "prompt": "Generate an attractive and catchy headline for a landing page. Your headline should be brief, compelling and directly related to the given prompt. Don't forget, your headline's goal is to grab visitors' attention and make them interested in the product, service, or topic described in the prompt.",
+            "elo": 1177.3864774236358
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1200
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1185.315890173069
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1203.9626684711463
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1220.9154338007702
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1220.3082120745607
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1203.7568441658334
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1220.7284980521624
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1204.1384696418545
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1205.0750995339617
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1205.9257319393664
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1206.6982199291167
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1221.076474608298
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1218.157887920184
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1215.4999428052593
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1229.0806356590808
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1225.4558039588642
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1206.1491539554622
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1204.5774758048005
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1203.1492813874188
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1201.8516733385127
+        },
+        {
+            "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
+            "elo": 1200.6728630855812
         }
     ]
 ]

@@ -1,4 +1,5 @@
 import openai
+from ..cost import input, output
 
 class Includes:
     def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
@@ -22,6 +23,7 @@ class Includes:
         self.prompts = prompts
 
     def test_candidate_prompts(self):
+        cost = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
         results = [{"description": self.description, "method": "Equal"}]
         for prompt in self.prompts:
@@ -35,12 +37,17 @@ class Includes:
                     ],
                     max_tokens=self.model_test_max_tokens,
                     temperature=self.model_test_temperature,
-                ).choices[0].message.content
+                )
+                tokens_input = response["usage"]["prompt_tokens"]
+                tokens_output = response["usage"]["completion_tokens"]
+                cost_input = input.cost(tokens_input, self.model_test)
+                cost_output = output.cost(tokens_output, self.model_test)
+                cost = cost_input + cost_output
                 # Update model results
-                if test_case[1].lower() in response.lower():
+                if test_case[1].lower() in response.choices[0].message.content.lower():
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case[0], "answer": response, "ideal": test_case[1], "result": test_case[1].lower() in response.lower()})
+                prompt_and_results.append({"test": test_case[0], "answer": response.choices[0].message.content, "ideal": test_case[1], "result": test_case[1].lower() in response.choices[0].message.content.lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
 
@@ -58,11 +65,10 @@ class Includes:
                 best_percentage = percentage
                 best_prompt = prompt
         sorted_data = sorted(data_list, key=lambda x: x['rating'], reverse=True)
-        print(sorted_data)
         best_prompts = [sorted_data[0], sorted_data[1]]
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
         sorted_data.append(results)
-        return sorted_data, best_prompts
+        return sorted_data, best_prompts, cost
     
     def evaluate_optimal_prompt(self):
         return self.test_candidate_prompts()

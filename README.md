@@ -66,3 +66,7 @@ We provide you with a YAML file in the 'examples/how-my-YAML-files-should-be' fo
 ## Special features
 
 Remember that you can also make changes to your provided prompts or those you will generate. For example, you can convert the entire content of your prompts to uppercase or rephrase them with grammatical errors.
+
+## Cost
+
+When you finish performing all the operations you want, you will see the final cost in US dollars for your work.
