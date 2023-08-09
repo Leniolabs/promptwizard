@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
+        "rating": 44.44444444444444
+    },
+    {
+        "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.",
+        "rating": 29.629629629629626
+    },
+    {
+        "approximate_cost": 0.149469,
+        "real_cost": 0.0482435,
+        "tokens_input_gpt-3.5-turbo": 17137,
+        "tokens_output_gpt-3.5-turbo": 1294,
+        "tokens_input_gpt-4": 241,
+        "tokens_output_gpt-4": 212
+    }
+]

@@ -1,0 +1,521 @@
+[
+    {
+        "prompt": "Given a list of different countries, your job as an AI is to recognize and reply with the name of the country that possesses the largest landmass according to existing geographical information. For instance, if you receive a list such as 'Canada, Germany, Australia', your response should be 'Canada'.",
+        "rating": 25.925925925925924
+    },
+    {
+        "prompt": "As an AI, you will be presented with a list of different country names. Your responsibility is to identify and respond with the name of the country possessing the largest landmass from the list based on your existing geographical data. For example, if given names are 'Australia, Russia, Canada', your response should be 'Russia'. Your output should present only the name of the chosen country, without any additional data or formatting.",
+        "rating": 22.22222222222222
+    },
+    {
+        "prompt": "You are given a comma-separated list of countries. Your goal is to determine which country out of those listed has the most significant geographical space and return only that country's name in your response. For example, if the given list is 'Japan, Canada, Spain', you should respond with 'Canada'. No other information or output formatting is necessary.",
+        "rating": 11.11111111111111
+    },
+    [
+        {
+            "description": "Respond the country's name from the list with the largest territorial extension.",
+            "method": "Equal"
+        },
+        [
+            {
+                "prompt": "You are given a comma-separated list of countries. Your goal is to determine which country out of those listed has the most significant geographical space and return only that country's name in your response. For example, if the given list is 'Japan, Canada, Spain', you should respond with 'Canada'. No other information or output formatting is necessary."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Russia",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Australia",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "Australia",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            },
+            {
+                "test": "Australia, India, Argentina, Kazakhstan",
+                "answer": "Kazakhstan",
+                "ideal": "Australia",
+                "result": false
+            },
+            {
+                "test": "India, Argentina, Kazakhstan, Algeria",
+                "answer": "Kazakhstan",
+                "ideal": "India",
+                "result": false
+            },
+            {
+                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
+                "answer": "Kazakhstan",
+                "ideal": "Argentina",
+                "result": false
+            },
+            {
+                "test": "Angola, Mali, South Africa, Colombia",
+                "answer": "Colombia",
+                "ideal": "Angola",
+                "result": false
+            },
+            {
+                "test": "Mali, South Africa, Colombia, Ethiopia",
+                "answer": "South Africa",
+                "ideal": "Mali",
+                "result": false
+            },
+            {
+                "test": "South Africa, Colombia, Ethiopia, Bolivia",
+                "answer": "Bolivia",
+                "ideal": "South Africa",
+                "result": false
+            },
+            {
+                "test": "Nigeria, Venezuela, Namibia, Mozambique",
+                "answer": "Namibia",
+                "ideal": "Nigeria",
+                "result": false
+            },
+            {
+                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
+                "answer": "Madagascar",
+                "ideal": "Somalia",
+                "result": false
+            },
+            {
+                "test": "Ukraine, Madagascar, Botswana, Kenya",
+                "answer": "Madagascar",
+                "ideal": "Ukraine",
+                "result": false
+            },
+            {
+                "test": "Madagascar, Botswana, Kenya, Yemen",
+                "answer": "Madagascar",
+                "ideal": "Madagascar",
+                "result": true
+            },
+            {
+                "test": "Botswana, Kenya, Yemen, Thailand",
+                "answer": "Thailand",
+                "ideal": "Botswana",
+                "result": false
+            },
+            {
+                "test": "Kenya, Yemen, Thailand, Spain",
+                "answer": "Spain",
+                "ideal": "Kenya",
+                "result": false
+            },
+            {
+                "test": "Yemen, Thailand, Spain, Turkmenistan",
+                "answer": "Turkmenistan",
+                "ideal": "Yemen",
+                "result": false
+            },
+            {
+                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
+                "answer": "Papua New Guinea",
+                "ideal": "Spain",
+                "result": false
+            },
+            {
+                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
+                "answer": "Papua New Guinea",
+                "ideal": "Cameroon",
+                "result": false
+            },
+            {
+                "test": "Iraq, Paraguay, Zimbabwe, Japan",
+                "answer": "Paraguay",
+                "ideal": "Iraq",
+                "result": false
+            },
+            {
+                "test": "Paraguay, Zimbabwe, Japan, Germany",
+                "answer": "Germany",
+                "ideal": "Paraguay",
+                "result": false
+            },
+            {
+                "test": "Japan, Germany, Republic of the Congo, Finland",
+                "answer": "Republic of the Congo",
+                "ideal": "Japan",
+                "result": false
+            },
+            {
+                "test": "Germany, Republic of the Congo, Finland, Vietnam",
+                "answer": "Republic of the Congo",
+                "ideal": "Germany",
+                "result": false
+            },
+            {
+                "test": "Finland, Vietnam, Malaysia, Belize",
+                "answer": "Finland",
+                "ideal": "Finland",
+                "result": true
+            },
+            {
+                "test": "Vietnam, Malaysia, Belize, Poland",
+                "answer": "Poland",
+                "ideal": "Vietnam",
+                "result": false
+            },
+            {
+                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
+                "answer": "Kyrgyzstan",
+                "ideal": "Guyana",
+                "result": false
+            },
+            {
+                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
+                "answer": "Kyrgyzstan",
+                "ideal": "Belarus",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, you will be presented with a list of different country names. Your responsibility is to identify and respond with the name of the country possessing the largest landmass from the list based on your existing geographical data. For example, if given names are 'Australia, Russia, Canada', your response should be 'Russia'. Your output should present only the name of the chosen country, without any additional data or formatting."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Russia",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Canada",
+                "ideal": "Canada",
+                "result": true
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "United States",
+                "ideal": "United States",
+                "result": true
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Brazil",
+                "ideal": "Brazil",
+                "result": true
+            },
+            {
+                "test": "Australia, India, Argentina, Kazakhstan",
+                "answer": "Kazakhstan",
+                "ideal": "Australia",
+                "result": false
+            },
+            {
+                "test": "India, Argentina, Kazakhstan, Algeria",
+                "answer": "Argentina",
+                "ideal": "India",
+                "result": false
+            },
+            {
+                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
+                "answer": "Democratic Republic of the Congo",
+                "ideal": "Argentina",
+                "result": false
+            },
+            {
+                "test": "Angola, Mali, South Africa, Colombia",
+                "answer": "Colombia",
+                "ideal": "Angola",
+                "result": false
+            },
+            {
+                "test": "Mali, South Africa, Colombia, Ethiopia",
+                "answer": "South Africa",
+                "ideal": "Mali",
+                "result": false
+            },
+            {
+                "test": "South Africa, Colombia, Ethiopia, Bolivia",
+                "answer": "Colombia",
+                "ideal": "South Africa",
+                "result": false
+            },
+            {
+                "test": "Nigeria, Venezuela, Namibia, Mozambique",
+                "answer": "Mozambique",
+                "ideal": "Nigeria",
+                "result": false
+            },
+            {
+                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
+                "answer": "Madagascar",
+                "ideal": "Somalia",
+                "result": false
+            },
+            {
+                "test": "Ukraine, Madagascar, Botswana, Kenya",
+                "answer": "Madagascar",
+                "ideal": "Ukraine",
+                "result": false
+            },
+            {
+                "test": "Madagascar, Botswana, Kenya, Yemen",
+                "answer": "Madagascar",
+                "ideal": "Madagascar",
+                "result": true
+            },
+            {
+                "test": "Botswana, Kenya, Yemen, Thailand",
+                "answer": "Thailand",
+                "ideal": "Botswana",
+                "result": false
+            },
+            {
+                "test": "Kenya, Yemen, Thailand, Spain",
+                "answer": "Spain",
+                "ideal": "Kenya",
+                "result": false
+            },
+            {
+                "test": "Yemen, Thailand, Spain, Turkmenistan",
+                "answer": "Turkmenistan",
+                "ideal": "Yemen",
+                "result": false
+            },
+            {
+                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
+                "answer": "Turkmenistan",
+                "ideal": "Spain",
+                "result": false
+            },
+            {
+                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
+                "answer": "Iraq",
+                "ideal": "Cameroon",
+                "result": false
+            },
+            {
+                "test": "Iraq, Paraguay, Zimbabwe, Japan",
+                "answer": "Paraguay",
+                "ideal": "Iraq",
+                "result": false
+            },
+            {
+                "test": "Paraguay, Zimbabwe, Japan, Germany",
+                "answer": "Germany",
+                "ideal": "Paraguay",
+                "result": false
+            },
+            {
+                "test": "Japan, Germany, Republic of the Congo, Finland",
+                "answer": "Republic of the Congo",
+                "ideal": "Japan",
+                "result": false
+            },
+            {
+                "test": "Germany, Republic of the Congo, Finland, Vietnam",
+                "answer": "Republic of the Congo",
+                "ideal": "Germany",
+                "result": false
+            },
+            {
+                "test": "Finland, Vietnam, Malaysia, Belize",
+                "answer": "Finland",
+                "ideal": "Finland",
+                "result": true
+            },
+            {
+                "test": "Vietnam, Malaysia, Belize, Poland",
+                "answer": "Poland",
+                "ideal": "Vietnam",
+                "result": false
+            },
+            {
+                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
+                "answer": "Russia",
+                "ideal": "Guyana",
+                "result": false
+            },
+            {
+                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
+                "answer": "Kyrgyzstan",
+                "ideal": "Belarus",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Given a list of different countries, your job as an AI is to recognize and reply with the name of the country that possesses the largest landmass according to existing geographical information. For instance, if you receive a list such as 'Canada, Germany, Australia', your response should be 'Canada'."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Russia",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The country with the largest landmass among the given options is Canada.",
+                "ideal": "Canada",
+                "result": true
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "United States",
+                "ideal": "United States",
+                "result": true
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            },
+            {
+                "test": "Australia, India, Argentina, Kazakhstan",
+                "answer": "Kazakhstan",
+                "ideal": "Australia",
+                "result": false
+            },
+            {
+                "test": "India, Argentina, Kazakhstan, Algeria",
+                "answer": "Kazakhstan",
+                "ideal": "India",
+                "result": false
+            },
+            {
+                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
+                "answer": "Kazakhstan",
+                "ideal": "Argentina",
+                "result": false
+            },
+            {
+                "test": "Angola, Mali, South Africa, Colombia",
+                "answer": "Angola, Mali, South Africa, and Colombia are all countries, but the country with the largest landmass among them is Angola.",
+                "ideal": "Angola",
+                "result": true
+            },
+            {
+                "test": "Mali, South Africa, Colombia, Ethiopia",
+                "answer": "Colombia",
+                "ideal": "Mali",
+                "result": false
+            },
+            {
+                "test": "South Africa, Colombia, Ethiopia, Bolivia",
+                "answer": "Colombia",
+                "ideal": "South Africa",
+                "result": false
+            },
+            {
+                "test": "Nigeria, Venezuela, Namibia, Mozambique",
+                "answer": "Mozambique",
+                "ideal": "Nigeria",
+                "result": false
+            },
+            {
+                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
+                "answer": "Madagascar",
+                "ideal": "Somalia",
+                "result": false
+            },
+            {
+                "test": "Ukraine, Madagascar, Botswana, Kenya",
+                "answer": "Madagascar",
+                "ideal": "Ukraine",
+                "result": false
+            },
+            {
+                "test": "Madagascar, Botswana, Kenya, Yemen",
+                "answer": "Madagascar",
+                "ideal": "Madagascar",
+                "result": true
+            },
+            {
+                "test": "Botswana, Kenya, Yemen, Thailand",
+                "answer": "Botswana",
+                "ideal": "Botswana",
+                "result": true
+            },
+            {
+                "test": "Kenya, Yemen, Thailand, Spain",
+                "answer": "Spain",
+                "ideal": "Kenya",
+                "result": false
+            },
+            {
+                "test": "Yemen, Thailand, Spain, Turkmenistan",
+                "answer": "Turkmenistan",
+                "ideal": "Yemen",
+                "result": false
+            },
+            {
+                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
+                "answer": "Papua New Guinea",
+                "ideal": "Spain",
+                "result": false
+            },
+            {
+                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
+                "answer": "Papua New Guinea",
+                "ideal": "Cameroon",
+                "result": false
+            },
+            {
+                "test": "Iraq, Paraguay, Zimbabwe, Japan",
+                "answer": "Paraguay",
+                "ideal": "Iraq",
+                "result": false
+            },
+            {
+                "test": "Paraguay, Zimbabwe, Japan, Germany",
+                "answer": "Germany",
+                "ideal": "Paraguay",
+                "result": false
+            },
+            {
+                "test": "Japan, Germany, Republic of the Congo, Finland",
+                "answer": "Republic of the Congo",
+                "ideal": "Japan",
+                "result": false
+            },
+            {
+                "test": "Germany, Republic of the Congo, Finland, Vietnam",
+                "answer": "Republic of the Congo",
+                "ideal": "Germany",
+                "result": false
+            },
+            {
+                "test": "Finland, Vietnam, Malaysia, Belize",
+                "answer": "Finland",
+                "ideal": "Finland",
+                "result": true
+            },
+            {
+                "test": "Vietnam, Malaysia, Belize, Poland",
+                "answer": "Poland",
+                "ideal": "Vietnam",
+                "result": false
+            },
+            {
+                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
+                "answer": "The country with the largest landmass among the given options is Kyrgyzstan.",
+                "ideal": "Guyana",
+                "result": false
+            },
+            {
+                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
+                "answer": "Kyrgyzstan",
+                "ideal": "Belarus",
+                "result": false
+            }
+        ]
+    ]
+]

@@ -24,6 +24,8 @@ class Classification:
 
     def test_candidate_prompts(self):
         cost = 0
+        tokens_input = 0
+        tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
         results = [{"description": self.description, "method": "Equal"}]
         for prompt in self.prompts:
@@ -42,11 +44,11 @@ class Classification:
                     max_tokens=self.model_test_max_tokens,
                     temperature=self.model_test_temperature,
                 )
-                tokens_input = response["usage"]["prompt_tokens"]
-                tokens_output = response["usage"]["completion_tokens"]
-                cost_input = input.cost(tokens_input, self.model_test)
-                cost_output = output.cost(tokens_output, self.model_test)
-                cost = cost_input + cost_output
+                partial_tokens_input = response["usage"]["prompt_tokens"]
+                partial_tokens_output = response["usage"]["completion_tokens"]
+                tokens_input = tokens_input + partial_tokens_input
+                tokens_output = tokens_output + partial_tokens_output
+            
                 # Update model results
                 if response.choices[0].message.content.lower() == test_case[1].lower():
                     prompt_results[prompt]['correct'] += 1
@@ -54,6 +56,10 @@ class Classification:
                 prompt_and_results.append({"test": test_case[0], "answer": response.choices[0].message.content, "ideal": test_case[1], "result": response.choices[0].message.content.lower() == test_case[1].lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
+
+        cost_input = input.cost(tokens_input, self.model_test)
+        cost_output = output.cost(tokens_output, self.model_test)
+        cost = cost + cost_input + cost_output
 
         # Calculate and print the percentage of correct answers and average time for each model
         best_prompt = self.prompts[0]
@@ -72,7 +78,7 @@ class Classification:
         best_prompts = [sorted_data[0], sorted_data[1]]
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
         sorted_data.append(results)
-        return sorted_data, best_prompts, cost
+        return sorted_data, best_prompts, cost, tokens_input, tokens_output
     
     def evaluate_optimal_prompt(self):
         return self.test_candidate_prompts()

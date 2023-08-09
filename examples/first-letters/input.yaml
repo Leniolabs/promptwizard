@@ -29,6 +29,7 @@ generation:
 
         name: 'gpt-4'
         temperature: 0.9
+        max_tokens: 500
 
 iterations:
     number: 2

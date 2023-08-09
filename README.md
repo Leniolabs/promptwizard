@@ -67,6 +67,12 @@ We provide you with a YAML file in the 'examples/how-my-YAML-files-should-be' fo
 
 Remember that you can also make changes to your provided prompts or those you will generate. For example, you can convert the entire content of your prompts to uppercase or rephrase them with grammatical errors.
 
-## Cost
+## Cost and tokens
 
-When you finish performing all the operations you want, you will see the final cost in US dollars for your work.
+If you want to know how much it will cost to run your evaluation, simply enter:
+
+```bash
+lenio-ai-prompt-engineer YAML_FILE_PATH "don't run"
+```
+
+Otherwise, run your evaluation and you'll receive the same notification about the approximate cost, along with the final cost at the end. In the final JSON file, in addition to seeing the top 2 prompts with the best results, you will also have this same information about the costs and the number of tokens effectively consumed for both GPT-3.5-turbo and GPT-4.

@@ -1,10 +1,18 @@
 [
     {
-        "prompt": "You're a linguistic Sleuth! Your mission, should you choose to accept it, involves decoding hidden words in sentences. Each sentence holds a hidden word, formed by concatenating the first letters of each word in the sentence. Your task is to determine this hidden word and reveal it.\n\nRemember: \n\n- Look at the first letter of each word in the sentence.\n- Concatenate these letters to form a word.\n- Output this word in lower case format.\n\nFollow these steps meticulously to solve the mystery!",
-        "rating": 60.0
+        "prompt": "Imagine that you are a code-breaking AI asked to decipher a secret message. Each message is a sentence where the first letters of each word, when combined, form a hidden word. Your task is to extract the secret word from each sentence. To do this, read each sentence and take the first letter of every word. Then, combine these letters to reveal the hidden word. Provide the discovered word from each message, and remember, the solution is case sensitive, so all the letters should be in lower case.",
+        "rating": 80.0
     },
     {
-        "prompt": "\"You have been designated as a Word Wizard! Your task, if you choose to accept it, involves unearthing obscured words in sentences. Each sentence carries a veiled word, constructed by amalgamating the starting letters of every word in the sentence. It's your responsibility to discover this obscured word and expose it. \n\nMind the following: \n\n- Concentrate on the beginning letter of every word in the sentence.\n- Combine these letters to formulate a word.\n- Present this word in lower case.\n\nStick to these instructions scrupulously to unfold the enigma!\n\nAs a sophisticated AI, you are expected to discern the starting letter of all the words in the given sentence and then fuse these letters to generate a new word. Carry out this procedure following the order the words appear in the sentence. Make sure to maintain the original case of the letters and provide your answer as a single, uninterrupted word.\"",
-        "rating": 60.0
+        "prompt": "As an AI, your task is to generate a word formed by concatenating the first letters of each word in a given sentence. You must read each sentence carefully, identify the first letter of each word, and then combine these letters in the order they appear to form a new word. Please provide the final word without any additional explanation or decoration. It is crucial that your response is accurate, as it will be the final output. The sentences could be long or short, complex or simple, but your task remains the same \u2014 form a word using the first letters of each word in the provided sentence.",
+        "rating": 80.0
+    },
+    {
+        "approximate_cost": 0.20454499999999998,
+        "real_cost": 0.09180749999999999,
+        "tokens_input_gpt-3.5-turbo": 5265,
+        "tokens_output_gpt-3.5-turbo": 225,
+        "tokens_input_gpt-4": 980,
+        "tokens_output_gpt-4": 901
     }
 ]

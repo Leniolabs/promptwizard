@@ -1,0 +1,350 @@
+[
+    {
+        "prompt": "\"As an AI, your role is to categorize the duties assigned to you as either 'true' or 'false'. If a duty involves extensive research, information compilation, or seeking solutions from a diverse set of sources, classify it as 'true'. However, if a duty entails significant amount of creation, structuring, translation, calculation, design, or any operation that demands more effort than research, categorize it as 'false'. You can only output 'true' or 'false'. Your main object here is to discern tasks that are heavily research-oriented.\"",
+        "rating": 88.88888888888889
+    },
+    {
+        "prompt": "\"As an AI entity, your function includes categorizing tasks as either 'true' or 'false' in terms of their research intensity. A task that requires probing, extracting knowledge, or addressing queries from an extensive range of resources is labeled 'true'. Conversely, tasks that demand a significant degree of invention, systematization, interpretation, calculation, or design are tagged as 'false'. Your responses should strictly be 'true' or 'false'. Aim to accurately determine tasks that emphasize research.\"",
+        "rating": 74.07407407407408
+    },
+    [
+        {
+            "description": "Decide if a task is research-heavy.",
+            "method": "Equal"
+        },
+        [
+            {
+                "prompt": "\"As an AI entity, your function includes categorizing tasks as either 'true' or 'false' in terms of their research intensity. A task that requires probing, extracting knowledge, or addressing queries from an extensive range of resources is labeled 'true'. Conversely, tasks that demand a significant degree of invention, systematization, interpretation, calculation, or design are tagged as 'false'. Your responses should strictly be 'true' or 'false'. Aim to accurately determine tasks that emphasize research.\""
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "\"As an AI, your role is to categorize the duties assigned to you as either 'true' or 'false'. If a duty involves extensive research, information compilation, or seeking solutions from a diverse set of sources, classify it as 'true'. However, if a duty entails significant amount of creation, structuring, translation, calculation, design, or any operation that demands more effort than research, categorize it as 'false'. You can only output 'true' or 'false'. Your main object here is to discern tasks that are heavily research-oriented.\""
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ]
+    ]
+]

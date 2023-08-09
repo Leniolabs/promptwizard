@@ -8,8 +8,6 @@ from ..cost import input, output
 K = 32
 
 N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
-RANKING_MODEL = 'gpt-3.5-turbo'
-RANKING_MODEL_TEMPERATURE = 0.5
 
 class Elo:
     def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
@@ -53,9 +51,9 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
     # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
-    def get_score(self, test_case, pos1, pos2, ranking_model_name, ranking_model_temperature):
+    def get_score(self, test_case, pos1, pos2):
         score = openai.ChatCompletion.create(
-            model=ranking_model_name,
+            model=self.model_test,
             messages=[
                 {"role": "system", "content": self.ranking_system_prompt},
                 {"role": "user", "content": f"""Task: {self.description.strip()}
@@ -68,14 +66,14 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 '33': 100,  # 'B' token
             },
             max_tokens=1,
-            temperature=ranking_model_temperature,
+            temperature=self.model_test_temperature,
         )
         tokens_input = score["usage"]["prompt_tokens"]
         tokens_output = score["usage"]["completion_tokens"]
-        cost_input = input.cost(tokens_input, ranking_model_name)
-        cost_output = output.cost(tokens_output, ranking_model_name)
+        cost_input = input.cost(tokens_input, self.model_test)
+        cost_output = output.cost(tokens_output, self.model_test)
         cost = cost_input + cost_output
-        return score.choices[0].message.content, cost
+        return score.choices[0].message.content, cost, tokens_input, tokens_output
 
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
     def get_generation(self, prompt, test_case):
@@ -93,10 +91,12 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         cost_input = input.cost(tokens_input, self.model_test)
         cost_output = output.cost(tokens_output, self.model_test)
         cost = cost_input + cost_output
-        return generation.choices[0].message.content, cost
+        return generation.choices[0].message.content, cost, tokens_input, tokens_output
 
     def test_candidate_prompts(self):
         cost = 0
+        tokens_input = 0
+        tokens_output = 0
     # Initialize each prompt with an ELO rating of 1200
         prompt_ratings = {prompt: 1200 for prompt in self.prompts}
 
@@ -123,16 +123,28 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                 pbar.update()
 
                 # Generate outputs for each prompt
-                generation1 = self.get_generation(prompt1, test_case)[0]
-                cost_generation1 = self.get_generation(prompt1, test_case)[1]
-                generation2 = self.get_generation(prompt2, test_case)[0]
-                cost_generation2 = self.get_generation(prompt2, test_case)[1]
+                generation1 = self.get_generation(prompt1, test_case)
+                generation2 = self.get_generation(prompt2, test_case)
+                response1 = generation1[0]
+                response2 = generation2[0]
+                cost_generation1 = generation1[1]
+                cost_generation2 = generation2[1]
+                tokens_input1 = generation1[2]
+                tokens_input2 = generation2[2]
+                tokens_output1 = generation1[3]
+                tokens_output2 = generation2[3]
 
                 # Rank the outputs
-                score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[0]
-                cost_score1 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[1]
-                score2 = self.get_score(test_case, generation2, generation1, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[0]
-                cost_score2 = self.get_score(test_case, generation1, generation2, RANKING_MODEL, RANKING_MODEL_TEMPERATURE)[1]
+                ranking1 = self.get_score(test_case, response1, response2)
+                ranking2 = self.get_score(test_case, response2, response1)
+                score1 = ranking1[0]
+                score2 = ranking2[0]
+                cost_score1 = ranking1[1]
+                cost_score2 = ranking2[1]
+                tokens_input_rank1 = ranking1[2]
+                tokens_input_rank2 = ranking2[2]
+                tokens_output_rank1 = ranking1[3]
+                tokens_output_rank2 = ranking2[3]
 
                 # Convert scores to numeric values
                 score1 = 1 if score1 == 'A' else 0 if score1 == 'B' else 0.5
@@ -160,11 +172,13 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
                     print("Draw")
 
                 cost = cost + cost_generation1 + cost_generation2 + cost_score1 + cost_score2
+                tokens_input = tokens_input + tokens_input1 + tokens_input_rank1 + tokens_input2 + tokens_input_rank2
+                tokens_output = tokens_output + tokens_output1 + tokens_output_rank1 + tokens_output2 + tokens_output_rank2
         elo_prompt_sorted = sorted(elo_prompt, key=lambda x: x["prompt"])
         # Close progress bar
         pbar.close()
 
-        return prompt_ratings, battles, elo_prompt_sorted, cost
+        return prompt_ratings, battles, elo_prompt_sorted, cost, tokens_input, tokens_output
 
 
     def evaluate_optimal_prompt(self): 
@@ -175,4 +189,4 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
         best_prompts = [data_list[0], data_list[1]]
-        return data_list, best_prompts, prompt_ratings[3]
+        return data_list, best_prompts, prompt_ratings[3], prompt_ratings[4], prompt_ratings[5]

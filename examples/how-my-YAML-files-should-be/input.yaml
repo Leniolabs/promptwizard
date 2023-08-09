@@ -36,6 +36,7 @@ generation:
 
         name: """The name of the GPT model you will use to generate the prompts."""
         temperature: """The temperature of the GPT model you will use to generate the prompts."""
+        max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate your prompts."""
 
 iterations:
     number: """The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 

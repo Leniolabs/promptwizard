@@ -1,11 +1,11 @@
 [
     {
-        "prompt": "You have been appointed as a Language Detective! Your assignment, should you decide to undertake it, involves deciphering concealed words within sentences. Every sentence contains a hidden word, created by stringing together the initial letters of every word in the sentence. It's your job to identify this concealed word and uncover it. \n\nPay attention to the following: \n\n- Focus on the initial letter of each word in the sentence.\n- Join these letters to create a word.\n- Deliver this word in lower case.\n\nAdhere to these guidelines carefully to crack the code!\n\nAs a sophisticated AI, you are required to recognise the initial letter of every word in the specified sentence and then merge these letters to establish a fresh word. Execute this procedure as per the sequence the words are presented in the sentence. Ensure to uphold the original case of the letters and present your response as a single, continuous word.",
-        "rating": 40.0
+        "prompt": "You are an AI developed to decipher secret codes hidden in sentences. Each sentence carries a concealed word that is formed by linking the first letters of all the given words. Your mission is to accurately extract and present the secret word from each sentence. Remember to maintain the case sensitivity by keeping all letters in lower case. The complexity and length of the sentences may vary, but your goal remains the same: Utilize the first letter of each word to construct the concealed word. Provide the decoded word as is, without any extra elaboration or embellishment.",
+        "rating": 80.0
     },
     {
-        "prompt": "You are an AI Language Detective. Your challenge, should you decide to undertake it, is to unveil concealed words within phrases. Each phrase contains a hidden word, created by joining the initial letters of every word in the phrase. Your duty is to identify this concealed word and disclose it.\n\nBear in mind:\n\n- Concentrate on the initial letter of each word in the phrase.\n- Unite these letters to create a word.\n- Present this word in lower case format.\n\nExecute these steps diligently to crack the code!\n\nYou, being an AI, are tasked with pinpointing the first character of each word in a supplied sentence, and subsequently merge these characters to craft a fresh word. This operation should be carried out in the sequence the words emerge in the sentence. Please make sure to preserve the original case of every character and deliver your response as a single, uninterrupted word.",
-        "rating": 20.0
+        "prompt": "Envision yourself as an AI whose mission is to reveal a secret word embedded within various sentences. This particular word is formed by amalgamating the starting letters of each word in a given sentence. You need to scrutinize every sentence, ascertain the initial letter of all words, and subsequently merge these letters to produce the concealed word. Make sure to provide only the word you've uncovered. It's crucial to note that cases matter, hence, the outcome must be in lower case. The sentences you will be provided with might vary in length and complexity, nevertheless, your job is constant: to unlock the word constructed from the initials of all words in the supplied sentence.",
+        "rating": 60.0
     },
     [
         {
@@ -14,72 +14,72 @@
         },
         [
             {
-                "prompt": "You have been appointed as a Language Detective! Your assignment, should you decide to undertake it, involves deciphering concealed words within sentences. Every sentence contains a hidden word, created by stringing together the initial letters of every word in the sentence. It's your job to identify this concealed word and uncover it. \n\nPay attention to the following: \n\n- Focus on the initial letter of each word in the sentence.\n- Join these letters to create a word.\n- Deliver this word in lower case.\n\nAdhere to these guidelines carefully to crack the code!\n\nAs a sophisticated AI, you are required to recognise the initial letter of every word in the specified sentence and then merge these letters to establish a fresh word. Execute this procedure as per the sequence the words are presented in the sentence. Ensure to uphold the original case of the letters and present your response as a single, continuous word."
+                "prompt": "Envision yourself as an AI whose mission is to reveal a secret word embedded within various sentences. This particular word is formed by amalgamating the starting letters of each word in a given sentence. You need to scrutinize every sentence, ascertain the initial letter of all words, and subsequently merge these letters to produce the concealed word. Make sure to provide only the word you've uncovered. It's crucial to note that cases matter, hence, the outcome must be in lower case. The sentences you will be provided with might vary in length and complexity, nevertheless, your job is constant: to unlock the word constructed from the initials of all words in the supplied sentence."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The concealed word in the sentence is \"TRACT",
+                "answer": "tracor",
                 "ideal": "tractor",
                 "result": false
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The concealed word in the sentence is \"HYDR",
+                "answer": "hycrating",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The concealed word within the sentence \"Rare obnoxious",
+                "answer": "roses",
                 "ideal": "rose",
-                "result": false
+                "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "The concealed word in the sentence is \"LIGHT\".",
+                "answer": "light",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The concealed word in the sentence is \"DEFINE\".",
+                "answer": "The secret word embedded within the sentence is \"DEFINE",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "You are an AI Language Detective. Your challenge, should you decide to undertake it, is to unveil concealed words within phrases. Each phrase contains a hidden word, created by joining the initial letters of every word in the phrase. Your duty is to identify this concealed word and disclose it.\n\nBear in mind:\n\n- Concentrate on the initial letter of each word in the phrase.\n- Unite these letters to create a word.\n- Present this word in lower case format.\n\nExecute these steps diligently to crack the code!\n\nYou, being an AI, are tasked with pinpointing the first character of each word in a supplied sentence, and subsequently merge these characters to craft a fresh word. This operation should be carried out in the sequence the words emerge in the sentence. Please make sure to preserve the original case of every character and deliver your response as a single, uninterrupted word."
+                "prompt": "You are an AI developed to decipher secret codes hidden in sentences. Each sentence carries a concealed word that is formed by linking the first letters of all the given words. Your mission is to accurately extract and present the secret word from each sentence. Remember to maintain the case sensitivity by keeping all letters in lower case. The complexity and length of the sentences may vary, but your goal remains the same: Utilize the first letter of each word to construct the concealed word. Provide the decoded word as is, without any extra elaboration or embellishment."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The concealed word in the given phrase is \"tr",
+                "answer": "The concealed word is \"TRACTOR\".",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "hydrating",
+                "answer": "hYdrAtIno",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The concealed word in the phrase \"Rare obnoxious",
+                "answer": "The concealed word is \"rose\".",
                 "ideal": "rose",
-                "result": false
+                "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "The hidden word is \"LIGHT\".",
+                "answer": "The concealed word is \"LIGHT\".",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The concealed word in the phrase \"Dear Elena find",
+                "answer": "The concealed word in the sentence is \"define\".",
                 "ideal": "define",
-                "result": false
+                "result": true
             }
         ]
     ]

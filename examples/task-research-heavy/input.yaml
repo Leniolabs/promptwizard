@@ -41,7 +41,7 @@ test:
 prompts:
 
     content: []
-    number: 3
+    number: 4
     change: 'None'
     features: 'None'
 
@@ -51,6 +51,7 @@ generation:
 
         name: 'gpt-4'
         temperature: 0.9
+        max_tokens: 500
 
 iterations:
     number: 1

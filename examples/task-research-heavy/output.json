@@ -1,1 +1,692 @@
-[[{"prompt": "As an AI, your task is to categorize requests based on their level of research intensity. If a request requires extensive searching, verification of information, gathering and analyzing data from multiple sources, or involves seeking out detailed and complex knowledge, then it should be categorized as 'true' for being research-heavy. On the other hand, tasks that are more about creation, execution, manipulation of personal data, translation, calculations, or involve direct actions on behalf of the user should be categorized as 'false' since these are not research-heavy. Make sure to carefully assess the nature of the task before you answer.", "rating": 0.0}, {"prompt": "As an AI, your task is to determine if a given task is research-heavy, meaning it requires in-depth exploration, gathering and analyzing of information. Consider a task as research-heavy if it involves finding data, information or knowledge on a certain topic which is not commonly known or can't be answered directly without looking up or investigating. If a task primarily involves general knowledge, answering questions based on understood concepts, or explaining theories, consider it as a research-heavy task. If the task demands creative, administrative or functional actions like composing, designing, writing, organizing, translating, executing, or scheduling, then it should not be marked as research-heavy. Your output should be either 'true' if the task requires considerable amount of research, or 'false' if it doesn't.", "rating": 0.0}, {"prompt": "As an AI, you will be given a series of tasks. Your job is to evaluate each task and then determine whether it involves significant research or not. If you believe that the task would require you to dig for in-depth information, evaluate various sources, make a comparison or do detailed fact-checking, you should classify it as 'true'. However, if the task involves creating, doing, executing, personalizing, calculating, or programming something, or if it's a task that doesn't need extensive digging for information and can be done based on common knowledge or straightforward facts, classify it as 'false'. Remember, the only outputs should be 'true' or 'false'.", "rating": 0.0}, [{"description": "Decide if a task is research-heavy.", "method": "Classification"}, [{"prompt": "As an AI, your task is to categorize requests based on their level of research intensity. If a request requires extensive searching, verification of information, gathering and analyzing data from multiple sources, or involves seeking out detailed and complex knowledge, then it should be categorized as 'true' for being research-heavy. On the other hand, tasks that are more about creation, execution, manipulation of personal data, translation, calculations, or involve direct actions on behalf of the user should be categorized as 'false' since these are not research-heavy. Make sure to carefully assess the nature of the task before you answer."}, {"test": "Find the best contact email on this site.", "answer": "true", "ideal": true, "result": false}, {"test": "who is the current president?", "answer": "false", "ideal": true, "result": false}, {"test": "order me a pizza", "answer": "false", "ideal": false, "result": false}, {"test": "what are some ways a doctor could use an assistant?", "answer": "true", "ideal": true, "result": false}, {"test": "write a speech on the danger of cults", "answer": "true", "ideal": false, "result": false}, {"test": "Make a reservation at The Accent for 9pm", "answer": "false", "ideal": false, "result": false}, {"test": "organize my google drive", "answer": "false", "ideal": false, "result": false}, {"test": "Find the highest-rated Italian restaurant near me.", "answer": "false", "ideal": true, "result": false}, {"test": "Explain the theory of relativity.", "answer": "true", "ideal": true, "result": false}, {"test": "What are the main differences between Python and Java programming languages?", "answer": "true", "ideal": true, "result": false}, {"test": "Translate the following English sentence to Spanish: \"The weather today is great.\"", "answer": "false", "ideal": false, "result": false}, {"test": "Create a new event on my calendar for tomorrow at 2 pm.", "answer": "false", "ideal": false, "result": false}, {"test": "Write a short story about a lonely cowboy.", "answer": "false", "ideal": false, "result": false}, {"test": "Design a logo for a startup.", "answer": "false", "ideal": false, "result": false}, {"test": "Compose a catchy jingle for a new soda brand.", "answer": "false", "ideal": false, "result": false}, {"test": "Calculate the square root of 1999.", "answer": "false", "ideal": false, "result": false}, {"test": "What are the health benefits of yoga?", "answer": "true", "ideal": true, "result": false}, {"test": "find me a source of meat that can be shipped to canada", "answer": "true", "ideal": true, "result": false}, {"test": "Find the best-selling book of all time.", "answer": "true", "ideal": true, "result": false}, {"test": "What are the top 5 tourist attractions in Brazil?", "answer": "true", "ideal": true, "result": false}, {"test": "List the main ingredients in a traditional lasagna recipe.", "answer": "false", "ideal": true, "result": false}, {"test": "How does photosynthesis work in plants?", "answer": "true", "ideal": true, "result": false}, {"test": "Write a Python program to reverse a string.", "answer": "false", "ideal": false, "result": false}, {"test": "Create a workout routine for a beginner.", "answer": "false", "ideal": false, "result": false}, {"test": "Edit my resume to highlight my project management skills.", "answer": "false", "ideal": false, "result": false}, {"test": "Draft an email to a client to discuss a new proposal.", "answer": "false", "ideal": false, "result": false}, {"test": "Plan a surprise birthday party for my best friend.", "answer": "false", "ideal": false, "result": false}], [{"prompt": "As an AI, your task is to determine if a given task is research-heavy, meaning it requires in-depth exploration, gathering and analyzing of information. Consider a task as research-heavy if it involves finding data, information or knowledge on a certain topic which is not commonly known or can't be answered directly without looking up or investigating. If a task primarily involves general knowledge, answering questions based on understood concepts, or explaining theories, consider it as a research-heavy task. If the task demands creative, administrative or functional actions like composing, designing, writing, organizing, translating, executing, or scheduling, then it should not be marked as research-heavy. Your output should be either 'true' if the task requires considerable amount of research, or 'false' if it doesn't."}, {"test": "Find the best contact email on this site.", "answer": "false", "ideal": true, "result": false}, {"test": "who is the current president?", "answer": "false", "ideal": true, "result": false}, {"test": "order me a pizza", "answer": "false", "ideal": false, "result": false}, {"test": "what are some ways a doctor could use an assistant?", "answer": "false", "ideal": true, "result": false}, {"test": "write a speech on the danger of cults", "answer": "false", "ideal": false, "result": false}, {"test": "Make a reservation at The Accent for 9pm", "answer": "false", "ideal": false, "result": false}, {"test": "organize my google drive", "answer": "false", "ideal": false, "result": false}, {"test": "Find the highest-rated Italian restaurant near me.", "answer": "true", "ideal": true, "result": false}, {"test": "Explain the theory of relativity.", "answer": "false", "ideal": true, "result": false}, {"test": "What are the main differences between Python and Java programming languages?", "answer": "true", "ideal": true, "result": false}, {"test": "Translate the following English sentence to Spanish: \"The weather today is great.\"", "answer": "false", "ideal": false, "result": false}, {"test": "Create a new event on my calendar for tomorrow at 2 pm.", "answer": "false", "ideal": false, "result": false}, {"test": "Write a short story about a lonely cowboy.", "answer": "false", "ideal": false, "result": false}, {"test": "Design a logo for a startup.", "answer": "false", "ideal": false, "result": false}, {"test": "Compose a catchy jingle for a new soda brand.", "answer": "false", "ideal": false, "result": false}, {"test": "Calculate the square root of 1999.", "answer": "false", "ideal": false, "result": false}, {"test": "What are the health benefits of yoga?", "answer": "true", "ideal": true, "result": false}, {"test": "find me a source of meat that can be shipped to canada", "answer": "true", "ideal": true, "result": false}, {"test": "Find the best-selling book of all time.", "answer": "false", "ideal": true, "result": false}, {"test": "What are the top 5 tourist attractions in Brazil?", "answer": "true", "ideal": true, "result": false}, {"test": "List the main ingredients in a traditional lasagna recipe.", "answer": "false", "ideal": true, "result": false}, {"test": "How does photosynthesis work in plants?", "answer": "true", "ideal": true, "result": false}, {"test": "Write a Python program to reverse a string.", "answer": "false", "ideal": false, "result": false}, {"test": "Create a workout routine for a beginner.", "answer": "false", "ideal": false, "result": false}, {"test": "Edit my resume to highlight my project management skills.", "answer": "false", "ideal": false, "result": false}, {"test": "Draft an email to a client to discuss a new proposal.", "answer": "false", "ideal": false, "result": false}, {"test": "Plan a surprise birthday party for my best friend.", "answer": "false", "ideal": false, "result": false}], [{"prompt": "As an AI, you will be given a series of tasks. Your job is to evaluate each task and then determine whether it involves significant research or not. If you believe that the task would require you to dig for in-depth information, evaluate various sources, make a comparison or do detailed fact-checking, you should classify it as 'true'. However, if the task involves creating, doing, executing, personalizing, calculating, or programming something, or if it's a task that doesn't need extensive digging for information and can be done based on common knowledge or straightforward facts, classify it as 'false'. Remember, the only outputs should be 'true' or 'false'."}, {"test": "Find the best contact email on this site.", "answer": "false", "ideal": true, "result": false}, {"test": "who is the current president?", "answer": "false", "ideal": true, "result": false}, {"test": "order me a pizza", "answer": "false", "ideal": false, "result": false}, {"test": "what are some ways a doctor could use an assistant?", "answer": "false", "ideal": true, "result": false}, {"test": "write a speech on the danger of cults", "answer": "false", "ideal": false, "result": false}, {"test": "Make a reservation at The Accent for 9pm", "answer": "false", "ideal": false, "result": false}, {"test": "organize my google drive", "answer": "false", "ideal": false, "result": false}, {"test": "Find the highest-rated Italian restaurant near me.", "answer": "true", "ideal": true, "result": false}, {"test": "Explain the theory of relativity.", "answer": "true", "ideal": true, "result": false}, {"test": "What are the main differences between Python and Java programming languages?", "answer": "true", "ideal": true, "result": false}, {"test": "Translate the following English sentence to Spanish: \"The weather today is great.\"", "answer": "false", "ideal": false, "result": false}, {"test": "Create a new event on my calendar for tomorrow at 2 pm.", "answer": "false", "ideal": false, "result": false}, {"test": "Write a short story about a lonely cowboy.", "answer": "false", "ideal": false, "result": false}, {"test": "Design a logo for a startup.", "answer": "false", "ideal": false, "result": false}, {"test": "Compose a catchy jingle for a new soda brand.", "answer": "false", "ideal": false, "result": false}, {"test": "Calculate the square root of 1999.", "answer": "false", "ideal": false, "result": false}, {"test": "What are the health benefits of yoga?", "answer": "true", "ideal": true, "result": false}, {"test": "find me a source of meat that can be shipped to canada", "answer": "true", "ideal": true, "result": false}, {"test": "Find the best-selling book of all time.", "answer": "true", "ideal": true, "result": false}, {"test": "What are the top 5 tourist attractions in Brazil?", "answer": "true", "ideal": true, "result": false}, {"test": "List the main ingredients in a traditional lasagna recipe.", "answer": "false", "ideal": true, "result": false}, {"test": "How does photosynthesis work in plants?", "answer": "true", "ideal": true, "result": false}, {"test": "Write a Python program to reverse a string.", "answer": "false", "ideal": false, "result": false}, {"test": "Create a workout routine for a beginner.", "answer": "false", "ideal": false, "result": false}, {"test": "Edit my resume to highlight my project management skills.", "answer": "true", "ideal": false, "result": false}, {"test": "Draft an email to a client to discuss a new proposal.", "answer": "false", "ideal": false, "result": false}, {"test": "Plan a surprise birthday party for my best friend.", "answer": "false", "ideal": false, "result": false}]]], [{"prompt": "As an AI, you will be given a series of tasks. Your job is to evaluate each task and then determine whether it involves significant research or not. If you believe that the task would require you to dig for in-depth information, evaluate various sources, make a comparison or do detailed fact-checking, you should classify it as 'true'. However, if the task involves creating, doing, executing, personalizing, calculating, or programming something, or if it's a task that doesn't need extensive digging for information and can be done based on common knowledge or straightforward facts, classify it as 'false'. Remember, the only outputs should be 'true' or 'false'.", "rating": 0.0}, {"prompt": "As an AI, your task is to determine if a given task is research-heavy, meaning it requires in-depth exploration, gathering and analyzing of information. Consider a task as research-heavy if it involves finding data, information or knowledge on a certain topic which is not commonly known or can't be answered directly without looking up or investigating. If a task primarily involves general knowledge, answering questions based on understood concepts, or explaining theories, consider it as a research-heavy task. If the task demands creative, administrative or functional actions like composing, designing, writing, organizing, translating, executing, or scheduling, then it should not be marked as research-heavy. Your output should be either 'true' if the task requires considerable amount of research, or 'false' if it doesn't.", "rating": 0.0}, [{"prompt": "Your assignment as an AI is to evaluate whether a given task is research-intensive, signifying it necessitates comprehensive exploration, compilation and analysis of data. Tag a task as research-intensive if it demands discovery of data, details or knowledge about a specific matter which is not generally known or can't be responded to straight away without conducting a search or investigation. If the task mainly pertains to general awareness, responding to queries based on comprehended notions, or elucidating theories, count it as a research-intensive task. If the task calls for artistic, executive or functional activities like formulating, conceptualizing, penning, structuring, translating, implementing or coordinating, then it shouldn't be labeled as research-intensive. Your response should be 'true' if the task necessitates substantial research, or 'false' if it doesn't.\n\nHere's the use-case summary: `Determine if a task is research-intensive.`\n\nProvide your prompt, and nothing else. Be inventive.", "rating": 0.0}, {"prompt": "You are an AI who will be presented with a variety of tasks. It is your responsibility to assess each task for whether it necessitates extensive research or not. If the task demands you to excavate profound information, scrutinize various sources, draw comparisons or perform meticulous fact verification, then label it as 'true'. On the other hand, if the task is about crafting, executing, customizing, calculating, or coding something, or if it's a task that doesn't necessitate comprehensive investigation and can be accomplished based on general knowledge or simple facts, classify it as 'false'. Your only potential responses should be 'true' or 'false'.\n\nHere's your use-case scenario: `Determining if a task is heavily research-dependent.`", "rating": 0.0}]]]
+[
+    {
+        "prompt": "As an AI, you'll need to classify the tasks given to you as 'true' or 'false'. If a task involves researching, gathering information, or seeking answers to questions from a wide array of resources, classify it as 'true'. But if a task involves a substantial amount of creation, organization, translation, computation, design, or any activity that requires more action than research, classify it as 'false'. Your only possible outputs are 'true' and 'false'. Remember, your goal is to identify which tasks are research-heavy.",
+        "rating": 92.5925925925926
+    },
+    {
+        "prompt": "As an AI, you are given various tasks. Based on the nature of these tasks, your task is to classify whether a job requires heavy research or not. If the task requires digging up information, looking into details, studying various sources, or collecting data, you should classify it as 'true'. However, if the task is more focused on creating, designing, executing or implementing, like writing a story, designing a logo, coding a program, or planning an event, you should classify it as 'false'. Always keep in mind you can only respond with 'true' or 'false'.",
+        "rating": 88.88888888888889
+    },
+    {
+        "prompt": "For each request presented, determine whether it is a task involving heavy research. Consider a task as \"research-heavy\" if it requires extensive information lookup, data collection, or investigation. For example, finding the best-selling book of all time or looking up the top tourist attractions in a specific location. If an activity involves creating, designing, or performing a specific action, regard it as not research-heavy. The task could be writing a story, making a reservation, or designing a logo. Provide a 'true' response for research-heavy tasks and 'false' for tasks that are not.",
+        "rating": 85.18518518518519
+    },
+    {
+        "prompt": "As an AI, I would like you to evaluate the provided tasks and determine if they require extensive research. A task is considered \"research-heavy\" if it requires in-depth investigation, gathering and analysis of information, such as finding specific data, explaining complex concepts, or identifying best options in a scenario. The tasks that involve creating, designing, writing, editing or organizing something without needing to gather extensive information are not considered \"research-heavy\". Make your judgement based on this criteria and simply respond with 'true' for research-heavy tasks and 'false' for tasks that are not research-heavy.",
+        "rating": 77.77777777777779
+    },
+    [
+        {
+            "description": "Decide if a task is research-heavy.",
+            "method": "Equal"
+        },
+        [
+            {
+                "prompt": "For each request presented, determine whether it is a task involving heavy research. Consider a task as \"research-heavy\" if it requires extensive information lookup, data collection, or investigation. For example, finding the best-selling book of all time or looking up the top tourist attractions in a specific location. If an activity involves creating, designing, or performing a specific action, regard it as not research-heavy. The task could be writing a story, making a reservation, or designing a logo. Provide a 'true' response for research-heavy tasks and 'false' for tasks that are not."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "true",
+                "ideal": "false",
+                "result": false
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "true",
+                "ideal": "false",
+                "result": false
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, I would like you to evaluate the provided tasks and determine if they require extensive research. A task is considered \"research-heavy\" if it requires in-depth investigation, gathering and analysis of information, such as finding specific data, explaining complex concepts, or identifying best options in a scenario. The tasks that involve creating, designing, writing, editing or organizing something without needing to gather extensive information are not considered \"research-heavy\". Make your judgement based on this criteria and simply respond with 'true' for research-heavy tasks and 'false' for tasks that are not research-heavy."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "true",
+                "ideal": "false",
+                "result": false
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, you are given various tasks. Based on the nature of these tasks, your task is to classify whether a job requires heavy research or not. If the task requires digging up information, looking into details, studying various sources, or collecting data, you should classify it as 'true'. However, if the task is more focused on creating, designing, executing or implementing, like writing a story, designing a logo, coding a program, or planning an event, you should classify it as 'false'. Always keep in mind you can only respond with 'true' or 'false'."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, you'll need to classify the tasks given to you as 'true' or 'false'. If a task involves researching, gathering information, or seeking answers to questions from a wide array of resources, classify it as 'true'. But if a task involves a substantial amount of creation, organization, translation, computation, design, or any activity that requires more action than research, classify it as 'false'. Your only possible outputs are 'true' and 'false'. Remember, your goal is to identify which tasks are research-heavy."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the main differences between Python and Java programming languages?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a new event on my calendar for tomorrow at 2 pm.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Write a short story about a lonely cowboy.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Design a logo for a startup.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Compose a catchy jingle for a new soda brand.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Calculate the square root of 1999.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "What are the health benefits of yoga?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "find me a source of meat that can be shipped to canada",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Find the best-selling book of all time.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "What are the top 5 tourist attractions in Brazil?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "List the main ingredients in a traditional lasagna recipe.",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "How does photosynthesis work in plants?",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Write a Python program to reverse a string.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Create a workout routine for a beginner.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Edit my resume to highlight my project management skills.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Draft an email to a client to discuss a new proposal.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Plan a surprise birthday party for my best friend.",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            }
+        ]
+    ]
+]

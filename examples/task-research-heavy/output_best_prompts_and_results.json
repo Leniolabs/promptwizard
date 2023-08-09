@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "As an AI, you'll need to classify the tasks given to you as 'true' or 'false'. If a task involves researching, gathering information, or seeking answers to questions from a wide array of resources, classify it as 'true'. But if a task involves a substantial amount of creation, organization, translation, computation, design, or any activity that requires more action than research, classify it as 'false'. Your only possible outputs are 'true' and 'false'. Remember, your goal is to identify which tasks are research-heavy.",
+        "rating": 92.5925925925926
+    },
+    {
+        "prompt": "As an AI, you are given various tasks. Based on the nature of these tasks, your task is to classify whether a job requires heavy research or not. If the task requires digging up information, looking into details, studying various sources, or collecting data, you should classify it as 'true'. However, if the task is more focused on creating, designing, executing or implementing, like writing a story, designing a logo, coding a program, or planning an event, you should classify it as 'false'. Always keep in mind you can only respond with 'true' or 'false'.",
+        "rating": 88.88888888888889
+    },
+    {
+        "approximate_cost": 0.256779,
+        "real_cost": 0.101157,
+        "tokens_input_gpt-3.5-turbo": 21462,
+        "tokens_output_gpt-3.5-turbo": 162,
+        "tokens_input_gpt-4": 944,
+        "tokens_output_gpt-4": 672
+    }
+]

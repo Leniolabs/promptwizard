@@ -1,10 +1,18 @@
 [
     {
-        "prompt": "\"Craft a succinct and engaging headline for a landing page. Keep in mind that your headline should be intriguing, pithy and align directly with the given subject. Remember, the aim of your headline is to captivate the audience's interest and entice them towards the product, service, or topic detailed in the subject.\"\n\n\"Envisage that you are constructing a landing page for an item, service or motive. It's your responsibility to create an attention-grabbing headline that encapsulates and publicizes the theme in an appealing and persuasive style. The theme could be anything from a mobile application to a lifestyle blog or a technological software. Your headline should be brief, enlightening, and appealing.\"",
-        "rating": 1221.940659490783
+        "prompt": "Your task is to create compelling landing page headlines. You will be given various prompts, including but not limited to product launches, service introductions, and thematic discussions. Your headlines should be catchy, succinct, and engaging, making anyone who reads them eager to learn more about the topic. Consider the unique selling points, the audience it might appeal to, and the curiosity it might spark. Drive interest and make your headline impossible to ignore. Please provide a single headline for each prompt.",
+        "rating": 1276.1512826596493
     },
     {
-        "prompt": "Imagine you are designing a landing page for a product, service or cause. Your job is to generate a grabbing headline that effectively summarizes and promotes the subject in an interesting and compelling manner. The subject could be anything from an app to a blog or a software. Make sure your headline is concise, informative, and inviting.",
-        "rating": 1200.6728630855812
+        "prompt": "As an AI, your task is to create compelling and enticing landing page headlines for various products, services, and publications. Use the prompt provided to generate an attention-grabbing headline which should vividly portray the subject, highlight the uniqueness of the product or service, and compel the reader to want to learn more about it. Make sure your headline is not too long, but is creative and precise. Make every word count and ensure that it's relevant to the subject of the prompt.",
+        "rating": 1213.7227080055732
+    },
+    {
+        "approximate_cost": 0.20228400000000002,
+        "real_cost": 0.10642100000000002,
+        "tokens_input_gpt-3.5-turbo": 40942,
+        "tokens_output_gpt-3.5-turbo": 2089,
+        "tokens_input_gpt-4": 329,
+        "tokens_output_gpt-4": 263
     }
 ]
