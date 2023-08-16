@@ -1,8 +1,8 @@
 from . import generation
-from .evals import elovalue, classification, equal, includes
+from .evals import elovalue, classification, equal, includes, function_calling
 
 
-def iterations(description, test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts_and_rating, method):
+def iterations(description, test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts_and_rating, method, functions, function_call):
     cost = 0
     tokens_input_gen = 0
     tokens_output_gen = 0
@@ -10,12 +10,14 @@ def iterations(description, test_cases, new_number_of_prompts, model_test, model
     tokens_output_test = 0
     if method == 'elovalue.Elo':
         class_method = elovalue.Elo
-    elif method == 'classification.Classification':
+    if method == 'classification.Classification':
         class_method = classification.Classification
-    elif method == 'equal.Equal':
+    if method == 'equal.Equal':
         class_method = equal.Equal
-    elif method == 'includes.Includes':
+    if method == 'includes.Includes':
         class_method = includes.Includes
+    if method == 'function_calling.functionCalling':
+         class_method = function_calling.functionCalling
     if method != 'elovalue.Elo':
             new_prompts = []
             old_prompts = []
@@ -33,8 +35,10 @@ def iterations(description, test_cases, new_number_of_prompts, model_test, model
             candidate_prompts.extend(candidates)
 
             new_prompts.extend(candidate_prompts)
-
-            evaluable_object = class_method(description, test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, new_prompts)
+            if method == 'function_calling.functionCalling':
+                evaluable_object = class_method(description, test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, new_prompts, functions, function_call)
+            if method != 'function_calling.functionCalling':
+                evaluable_object = class_method(description, test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, new_prompts)
             results = evaluable_object.evaluate_optimal_prompt()
             cost = cost + results[2]
             tokens_input_test = tokens_input_test + results[3]

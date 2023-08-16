@@ -4,7 +4,7 @@ import openai
 import json
 import matplotlib.pyplot as plt
 from . import generation, iteration
-from .evals import elovalue, classification, equal, includes
+from .evals import elovalue, classification, equal, includes, function_calling
 from .promptChange import uppercase, lowercase, random_uppercase, random_lowercase, random_lowercase_word, random_uppercase_word, synonymous_prompt, grammatical_errors
 from .approximate_cost import cost
 import yaml
@@ -12,14 +12,59 @@ import textwrap
 import numpy as np
 from collections import defaultdict
 from dotenv import load_dotenv
+from .validation_yaml import validation
 load_dotenv()
 #openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_key = os.getenv("OPENAI_API_KEY")
 #openai.api_type = os.getenv("OPENAI_API_TYPE")
 #openai.api_version = os.getenv("OPENAI_API_VERSION")
 
+def valid_yaml(file_name):
+    
+    valid = True
+
+    with open(file_name, 'r') as file:
+        content = yaml.safe_load(file)
+
+    if 'method' not in content['test']:
+        valid = False
+        print("Validation error:")
+        print({'test': {'method': ['Must be defined']}})
+
+    allowed_names = ['function_calling.functionCalling', 'classification.Classification', 'equal.Equal', 'includes.Includes', 'elovalue.Elo']
+    if 'method' in content['test']:
+        if content['test']['method'] == 'function_calling.functionCalling':
+            config_schema = validation.ConfigSchema3()
+
+        if content['test']['method'] == 'classification.Classification' or content['test']['method'] == 'equal.Equal' or content['test']['method'] == 'includes.Includes':
+            config_schema = validation.ConfigSchema2()
+
+        if content['test']['method'] == 'elovalue.Elo':
+            config_schema = validation.ConfigSchema1()
+        
+        if content['test']['method'] not in allowed_names:
+            valid = False
+            error_message = f"Must be one of the following: {', '.join(allowed_names)}"
+            print("Validation error:")
+            print({'test': {'method': [error_message]}})
+
+        if content['test']['method'] in allowed_names:
+            errors = config_schema.validate(content)
+            if not errors:
+                validated_object = config_schema.load(content)
+                print("Successful validation. Validated object:")
+                print(validated_object)
+            if errors:
+                print("Validation errors:")
+                print(errors)
+            if errors != {}:
+                valid = False
+
+    return valid
+
 # It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
 def read_yaml(file_name):
+
     with open(file_name, 'r') as file:
         content = yaml.safe_load(file)
     return content
@@ -36,16 +81,21 @@ def approximate_cost(file):
     test_cases = yaml_content['test']['cases']
     method = yaml_content['test']['method']
     model_test = yaml_content['test']['model']['name']
-    model_test_max_tokens = yaml_content['test']['model']['max_tokens']
+    model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
     prompts_value = yaml_content['prompts']['content']
-    number_of_prompts = yaml_content['prompts']['number']
+    number_of_prompts = int(yaml_content['prompts']['number'])
     prompt_features = yaml_content['prompts']['features']
     prompt_change = yaml_content['prompts']['change']
     if 'generation' in yaml_content:
         model_generation = yaml_content['generation']['model']['name']
-        model_generation_max_tokens = yaml_content['generation']['model']['max_tokens']
-    iterations = yaml_content['iterations']['number']
-    approximate_cost = cost.approximate_cost(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations)
+        model_generation_max_tokens = int(yaml_content['generation']['model']['max_tokens'])
+    if 'functions' in yaml_content['test']:
+        functions = yaml_content['test']['functions']
+    iterations = int(yaml_content['iterations']['number'])
+    if method == 'function_calling.functionCalling':
+        approximate_cost = cost.approximate_cost(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions)
+    if method == 'elovalue.Elo' or method == 'classification.Classification' or method == 'equal.Equal' or method == 'includes.Includes':
+        approximate_cost = cost.approximate_cost(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions=None)
     return approximate_cost
 
 def run_evaluation(file, approximate_cost):
@@ -61,17 +111,20 @@ def run_evaluation(file, approximate_cost):
     test_cases = yaml_content['test']['cases']
     method = yaml_content['test']['method']
     model_test = yaml_content['test']['model']['name']
-    model_test_temperature = yaml_content['test']['model']['temperature']
-    model_test_max_tokens = yaml_content['test']['model']['max_tokens']
+    model_test_temperature = int(yaml_content['test']['model']['temperature'])
+    model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
     prompts_value = yaml_content['prompts']['content']
-    number_of_prompts = yaml_content['prompts']['number']
+    number_of_prompts = int(yaml_content['prompts']['number'])
     prompt_features = yaml_content['prompts']['features']
     prompt_change = yaml_content['prompts']['change']
     if 'generation' in yaml_content:
         model_generation = yaml_content['generation']['model']['name']
-        model_generation_temperature = yaml_content['generation']['model']['temperature']
-        model_generation_max_tokens = yaml_content['generation']['model']['max_tokens']
-    iterations = yaml_content['iterations']['number']
+        model_generation_temperature = int(yaml_content['generation']['model']['temperature'])
+        model_generation_max_tokens = int(yaml_content['generation']['model']['max_tokens'])
+    if 'functions' in yaml_content['test']:
+        functions = yaml_content['test']['functions']
+        function_call = yaml_content['test']['function_call']
+    iterations = int(yaml_content['iterations']['number'])
     cost = 0
     tokens_input_gpt4 = 0
     tokens_output_gpt4 = 0
@@ -86,9 +139,14 @@ def run_evaluation(file, approximate_cost):
         class_method = equal.Equal
     if method == 'includes.Includes':
         class_method = includes.Includes
+    if method == 'function_calling.functionCalling':
+        class_method = function_calling.functionCalling
 
     # Initialize an object of the class obtained from the 'method'
-    object_class = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None)
+    if method != 'function_calling.functionCalling':
+        object_class = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None)
+    if method == 'function_calling.functionCalling':
+        object_class = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, functions, function_call)
     # Checks if the prompts to evaluate already exist and if not, creates them
     if prompts_value == []:
         if prompt_features != 'None':
@@ -137,8 +195,11 @@ def run_evaluation(file, approximate_cost):
             cost = cost + prompts_value_cost[1]
             tokens_input_gpt35 = tokens_input_gpt35 + prompts_value_cost[2]
             tokens_output_gpt35 = tokens_output_gpt35 + prompts_value_cost[3]
+    if method == 'function_calling.functionCalling':
+        evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, functions, function_call)
+    if method != 'function_calling.functionCalling':
+        evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value)
 
-    evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value)
     
     # Evaluate the prompts
     results = evaluable_object.evaluate_optimal_prompt()
@@ -192,7 +253,10 @@ def run_evaluation(file, approximate_cost):
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
-            new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts, method)
+            if method == 'function_calling.functionCalling':
+                new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts, method, functions, function_call)
+            if method != 'function_calling.functionCalling':
+                new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts, method, None, None)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
             tokens_input_gen = tokens_input_gen + new_results_prompts_cost[2]
@@ -218,7 +282,7 @@ def run_evaluation(file, approximate_cost):
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
-            new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, prompt_contents, method)
+            new_results_prompts_cost = iteration.iterations(description, test_cases, number_of_prompts - 2, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, prompt_contents, method, None, None)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
             tokens_input_gen = tokens_input_gen + new_results_prompts_cost[2]
@@ -291,12 +355,14 @@ def main():
     parser.add_argument("optional_string", help="Optional string parameter.", nargs='?', default=None)
     args = parser.parse_args()
     if args.optional_string == "don't run":
-        approximate = approximate_cost(args.yaml_file)
-        print(f"The cost of your evaluation will be approximately: {approximate} dollars.")
+        if (valid_yaml(args.yaml_file)):
+            approximate = approximate_cost(args.yaml_file)
+            print(f"The cost of your evaluation will be approximately {approximate} dollars.")
     else:
-        approximate = approximate_cost(args.yaml_file)
-        print(f"The cost of your evaluation will be approximately: {approximate} dollars.")
-        run_evaluation(args.yaml_file, approximate)
+        if (valid_yaml(args.yaml_file)):
+            approximate = approximate_cost(args.yaml_file)
+            print(f"The cost of your evaluation will be approximately {approximate} dollars.")
+            run_evaluation(args.yaml_file, approximate)
 
 if __name__ == "__main__":
     main()

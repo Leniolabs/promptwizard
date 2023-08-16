@@ -1,98 +1,28 @@
 [
     {
-        "prompt": "Imagine that you are a code-breaking AI asked to decipher a secret message. Each message is a sentence where the first letters of each word, when combined, form a hidden word. Your task is to extract the secret word from each sentence. To do this, read each sentence and take the first letter of every word. Then, combine these letters to reveal the hidden word. Provide the discovered word from each message, and remember, the solution is case sensitive, so all the letters should be in lower case.",
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to generate a word formed by concatenating the first letters of each word in a given sentence. You must read each sentence carefully, identify the first letter of each word, and then combine these letters in the order they appear to form a new word. Please provide the final word without any additional explanation or decoration. It is crucial that your response is accurate, as it will be the final output. The sentences could be long or short, complex or simple, but your task remains the same \u2014 form a word using the first letters of each word in the provided sentence.",
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any extra letters. Your output should be a single word formed by the first letters of each word in the sentence. Please provide a step-by-step response to show how you arrived at the final word.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to decipher a code hidden within the provided sentences. The code forms a word by concatenating the first letter of each word in the sentence. Pay attention to the capitalization of the original words - if a word starts with a capital letter, the corresponding letter in the code word should also be capitalized. Once you have identified all the letters, assemble them together in the same order to reveal the encoded word. Remember, your response should be the decoded word, and nothing more.",
-        "rating": 60.0
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. Your output should be a single word, without any spaces or punctuation.",
+        "rating": 80.0
     },
     {
-        "prompt": "\"Imagine you are a detective and each sentence is a secret message. Your task is to decipher this secret message by stringing together the first letter of each word. Remember, you should only take the first letter of each word and not involve any other information or context from the sentence. Just think of the sentence as a sequence of code words, where the first letter of each word forms part of the code. Put these letters together, in the order they appear in the sentence, to construct the message. Be meticulous and ensure you don't miss any words. Provide a step by step response revealing the secret word at the end.\"",
-        "rating": 0.0
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation.",
+        "rating": 80.0
     },
     [
         {
             "description": "What is the word that is formed by concatenating the first letters of each given word?",
-            "method": "Equal"
+            "method": "Includes"
         },
         [
             {
-                "prompt": "As an AI, your task is to decipher a code hidden within the provided sentences. The code forms a word by concatenating the first letter of each word in the sentence. Pay attention to the capitalization of the original words - if a word starts with a capital letter, the corresponding letter in the code word should also be capitalized. Once you have identified all the letters, assemble them together in the same order to reveal the encoded word. Remember, your response should be the decoded word, and nothing more."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "TRACTOR",
-                "ideal": "tractor",
-                "result": true
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "Hydrant",
-                "ideal": "hydration",
-                "result": false
-            },
-            {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
-                "ideal": "light",
-                "result": true
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "Decode: \"Defining\"\n\nExplanation: \nThe",
-                "ideal": "define",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "Imagine that you are a code-breaking AI asked to decipher a secret message. Each message is a sentence where the first letters of each word, when combined, form a hidden word. Your task is to extract the secret word from each sentence. To do this, read each sentence and take the first letter of every word. Then, combine these letters to reveal the hidden word. Provide the discovered word from each message, and remember, the solution is case sensitive, so all the letters should be in lower case."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "The hidden word is \"taroc\"",
-                "ideal": "tractor",
-                "result": false
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The hidden word is \"hydration\".",
-                "ideal": "hydration",
-                "result": true
-            },
-            {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The hidden word is \"rose\".",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "The hidden word is \"LIGHT\".",
-                "ideal": "light",
-                "result": true
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "The hidden word in the sentence is \"define\".",
-                "ideal": "define",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to generate a word formed by concatenating the first letters of each word in a given sentence. You must read each sentence carefully, identify the first letter of each word, and then combine these letters in the order they appear to form a new word. Please provide the final word without any additional explanation or decoration. It is crucial that your response is accurate, as it will be the final output. The sentences could be long or short, complex or simple, but your task remains the same \u2014 form a word using the first letters of each word in the provided sentence."
+                "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation."
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -102,7 +32,7 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRASTIN",
+                "answer": "HYDRATIGN",
                 "ideal": "hydration",
                 "result": false
             },
@@ -114,7 +44,7 @@
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "Light",
                 "ideal": "light",
                 "result": true
             },
@@ -127,37 +57,107 @@
         ],
         [
             {
-                "prompt": "\"Imagine you are a detective and each sentence is a secret message. Your task is to decipher this secret message by stringing together the first letter of each word. Remember, you should only take the first letter of each word and not involve any other information or context from the sentence. Just think of the sentence as a sequence of code words, where the first letter of each word forms part of the code. Put these letters together, in the order they appear in the sentence, to construct the message. Be meticulous and ensure you don't miss any words. Provide a step by step response revealing the secret word at the end.\""
+                "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any extra letters. Your output should be a single word formed by the first letters of each word in the sentence. Please provide a step-by-step response to show how you arrived at the final word."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Step 1: Take the first letter of each",
+                "answer": "Step 1: Take the first letter of the first word \"The\" which is \"T\".\nStep 2: Take the first letter of the second word \"red\" which is \"r\".\nStep 3: Take the first letter of the third word \"acrobat\" which is \"a\".\nStep 4: Take the first letter of the fourth word \"closed\" which is \"c\".\nStep 5: Take the first letter of the fifth word \"the\" which is \"t\".\nStep 6: Take the first letter of the sixth word \"orange\" which is \"o\".\nStep 7: Take the first letter of the seventh word \"raft\" which is \"r\".\n\nFinal word: \"Tractor\"",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "Step 1: Honey\nStep 2:",
+                "answer": "Step 1: The given sentence is \"Honey your daring rationale asserts typical ignorance or neglect.\"\nStep 2: Take the first letter of each word in the sentence: H, y, d, r, a, s, t, i, o, n.\nStep 3: Concatenate the letters together: Hydrastion.\n\nThe final word formed by concatenating the first letters of each word in the sentence is \"Hydrastion\".",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "R - Rare\nO - Obnoxiousness\n",
+                "answer": "Step 1: Take the first letter of the first word \"Rare\" which is \"R\".\nStep 2: Take the first letter of the second word \"obnoxiousness\" which is \"O\".\nStep 3: Take the first letter of the third word \"searches\" which is \"S\".\nStep 4: Take the first letter of the fourth word \"elevation\" which is \"E\".\n\nPutting all the letters together, we get the word \"ROSE\".",
                 "ideal": "rose",
-                "result": false
+                "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "Step 1: Take the first letter of each",
+                "answer": "Step 1: The sentence is \"Late into geometry he theorised.\"\nStep 2: Take the first letter of each word: L, i, g, h, t, i, h, t.\nStep 3: Concatenate the letters together: \"Lightight\".\nStep 4: The final word formed by the first letters of each word in the sentence is \"Lightight\".",
                 "ideal": "light",
-                "result": false
+                "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Step 1: Take the first letter of each",
+                "answer": "Step 1: Sentence: Dear Elena find irregular new energies.\nStep 2: Extract the first letter of each word: D E f i n e.\nStep 3: Concatenate the first letters: DEfine.\n\nThe final word formed by concatenating the first letters of each word in the sentence is \"DEfine\".",
                 "ideal": "define",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. Your output should be a single word, without any spaces or punctuation."
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "Tractor",
+                "ideal": "tractor",
+                "result": true
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "HYDRATIGN",
+                "ideal": "hydration",
                 "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "ROSE",
+                "ideal": "rose",
+                "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "Light",
+                "ideal": "light",
+                "result": true
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "DEFINE",
+                "ideal": "define",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation."
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "Tractor",
+                "ideal": "tractor",
+                "result": true
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "HYDRATIGN",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "ROSE",
+                "ideal": "rose",
+                "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "Light",
+                "ideal": "light",
+                "result": true
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "DEFINE",
+                "ideal": "define",
+                "result": true
             }
         ]
     ]

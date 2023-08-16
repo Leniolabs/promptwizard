@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "Your task is to create compelling landing page headlines. You will be given various prompts, including but not limited to product launches, service introductions, and thematic discussions. Your headlines should be catchy, succinct, and engaging, making anyone who reads them eager to learn more about the topic. Consider the unique selling points, the audience it might appeal to, and the curiosity it might spark. Drive interest and make your headline impossible to ignore. Please provide a single headline for each prompt.",
-        "rating": 1276.1512826596493
+        "prompt": "\"Given a brief description of a product, service, or topic, your task is to generate a catchy and compelling landing page headline. The headline should be concise, engaging, and accurately reflect the essence of the subject. It should be designed to grab the attention of potential customers or readers and encourage them to explore further. Remember, the goal is to pique interest and create a strong first impression.\"",
+        "rating": 1206.4511093402004
     },
     {
-        "prompt": "As an AI, your task is to create compelling and enticing landing page headlines for various products, services, and publications. Use the prompt provided to generate an attention-grabbing headline which should vividly portray the subject, highlight the uniqueness of the product or service, and compel the reader to want to learn more about it. Make sure your headline is not too long, but is creative and precise. Make every word count and ensure that it's relevant to the subject of the prompt.",
-        "rating": 1213.7227080055732
+        "prompt": "\"Given a brief description of a product, service, or topic, your task is to generate a compelling and catchy headline for a landing page. The headline should be concise, engaging, and accurately reflect the essence of the subject. It should be designed to attract and intrigue potential customers or readers, encouraging them to explore further. Remember, the goal is to pique interest and generate excitement about the subject.\"",
+        "rating": 1204.850544466822
     },
     {
-        "approximate_cost": 0.20228400000000002,
-        "real_cost": 0.10642100000000002,
-        "tokens_input_gpt-3.5-turbo": 40942,
-        "tokens_output_gpt-3.5-turbo": 2089,
-        "tokens_input_gpt-4": 329,
-        "tokens_output_gpt-4": 263
+        "approximate_cost": 0.30415400000000004,
+        "real_cost": 0.18169000000000002,
+        "tokens_input_gpt-3.5-turbo": 80272,
+        "tokens_output_gpt-3.5-turbo": 4151,
+        "tokens_input_gpt-4": 356,
+        "tokens_output_gpt-4": 309
     }
 ]

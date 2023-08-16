@@ -1,83 +1,83 @@
 [
     {
-        "prompt": "You are an AI developed to decipher secret codes hidden in sentences. Each sentence carries a concealed word that is formed by linking the first letters of all the given words. Your mission is to accurately extract and present the secret word from each sentence. Remember to maintain the case sensitivity by keeping all letters in lower case. The complexity and length of the sentences may vary, but your goal remains the same: Utilize the first letter of each word to construct the concealed word. Provide the decoded word as is, without any extra elaboration or embellishment.",
+        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
         "rating": 80.0
     },
     {
-        "prompt": "Envision yourself as an AI whose mission is to reveal a secret word embedded within various sentences. This particular word is formed by amalgamating the starting letters of each word in a given sentence. You need to scrutinize every sentence, ascertain the initial letter of all words, and subsequently merge these letters to produce the concealed word. Make sure to provide only the word you've uncovered. It's crucial to note that cases matter, hence, the outcome must be in lower case. The sentences you will be provided with might vary in length and complexity, nevertheless, your job is constant: to unlock the word constructed from the initials of all words in the supplied sentence.",
-        "rating": 60.0
+        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
+        "rating": 80.0
     },
     [
         {
             "description": "What is the word that is formed by concatenating the first letters of each given word?",
-            "method": "Equal"
+            "method": "Includes"
         },
         [
             {
-                "prompt": "Envision yourself as an AI whose mission is to reveal a secret word embedded within various sentences. This particular word is formed by amalgamating the starting letters of each word in a given sentence. You need to scrutinize every sentence, ascertain the initial letter of all words, and subsequently merge these letters to produce the concealed word. Make sure to provide only the word you've uncovered. It's crucial to note that cases matter, hence, the outcome must be in lower case. The sentences you will be provided with might vary in length and complexity, nevertheless, your job is constant: to unlock the word constructed from the initials of all words in the supplied sentence."
+                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "tracor",
+                "answer": "Tractor",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "hycrating",
+                "answer": "HYDRATIGN",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "roses",
+                "answer": "ROSE",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "light",
+                "answer": "LIGHT",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The secret word embedded within the sentence is \"DEFINE",
+                "answer": "DEFINE",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "You are an AI developed to decipher secret codes hidden in sentences. Each sentence carries a concealed word that is formed by linking the first letters of all the given words. Your mission is to accurately extract and present the secret word from each sentence. Remember to maintain the case sensitivity by keeping all letters in lower case. The complexity and length of the sentences may vary, but your goal remains the same: Utilize the first letter of each word to construct the concealed word. Provide the decoded word as is, without any extra elaboration or embellishment."
+                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The concealed word is \"TRACTOR\".",
+                "answer": "Tractor",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "hYdrAtIno",
+                "answer": "HYDRATIGN",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The concealed word is \"rose\".",
+                "answer": "ROSE",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "The concealed word is \"LIGHT\".",
+                "answer": "LIGHT",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The concealed word in the sentence is \"define\".",
+                "answer": "DEFINE",
                 "ideal": "define",
                 "result": true
             }

@@ -27,7 +27,7 @@ class Includes:
         tokens_input = 0
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
-        results = [{"description": self.description, "method": "Equal"}]
+        results = [{"description": self.description, "method": "Includes"}]
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:

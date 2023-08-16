@@ -14,7 +14,7 @@ test:
     model:
         name: 'gpt-3.5-turbo'
         temperature: 0.8
-        max_tokens: 10
+        max_tokens: 500
 
 prompts:
 

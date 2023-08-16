@@ -1,26 +1,26 @@
 [
     {
-        "prompt": "\"As an AI, your role is to categorize the duties assigned to you as either 'true' or 'false'. If a duty involves extensive research, information compilation, or seeking solutions from a diverse set of sources, classify it as 'true'. However, if a duty entails significant amount of creation, structuring, translation, calculation, design, or any operation that demands more effort than research, categorize it as 'false'. You can only output 'true' or 'false'. Your main object here is to discern tasks that are heavily research-oriented.\"",
-        "rating": 88.88888888888889
+        "prompt": "\"As an AI, your role is to discern if a given task is research-heavy or not. If the task demands thorough searching, verification of facts, or collection of data from multiple sources, you should label it as 'true'. Conversely, if the task is related to creative writing, personal assistance, coding, designing, or any other task that doesn't necessitate substantial research, you should label it as 'false'. Bear in mind, your only potential responses are 'true' and 'false'.\"",
+        "rating": 85.18518518518519
     },
     {
-        "prompt": "\"As an AI entity, your function includes categorizing tasks as either 'true' or 'false' in terms of their research intensity. A task that requires probing, extracting knowledge, or addressing queries from an extensive range of resources is labeled 'true'. Conversely, tasks that demand a significant degree of invention, systematization, interpretation, calculation, or design are tagged as 'false'. Your responses should strictly be 'true' or 'false'. Aim to accurately determine tasks that emphasize research.\"",
-        "rating": 74.07407407407408
+        "prompt": "\"As an AI, your role is to discern if a given task is research-heavy or not. If the task demands thorough searching, verification of facts, or collection of data from multiple sources, you should label it as 'true'. Conversely, if the task is related to creative writing, personal assistance, coding, designing, or any other task that doesn't necessitate substantial research, you should label it as 'false'. Bear in mind, your only potential responses are 'true' and 'false'.\"",
+        "rating": 85.18518518518519
     },
     [
         {
             "description": "Decide if a task is research-heavy.",
-            "method": "Equal"
+            "method": "Classification"
         },
         [
             {
-                "prompt": "\"As an AI entity, your function includes categorizing tasks as either 'true' or 'false' in terms of their research intensity. A task that requires probing, extracting knowledge, or addressing queries from an extensive range of resources is labeled 'true'. Conversely, tasks that demand a significant degree of invention, systematization, interpretation, calculation, or design are tagged as 'false'. Your responses should strictly be 'true' or 'false'. Aim to accurately determine tasks that emphasize research.\""
+                "prompt": "\"As an AI, your role is to discern if a given task is research-heavy or not. If the task demands thorough searching, verification of facts, or collection of data from multiple sources, you should label it as 'true'. Conversely, if the task is related to creative writing, personal assistance, coding, designing, or any other task that doesn't necessitate substantial research, you should label it as 'false'. Bear in mind, your only potential responses are 'true' and 'false'.\""
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -36,15 +36,15 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -60,9 +60,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -72,9 +72,9 @@
             },
             {
                 "test": "What are the main differences between Python and Java programming languages?",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Translate the following English sentence to Spanish: \"The weather today is great.\"",
@@ -120,9 +120,9 @@
             },
             {
                 "test": "find me a source of meat that can be shipped to canada",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Find the best-selling book of all time.",
@@ -132,9 +132,9 @@
             },
             {
                 "test": "What are the top 5 tourist attractions in Brazil?",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "List the main ingredients in a traditional lasagna recipe.",
@@ -181,13 +181,13 @@
         ],
         [
             {
-                "prompt": "\"As an AI, your role is to categorize the duties assigned to you as either 'true' or 'false'. If a duty involves extensive research, information compilation, or seeking solutions from a diverse set of sources, classify it as 'true'. However, if a duty entails significant amount of creation, structuring, translation, calculation, design, or any operation that demands more effort than research, categorize it as 'false'. You can only output 'true' or 'false'. Your main object here is to discern tasks that are heavily research-oriented.\""
+                "prompt": "\"As an AI, your role is to discern if a given task is research-heavy or not. If the task demands thorough searching, verification of facts, or collection of data from multiple sources, you should label it as 'true'. Conversely, if the task is related to creative writing, personal assistance, coding, designing, or any other task that doesn't necessitate substantial research, you should label it as 'false'. Bear in mind, your only potential responses are 'true' and 'false'.\""
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -203,15 +203,15 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",

@@ -4,13 +4,16 @@ cli/__init__.py
 cli/generation.py
 cli/iteration.py
 cli/main.py
+cli/approximate_cost/__init__.py
 cli/approximate_cost/cost.py
+cli/cost/__init__.py
 cli/cost/input.py
 cli/cost/output.py
 cli/evals/__init__.py
 cli/evals/classification.py
 cli/evals/elovalue.py
 cli/evals/equal.py
+cli/evals/function_calling.py
 cli/evals/includes.py
 cli/promptChange/__init__.py
 cli/promptChange/grammatical_errors.py
@@ -21,6 +24,8 @@ cli/promptChange/random_uppercase.py
 cli/promptChange/random_uppercase_word.py
 cli/promptChange/synonymous_prompt.py
 cli/promptChange/uppercase.py
+cli/validation_yaml/__init__.py
+cli/validation_yaml/validation.py
 lenio_ai_prompt_engineer.egg-info/PKG-INFO
 lenio_ai_prompt_engineer.egg-info/SOURCES.txt
 lenio_ai_prompt_engineer.egg-info/dependency_links.txt

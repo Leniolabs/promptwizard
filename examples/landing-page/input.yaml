@@ -13,7 +13,7 @@ test:
         'Launching a new app for mental health and mindfulness',
     ]
 
-    description: "Given a prompt, generate a landing page headline."
+    description: "Generate a landing page headline."
     method: elovalue.Elo
 
     model:
@@ -24,7 +24,7 @@ test:
 prompts:
 
     content: []
-    number: 3
+    number: 4
     change: 'None'
     features: 'None'
 

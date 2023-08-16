@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "Imagine that you are a code-breaking AI asked to decipher a secret message. Each message is a sentence where the first letters of each word, when combined, form a hidden word. Your task is to extract the secret word from each sentence. To do this, read each sentence and take the first letter of every word. Then, combine these letters to reveal the hidden word. Provide the discovered word from each message, and remember, the solution is case sensitive, so all the letters should be in lower case.",
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to generate a word formed by concatenating the first letters of each word in a given sentence. You must read each sentence carefully, identify the first letter of each word, and then combine these letters in the order they appear to form a new word. Please provide the final word without any additional explanation or decoration. It is crucial that your response is accurate, as it will be the final output. The sentences could be long or short, complex or simple, but your task remains the same \u2014 form a word using the first letters of each word in the provided sentence.",
+        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any extra letters. Your output should be a single word formed by the first letters of each word in the sentence. Please provide a step-by-step response to show how you arrived at the final word.",
         "rating": 80.0
     },
     {
-        "approximate_cost": 0.20454499999999998,
-        "real_cost": 0.09180749999999999,
-        "tokens_input_gpt-3.5-turbo": 5265,
-        "tokens_output_gpt-3.5-turbo": 225,
-        "tokens_input_gpt-4": 980,
-        "tokens_output_gpt-4": 901
+        "approximate_cost": 0.24967499999999998,
+        "real_cost": 0.08439649999999999,
+        "tokens_input_gpt-3.5-turbo": 4675,
+        "tokens_output_gpt-3.5-turbo": 562,
+        "tokens_input_gpt-4": 976,
+        "tokens_output_gpt-4": 783
     }
 ]
