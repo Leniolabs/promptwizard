@@ -2,14 +2,15 @@ from setuptools import setup
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.0',
+    version='1.4.2',
     packages=['cli', 'cli.evals', 'cli.promptChange', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
+    python_requires='>=3.8',
     install_requires=[
         'openai>=0.27.0',
         'PyYAML>=5.4',
         'matplotlib',
         'numpy',
-        'marshmallow>=3.20.1',
+        'marshmallow',
         'tiktoken>=0.4.0'
     ],
     entry_points={
