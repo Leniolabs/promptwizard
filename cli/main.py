@@ -14,10 +14,10 @@ from collections import defaultdict
 from dotenv import load_dotenv
 from .validation_yaml import validation
 load_dotenv()
-#openai.api_base = os.getenv("OPENAI_API_BASE")
+openai.api_base = os.getenv("OPENAI_API_BASE")
 openai.api_key = os.getenv("OPENAI_API_KEY")
-#openai.api_type = os.getenv("OPENAI_API_TYPE")
-#openai.api_version = os.getenv("OPENAI_API_VERSION")
+openai.api_type = os.getenv("OPENAI_API_TYPE")
+openai.api_version = os.getenv("OPENAI_API_VERSION")
 
 def valid_yaml(file_name):
     
