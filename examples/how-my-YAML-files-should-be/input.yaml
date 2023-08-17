@@ -16,6 +16,30 @@ test:
         temperature: """The temperature of the GPT model you will use to evaluate the prompts."""
         max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate the response to the test."""
 
+    functions: """This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used.
+    If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:
+
+            - Function Name (name): This is the identifier used to refer to this function within the context of your code.
+
+            - Function Description (description): A brief description of what the function does.
+
+            - Function Parameters (parameters): This section defines the input parameters that the function accepts.
+
+                - Type (type): The type of the parameter being defined.
+
+                - Properties (properties): This is an object containing properties that the input parameter object should have.
+
+                    - File Type (file_type): This is a property of the parameter object.
+
+                    - Enum (enum): An enumeration of allowed values for the 'file_type' property. (optional)
+
+                    - Description (description): A description of what the 'file_type' property represents.
+
+                - Required (required): An array listing the properties that are required within the parameter object. (optional)"""
+
+    function_call: """This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be 
+            used. If another method is used, it must not be filled out."""
+
 prompts:
 
     content: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.

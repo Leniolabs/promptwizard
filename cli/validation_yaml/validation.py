@@ -12,7 +12,7 @@ class ModelSchema(Schema):
         @validates("temperature")
         def validate_temperature_range(self, value):
             if not (0 <= value <= 2):
-                raise ValidationError("'Temperature' must be a float between 0 and 2.")
+                raise ValidationError("'temperature' must be a float between 0 and 2.")
         @validates("max_tokens")
         def validate_max_tokens(self, value):
             if not (1 <= value):
@@ -23,6 +23,11 @@ class FirstFormatTestCaseSchema(Schema):
     method = fields.Str(required=True)
     model = fields.Nested(ModelSchema)
     description = fields.Str(required=True)
+    @validates("method")
+    def validate_method(self, value):
+        expected_method = "elovalue.Elo"
+        if value != expected_method:
+            raise ValidationError(f"Method must be '{expected_method}'.")
 
 class SecondFormatTestCaseSchema(Schema):
         cases = fields.List(fields.List(fields.Str(required=True)))
@@ -75,6 +80,12 @@ class PromptSchema(Schema):
         def validate_number_iterations(self, value):
             if not (value >= 4):
                 raise ValidationError("'number' must be an integer equal or greater than 4.")
+        changes = ['uppercase', 'lowercase']
+        @validates("change")
+        def validate_change_prompts(self, value):
+             changes = ['uppercase', 'lowercase', 'random_uppercase', 'random_lowercase', 'random_lowercase_word', 'random_uppercase_word', 'synonymous_prompt', 'grammatical_errors', 'None']
+             if not value in changes:
+                  raise ValidationError(f"'change' must be one of the following: {', '.join(changes)}.")
 
 class GenerationModelSchema(Schema):
         model = fields.Nested(ModelSchema)
