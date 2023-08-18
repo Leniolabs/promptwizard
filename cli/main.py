@@ -11,13 +11,17 @@ import yaml
 import textwrap
 import numpy as np
 from collections import defaultdict
-from dotenv import load_dotenv
+import dotenv
 from .validation_yaml import validation
-load_dotenv()
-openai.api_base = os.getenv("OPENAI_API_BASE")
-openai.api_key = os.getenv("OPENAI_API_KEY")
-openai.api_type = os.getenv("OPENAI_API_TYPE")
-openai.api_version = os.getenv("OPENAI_API_VERSION")
+
+from marshmallow import Schema, fields, validate
+from marshmallow.exceptions import ValidationError
+
+class EnvSchema(Schema):
+    OPENAI_API_BASE = fields.Str(allow_none=True)
+    OPENAI_API_KEY = fields.Str(required=True)
+    OPENAI_API_TYPE = fields.Str(allow_none=True)
+    OPENAI_API_VERSION = fields.Str(allow_none=True, validate=validate.Regexp(r'\d{4}-\d{2}-\d{2}'))
 
 def valid_yaml(file_name):
     
@@ -62,9 +66,12 @@ def valid_yaml(file_name):
 
     return valid
 
-# It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
 def read_yaml(file_name):
-
+    """
+    It loads and reads the content of a given YAML file and returns its content as a Python dictionary or list.
+    :type file_name: path of the yaml file.
+    :return: yaml file as an object.
+    """
     with open(file_name, 'r') as file:
         content = yaml.safe_load(file)
     return content
@@ -342,7 +349,6 @@ def run_evaluation(file, approximate_cost):
         "tokens_output_gpt-4": tokens_output_gpt4
     }
     old_prompts.append(tokens_and_cost)
-    #final_json = {**tokens_and_cost, **old_prompts}
     with open(json_file_path, 'w') as file:
         json.dump(old_prompts, file, indent=4)
 
@@ -351,9 +357,104 @@ def run_evaluation(file, approximate_cost):
 
 def main():
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")
-    parser.add_argument("yaml_file", help="Name of the YAML file to read.")
+    parser.add_argument("yaml_file", help="Path of the YAML file to read.\n The following is the structure that your YAML files should have.\n"
+
+"test:\n\n"
+
+    "cases: Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the"
+        "Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, "
+        "equal or includes, it should be a list of lists with two elements, where the first element is the test case and the "
+        "second element is the correct response to the test. Remember that if you decide to use classification, only a boolean"
+        "value is allowed as a response. And if you choose function_calling.functionCalling method the test cases should be a list"
+        "of lists with three elements where the first one is a test case, the second one is the correct function and the third one "
+        "the correct variable to call the function.\n"
+
+    "description: Here is the description of the type of task that summarizes the test cases.\n"
+    "method: Here, you select the evaluation method for your prompts. The options are: elovalue.Elo, classification.Classification, "
+        "equal.Equal, includes.Includes and function_calling.functionCalling.\n"
+
+    "model:\n"
+        "name: The name of the GPT model you will use to evaluate the prompts. Options: 'gpt-3.5-turbo', 'gpt-4'.\n"
+        "temperature: The temperature of the GPT model you will use to evaluate the prompts. The value must be between 0 and 2.\n"
+        "max_tokens: The maximum number of tokens you will allow the GPT model to use to generate the response to the test.\n"
+
+    "functions: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used."
+    "If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:\n\n"
+
+            "- Function Name (name): This is the identifier used to refer to this function within the context of your code.\n"
+
+            "- Function Description (description): A brief description of what the function does.\n"
+
+            "- Function Parameters (parameters): This section defines the input parameters that the function accepts.\n\n"
+
+                "- Type (type): The type of the parameter being defined.\n"
+
+                "- Properties (properties): This is an object containing properties that the input parameter object should have.\n\n"
+
+                    "- File Type (file_type): This is a property of the parameter object.\n"
+
+                    "- Enum (enum): An enumeration of allowed values for the 'file_type' property. (optional)\n"
+
+                    "- Description (description): A description of what the 'file_type' property represents.\n"
+
+                "- Required (required): An array listing the properties that are required within the parameter object. (optional)\n"
+
+    "function_call: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be "
+            "used. If another method is used, it must not be filled out.\n"
+
+"prompts:\n\n"
+
+    "content: A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty. "
+        "Please provide a minimum number of 4 prompts\n"
+    "number: The number of prompts you are going to evaluate. If you are going to provide the prompts yourself, please specify "
+        "the corresponding quantity of prompts you inserted previously. If you are going to generate the prompts, indicate the "
+        "quantity of prompts you want to generate. Please provide a minimum number of 4 prompts.\n"
+    "change: An optional feature that allows you to make changes to your prompts, whether you provide them or generate them. "
+        "If you don't want to use it, simply put None. Otherwise, the options are: uppercase, lowercase, random_uppercase, "
+        "random_lowercase, random_lowercase_word, random_uppercase_word, synonymous_prompt, grammatical_errors.\n"
+    "features: If you are going to generate prompts, this optional feature allows you to add special characteristics to the "
+        "prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with "
+        "'Generate prompts with a maximum length of 50 characters.'\n"
+
+"generation:\n\n"
+
+    "model:\n\n"
+
+        "name: The name of the GPT model you will use to generate the prompts. Options: 'gpt-3.5-turbo', 'gpt-4'.\n"
+        "temperature: The temperature of the GPT model you will use to generate the prompts. The value must be between 0 and 2.\n"
+        "max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.\n"
+
+"iterations:\n\n"
+
+    "number: The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at "
+        "prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0.")
     parser.add_argument("optional_string", help="Optional string parameter.", nargs='?', default=None)
     args = parser.parse_args()
+    try:
+        dotenv.load_dotenv()
+    except FileNotFoundError:
+        print("Error: The .env file was not found in your directory.")
+        exit(1)
+
+    openai_env = {
+    "OPENAI_API_BASE": os.getenv("OPENAI_API_BASE"),
+    "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY"),
+    "OPENAI_API_TYPE": os.getenv("OPENAI_API_TYPE"),
+    "OPENAI_API_VERSION": os.getenv("OPENAI_API_VERSION")
+}
+    env_schema = EnvSchema()
+
+    try:
+        validated_env = env_schema.load(openai_env)
+    except ValidationError as error:
+        print("Error: Invalid environment variables:", error.messages)
+        exit(1)
+
+    # Variables de entorno válidas
+    openai.api_base = validated_env["OPENAI_API_BASE"]
+    openai.api_key = validated_env["OPENAI_API_KEY"]
+    openai.api_type = validated_env["OPENAI_API_TYPE"]
+    openai.api_version = validated_env["OPENAI_API_VERSION"]
     if args.optional_string == "don't run":
         if (valid_yaml(args.yaml_file)):
             approximate = approximate_cost(args.yaml_file)
