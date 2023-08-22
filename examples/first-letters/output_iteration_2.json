@@ -1,36 +1,35 @@
 [
     {
-        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
+        "prompt": "'As an AI, you are required to unravel a concealed word hidden within a specified sentence. This concealed word is constructed by choosing the initial letter of every word in the sentence in sequence. Your resultant output should be a solitary word, devoid of any spaces or punctuation. You are to process the sentence sequentially from the initial word to the final, preserving the order of the letters as they are presented. Keep in mind, the aim is to discover the hidden word by conjoining the starting letters of each word in the sentence.'",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
+        "prompt": "\"As an AI, your aim is to decode a secret word embedded in a provided sentence. This word originates from the first letter of every word in the sentence, all assembled together. Your response should comprise only a single word, devoid of spaces or punctuations. Pay attention to process the sentence from the first to the last word, preserving the arrangement of the letters. Keep in mind, the objective is to unveil the masked word by concatenating the leading characters of each word in the sentence.\"",
         "rating": 80.0
     },
     [
         {
-            "description": "What is the word that is formed by concatenating the first letters of each given word?",
             "method": "Includes"
         },
         [
             {
-                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
+                "prompt": "'As an AI, you are required to unravel a concealed word hidden within a specified sentence. This concealed word is constructed by choosing the initial letter of every word in the sentence in sequence. Your resultant output should be a solitary word, devoid of any spaces or punctuation. You are to process the sentence sequentially from the initial word to the final, preserving the order of the letters as they are presented. Keep in mind, the aim is to discover the hidden word by conjoining the starting letters of each word in the sentence.'"
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The hidden word is \"TRACTOR\".",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATIGN",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "The hidden word is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
@@ -42,14 +41,14 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
+                "answer": "The concealed word hidden within the sentence \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
+                "prompt": "\"As an AI, your aim is to decode a secret word embedded in a provided sentence. This word originates from the first letter of every word in the sentence, all assembled together. Your response should comprise only a single word, devoid of spaces or punctuations. Pay attention to process the sentence from the first to the last word, preserving the arrangement of the letters. Keep in mind, the objective is to unveil the masked word by concatenating the leading characters of each word in the sentence.\""
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -59,7 +58,7 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATIGN",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },

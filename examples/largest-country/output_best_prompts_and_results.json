@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
-        "rating": 44.44444444444444
+        "prompt": "Upon receipt of a list of nations, your duty is to ascertain and return the name of the country encompassing the most extensive land mass. Your answer should solely consist of the country's name, excluding any supplementary data. Attempt to utilize your preexisting domain expertise to complete this.",
+        "rating": 30.0
     },
     {
-        "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.",
-        "rating": 29.629629629629626
+        "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.",
+        "rating": 20.0
     },
     {
-        "approximate_cost": 0.149469,
-        "real_cost": 0.0482435,
-        "tokens_input_gpt-3.5-turbo": 17137,
-        "tokens_output_gpt-3.5-turbo": 1294,
-        "tokens_input_gpt-4": 241,
-        "tokens_output_gpt-4": 212
+        "approximate_cost": 0.18384399999999998,
+        "real_cost": 0.04865799999999999,
+        "tokens_input_gpt-3.5-turbo": 8132,
+        "tokens_output_gpt-3.5-turbo": 470,
+        "tokens_input_gpt-4": 506,
+        "tokens_output_gpt-4": 339
     }
 ]

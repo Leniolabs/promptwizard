@@ -1,14 +1,17 @@
 test:
 
-    cases: [
-        ['The red acrobat closed the orange raft', 'tractor'],
-        ['Honey your daring rationale asserts typical ignorance or neglect.', 'hydration'],
-        ['Rare obnoxiousness searches elevation.', 'rose'],
-        ['Late into geometry he theorised.', 'light'],
-        ['Dear Elena find irregular new energies.', 'define']
-    ]
+    cases:
+        - inout: 'The red acrobat closed the orange raft'
+          output: 'tractor'
+        - inout: 'Honey your daring rationale asserts typical ignorance or neglect.'
+          output: 'hydration'
+        - inout: 'Rare obnoxiousness searches elevation.'
+          output: 'rose'
+        - inout: 'Late into geometry he theorised.'
+          output: 'light'
+        - inout: 'Dear Elena find irregular new energies.'
+          output: 'define'
 
-    description: "What is the word that is formed by concatenating the first letters of each given word?"
     method: includes.Includes
 
     model:
@@ -18,18 +21,19 @@ test:
 
 prompts:
 
-    content: []
-    number: 4
-    change: 'None'
-    features: 'None'
+    generation:
+        number: 4
+        model:
+            name: 'gpt-4'
+            temperature: 0.9
+            max_tokens: 500
+        description: "What is the word that is formed by concatenating the first letters of each given word?"
 
-generation:
+    iterations:
+        number: 2
+        best_prompts: 2
+        model:
 
-    model:
-
-        name: 'gpt-4'
-        temperature: 0.9
-        max_tokens: 500
-
-iterations:
-    number: 2
+            name: 'gpt-4'
+            temperature: 0.9
+            max_tokens: 500

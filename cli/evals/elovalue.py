@@ -10,7 +10,7 @@ K = 32
 N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
 
 class Elo:
-    def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
+    def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
         self.description = description
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
@@ -40,6 +40,7 @@ Also, keep in mind that you are a very harsh critic. Only rank a generation as b
 
 Respond with your ranking, and nothing else. Be fair and unbiased in your judgement."""
         self.prompts = prompts
+        self.best_prompts = best_prompts
 
     def expected_score(self, r1, r2):
         return 1 / (1 + 10**((r2 - r1) / 400))
@@ -116,12 +117,10 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         elo_prompt = []
         for prompt in self.prompts:
             elo_prompt.append({"prompt": prompt, "elo": 1200})
-
         # For each pair of prompts
         for prompt1, prompt2 in itertools.combinations(self.prompts, 2):
             # For each test case
             for test_case in self.test_cases:
-
                 # Get the value of the "prompt" field as a string
                 prompt_content = test_case
 
@@ -194,5 +193,5 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             data_list.append({"prompt": prompt, "rating": rating})
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
-        best_prompts = [data_list[0], data_list[1]]
+        best_prompts = data_list[:self.best_prompts]
         return data_list, best_prompts, prompt_ratings[3], prompt_ratings[4], prompt_ratings[5]

@@ -2,8 +2,8 @@ from setuptools import setup
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.7',
-    packages=['cli', 'cli.evals', 'cli.promptChange', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
+    version='1.4.8',
+    packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
     python_requires='>=3.7',
     install_requires=[
         'openai>=0.27.0',

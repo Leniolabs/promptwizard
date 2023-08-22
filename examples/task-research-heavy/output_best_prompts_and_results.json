@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to determine whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if the task involves creative writing, personal assistance, programming, designing, or any other activity that doesn't require significant research, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
-        "rating": 96.29629629629629
+        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, or involves organizing or creating content without the need for extensive research, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
+        "rating": 77.77777777777779
     },
     {
-        "prompt": "As an AI, your task is to determine whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if the task involves creative writing, personal assistance, programming, designing, or any other activity that doesn't primarily rely on research, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
-        "rating": 92.5925925925926
+        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or organizing files, and does not require extensive research, you should classify it as 'false'. Remember, your responses should only be 'true' or 'false'.",
+        "rating": 66.66666666666666
     },
     {
-        "approximate_cost": 0.34001699999999996,
-        "real_cost": 0.09391949999999999,
-        "tokens_input_gpt-3.5-turbo": 19437,
-        "tokens_output_gpt-3.5-turbo": 162,
-        "tokens_input_gpt-4": 954,
-        "tokens_output_gpt-4": 597
+        "approximate_cost": 0.24002999999999997,
+        "real_cost": 0.098673,
+        "tokens_input_gpt-3.5-turbo": 9930,
+        "tokens_output_gpt-3.5-turbo": 54,
+        "tokens_input_gpt-4": 809,
+        "tokens_output_gpt-4": 990
     }
 ]

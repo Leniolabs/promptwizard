@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any additional letters. Your output should be a single word, without any spaces or punctuation.",
+        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, and nothing more.",
+        "rating": 100.0
+    },
+    {
+        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the discovered word, created by sequentially joining the initial letters of each word in the sentence. Remember to maintain the order of the letters as they appear in the sentence. Your response should be concise and only contain the hidden word, without any additional explanation or context.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to form a word by concatenating the first letters of each word in a given sentence. You will be provided with a sentence, and you need to take the first letter of each word and put them together to form a new word. The order of the letters should follow the order of the words in the sentence. You are not allowed to rearrange the letters or add any extra letters. Your output should be a single word formed by the first letters of each word in the sentence. Please provide a step-by-step response to show how you arrived at the final word.",
-        "rating": 80.0
-    },
-    {
-        "approximate_cost": 0.24967499999999998,
-        "real_cost": 0.08439649999999999,
-        "tokens_input_gpt-3.5-turbo": 4675,
-        "tokens_output_gpt-3.5-turbo": 562,
-        "tokens_input_gpt-4": 976,
-        "tokens_output_gpt-4": 783
+        "approximate_cost": 0.16283,
+        "real_cost": 0.03639,
+        "tokens_input_gpt-3.5-turbo": 2280,
+        "tokens_output_gpt-3.5-turbo": 60,
+        "tokens_input_gpt-4": 335,
+        "tokens_output_gpt-4": 380
     }
 ]

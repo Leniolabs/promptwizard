@@ -1,36 +1,35 @@
 [
     {
-        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
+        "prompt": "As an AI, your assignment is to decode a concealed word from a provided phrase. This word is created by gathering the initial letter of every single word in the sentence and merging them in the sequence they occur. Your result must be a singular word, devoid of any spaces or punctuation marks. Make sure to keep the arrangement of the letters as they initially appear. The main objective is to uncover the hidden word by assembling the starting letters of every word in the sentence.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation.",
+        "prompt": "\"As an AI, your objective is to decode a concealed word from a provided phrase. This word is constructed by appending the first letter of each word in the phrase. Your result should be a single word, devoid of any spaces or punctuation. You should interpret the phrase from left to right, preserving the order of the letters as they come up. The key aim is to uncover the cryptic word by joining together the initial letters of every word in the phrase.\"",
         "rating": 80.0
     },
     [
         {
-            "description": "What is the word that is formed by concatenating the first letters of each given word?",
             "method": "Includes"
         },
         [
             {
-                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
+                "prompt": "As an AI, your assignment is to decode a concealed word from a provided phrase. This word is created by gathering the initial letter of every single word in the sentence and merging them in the sequence they occur. Your result must be a singular word, devoid of any spaces or punctuation marks. Make sure to keep the arrangement of the letters as they initially appear. The main objective is to uncover the hidden word by assembling the starting letters of every word in the sentence."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The concealed word is \"TRACTOR\".",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATIGN",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "The concealed word in the phrase \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
@@ -42,30 +41,30 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
+                "answer": "The concealed word in the phrase \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to create a word by joining the initial letters of each word in a provided sentence. You will receive a sentence, and you must extract the first letter of each word and combine them to create a new word. The sequence of the letters must correspond to the sequence of the words in the sentence. You are not permitted to shuffle the letters or insert any additional ones. Your result should be a single word, devoid of any spaces or punctuation."
+                "prompt": "\"As an AI, your objective is to decode a concealed word from a provided phrase. This word is constructed by appending the first letter of each word in the phrase. Your result should be a single word, devoid of any spaces or punctuation. You should interpret the phrase from left to right, preserving the order of the letters as they come up. The key aim is to uncover the cryptic word by joining together the initial letters of every word in the phrase.\""
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The concealed word is \"TRACTOR\".",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATIGN",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "The concealed word from the phrase \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
@@ -77,7 +76,7 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
+                "answer": "The concealed word in the phrase \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }

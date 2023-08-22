@@ -6,10 +6,26 @@ test:
         Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
         equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
         second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
-        value is allowed as a response."""
+        value is allowed as a response. the form of your test cases has to be, in case of selecting the elovalue.Elo method:
+            -'Test1'
+            -'Test2'...
+        If you choose the methods classification.Classification, equal.Equal, includes.Includes they must be of the form:
+            -inout: 'Test1'
+            output: 'Answer1'
+            -inout: 'Test2'
+            output: 'Answer2'
+        And in case the method is function_calling.functionCalling:
+            -inout: 'Test1'
+            output1: 'name_function'
+            output2: 'variable'
+            -inout: 'Test2'
+            output1: 'name_function'
+            output2: 'variable'"""
 
-    description: """Here is the description of the type of task that summarizes the test cases."""
-    method: """Here, you select the evaluation method for your prompts."""
+    description: """Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
+        you are going to use the 'elovalue.Elo' method"""
+    method: """Here, you select the evaluation method for your prompts. You must choose between 'elovalue.Elo',
+        'classification.Classification', 'equal.Equal', 'includes.Includes' and 'function_calling.functionCalling'."""
 
     model:
         name: """The name of the GPT model you will use to evaluate the prompts."""
@@ -40,28 +56,38 @@ test:
     function_call: """This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be 
             used. If another method is used, it must not be filled out."""
 
-prompts:
+prompts: """You have two options, either provide your list of prompts or generate them following the instructions below."""
 
-    content: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.
-        Please provide a minimum number of 4 prompts"""
-    number: """The number of prompts you are going to evaluate. If you are going to provide the prompts yourself, please specify 
-        the corresponding quantity of prompts you inserted previously. If you are going to generate the prompts, indicate the 
-        quantity of prompts you want to generate. Please provide a minimum number of 4 prompts"""
-    change: """An optional feature that allows you to make changes to your prompts, whether you provide them or generate them. 
-        If you don't want to use it, simply put None. Otherwise, the options are: uppercase, lowercase, random_uppercase, 
-        random_lowercase, random_lowercase_word, random_uppercase_word, synonymous_prompt, grammatical_errors."""
-    features: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
-        prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
-        'Generate prompts with a maximum length of 50 characters.'"""
+    list: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.
+        Please provide a minimum number of 4 prompts. Your prompts must be listed as follows:
+            -'Prompt1'
+            - 'Prompt2'..."""
 
-generation:
+    generation:
 
-    model:
+        number: """The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts.
+            Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not 
+            define this key by default, 4 prompts will be created."""
+        constraints: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
+            prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
+            'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key 
+            defined."""
+        description: """Here is the description of the type of task that summarizes the test cases."""
 
-        name: """The name of the GPT model you will use to generate the prompts."""
-        temperature: """The temperature of the GPT model you will use to generate the prompts."""
-        max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate your prompts."""
+        model:
 
-iterations:
-    number: """The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
-        prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0."""
+            name: """The name of the GPT model you will use to generate the prompts."""
+            temperature: """The temperature of the GPT model you will use to generate the prompts."""
+            max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate your prompts."""
+
+    iterations:
+        number: """The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
+            prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0."""
+        best_prompts: """The number of prompts you want to iterate over. the value must be between 2 and the number of prompts you 
+            provide (or generate) minus one. If you do not define this value but do want to iterate, the default value will be 2."""
+
+        model:
+
+            name: """The name of the GPT model you will use to generate the prompts."""
+            temperature: """The temperature of the GPT model you will use to generate the prompts."""
+            max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate your prompts."""

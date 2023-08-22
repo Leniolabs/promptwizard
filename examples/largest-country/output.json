@@ -1,27 +1,26 @@
 [
     {
-        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
-        "rating": 44.44444444444444
+        "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.",
+        "rating": 20.0
     },
     {
         "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.",
-        "rating": 29.629629629629626
-    },
-    {
-        "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.",
-        "rating": 25.925925925925924
-    },
-    {
-        "prompt": "As an AI, your task is to identify the country with the largest territorial extension from a list of countries given to you. Analyze the list and provide a single output: the name of the country that covers the largest land area.",
-        "rating": 25.925925925925924
+        "rating": 20.0
     },
     {
         "prompt": "You will be provided with a list of country names. Your task is to identify and respond with the name of the country that has the largest land area from the given list. You should not provide any explanations or additional details, just the name of the country.",
-        "rating": 22.22222222222222
+        "rating": 10.0
+    },
+    {
+        "prompt": "As an AI, your task is to identify the country with the largest territorial extension from a list of countries given to you. Analyze the list and provide a single output: the name of the country that covers the largest land area.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
+        "rating": 0.0
     },
     [
         {
-            "description": "Respond the country's name from the list with the largest territorial extension.",
             "method": "Equal"
         },
         [
@@ -87,108 +86,6 @@
                 "answer": "Colombia",
                 "ideal": "South Africa",
                 "result": false
-            },
-            {
-                "test": "Nigeria, Venezuela, Namibia, Mozambique",
-                "answer": "Mozambique",
-                "ideal": "Nigeria",
-                "result": false
-            },
-            {
-                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
-                "answer": "Madagascar",
-                "ideal": "Somalia",
-                "result": false
-            },
-            {
-                "test": "Ukraine, Madagascar, Botswana, Kenya",
-                "answer": "Madagascar",
-                "ideal": "Ukraine",
-                "result": false
-            },
-            {
-                "test": "Madagascar, Botswana, Kenya, Yemen",
-                "answer": "Botswana",
-                "ideal": "Madagascar",
-                "result": false
-            },
-            {
-                "test": "Botswana, Kenya, Yemen, Thailand",
-                "answer": "Botswana",
-                "ideal": "Botswana",
-                "result": true
-            },
-            {
-                "test": "Kenya, Yemen, Thailand, Spain",
-                "answer": "Thailand",
-                "ideal": "Kenya",
-                "result": false
-            },
-            {
-                "test": "Yemen, Thailand, Spain, Turkmenistan",
-                "answer": "Turkmenistan",
-                "ideal": "Yemen",
-                "result": false
-            },
-            {
-                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
-                "answer": "Papua New Guinea",
-                "ideal": "Spain",
-                "result": false
-            },
-            {
-                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
-                "answer": "Papua New Guinea",
-                "ideal": "Cameroon",
-                "result": false
-            },
-            {
-                "test": "Iraq, Paraguay, Zimbabwe, Japan",
-                "answer": "The country with the largest territory among Iraq, Paraguay, Zimbabwe, and Japan is Iraq.",
-                "ideal": "Iraq",
-                "result": true
-            },
-            {
-                "test": "Paraguay, Zimbabwe, Japan, Germany",
-                "answer": "Paraguay",
-                "ideal": "Paraguay",
-                "result": true
-            },
-            {
-                "test": "Japan, Germany, Republic of the Congo, Finland",
-                "answer": "The country with the largest territory among the given options is the Republic of the Congo.",
-                "ideal": "Japan",
-                "result": false
-            },
-            {
-                "test": "Germany, Republic of the Congo, Finland, Vietnam",
-                "answer": "Republic of the Congo",
-                "ideal": "Germany",
-                "result": false
-            },
-            {
-                "test": "Finland, Vietnam, Malaysia, Belize",
-                "answer": "Finland",
-                "ideal": "Finland",
-                "result": true
-            },
-            {
-                "test": "Vietnam, Malaysia, Belize, Poland",
-                "answer": "Malaysia",
-                "ideal": "Vietnam",
-                "result": false
-            },
-            {
-                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
-                "answer": "Guyana",
-                "ideal": "Guyana",
-                "result": true
-            },
-            {
-                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
-                "answer": "Kyrgyzstan",
-                "ideal": "Belarus",
-                "result": false
             }
         ],
         [
@@ -197,9 +94,9 @@
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "The country with the largest territorial extension from the list provided is Russia.",
+                "answer": "The country with the largest territorial extension from the given list is Russia.",
                 "ideal": "Russia",
-                "result": true
+                "result": false
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
@@ -215,13 +112,13 @@
             },
             {
                 "test": "Brazil, Australia, India, Argentina",
-                "answer": "Among the given countries, the country with the largest territorial extension is Russia.",
+                "answer": "The country with the largest territorial extension from the given list is Australia.",
                 "ideal": "Brazil",
                 "result": false
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "The country with the largest territorial extension from the list provided is Kazakhstan.",
+                "answer": "The country with the largest territorial extension from the given list is Kazakhstan.",
                 "ideal": "Australia",
                 "result": false
             },
@@ -239,7 +136,7 @@
             },
             {
                 "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "The country with the largest territorial extension from the given list is Colombia.",
+                "answer": "The country with the largest territorial extension from the given list is Angola.",
                 "ideal": "Angola",
                 "result": false
             },
@@ -251,111 +148,9 @@
             },
             {
                 "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "From the given list, the country with the largest territorial extension is Colombia.",
+                "answer": "The country with the largest territorial extension from the given list is Bolivia.",
                 "ideal": "South Africa",
                 "result": false
-            },
-            {
-                "test": "Nigeria, Venezuela, Namibia, Mozambique",
-                "answer": "The country with the largest territorial extension from the given list is Mozambique.",
-                "ideal": "Nigeria",
-                "result": false
-            },
-            {
-                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
-                "answer": "The country with the largest territorial extension from the list provided is Madagascar.",
-                "ideal": "Somalia",
-                "result": false
-            },
-            {
-                "test": "Ukraine, Madagascar, Botswana, Kenya",
-                "answer": "Based on the list provided, the country with the largest territorial extension is Ukraine.",
-                "ideal": "Ukraine",
-                "result": true
-            },
-            {
-                "test": "Madagascar, Botswana, Kenya, Yemen",
-                "answer": "The country with the largest territorial extension from the given list is Madagascar.",
-                "ideal": "Madagascar",
-                "result": true
-            },
-            {
-                "test": "Botswana, Kenya, Yemen, Thailand",
-                "answer": "From the given list, the country with the largest territorial extension is Thailand.",
-                "ideal": "Botswana",
-                "result": false
-            },
-            {
-                "test": "Kenya, Yemen, Thailand, Spain",
-                "answer": "The country with the largest territorial extension from the given list is Thailand.",
-                "ideal": "Kenya",
-                "result": false
-            },
-            {
-                "test": "Yemen, Thailand, Spain, Turkmenistan",
-                "answer": "The country with the largest territorial extension from the given list is Turkmenistan.",
-                "ideal": "Yemen",
-                "result": false
-            },
-            {
-                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
-                "answer": "The country with the largest territorial extension from the given list is Turkmenistan.",
-                "ideal": "Spain",
-                "result": false
-            },
-            {
-                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
-                "answer": "The country with the largest territorial extension from the given list is Papua New Guinea.",
-                "ideal": "Cameroon",
-                "result": false
-            },
-            {
-                "test": "Iraq, Paraguay, Zimbabwe, Japan",
-                "answer": "Based on the given list, the country with the largest territorial extension is Iraq.",
-                "ideal": "Iraq",
-                "result": true
-            },
-            {
-                "test": "Paraguay, Zimbabwe, Japan, Germany",
-                "answer": "The country with the largest territorial extension from the given list is Germany.",
-                "ideal": "Paraguay",
-                "result": false
-            },
-            {
-                "test": "Japan, Germany, Republic of the Congo, Finland",
-                "answer": "The country with the largest territorial extension from the given list is the Republic of the Congo.",
-                "ideal": "Japan",
-                "result": false
-            },
-            {
-                "test": "Germany, Republic of the Congo, Finland, Vietnam",
-                "answer": "Based on the list provided, the country with the largest territorial extension is the Republic of the Congo.",
-                "ideal": "Germany",
-                "result": false
-            },
-            {
-                "test": "Finland, Vietnam, Malaysia, Belize",
-                "answer": "The country with the largest territorial extension from the given list is Finland.",
-                "ideal": "Finland",
-                "result": true
-            },
-            {
-                "test": "Vietnam, Malaysia, Belize, Poland",
-                "answer": "Poland",
-                "ideal": "Vietnam",
-                "result": false
-            },
-            {
-                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
-                "answer": "Out of the given list of countries (Guyana, Belarus, Kyrgyzstan, Senegal), the country with the largest territorial extension is Guyana.",
-                "ideal": "Guyana",
-                "result": true
-            },
-            {
-                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
-                "answer": "Based on the given list of countries, the country with the largest territorial extension is Belarus.",
-                "ideal": "Belarus",
-                "result": true
             }
         ],
         [
@@ -376,7 +171,7 @@
             },
             {
                 "test": "United States, Brazil, Australia, India",
-                "answer": "Australia",
+                "answer": "Russia",
                 "ideal": "United States",
                 "result": false
             },
@@ -400,7 +195,7 @@
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Russia",
+                "answer": "Kazakhstan",
                 "ideal": "Argentina",
                 "result": false
             },
@@ -421,108 +216,6 @@
                 "answer": "Colombia",
                 "ideal": "South Africa",
                 "result": false
-            },
-            {
-                "test": "Nigeria, Venezuela, Namibia, Mozambique",
-                "answer": "Namibia",
-                "ideal": "Nigeria",
-                "result": false
-            },
-            {
-                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
-                "answer": "Ukraine",
-                "ideal": "Somalia",
-                "result": false
-            },
-            {
-                "test": "Ukraine, Madagascar, Botswana, Kenya",
-                "answer": "Madagascar",
-                "ideal": "Ukraine",
-                "result": false
-            },
-            {
-                "test": "Madagascar, Botswana, Kenya, Yemen",
-                "answer": "Madagascar",
-                "ideal": "Madagascar",
-                "result": true
-            },
-            {
-                "test": "Botswana, Kenya, Yemen, Thailand",
-                "answer": "Botswana",
-                "ideal": "Botswana",
-                "result": true
-            },
-            {
-                "test": "Kenya, Yemen, Thailand, Spain",
-                "answer": "Thailand",
-                "ideal": "Kenya",
-                "result": false
-            },
-            {
-                "test": "Yemen, Thailand, Spain, Turkmenistan",
-                "answer": "Turkmenistan",
-                "ideal": "Yemen",
-                "result": false
-            },
-            {
-                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
-                "answer": "Papua New Guinea",
-                "ideal": "Spain",
-                "result": false
-            },
-            {
-                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
-                "answer": "Papua New Guinea",
-                "ideal": "Cameroon",
-                "result": false
-            },
-            {
-                "test": "Iraq, Paraguay, Zimbabwe, Japan",
-                "answer": "Paraguay",
-                "ideal": "Iraq",
-                "result": false
-            },
-            {
-                "test": "Paraguay, Zimbabwe, Japan, Germany",
-                "answer": "Paraguay",
-                "ideal": "Paraguay",
-                "result": true
-            },
-            {
-                "test": "Japan, Germany, Republic of the Congo, Finland",
-                "answer": "Republic of the Congo",
-                "ideal": "Japan",
-                "result": false
-            },
-            {
-                "test": "Germany, Republic of the Congo, Finland, Vietnam",
-                "answer": "Republic of the Congo",
-                "ideal": "Germany",
-                "result": false
-            },
-            {
-                "test": "Finland, Vietnam, Malaysia, Belize",
-                "answer": "Finland",
-                "ideal": "Finland",
-                "result": true
-            },
-            {
-                "test": "Vietnam, Malaysia, Belize, Poland",
-                "answer": "Malaysia",
-                "ideal": "Vietnam",
-                "result": false
-            },
-            {
-                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
-                "answer": "Russia",
-                "ideal": "Guyana",
-                "result": false
-            },
-            {
-                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
-                "answer": "Belarus",
-                "ideal": "Belarus",
-                "result": true
             }
         ],
         [
@@ -531,15 +224,15 @@
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "The country with the largest territorial extension from the given list is Russia.",
+                "answer": "The country with the largest territorial extension among the given list is Russia.",
                 "ideal": "Russia",
-                "result": true
+                "result": false
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "The country with the largest territorial extension among Canada, United States, Brazil, and Australia is Canada.",
+                "answer": "The country with the largest territorial extension among the given list is Canada.",
                 "ideal": "Canada",
-                "result": true
+                "result": false
             },
             {
                 "test": "United States, Brazil, Australia, India",
@@ -555,141 +248,39 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "The country with the largest territorial extension among the ones mentioned is Kazakhstan.",
+                "answer": "The country with the largest territorial extension among Australia, India, Argentina, and Kazakhstan is Kazakhstan.",
                 "ideal": "Australia",
                 "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "The country with the largest territorial extension among India, Argentina, Kazakhstan, and Algeria is Kazakhstan.",
+                "answer": "The country with the largest territorial extension among the given list is Kazakhstan.",
                 "ideal": "India",
-                "result": true
+                "result": false
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "The country with the largest territorial extension among Argentina, Kazakhstan, Algeria, and Democratic Republic of the Congo is Kazakhstan.",
+                "answer": "The country with the largest territorial extension among the given list is Kazakhstan.",
                 "ideal": "Argentina",
-                "result": true
+                "result": false
             },
             {
                 "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "South Africa",
+                "answer": "The country with the largest territorial extension among Angola, Mali, South Africa, and Colombia is Angola.",
                 "ideal": "Angola",
                 "result": false
             },
             {
                 "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "The country with the largest territorial extension among the ones you mentioned is Ethiopia.",
+                "answer": "The country with the largest territorial extension among the given list is Ethiopia.",
                 "ideal": "Mali",
                 "result": false
             },
             {
                 "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "The country with the largest territorial extension among South Africa, Colombia, Ethiopia, and Bolivia is Ethiopia.",
+                "answer": "The country with the largest territorial extension among South Africa, Colombia, Ethiopia, and Bolivia is Bolivia.",
                 "ideal": "South Africa",
-                "result": true
-            },
-            {
-                "test": "Nigeria, Venezuela, Namibia, Mozambique",
-                "answer": "Mozambique has the largest territorial extension among the countries listed.",
-                "ideal": "Nigeria",
                 "result": false
-            },
-            {
-                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
-                "answer": "Based on known geographical data, the country with the largest territorial extension among the given list is Madagascar.",
-                "ideal": "Somalia",
-                "result": false
-            },
-            {
-                "test": "Ukraine, Madagascar, Botswana, Kenya",
-                "answer": "The country with the largest territorial extension among Ukraine, Madagascar, Botswana, and Kenya is Ukraine.",
-                "ideal": "Ukraine",
-                "result": true
-            },
-            {
-                "test": "Madagascar, Botswana, Kenya, Yemen",
-                "answer": "The country with the largest territorial extension among Madagascar, Botswana, Kenya, and Yemen is Madagascar.",
-                "ideal": "Madagascar",
-                "result": true
-            },
-            {
-                "test": "Botswana, Kenya, Yemen, Thailand",
-                "answer": "Thailand",
-                "ideal": "Botswana",
-                "result": false
-            },
-            {
-                "test": "Kenya, Yemen, Thailand, Spain",
-                "answer": "Spain",
-                "ideal": "Kenya",
-                "result": false
-            },
-            {
-                "test": "Yemen, Thailand, Spain, Turkmenistan",
-                "answer": "The country with the largest territorial extension among Yemen, Thailand, Spain, and Turkmenistan is Turkmenistan.",
-                "ideal": "Yemen",
-                "result": true
-            },
-            {
-                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
-                "answer": "The country with the largest territorial extension among the given list is Papua New Guinea.",
-                "ideal": "Spain",
-                "result": false
-            },
-            {
-                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
-                "answer": "Papua New Guinea",
-                "ideal": "Cameroon",
-                "result": false
-            },
-            {
-                "test": "Iraq, Paraguay, Zimbabwe, Japan",
-                "answer": "The country with the largest territorial extension among Iraq, Paraguay, Zimbabwe, and Japan is Iraq.",
-                "ideal": "Iraq",
-                "result": true
-            },
-            {
-                "test": "Paraguay, Zimbabwe, Japan, Germany",
-                "answer": "Germany",
-                "ideal": "Paraguay",
-                "result": false
-            },
-            {
-                "test": "Japan, Germany, Republic of the Congo, Finland",
-                "answer": "The country with the largest territorial extension among the provided options is Republic of the Congo.",
-                "ideal": "Japan",
-                "result": false
-            },
-            {
-                "test": "Germany, Republic of the Congo, Finland, Vietnam",
-                "answer": "The country with the largest territorial extension from the given list is the Republic of the Congo.",
-                "ideal": "Germany",
-                "result": false
-            },
-            {
-                "test": "Finland, Vietnam, Malaysia, Belize",
-                "answer": "The country with the largest territorial extension among Finland, Vietnam, Malaysia, and Belize is Malaysia.",
-                "ideal": "Finland",
-                "result": true
-            },
-            {
-                "test": "Vietnam, Malaysia, Belize, Poland",
-                "answer": "Based on known geographical data, the country with the largest territorial extension among Vietnam, Malaysia, Belize, and Poland is Poland.",
-                "ideal": "Vietnam",
-                "result": true
-            },
-            {
-                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
-                "answer": "The country with the largest territorial extension among the given list is Kyrgyzstan.",
-                "ideal": "Guyana",
-                "result": false
-            },
-            {
-                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
-                "answer": "Based on known geographical data, the country with the largest territorial extension among Belarus, Kyrgyzstan, Senegal, and Syria is Syria.",
-                "ideal": "Belarus",
-                "result": true
             }
         ],
         [
@@ -722,9 +313,9 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Kazakhstan",
+                "answer": "Australia",
                 "ideal": "Australia",
-                "result": false
+                "result": true
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -754,108 +345,6 @@
                 "test": "South Africa, Colombia, Ethiopia, Bolivia",
                 "answer": "Colombia",
                 "ideal": "South Africa",
-                "result": false
-            },
-            {
-                "test": "Nigeria, Venezuela, Namibia, Mozambique",
-                "answer": "Namibia",
-                "ideal": "Nigeria",
-                "result": false
-            },
-            {
-                "test": "Somalia, Central African Republic, Ukraine, Madagascar",
-                "answer": "Somalia",
-                "ideal": "Somalia",
-                "result": true
-            },
-            {
-                "test": "Ukraine, Madagascar, Botswana, Kenya",
-                "answer": "Madagascar",
-                "ideal": "Ukraine",
-                "result": false
-            },
-            {
-                "test": "Madagascar, Botswana, Kenya, Yemen",
-                "answer": "Madagascar",
-                "ideal": "Madagascar",
-                "result": true
-            },
-            {
-                "test": "Botswana, Kenya, Yemen, Thailand",
-                "answer": "Botswana",
-                "ideal": "Botswana",
-                "result": true
-            },
-            {
-                "test": "Kenya, Yemen, Thailand, Spain",
-                "answer": "Thailand",
-                "ideal": "Kenya",
-                "result": false
-            },
-            {
-                "test": "Yemen, Thailand, Spain, Turkmenistan",
-                "answer": "Turkmenistan",
-                "ideal": "Yemen",
-                "result": false
-            },
-            {
-                "test": "Spain, Turkmenistan, Cameroon, Papua New Guinea",
-                "answer": "Turkmenistan",
-                "ideal": "Spain",
-                "result": false
-            },
-            {
-                "test": "Cameroon, Papua New Guinea, Uzbekistan, Iraq",
-                "answer": "Cameroon",
-                "ideal": "Cameroon",
-                "result": true
-            },
-            {
-                "test": "Iraq, Paraguay, Zimbabwe, Japan",
-                "answer": "Paraguay",
-                "ideal": "Iraq",
-                "result": false
-            },
-            {
-                "test": "Paraguay, Zimbabwe, Japan, Germany",
-                "answer": "Paraguay",
-                "ideal": "Paraguay",
-                "result": true
-            },
-            {
-                "test": "Japan, Germany, Republic of the Congo, Finland",
-                "answer": "Republic of the Congo",
-                "ideal": "Japan",
-                "result": false
-            },
-            {
-                "test": "Germany, Republic of the Congo, Finland, Vietnam",
-                "answer": "Republic of the Congo",
-                "ideal": "Germany",
-                "result": false
-            },
-            {
-                "test": "Finland, Vietnam, Malaysia, Belize",
-                "answer": "Finland",
-                "ideal": "Finland",
-                "result": true
-            },
-            {
-                "test": "Vietnam, Malaysia, Belize, Poland",
-                "answer": "Malaysia",
-                "ideal": "Vietnam",
-                "result": false
-            },
-            {
-                "test": "Guyana, Belarus, Kyrgyzstan, Senegal",
-                "answer": "Guyana",
-                "ideal": "Guyana",
-                "result": true
-            },
-            {
-                "test": "Belarus, Kyrgyzstan, Senegal, Syria",
-                "answer": "Kyrgyzstan",
-                "ideal": "Belarus",
                 "result": false
             }
         ]

@@ -15,15 +15,6 @@ cli/evals/elovalue.py
 cli/evals/equal.py
 cli/evals/function_calling.py
 cli/evals/includes.py
-cli/promptChange/__init__.py
-cli/promptChange/grammatical_errors.py
-cli/promptChange/lowercase.py
-cli/promptChange/random_lowercase.py
-cli/promptChange/random_lowercase_word.py
-cli/promptChange/random_uppercase.py
-cli/promptChange/random_uppercase_word.py
-cli/promptChange/synonymous_prompt.py
-cli/promptChange/uppercase.py
 cli/validation_yaml/__init__.py
 cli/validation_yaml/validation.py
 lenio_ai_prompt_engineer.egg-info/PKG-INFO

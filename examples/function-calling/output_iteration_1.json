@@ -1,121 +1,72 @@
 [
     {
-        "prompt": "You are an AI designed to interpret tasks related to file operations. When provided with a sentence that describes a task, your role is to decode it and produce the corresponding command that matches the function you would execute. The response should be presented as an array, with the first element being the function name, and the second element being the variable that signifies the file type you're working with. The function name could be \"open_file\" for opening a file or \"save_file\" for saving a file. The variable might represent the file type, such as \"PDF\", \"DOCX\", etc. Pay attention to the context to select the suitable function and variable.",
-        "rating": 85.71428571428571
+        "prompt": "Upon receiving an action regarding a specific file type (such as: reading, saving, printing, converting, and so forth) and the file's format (such as: PDF, .docx, Excel spreadsheet, image, PowerPoint, and so on), it is your task to determine and construct the appropriate function call (examples include 'open_file', 'save_file', 'print_file', 'convert', 'edit_file') along with the file variant ('PDF', 'DOCX', 'XLSX', 'JPEG', 'PPTX', 'CSV', 'JSON'). Scrutinize the given information thoroughly to pinpoint the required action and file format to generate the fitting output. Ensure precision and succinctness in your responses.\n\nAs an AI system, your responsibility is to decipher a text string that describes a specific file-related action. From the sentence details, you're meant to identify two aspects:\n\n1. The action being executed (such as open, save, print, convert, edit).\n2. The file type that the action applies to (like PDF, DOCX, XLSX, JPEG, PPTX, CSV, JSON etc).\n\nBased on your interpretation, you are to produce two responses: 'output1' being the extracted action and 'output2' the recognized file type. Note that the action or file type might not always be clearly stated, but often inferred through the context. Utilize your comprehensive language comprehension skills to inspect the sentence and deliver accurate determinations.",
+        "rating": 14.285714285714285
     },
     {
-        "prompt": "You are an AI designed to handle file operations. When provided with a sentence that describes a task, your role is to interpret it and produce the corresponding command that matches the function you would execute. The response should be presented as an array. The first component should be the function name, and the second component should be the variable that signifies the file type you're working with. The function name could be \"open_file\" for opening a file or \"save_file\" for saving a file. The variable could be the file type such as \"PDF\", \"DOCX\", etc. Pay attention to the context to select the suitable function and variable.\n\nAs a sophisticated AI, your responsibility is to determine the operation to be executed and the type of file involved, based on a given sentence. The operation could be either opening or saving a file. The file type will also be mentioned in the sentence; it could be a PDF, DOCX, or any other type. After analyzing the sentence, you should produce a response that includes the specific function to be invoked along with the variable that represents the file type. For example, if the operation is to open a PDF file, the function and variable could be `open_file` and `PDF` respectively.\n\nYour response should solely be the function call, and it should be in this format: `function_variable`. All responses must be in the context of file operations. Keep in mind, your objective is to accurately identify the function and variable from the provided sentence. Be sure to accurately represent the function and the type of file involved.",
-        "rating": 85.71428571428571
+        "prompt": "Given an action performed on a file, such as opening, saving, printing or converting, along with the file type, including PDF, .docx, Excel spreadsheet, image, PowerPoint, etc., your task is to determine and formulate the correct function call (like 'open_file', 'save_file', 'print_file', 'convert', 'edit_file') and the associated file format ('PDF', 'DOCX', 'XLSX', 'JPEG', 'PPTX', 'CSV', 'JSON'). Analyze the provided statement meticulously to discern the required action and file type to produce the correct output. Strive for accurate and precise responses.\n\nAs an AI, you have to analyze a written statement that describes a specific action relating to a file type. Based on the data in the sentence, you need to pinpoint two factors: \n\n1. The action being carried out (for instance, opening, saving, printing, converting, editing).\n2. The file type that the action is applied to (such as PDF, DOCX, XLSX, JPEG, PPTX, CSV, JSON etc). \n\nUpon conclusion of your analysis, two outputs should be provided: 'output1' is the action deduced and 'output2' is the file type recognized. Please note that the action or file type might not be explicitly mentioned, but could often be deduced from the context. Harness your extensive language comprehension skills to dissect the sentence and deliver the correct determinations.",
+        "rating": 0.0
     },
     [
         {
-            "description": "You should reply a function calling",
             "method": "Function_calling"
         },
         [
             {
-                "prompt": "You are an AI designed to interpret tasks related to file operations. When provided with a sentence that describes a task, your role is to decode it and produce the corresponding command that matches the function you would execute. The response should be presented as an array, with the first element being the function name, and the second element being the variable that signifies the file type you're working with. The function name could be \"open_file\" for opening a file or \"save_file\" for saving a file. The variable might represent the file type, such as \"PDF\", \"DOCX\", etc. Pay attention to the context to select the suitable function and variable."
+                "prompt": "Given an action performed on a file, such as opening, saving, printing or converting, along with the file type, including PDF, .docx, Excel spreadsheet, image, PowerPoint, etc., your task is to determine and formulate the correct function call (like 'open_file', 'save_file', 'print_file', 'convert', 'edit_file') and the associated file format ('PDF', 'DOCX', 'XLSX', 'JPEG', 'PPTX', 'CSV', 'JSON'). Analyze the provided statement meticulously to discern the required action and file type to produce the correct output. Strive for accurate and precise responses.\n\nAs an AI, you have to analyze a written statement that describes a specific action relating to a file type. Based on the data in the sentence, you need to pinpoint two factors: \n\n1. The action being carried out (for instance, opening, saving, printing, converting, editing).\n2. The file type that the action is applied to (such as PDF, DOCX, XLSX, JPEG, PPTX, CSV, JSON etc). \n\nUpon conclusion of your analysis, two outputs should be provided: 'output1' is the action deduced and 'output2' is the file type recognized. Please note that the action or file type might not be explicitly mentioned, but could often be deduced from the context. Harness your extensive language comprehension skills to dissect the sentence and deliver the correct determinations."
             },
             {
                 "test": "The goal is to read a PDF file about climate change.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "PDF"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "PDF"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file PDF",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "You want to save the changes made to your .docx file.",
-                "answer": {
-                    "function": "save_file",
-                    "variable": "DOCX"
-                },
-                "ideal": {
-                    "function": "save_file",
-                    "variable": "DOCX"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "save_file DOCX",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "He needs to review an Excel spreadsheet containing sales data.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "XLSX"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "XLSX"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file XLSX",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "She is trying to print a high-resolution image for the art exhibition.",
-                "answer": {
-                    "function": "print_file",
-                    "variable": "JPEG"
-                },
-                "ideal": {
-                    "function": "print_file",
-                    "variable": "JPEG"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "print_file JPEG",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "Please convert the PowerPoint presentation to a PDF for sharing.",
-                "answer": {
-                    "function": "convert_file",
-                    "variable": "PPTX"
-                },
-                "ideal": {
-                    "function": "convert",
-                    "variable": "PPTX"
-                },
-                "result": "function error"
+                "answer": "not a function call",
+                "ideal": "convert PPTX",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "They're editing a CSV file to update the product inventory.",
-                "answer": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
-                "ideal": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "edit_file CSV",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "The task is to analyze the data in a JSON file using Python.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file JSON",
+                "result": "Received text data instead of JSON."
             }
         ],
         [
             {
-                "prompt": "You are an AI designed to handle file operations. When provided with a sentence that describes a task, your role is to interpret it and produce the corresponding command that matches the function you would execute. The response should be presented as an array. The first component should be the function name, and the second component should be the variable that signifies the file type you're working with. The function name could be \"open_file\" for opening a file or \"save_file\" for saving a file. The variable could be the file type such as \"PDF\", \"DOCX\", etc. Pay attention to the context to select the suitable function and variable.\n\nAs a sophisticated AI, your responsibility is to determine the operation to be executed and the type of file involved, based on a given sentence. The operation could be either opening or saving a file. The file type will also be mentioned in the sentence; it could be a PDF, DOCX, or any other type. After analyzing the sentence, you should produce a response that includes the specific function to be invoked along with the variable that represents the file type. For example, if the operation is to open a PDF file, the function and variable could be `open_file` and `PDF` respectively.\n\nYour response should solely be the function call, and it should be in this format: `function_variable`. All responses must be in the context of file operations. Keep in mind, your objective is to accurately identify the function and variable from the provided sentence. Be sure to accurately represent the function and the type of file involved."
+                "prompt": "Upon receiving an action regarding a specific file type (such as: reading, saving, printing, converting, and so forth) and the file's format (such as: PDF, .docx, Excel spreadsheet, image, PowerPoint, and so on), it is your task to determine and construct the appropriate function call (examples include 'open_file', 'save_file', 'print_file', 'convert', 'edit_file') along with the file variant ('PDF', 'DOCX', 'XLSX', 'JPEG', 'PPTX', 'CSV', 'JSON'). Scrutinize the given information thoroughly to pinpoint the required action and file format to generate the fitting output. Ensure precision and succinctness in your responses.\n\nAs an AI system, your responsibility is to decipher a text string that describes a specific file-related action. From the sentence details, you're meant to identify two aspects:\n\n1. The action being executed (such as open, save, print, convert, edit).\n2. The file type that the action applies to (like PDF, DOCX, XLSX, JPEG, PPTX, CSV, JSON etc).\n\nBased on your interpretation, you are to produce two responses: 'output1' being the extracted action and 'output2' the recognized file type. Note that the action or file type might not always be clearly stated, but often inferred through the context. Utilize your comprehensive language comprehension skills to inspect the sentence and deliver accurate determinations."
             },
             {
                 "test": "The goal is to read a PDF file about climate change.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "PDF"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "PDF"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file PDF",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "You want to save the changes made to your .docx file.",
@@ -131,27 +82,15 @@
             },
             {
                 "test": "He needs to review an Excel spreadsheet containing sales data.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "XLSX"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "XLSX"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file XLSX",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "She is trying to print a high-resolution image for the art exhibition.",
-                "answer": {
-                    "function": "print_file",
-                    "variable": "JPEG"
-                },
-                "ideal": {
-                    "function": "print_file",
-                    "variable": "JPEG"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "print_file JPEG",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "Please convert the PowerPoint presentation to a PDF for sharing.",
@@ -167,27 +106,15 @@
             },
             {
                 "test": "They're editing a CSV file to update the product inventory.",
-                "answer": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
-                "ideal": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "edit_file CSV",
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "The task is to analyze the data in a JSON file using Python.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
-                "ideal": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
-                "result": true
+                "answer": "not a function call",
+                "ideal": "open_file JSON",
+                "result": "Received text data instead of JSON."
             }
         ]
     ]

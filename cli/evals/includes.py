@@ -2,8 +2,8 @@ import openai
 from ..cost import input, output
 
 class Includes:
-    def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
-        self.description = description
+    def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts=2):
+
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
         self.model_test = model_test
@@ -21,13 +21,14 @@ class Includes:
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
         self.prompts = prompts
+        self.best_prompts = best_prompts
 
     def test_candidate_prompts(self):
         cost = 0
         tokens_input = 0
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
-        results = [{"description": self.description, "method": "Includes"}]
+        results = [{"method": "Includes"}]
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:
@@ -35,7 +36,7 @@ class Includes:
                     model=self.model_test,
                     messages=[
                         {"role": "system", "content": prompt},
-                        {"role": "user", "content": f"{test_case[0]}"}
+                        {"role": "user", "content": f"{test_case['inout']}"}
                     ],
                     max_tokens=self.model_test_max_tokens,
                     temperature=self.model_test_temperature,
@@ -45,10 +46,10 @@ class Includes:
                 tokens_input = tokens_input + partial_tokens_input
                 tokens_output = tokens_output + partial_tokens_output
                 # Update model results
-                if test_case[1].lower() in response.choices[0].message.content.lower():
+                if test_case['output'].lower() in response.choices[0].message.content.lower():
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case[0], "answer": response.choices[0].message.content, "ideal": test_case[1], "result": test_case[1].lower() in response.choices[0].message.content.lower()})
+                prompt_and_results.append({"test": test_case['inout'], "answer": response.choices[0].message.content, "ideal": test_case['output'], "result": test_case['output'].lower() in response.choices[0].message.content.lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
 
@@ -70,7 +71,7 @@ class Includes:
                 best_percentage = percentage
                 best_prompt = prompt
         sorted_data = sorted(data_list, key=lambda x: x['rating'], reverse=True)
-        best_prompts = [sorted_data[0], sorted_data[1]]
+        best_prompts = sorted_data[:self.best_prompts]
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
         sorted_data.append(results)
         return sorted_data, best_prompts, cost, tokens_input, tokens_output

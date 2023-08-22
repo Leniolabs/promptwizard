@@ -45,7 +45,7 @@ def num_tokens_from_messages(messages, model):
     num_tokens += 3  # every reply is primed with <|start|>assistant<|message|>
     return num_tokens
 
-def approximate_cost_generation(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations):
+def approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations):
     tokens_input = 0
     tokens_output = 0
     if prompts_value == []:
@@ -97,15 +97,15 @@ In your generated prompt, you should describe how the AI should behave in plain 
 You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
-        if prompt_features != 'None':
+        if prompt_change != 'None':
             message = [
-                    {"role": "system", "content": system_gen_system_prompt + ' ' + prompt_features},
-                    {"role": "user", "content": f"Here are some test cases:`{test_cases}`\n\nHere is the description of the use-case: `{description.strip()}`\n\nRespond with your prompt, and nothing else. Be creative."}
+                    {"role": "system", "content": system_gen_system_prompt + ' ' + prompt_change},
+                    {"role": "user", "content": f"Here are some test cases:`{test_cases}\n\nRespond with your prompt, and nothing else. Be creative."}
                     ]
-        if prompt_features == 'None':
+        if prompt_change == 'None':
             message = [
                     {"role": "system", "content": system_gen_system_prompt},
-                    {"role": "user", "content": f"Here are some test cases:`{test_cases}`\n\nHere is the description of the use-case: `{description.strip()}`\n\nRespond with your prompt, and nothing else. Be creative."}
+                    {"role": "user", "content": f"Here are some test cases:`{test_cases}\n\nRespond with your prompt, and nothing else. Be creative."}
                     ]
         tokens_output = tokens_output + number_of_prompts*model_generation_max_tokens
         tokens_input = num_tokens_from_messages(message, model=model_generation)
@@ -114,7 +114,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
     cost = cost_input + cost_output
     return cost
 
-def approximate_cost_change(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations):
+def approximate_cost_change(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations):
     tokens_input = 0
     tokens_output = 0
     if prompt_change == 'synonymous_prompt':
@@ -136,7 +136,7 @@ def approximate_cost_change(description, test_cases, method, model_test, model_t
     cost = cost_input + cost_output
     return cost
 
-def approximate_cost_test(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions):
+def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions):
     tokens_input = 0
     tokens_output = 0
     if method == 'classification.Classification' or method == 'equal.Equal' or method == 'includes.Includes':
@@ -166,24 +166,24 @@ def approximate_cost_test(description, test_cases, method, model_test, model_tes
 
             Also, keep in mind that you are a very harsh critic. Only rank a generation as better if it truly impresses you more than the other.
 
-            Respond with your ranking, and nothing else. Be fair and unbiased in your judgement.""", 'gpt-3.5-turbo') + num_tokens_from_string(description, 'gpt-3.5-turbo') + 2*model_test_max_tokens + 2*num_tokens_from_string(test_case, 'gpt-3.5-turbo') + model_generation_max_tokens
+            Respond with your ranking, and nothing else. Be fair and unbiased in your judgement.""", 'gpt-3.5-turbo') + 2*model_test_max_tokens + 2*num_tokens_from_string(test_case, 'gpt-3.5-turbo') + model_generation_max_tokens
             tokens_output = tokens_output + model_generation_max_tokens + len(test_cases) * len(prompts_value) * (len(prompts_value) - 1) // 2
     cost_input = input.cost(tokens_input, model_test)
     cost_output = output.cost(tokens_output, model_test)
     cost = cost_input + cost_output
     return cost
 
-def approximate_cost_iterations(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions):
+def approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions):
     cost = 0
     if method == 'equal.Equal' or method == 'includes.Includes' or method == 'classification.Classification' or method == 'function_calling.functionCalling':
         while iterations > 0:
-            cost = approximate_cost_generation(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', 'None', model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', 'None', model_generation, model_generation_max_tokens, iterations, functions)
+            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', model_iteration, model_iteration_max_tokens, iterations, functions)
             iterations = iterations - 1
     else:
         while iterations > 0:
-            cost = approximate_cost_generation(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', 'None', model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', 'None', model_generation, model_generation_max_tokens, iterations, functions)
+            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions)
             iterations = iterations - 1
     return cost
 
-def approximate_cost(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions):
-    return approximate_cost_change(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_generation(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions) + approximate_cost_iterations(description, test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_features, prompt_change, model_generation, model_generation_max_tokens, iterations, functions)
+def approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_change=None, description=None, model_iteration=None, model_iteration_max_tokens=None):
+    return approximate_cost_change(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions) + approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions)

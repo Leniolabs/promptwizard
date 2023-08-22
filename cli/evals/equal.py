@@ -2,8 +2,8 @@ import openai
 from ..cost import input, output
 
 class Equal:
-    def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts):
-        self.description = description
+    def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
+
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
         self.model_test = model_test
@@ -12,6 +12,7 @@ class Equal:
         self.model_generation = model_generation
         self.model_generation_temperature = model_generation_temperature
         self.prompts = prompts
+        self.best_prompts = best_prompts
         self.system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
 In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
@@ -27,7 +28,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         tokens_input = 0
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
-        results = [{"description": self.description, "method": "Equal"}]
+        results = [{"method": "Equal"}]
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:
@@ -35,7 +36,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                     model=self.model_test,
                     messages=[
                         {"role": "system", "content": prompt},
-                        {"role": "user", "content": f"{test_case[0]}"}
+                        {"role": "user", "content": f"{test_case['inout']}"}
                     ],
                     max_tokens=self.model_test_max_tokens,
                     temperature=self.model_test_temperature,
@@ -46,10 +47,10 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                 tokens_output = tokens_output + partial_tokens_output
 
                 # Update model results
-                if response.choices[0].message.content.lower() == test_case[1].lower():
+                if response.choices[0].message.content.lower() == test_case['output'].lower():
                     prompt_results[prompt]['correct'] += 1
                 prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case[0], "answer": response.choices[0].message.content, "ideal": test_case[1], "result": response.choices[0].message.content.lower() == test_case[1].lower()})
+                prompt_and_results.append({"test": test_case['inout'], "answer": response.choices[0].message.content, "ideal": test_case['output'], "result": response.choices[0].message.content.lower() == test_case['output'].lower()})
             results.append(prompt_and_results)
             prompt_and_results = []
 
@@ -71,7 +72,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                 best_percentage = percentage
                 best_prompt = prompt
         sorted_data = sorted(data_list, key=lambda x: x['rating'], reverse=True)
-        best_prompts = [sorted_data[0], sorted_data[1]]
+        best_prompts = sorted_data[:self.best_prompts]
         print(f"The best prompt was '{best_prompt}' with a correctness of {best_percentage:.2f}%.")
         sorted_data.append(results)
         return sorted_data, best_prompts, cost, tokens_input, tokens_output

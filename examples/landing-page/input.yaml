@@ -1,17 +1,17 @@
 test:
 
-    cases: [
-        'Promoting an innovative new fitness app, Smartly',
-        'Why a vegan diet is beneficial for your health',
-        'Introducing a new online course on digital marketing',
-        'Launching a new line of eco-friendly clothing',
-        'Promoting a new travel blog focusing on budget travel',
-        'Advertising a new software for efficient project management',
-        'Introducing a new book on mastering Python programming',
-        'Promoting a new online platform for learning languages',
-        'Advertising a new service for personalized meal plans',
-        'Launching a new app for mental health and mindfulness',
-    ]
+    cases: 
+        - 'Promoting an innovative new fitness app, Smartly'
+        - 'Why a vegan diet is beneficial for your health'
+        - 'Introducing a new online course on digital marketing'
+        - 'Launching a new line of eco-friendly clothing'
+        - 'Promoting a new travel blog focusing on budget travel'
+        - 'Advertising a new software for efficient project management'
+        - 'Introducing a new book on mastering Python programming'
+        - 'Promoting a new online platform for learning languages'
+        - 'Advertising a new service for personalized meal plans'
+        - 'Launching a new app for mental health and mindfulness'
+    
 
     description: "Generate a landing page headline."
     method: elovalue.Elo
@@ -23,18 +23,18 @@ test:
 
 prompts:
 
-    content: []
-    number: 4
-    change: 'None'
-    features: 'None'
+    generation:
+        description: "Generate a landing page headline."
+        number: 4
+        constraints: 'None'
+        model:
+            name: 'gpt-4'
+            temperature: 1.5
+            max_tokens: 500
 
-generation:
-
-    model:
-
-        name: 'gpt-4'
-        temperature: 0.9
-        max_tokens: 500
-
-iterations:
-    number: 1
+    iterations:
+        number: 1
+        model:
+            name: 'gpt-4'
+            temperature: 0.9
+            max_tokens: 500

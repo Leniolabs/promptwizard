@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, ValidationError, validates
+from marshmallow import Schema, fields, ValidationError, validates, validates_schema
 
 class ModelSchema(Schema):
         name = fields.Str(required=True)
@@ -29,16 +29,14 @@ class FirstFormatTestCaseSchema(Schema):
         if value != expected_method:
             raise ValidationError(f"Method must be '{expected_method}'.")
 
+class TestCaseSchema(Schema):
+    inout = fields.String(required=True)
+    output = fields.String(required=True)
+
 class SecondFormatTestCaseSchema(Schema):
-        cases = fields.List(fields.List(fields.Str(required=True)))
+        cases = fields.List(fields.Nested(TestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
-        description = fields.Str(required=True)
-        @validates("cases")
-        def validate_cases_list(self, cases):
-            for case in cases:
-                if len(case) != 2:
-                    raise ValidationError("Each test case must consist of 2 strings, the first one being the specific test case and the second one must be the correct answer.")
         @validates("method")
         def validate_method(self, value):
             expected_method1 = "classification.Classification"
@@ -52,13 +50,17 @@ class ThirdFormatFunctionSchema(Schema):
         description = fields.Str(required=True)
         parameters = fields.Dict(required=True)
 
+class CaseSchema(Schema):
+    inout = fields.Str(required=True)
+    output1 = fields.Str(required=True)
+    output2 = fields.Str(required=True)
+
 class ThirdFormatTestCaseSchema(Schema):
-        cases = fields.List(fields.List(fields.Str(required=True)))
+        cases = fields.List(fields.Nested(CaseSchema))
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
         functions = fields.List(fields.Nested(ThirdFormatFunctionSchema))
         function_call = fields.Str(required=True)
-        description = fields.Str(required=True)
         @validates("cases")
         def validate_cases_list(self, cases):
             for case in cases:
@@ -69,46 +71,48 @@ class ThirdFormatTestCaseSchema(Schema):
             expected_method = "function_calling.functionCalling"
             if value != expected_method:
                 raise ValidationError(f"Method must be '{expected_method}'.")
-
-
-class PromptSchema(Schema):
-        content = fields.List(fields.Str(required=True))
-        number = fields.Integer(required=True)
-        change = fields.Str(required=True)
-        features = fields.Str(required=True)
-        @validates("number")
-        def validate_number_iterations(self, value):
-            if not (value >= 4):
-                raise ValidationError("'number' must be an integer equal or greater than 4.")
-        changes = ['uppercase', 'lowercase']
-        @validates("change")
-        def validate_change_prompts(self, value):
-             changes = ['uppercase', 'lowercase', 'random_uppercase', 'random_lowercase', 'random_lowercase_word', 'random_uppercase_word', 'synonymous_prompt', 'grammatical_errors', 'None']
-             if not value in changes:
-                  raise ValidationError(f"'change' must be one of the following: {', '.join(changes)}.")
-
-class GenerationModelSchema(Schema):
-        model = fields.Nested(ModelSchema)
-
+            
 class IterationsSchema(Schema):
-        number = fields.Integer(required=True, strict=True)
+        number = fields.Integer(strict=True, missing=0)
+        best_prompts = fields.Integer(strict=True)
+        model = fields.Nested(ModelSchema)
         @validates("number")
         def validate_number_iterations(self, value):
             if not (0 <= value):
                 raise ValidationError("'number' must be an integer equal or greater than 0.")
 
+class GenerationModelSchema(Schema):
+        model = fields.Nested(ModelSchema)
+        number = fields.Integer(missing=4)
+        constraints = fields.Str()
+        description = fields.Str()
+        @validates("number")
+        def validate_number_iterations(self, value):
+            if not (value >= 4):
+                raise ValidationError("'number' must be an integer equal or greater than 4.")
+
+class PromptSchema(Schema):
+        list = fields.List(fields.Str())
+        iterations = fields.Nested(IterationsSchema)
+        generation = fields.Nested(GenerationModelSchema)
+        @validates_schema
+        def validate_my_list_length(self, data, **kwargs):
+            my_list = data.get('my_list')
+            if my_list is not None and len(my_list) < 4:
+                raise ValidationError("The list should have at least 4 elements.")
+        
+
+
 class ConfigSchema3(Schema):
         test = fields.Nested(ThirdFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
-        generation = fields.Nested(GenerationModelSchema, required=True)
-        iterations = fields.Nested(IterationsSchema, required=True)
+
 class ConfigSchema2(Schema):
         test = fields.Nested(SecondFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
-        generation = fields.Nested(GenerationModelSchema, required=True)
-        iterations = fields.Nested(IterationsSchema, required=True)
+
+
 class ConfigSchema1(Schema):
         test = fields.Nested(FirstFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
-        generation = fields.Nested(GenerationModelSchema, required=True)
-        iterations = fields.Nested(IterationsSchema, required=True)
+        
