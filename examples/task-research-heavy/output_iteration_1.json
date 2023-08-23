@@ -1,11 +1,11 @@
 [
     {
-        "prompt": "\"As an AI, your mission is to ascertain if a given task is research-intensive. You'll face a plethora of tasks, and your responsibility is to judge if the task necessitates substantial research for its completion. If the task comprises collecting, scrutinizing, or explaining information from diverse sources, it should be labeled as 'true'. On the contrary, if the task is primarily about action, such as booking a table at a restaurant or purchasing a product, or about constructing or organizing content with no need for comprehensive research, it should be tagged as 'false'. Bear in mind, your options for response are exclusively 'true' and 'false'.\" \n\n\"As an AI, your role is to evaluate if a task presented to you is heavy on research. An array of tasks will come your way, and your role is to assess if a significant level of research is a prerequisite for the task's completion. If data collection, analysis, or interpretation from several sources is part of the task, then it falls under the 'true' category. However, if the task revolves around more hands-on work, such as arranging an appointment or file management, without the need for broad research, then it's a 'false'. Your judgements should strictly be 'true' or 'false'.\"",
-        "rating": 55.55555555555556
+        "prompt": "As an AI, it's your responsibility to ascertain if a certain task is demanding in terms of research or not. For tasks necessitating extensive probing, validation of facts, or the compilation of data from diverse sources, categorize them as 'true'. Conversely, if the task revolves around executing actions, content creation, structuring, or scheduling reservations, tag it as 'false'. Be mindful, your only allowed responses are 'true' or 'false'.",
+        "rating": 66.66666666666666
     },
     {
-        "prompt": "\"As an AI, it's your responsibility to discern if a presented task involves extensive research or not. You would come across a wide range of tasks, and you must categorize them based on their requirement for research. In case a task entails exhaustive compiling, analyzing, or interpreting data from diverse sources, it should be labeled as 'true'. On the contrary, if the task is more focused on practical actions, such as booking appointments or buying an item, or demands organizing or producing content without the necessity for extended research, it should be tagged as 'false'. Bear in mind, your only acceptable outputs are 'true' and 'false'.\"\n\n\"As an AI, you are responsible for identifying whether a given task necessitates significant research. You will be presented with an assortment of tasks, and your role is to ascertain if the task demands considerable research for its completion. If the task involves the collection, analysis, or interpretation of information from several sources, it should be determined as 'true'. However, if the task primarily involves actions, like scheduling an appointment or sorting out documents, that doesn\u2019t demand comprehensive research, it should be categorized as 'false'. Remember, your answers should be confined to 'true' or 'false' only.\"",
-        "rating": 44.44444444444444
+        "prompt": "\"As an AI, your job is to determine if a task is research-heavy or not. If the task necessitates extensive exploration, verification of facts, or amassing details from a range of sources, it should be marked as 'true'. Conversely, if the task pertains to activities, generating content, arrangement, or booking appointments, it should be marked as 'false'. It's worth noting that your responses can only be 'true' or 'false'.\"",
+        "rating": 55.55555555555556
     },
     [
         {
@@ -13,13 +13,13 @@
         },
         [
             {
-                "prompt": "\"As an AI, it's your responsibility to discern if a presented task involves extensive research or not. You would come across a wide range of tasks, and you must categorize them based on their requirement for research. In case a task entails exhaustive compiling, analyzing, or interpreting data from diverse sources, it should be labeled as 'true'. On the contrary, if the task is more focused on practical actions, such as booking appointments or buying an item, or demands organizing or producing content without the necessity for extended research, it should be tagged as 'false'. Bear in mind, your only acceptable outputs are 'true' and 'false'.\"\n\n\"As an AI, you are responsible for identifying whether a given task necessitates significant research. You will be presented with an assortment of tasks, and your role is to ascertain if the task demands considerable research for its completion. If the task involves the collection, analysis, or interpretation of information from several sources, it should be determined as 'true'. However, if the task primarily involves actions, like scheduling an appointment or sorting out documents, that doesn\u2019t demand comprehensive research, it should be categorized as 'false'. Remember, your answers should be confined to 'true' or 'false' only.\""
+                "prompt": "As an AI, it's your responsibility to ascertain if a certain task is demanding in terms of research or not. For tasks necessitating extensive probing, validation of facts, or the compilation of data from diverse sources, categorize them as 'true'. Conversely, if the task revolves around executing actions, content creation, structuring, or scheduling reservations, tag it as 'false'. Be mindful, your only allowed responses are 'true' or 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -59,9 +59,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -72,7 +72,7 @@
         ],
         [
             {
-                "prompt": "\"As an AI, your mission is to ascertain if a given task is research-intensive. You'll face a plethora of tasks, and your responsibility is to judge if the task necessitates substantial research for its completion. If the task comprises collecting, scrutinizing, or explaining information from diverse sources, it should be labeled as 'true'. On the contrary, if the task is primarily about action, such as booking a table at a restaurant or purchasing a product, or about constructing or organizing content with no need for comprehensive research, it should be tagged as 'false'. Bear in mind, your options for response are exclusively 'true' and 'false'.\" \n\n\"As an AI, your role is to evaluate if a task presented to you is heavy on research. An array of tasks will come your way, and your role is to assess if a significant level of research is a prerequisite for the task's completion. If data collection, analysis, or interpretation from several sources is part of the task, then it falls under the 'true' category. However, if the task revolves around more hands-on work, such as arranging an appointment or file management, without the need for broad research, then it's a 'false'. Your judgements should strictly be 'true' or 'false'.\""
+                "prompt": "\"As an AI, your job is to determine if a task is research-heavy or not. If the task necessitates extensive exploration, verification of facts, or amassing details from a range of sources, it should be marked as 'true'. Conversely, if the task pertains to activities, generating content, arrangement, or booking appointments, it should be marked as 'false'. It's worth noting that your responses can only be 'true' or 'false'.\""
             },
             {
                 "test": "Find the best contact email on this site.",

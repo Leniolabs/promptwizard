@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, or involves organizing or creating content without the need for extensive research, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
         "rating": 77.77777777777779
     },
     {
-        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or organizing files, and does not require extensive research, you should classify it as 'false'. Remember, your responses should only be 'true' or 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
+        "rating": 77.77777777777779
+    },
+    {
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your output should only be 'true' or 'false'.",
         "rating": 66.66666666666666
     },
     {
-        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, and does not require extensive research, you should classify it as 'false'. Remember, your responses should only be 'true' or 'false'.",
-        "rating": 66.66666666666666
-    },
-    {
-        "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, or involves creating content from scratch, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
         "rating": 66.66666666666666
     },
     [
@@ -21,7 +21,7 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, or involves organizing or creating content without the need for extensive research, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -43,15 +43,15 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "false",
-                "result": false
+                "result": true
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -80,7 +80,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or organizing files, and does not require extensive research, you should classify it as 'false'. Remember, your responses should only be 'true' or 'false'."
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your output should only be 'true' or 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -108,9 +108,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "false",
-                "result": false
+                "result": true
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -126,9 +126,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -139,7 +139,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, and does not require extensive research, you should classify it as 'false'. Remember, your responses should only be 'true' or 'false'."
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -167,9 +167,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "false",
-                "result": false
+                "result": true
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -185,9 +185,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -198,7 +198,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to discern whether a given task is research-intensive or not. You will be presented with a variety of tasks, and your job is to determine if the task requires a significant amount of research to be completed. If the task involves gathering, analyzing, or interpreting information from various sources, you should classify it as 'true'. However, if the task is more action-oriented, such as making a reservation or ordering a product, or involves creating content from scratch, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -226,9 +226,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "false",
-                "result": false
+                "result": true
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",

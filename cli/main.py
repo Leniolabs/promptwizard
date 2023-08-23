@@ -537,6 +537,11 @@ def main():
     openai.api_type = validated_env["OPENAI_API_TYPE"]
     openai.api_version = validated_env["OPENAI_API_VERSION"]
 
+    print("openai.api_base =", openai.api_base)
+    print("openai.api_key =", openai.api_key)
+    print("openai.api_type =", openai.api_type)
+    print("openai.api_version =", openai.api_version)
+
     if args.optional_string == "don't run":
         if (valid_yaml(args.yaml_file)):
             approximate = approximate_cost(args.yaml_file)

@@ -37,7 +37,7 @@ Before using Prompt-Engineer you will need to have your environment variables de
 
 ### Prompt Evaluation
 
-1. Make sure you have the YAML file with the prompts you want to evaluate. The YAML file should follow the proper structure. If the "prompts" variable is already defined in the YAML, it will be used for evaluation.
+1. Make sure you have the YAML file with the prompts you want to evaluate. The YAML file should follow the proper structure.
 
 2. Run the package with the YAML file as an argument:
 
@@ -45,7 +45,7 @@ Before using Prompt-Engineer you will need to have your environment variables de
 lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
 
-3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file.
+3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file. A larger number of files will also be generated if you have indicated in your yaml file that you want to perform iterations.
 
 ### Automatic Prompt Generation
 
@@ -165,7 +165,7 @@ In case the YAML file you wish to evaluate has errors in its structure, don't wo
 
 ## Special features
 
-Remember that you can also make changes to your provided prompts or those you will generate. For example, you can convert the entire content of your prompts to uppercase or rephrase them with grammatical errors.
+Remember that when you generate your prompts you can use the `constraints` key to explicitly request that the prompts you are going to generate have a special characteristic, for example, 'generate prompts of a length not exceeding 20 words'.
 
 ## Cost and tokens
 
