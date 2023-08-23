@@ -12,27 +12,9 @@ import numpy as np
 from collections import defaultdict
 import dotenv
 from .validation_yaml import validation
+from pathlib import Path
 
-from marshmallow import Schema, fields, ValidationError, validates_schema
-
-class EnvSchema(Schema):
-    OPENAI_API_BASE = fields.Str(allow_none=True)
-    OPENAI_API_KEY = fields.Str(required=True)
-    OPENAI_API_TYPE = fields.Str(allow_none=True)
-    OPENAI_API_VERSION = fields.Str(allow_none=True)
-
-    @validates_schema
-    def validate_related_fields(self, data, **kwargs):
-        api_type = data.get('OPENAI_API_TYPE')
-        api_base = data.get('OPENAI_API_BASE')
-        api_version = data.get('OPENAI_API_VERSION')
-
-        if api_type == 'azure':
-            if api_base is None:
-                raise ValidationError("OPENAI_API_BASE is required when OPENAI_API_TYPE is 'azure'")
-            if api_version is None:
-                raise ValidationError("OPENAI_API_VERSION is required when OPENAI_API_TYPE is 'azure'")
-
+from marshmallow import ValidationError
 
 def valid_yaml(file_name):
     
@@ -438,6 +420,7 @@ def run_evaluation(file, approximate_cost):
     
 
 def main():
+    
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")
     parser.add_argument("yaml_file", help="Path of the YAML file to read.\n The following is the structure that your YAML files should have.\n"
 
@@ -511,36 +494,41 @@ def main():
     "number: The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at "
         "prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0.")
     parser.add_argument("optional_string", help="Optional string parameter.", nargs='?', default=None)
+    parser.add_argument("--env_path", help="Path to the .env file.", default=None)
     args = parser.parse_args()
     try:
-        dotenv.load_dotenv()
+        def valid_path(path):
+            try:
+                Path(path)
+                return True
+            except (ValueError, TypeError):
+                return False
+        if valid_path(args.env_path):
+            dotenv.load_dotenv(dotenv_path=args.env_path)
+        else:
+            dotenv.load_dotenv(dotenv_path=os.getcwd()+'/.env')
+        
     except FileNotFoundError:
         print("Error: The .env file was not found in your directory.")
         exit(1)
-
-    openai_env = {
-    "OPENAI_API_BASE": os.getenv("OPENAI_API_BASE"),
-    "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY"),
-    "OPENAI_API_TYPE": os.getenv("OPENAI_API_TYPE"),
-    "OPENAI_API_VERSION": os.getenv("OPENAI_API_VERSION")
-    }
-    env_schema = EnvSchema()
-
-    try:
-        validated_env = env_schema.load(openai_env)
-    except ValidationError as error:
-        print("Error: Invalid environment variables:", error.messages)
-        exit(1)
-
-    openai.api_base = validated_env["OPENAI_API_BASE"]
-    openai.api_key = validated_env["OPENAI_API_KEY"]
-    openai.api_type = validated_env["OPENAI_API_TYPE"]
-    openai.api_version = validated_env["OPENAI_API_VERSION"]
-
-    print("openai.api_base =", openai.api_base)
-    print("openai.api_key =", openai.api_key)
-    print("openai.api_type =", openai.api_type)
-    print("openai.api_version =", openai.api_version)
+    if os.getenv("OPENAI_API_TYPE") == "azure":
+        if os.getenv("OPENAI_API_BASE") is None:
+            print("Error: OPENAI_API_BASE is required when OPENAI_API_TYPE is 'azure'")
+            exit(1)
+        if os.getenv("OPENAI_API_VERSION") is None:
+            print("Error: OPENAI_API_VERSION is required when OPENAI_API_TYPE is 'azure'")
+            exit(1)
+    if os.getenv("OPENAI_API_BASE") != None and os.getenv("OPENAI_API_TYPE") != None and os.getenv("OPENAI_API_VERSION") != None:
+        openai_env = {
+        "OPENAI_API_BASE": os.getenv("OPENAI_API_BASE"),
+        "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY"),
+        "OPENAI_API_TYPE": os.getenv("OPENAI_API_TYPE"),
+        "OPENAI_API_VERSION": os.getenv("OPENAI_API_VERSION")
+        }
+    if not (os.getenv("OPENAI_API_BASE") != None and os.getenv("OPENAI_API_TYPE") != None and os.getenv("OPENAI_API_VERSION") != None):
+        openai_env = {
+            "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY")
+        }
 
     if args.optional_string == "don't run":
         if (valid_yaml(args.yaml_file)):

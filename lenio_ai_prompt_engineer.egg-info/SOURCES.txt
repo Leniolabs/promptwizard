@@ -4,6 +4,7 @@ cli/__init__.py
 cli/generation.py
 cli/iteration.py
 cli/main.py
+cli/prueba.py
 cli/approximate_cost/__init__.py
 cli/approximate_cost/cost.py
 cli/cost/__init__.py

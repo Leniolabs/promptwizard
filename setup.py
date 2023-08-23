@@ -5,7 +5,7 @@ with open('/Users/camilo.basualdo/Documents/prompt-engineer/lenio-ai-prompt-engi
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.8',
+    version='1.4.10',
     packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
     python_requires='>=3.7',
     long_description=long_description,

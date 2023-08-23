@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, or organizing things, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
         "rating": 77.77777777777779
     },
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves more of execution, organization, or creation without the need for substantial research, classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
         "rating": 77.77777777777779
     },
     {
         "approximate_cost": 0.24002999999999997,
-        "real_cost": 0.062465999999999994,
-        "tokens_input_gpt-3.5-turbo": 5772,
+        "real_cost": 0.061730999999999994,
+        "tokens_input_gpt-3.5-turbo": 5682,
         "tokens_output_gpt-3.5-turbo": 54,
         "tokens_input_gpt-4": 734,
-        "tokens_output_gpt-4": 528
+        "tokens_output_gpt-4": 518
     }
 ]

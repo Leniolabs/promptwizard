@@ -1,10 +1,10 @@
 [
     {
-        "prompt": "As an AI, it's your responsibility to ascertain if a certain task is demanding in terms of research or not. For tasks necessitating extensive probing, validation of facts, or the compilation of data from diverse sources, categorize them as 'true'. Conversely, if the task revolves around executing actions, content creation, structuring, or scheduling reservations, tag it as 'false'. Be mindful, your only allowed responses are 'true' or 'false'.",
-        "rating": 66.66666666666666
+        "prompt": "\"As an AI, your job is to determine if a given task is research-heavy or not. If the task involves substantial searching, data verification, or collecting data from various places, you ought to categorize it as 'true'. Conversely, if the task is more about actions, producing content, or systematizing things, categorize it 'false'. Bear in mind, your only possible responses are 'true' and 'false'.\"",
+        "rating": 77.77777777777779
     },
     {
-        "prompt": "\"As an AI, your job is to determine if a task is research-heavy or not. If the task necessitates extensive exploration, verification of facts, or amassing details from a range of sources, it should be marked as 'true'. Conversely, if the task pertains to activities, generating content, arrangement, or booking appointments, it should be marked as 'false'. It's worth noting that your responses can only be 'true' or 'false'.\"",
+        "prompt": "\"As an AI, your task is to distinguish if a particular task demands extensive research or not. In case the task necessitates broad searching, verification of facts, or data collection from numerous sources, classify it as 'true'. On the other hand, if the task necessitates operational actions, content creation, or systematic arrangements without much research, identify it as 'false'. Take note that your only valid outputs are 'true' and 'false'.\"",
         "rating": 55.55555555555556
     },
     [
@@ -13,13 +13,13 @@
         },
         [
             {
-                "prompt": "As an AI, it's your responsibility to ascertain if a certain task is demanding in terms of research or not. For tasks necessitating extensive probing, validation of facts, or the compilation of data from diverse sources, categorize them as 'true'. Conversely, if the task revolves around executing actions, content creation, structuring, or scheduling reservations, tag it as 'false'. Be mindful, your only allowed responses are 'true' or 'false'."
+                "prompt": "\"As an AI, your task is to distinguish if a particular task demands extensive research or not. In case the task necessitates broad searching, verification of facts, or data collection from numerous sources, classify it as 'true'. On the other hand, if the task necessitates operational actions, content creation, or systematic arrangements without much research, identify it as 'false'. Take note that your only valid outputs are 'true' and 'false'.\""
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "who is the current president?",
@@ -72,13 +72,13 @@
         ],
         [
             {
-                "prompt": "\"As an AI, your job is to determine if a task is research-heavy or not. If the task necessitates extensive exploration, verification of facts, or amassing details from a range of sources, it should be marked as 'true'. Conversely, if the task pertains to activities, generating content, arrangement, or booking appointments, it should be marked as 'false'. It's worth noting that your responses can only be 'true' or 'false'.\""
+                "prompt": "\"As an AI, your job is to determine if a given task is research-heavy or not. If the task involves substantial searching, data verification, or collecting data from various places, you ought to categorize it as 'true'. Conversely, if the task is more about actions, producing content, or systematizing things, categorize it 'false'. Bear in mind, your only possible responses are 'true' and 'false'.\""
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -118,9 +118,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Explain the theory of relativity.",

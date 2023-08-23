@@ -1,6 +1,10 @@
 [
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, or organizing things, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
+        "rating": 77.77777777777779
+    },
+    {
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves more of execution, organization, or creation without the need for substantial research, classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
         "rating": 77.77777777777779
     },
     {
@@ -8,17 +12,131 @@
         "rating": 77.77777777777779
     },
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your output should only be 'true' or 'false'.",
-        "rating": 66.66666666666666
-    },
-    {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
-        "rating": 66.66666666666666
+        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
+        "rating": 77.77777777777779
     },
     [
         {
             "method": "Classification"
         },
+        [
+            {
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, or organizing things, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves more of execution, organization, or creation without the need for substantial research, classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+            },
+            {
+                "test": "Find the best contact email on this site.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "who is the current president?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "order me a pizza",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "what are some ways a doctor could use an assistant?",
+                "answer": "false",
+                "ideal": "true",
+                "result": false
+            },
+            {
+                "test": "write a speech on the danger of cults",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Make a reservation at The Accent for 9pm",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "organize my google drive",
+                "answer": "false",
+                "ideal": "false",
+                "result": true
+            },
+            {
+                "test": "Find the highest-rated Italian restaurant near me.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            },
+            {
+                "test": "Explain the theory of relativity.",
+                "answer": "true",
+                "ideal": "true",
+                "result": true
+            }
+        ],
         [
             {
                 "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'."
@@ -70,124 +188,6 @@
                 "answer": "true",
                 "ideal": "true",
                 "result": true
-            },
-            {
-                "test": "Explain the theory of relativity.",
-                "answer": "true",
-                "ideal": "true",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your output should only be 'true' or 'false'."
-            },
-            {
-                "test": "Find the best contact email on this site.",
-                "answer": "true",
-                "ideal": "true",
-                "result": true
-            },
-            {
-                "test": "who is the current president?",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
-            },
-            {
-                "test": "order me a pizza",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "what are some ways a doctor could use an assistant?",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
-            },
-            {
-                "test": "write a speech on the danger of cults",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "Make a reservation at The Accent for 9pm",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "organize my google drive",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
-            },
-            {
-                "test": "Explain the theory of relativity.",
-                "answer": "true",
-                "ideal": "true",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If a task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. On the other hand, if a task involves actions, writing, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
-            },
-            {
-                "test": "Find the best contact email on this site.",
-                "answer": "true",
-                "ideal": "true",
-                "result": true
-            },
-            {
-                "test": "who is the current president?",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
-            },
-            {
-                "test": "order me a pizza",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "what are some ways a doctor could use an assistant?",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
-            },
-            {
-                "test": "write a speech on the danger of cults",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "Make a reservation at The Accent for 9pm",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "organize my google drive",
-                "answer": "false",
-                "ideal": "false",
-                "result": true
-            },
-            {
-                "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
-                "ideal": "true",
-                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",

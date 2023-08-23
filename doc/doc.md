@@ -27,31 +27,17 @@ To run Prompt Engineer, you will need to set up and specify your OpenAI API key.
 
 ### Prompt Evaluation
 
-Make sure you have the YAML file with the prompts you want to evaluate. The YAML file should follow the proper structure. You have two options for the evaluation of your YAML file, the first is the following:
+Make sure you have the YAML file with the prompts you want to evaluate. The YAML file should follow the proper structure. You have two options for the evaluation of your YAML file when you run evaluation by terminal, the first is the following:
 
-- Run the package with the YAML file as an argument:
+- Run the package with the YAML file as an argument if you have your .env file in the same directory as the package:
 
 ```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
-The other option you have is the following:
-
-- Suppose you have a file called my_script.py and you want to evaluate a YAML file that you have:
+- Run the package with the YAML file as an argument with the path of your .env file as shown below
 
 ```bash
-import lenio-ai-prompt-engineer
-print(lenio-ai-prompt-engineer.valid_yaml(YAML_FILE_PATH))
-```
-That will tell you if your YAML file meets the required format to perform the evaluation. If you want to know an approximate value of the cost of the evaluation, execute the following:
-
-```bash
-print(lenio-ai-prompt-engineer.approximate_cost(YAML_FILE_PATH))
-```
-
-If cost is not an issue for you, just run your evaluation.
-
-```bash
-print(lenio-ai-prompt-engineer.run_evaluation(YAML_FILE_PATH))
+lenio-ai-prompt-engineer YAML_FILE_PATH --env_path .env_FILE_PATH
 ```
 
 The evaluation result will be saved in an output.json file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot scatter_plot.png will also be saved in the same folder as the YAML file. A larger number of files will also be generated if you have indicated in your yaml file that you want to perform iterations.
@@ -60,7 +46,7 @@ The evaluation result will be saved in an output.json file in the same folder as
 
 If the "prompts" variable is not defined in the YAML file, the program will automatically generate prompts for evaluation.
 
-###Prompt Iteration
+### Prompt Iteration
 
 If you want, you can also specify the number of iterations you want to perform on your provided prompts or the ones that will be generated automatically to obtain prompts that achieve optimal behavior for the language model.
 
@@ -345,6 +331,10 @@ If you want to know how much it will cost to run your evaluation, simply enter:
 
 ```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH "don't run"
+```
+Or
+```bash
+lenio-ai-prompt-engineer YAML_FILE_PATH "don't run" --env_path .env_FILE_PATH
 ```
 
 The other option to know the cost is to carry out the steps that we explained in the `Usage` section.
