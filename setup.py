@@ -1,11 +1,11 @@
 from setuptools import setup
 
-with open('/Users/camilo.basualdo/Documents/prompt-engineer/lenio-ai-prompt-engineer/doc/doc.md', 'r', encoding='utf-8') as f:
+with open('cli/doc/doc.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.10',
+    version='1.4.11',
     packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
     python_requires='>=3.7',
     long_description=long_description,
@@ -24,4 +24,6 @@ setup(
             'lenio-ai-prompt-engineer=cli.main:main',
         ],
     },
+    package_data={'': ['doc/doc.md']},
+    include_package_data=True,
 )

@@ -10,6 +10,7 @@ cli/approximate_cost/cost.py
 cli/cost/__init__.py
 cli/cost/input.py
 cli/cost/output.py
+cli/doc/doc.md
 cli/evals/__init__.py
 cli/evals/classification.py
 cli/evals/elovalue.py

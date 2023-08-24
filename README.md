@@ -135,14 +135,12 @@ prompts: """You have two options, either provide your list of prompts or generat
 
     list: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.
         Please provide a minimum number of 4 prompts. Your prompts must be listed as follows:
-            -'Prompt1'
+            - 'Prompt1'
             - 'Prompt2'..."""
 
     generation:
 
-        number: """The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts.
-            Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not 
-            define this key by default, 4 prompts will be created."""
+        number: """The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts. Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not define this key by default, 4 prompts will be created."""
         constraints: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
             prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
             'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key 

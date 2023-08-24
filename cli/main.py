@@ -1,6 +1,5 @@
 import argparse
 import os
-import openai
 import json
 import matplotlib.pyplot as plt
 from . import generation, iteration
@@ -13,8 +12,6 @@ from collections import defaultdict
 import dotenv
 from .validation_yaml import validation
 from pathlib import Path
-
-from marshmallow import ValidationError
 
 def valid_yaml(file_name):
     
@@ -424,79 +421,104 @@ def main():
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")
     parser.add_argument("yaml_file", help="Path of the YAML file to read.\n The following is the structure that your YAML files should have.\n"
 
-"test:\n\n"
+"""test:\n"""
 
-    "cases: Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the"
-        "Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, "
-        "equal or includes, it should be a list of lists with two elements, where the first element is the test case and the "
-        "second element is the correct response to the test. Remember that if you decide to use classification, only a boolean"
-        "value is allowed as a response. And if you choose function_calling.functionCalling method the test cases should be a list"
-        "of lists with three elements where the first one is a test case, the second one is the correct function and the third one "
-        "the correct variable to call the function.\n"
+    """cases: Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the
+        Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
+        equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
+        second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
+        value is allowed as a response. the form of your test cases has to be, in case of selecting the elovalue.Elo method:\n
+            -'Test1'\n
+            -'Test2'...\n
+        If you choose the methods classification.Classification, equal.Equal, includes.Includes they must be of the form:\n
+            -inout: 'Test1'\n
+            output: 'Answer1'\n
+            -inout: 'Test2'\n
+            output: 'Answer2'\n
+        And in case the method is function_calling.functionCalling:\n
+            -inout: 'Test1'\n
+            output1: 'name_function'\n
+            output2: 'variable'\n
+            -inout: 'Test2'\n
+            output1: 'name_function'\n
+            output2: 'variable'\n"""
 
-    "description: Here is the description of the type of task that summarizes the test cases.\n"
-    "method: Here, you select the evaluation method for your prompts. The options are: elovalue.Elo, classification.Classification, "
-        "equal.Equal, includes.Includes and function_calling.functionCalling.\n"
+    """description: Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
+        you are going to use the 'elovalue.Elo' method.\n"""
+    """method: Here, you select the evaluation method for your prompts. You must choose between 'elovalue.Elo',
+        'classification.Classification', 'equal.Equal', 'includes.Includes' and 'function_calling.functionCalling'.\n"""
 
-    "model:\n"
-        "name: The name of the GPT model you will use to evaluate the prompts. Options: 'gpt-3.5-turbo', 'gpt-4'.\n"
-        "temperature: The temperature of the GPT model you will use to evaluate the prompts. The value must be between 0 and 2.\n"
-        "max_tokens: The maximum number of tokens you will allow the GPT model to use to generate the response to the test.\n"
+    """model:\n"""
+        """name: The name of the GPT model you will use to evaluate the prompts.\n"""
+        """temperature: The temperature of the GPT model you will use to evaluate the prompts.\n"""
+        """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate the response to the test.\n"""
 
-    "functions: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used."
-    "If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:\n\n"
+    """functions: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used.
+    If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:\n
 
-            "- Function Name (name): This is the identifier used to refer to this function within the context of your code.\n"
+            - Function Name (name): This is the identifier used to refer to this function within the context of your code.\n
 
-            "- Function Description (description): A brief description of what the function does.\n"
+            - Function Description (description): A brief description of what the function does.\n
 
-            "- Function Parameters (parameters): This section defines the input parameters that the function accepts.\n\n"
+            - Function Parameters (parameters): This section defines the input parameters that the function accepts.\n
 
-                "- Type (type): The type of the parameter being defined.\n"
+                - Type (type): The type of the parameter being defined.\n
 
-                "- Properties (properties): This is an object containing properties that the input parameter object should have.\n\n"
+                - Properties (properties): This is an object containing properties that the input parameter object should have.\n
 
-                    "- File Type (file_type): This is a property of the parameter object.\n"
+                    - File Type (file_type): This is a property of the parameter object.\n
 
-                    "- Enum (enum): An enumeration of allowed values for the 'file_type' property. (optional)\n"
+                    - Enum (enum): An enumeration of allowed values for the 'file_type' property. (optional)\n
 
-                    "- Description (description): A description of what the 'file_type' property represents.\n"
+                    - Description (description): A description of what the 'file_type' property represents.\n
 
-                "- Required (required): An array listing the properties that are required within the parameter object. (optional)\n"
+                - Required (required): An array listing the properties that are required within the parameter object. (optional)\n"""
 
-    "function_call: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be "
-            "used. If another method is used, it must not be filled out.\n"
+    """function_call: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be 
+        used. If another method is used, it must not be filled out.\n"""
 
-"prompts:\n\n"
+"""prompts: You have two options, either provide your list of prompts or generate them following the instructions below.\n"""
 
-    "content: A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty. "
-        "Please provide a minimum number of 4 prompts\n"
-    "number: The number of prompts you are going to evaluate. If you are going to provide the prompts yourself, please specify "
-        "the corresponding quantity of prompts you inserted previously. If you are going to generate the prompts, indicate the "
-        "quantity of prompts you want to generate. Please provide a minimum number of 4 prompts.\n"
-    "change: An optional feature that allows you to make changes to your prompts, whether you provide them or generate them. "
-        "If you don't want to use it, simply put None. Otherwise, the options are: uppercase, lowercase, random_uppercase, "
-        "random_lowercase, random_lowercase_word, random_uppercase_word, synonymous_prompt, grammatical_errors.\n"
-    "features: If you are going to generate prompts, this optional feature allows you to add special characteristics to the "
-        "prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with "
-        "'Generate prompts with a maximum length of 50 characters.'\n"
+    """list: A list of prompts you want to evaluate. If you want to generate them with the prompt generator, don't put this key in 
+        your YAML file. Please provide a minimum number of 4 prompts. Your prompts must be listed as follows:\n
+            - 'Prompt1'\n
+            - 'Prompt2'...\n"""
 
-"generation:\n\n"
+    """generation:\n"""
 
-    "model:\n\n"
+        """number: The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts.
+            Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not 
+            define this key by default, 4 prompts will be created.\n"""
+        """constraints: If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
+            prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
+            'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key 
+            defined.\n"""
+        """description: Here is the description of the type of task that summarizes the test cases.\n"""
 
-        "name: The name of the GPT model you will use to generate the prompts. Options: 'gpt-3.5-turbo', 'gpt-4'.\n"
-        "temperature: The temperature of the GPT model you will use to generate the prompts. The value must be between 0 and 2.\n"
-        "max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.\n"
+        """model:\n"""
 
-"iterations:\n\n"
+            """name: The name of the GPT model you will use to generate the prompts.\n"""
+            """temperature: The temperature of the GPT model you will use to generate the prompts.\n"""
+            """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.\n"""
 
-    "number: The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at "
-        "prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0.")
+    """iterations:\n (optional)"""
+        """number: The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
+            prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0.\n"""
+        """best_prompts: The number of prompts you want to iterate over. the value must be between 2 and the number of prompts you 
+            provide (or generate) minus one. If you do not define this value but do want to iterate, the default value will be 2.\n"""
+
+        """model:\n"""
+
+            """name: The name of the GPT model you will use to generate the prompts.\n"""
+            """temperature: The temperature of the GPT model you will use to generate the prompts.\n"""
+            """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.""")
+    
     parser.add_argument("optional_string", help="Optional string parameter.", nargs='?', default=None)
     parser.add_argument("--env_path", help="Path to the .env file.", default=None)
     args = parser.parse_args()
+
     try:
+        
         def valid_path(path):
             try:
                 Path(path)
