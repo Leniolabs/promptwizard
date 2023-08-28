@@ -3,7 +3,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 from . import generation, iteration
-from .evals import elovalue, classification, equal, includes, function_calling
+from .evals import elovalue, classification, equals, includes, function_calling
 from .approximate_cost import cost
 import yaml
 import textwrap
@@ -44,15 +44,15 @@ def valid_yaml(file_name):
             print({'prompts': {'iterations': {'best_prompts':{'test': {'method': ['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}}}})
             return valid
 
-    allowed_names = ['function_calling.functionCalling', 'classification.Classification', 'equal.Equal', 'includes.Includes', 'elovalue.Elo']
+    allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo']
     if 'method' in content['test']:
-        if content['test']['method'] == 'function_calling.functionCalling':
+        if content['test']['method'] == 'function_calling':
             config_schema = validation.ConfigSchema3()
 
-        if content['test']['method'] == 'classification.Classification' or content['test']['method'] == 'equal.Equal' or content['test']['method'] == 'includes.Includes':
+        if content['test']['method'] == 'Classification' or content['test']['method'] == 'Equals' or content['test']['method'] == 'Includes':
             config_schema = validation.ConfigSchema2()
 
-        if content['test']['method'] == 'elovalue.Elo':
+        if content['test']['method'] == 'Elo':
             config_schema = validation.ConfigSchema1()
         
         if content['test']['method'] not in allowed_names:
@@ -94,13 +94,13 @@ def approximate_cost(file):
     # Extract the 'description', 'test_cases', 'number_of_prompts', 'candidate_model', 'generation_model',
     # 'generation_model_temperature', 'generation_model_max_tokens', and 'method' from the YAML content
     method = yaml_content['test']['method']
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
-    if method == 'classification.Classification' or method == 'includes.Includes' or method == 'equal.Equal':
+    if method == 'Classification' or method == 'Includes' or method == 'Equals':
         input_output_pairs = [(case['inout'], case['output']) for case in test_cases]
         test_cases = input_output_pairs
-    if method == 'function_calling.functionCalling':
+    if method == 'function_calling':
         result_list = [[case['inout'], case['output1'], case['output2']] for case in test_cases]
         test_cases = result_list
     model_test = yaml_content['test']['model']['name']
@@ -121,7 +121,8 @@ def approximate_cost(file):
             prompt_constrainst = 'None'
         model_generation = yaml_content['prompts']['generation']['model']['name']
         model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
-        description = yaml_content['prompts']['generation']['description']
+        if method != 'Elo':
+            description = yaml_content['prompts']['generation']['description']
     if not 'generation' in yaml_content['prompts']:
         model_generation = 'gpt-4'
         model_generation_max_tokens = 0
@@ -143,9 +144,9 @@ def approximate_cost(file):
         model_iteration_max_tokens = 0
 
     
-    if method == 'function_calling.functionCalling':
+    if method == 'function_calling':
         approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens)
-    if method == 'elovalue.Elo' or method == 'classification.Classification' or method == 'equal.Equal' or method == 'includes.Includes':
+    if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes':
         approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens)
     return approximate_cost
 
@@ -159,7 +160,7 @@ def run_evaluation(file, approximate_cost):
     # Extract the 'description', 'test_cases', 'number_of_prompts', 'candidate_model', 'generation_model',
     # 'generation_model_temperature', 'generation_model_max_tokens', and 'method' from the YAML content
     method = yaml_content['test']['method']
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
     
@@ -183,12 +184,14 @@ def run_evaluation(file, approximate_cost):
         model_generation = yaml_content['prompts']['generation']['model']['name']
         model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
         model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
-        description = yaml_content['prompts']['generation']['description']
+        if method != 'Elo':
+            description = yaml_content['prompts']['generation']['description']
     if not 'generation' in yaml_content['prompts']:
         model_generation = 'gpt-4'
         model_generation_max_tokens = 0
         prompt_constrainst = None
-        description = None
+        if method != 'Elo':
+            description = None
         model_generation_temperature = 0
     if 'functions' in yaml_content['test']:
         functions = yaml_content['test']['functions']
@@ -217,23 +220,23 @@ def run_evaluation(file, approximate_cost):
     tokens_input_gpt35 = 0
     tokens_output_gpt35 = 0
 
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         class_method = elovalue.Elo
-    if method == 'classification.Classification':
+    if method == 'Classification':
         class_method = classification.Classification
-    if method == 'equal.Equal':
-        class_method = equal.Equal
-    if method == 'includes.Includes':
+    if method == 'Equals':
+        class_method = equals.Equals
+    if method == 'Includes':
         class_method = includes.Includes
-    if method == 'function_calling.functionCalling':
+    if method == 'function_calling':
         class_method = function_calling.functionCalling
 
     # Initialize an object of the class obtained from the 'method'
-    if method != 'function_calling.functionCalling' and method != 'elovalue.Elo':
+    if method != 'function_calling' and method != 'Elo':
         object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, best_prompts)
-    if method == 'function_calling.functionCalling':
+    if method == 'function_calling':
         object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, functions, function_call, best_prompts)
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         object_class = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, best_prompts)
     # Checks if the prompts to evaluate already exist and if not, creates them
     if prompts_value == []:
@@ -258,12 +261,11 @@ def run_evaluation(file, approximate_cost):
                 tokens_input_gpt4 = tokens_input_gpt4 + prompts_generation_cost[2]
                 tokens_output_gpt4 = tokens_output_gpt4 + prompts_generation_cost[3]
     
-    if method == 'function_calling.functionCalling':
+    if method == 'function_calling':
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, functions, function_call, best_prompts)
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts)
-    if method != 'function_calling.functionCalling' and method != 'elovalue.Elo':
-
+    if method != 'function_calling' and method != 'Elo':
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts)
 
     # Evaluate the prompts
@@ -276,7 +278,7 @@ def run_evaluation(file, approximate_cost):
         tokens_input_gpt35 = tokens_input_gpt35 + results[3]
         tokens_output_gpt35 = tokens_output_gpt35 + results[4]
     yaml_folder = os.path.dirname(file)
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         # Group "elo" values by prompt using a dictionary
         elos_by_prompt = defaultdict(list)
         for item in results[0][number_of_prompts + 1]:
@@ -309,7 +311,7 @@ def run_evaluation(file, approximate_cost):
     print(f"Result saved in: {output_json_path}")
     old_prompts = results[1]
     number_of_iteration = 1
-    if method != 'elovalue.Elo':
+    if method != 'Elo':
         tokens_input_gen = 0
         tokens_output_gen = 0
         tokens_input_test = 0
@@ -318,12 +320,12 @@ def run_evaluation(file, approximate_cost):
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
-            if method == 'function_calling.functionCalling':
+            if method == 'function_calling':
                 new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, functions, function_call, best_prompts)
-            if method == 'elovalue.Elo':
+            if method == 'Elo':
                 new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, description, best_prompts)
 
-            if method != 'function_calling.functionCalling' and method != 'elovalue.Elo':
+            if method != 'function_calling' and method != 'Elo':
                 new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, best_prompts)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
@@ -340,7 +342,7 @@ def run_evaluation(file, approximate_cost):
             combined_data = [item for sublist in combine_prompts for item in sublist]
             sorted_data = sorted(combined_data, key=lambda x: x['rating'], reverse=True)
             old_prompts = [sorted_data[0], sorted_data[1]]
-    if method == 'elovalue.Elo':
+    if method == 'Elo':
         tokens_input_gen = 0
         tokens_output_gen = 0
         tokens_input_test = 0
@@ -427,15 +429,15 @@ def main():
         Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
         equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
         second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
-        value is allowed as a response. the form of your test cases has to be, in case of selecting the elovalue.Elo method:\n
+        value is allowed as a response. the form of your test cases has to be, in case of selecting the Elo method:\n
             -'Test1'\n
             -'Test2'...\n
-        If you choose the methods classification.Classification, equal.Equal, includes.Includes they must be of the form:\n
+        If you choose the methods Classification, Equals, Includes they must be of the form:\n
             -inout: 'Test1'\n
             output: 'Answer1'\n
             -inout: 'Test2'\n
             output: 'Answer2'\n
-        And in case the method is function_calling.functionCalling:\n
+        And in case the method is function_calling:\n
             -inout: 'Test1'\n
             output1: 'name_function'\n
             output2: 'variable'\n
@@ -444,16 +446,16 @@ def main():
             output2: 'variable'\n"""
 
     """description: Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
-        you are going to use the 'elovalue.Elo' method.\n"""
-    """method: Here, you select the evaluation method for your prompts. You must choose between 'elovalue.Elo',
-        'classification.Classification', 'equal.Equal', 'includes.Includes' and 'function_calling.functionCalling'.\n"""
+        you are going to use the 'Elo' method.\n"""
+    """method: Here, you select the evaluation method for your prompts. You must choose between 'Elo',
+        'Classification', 'Equals', 'includes' and 'function_calling'.\n"""
 
     """model:\n"""
         """name: The name of the GPT model you will use to evaluate the prompts.\n"""
         """temperature: The temperature of the GPT model you will use to evaluate the prompts.\n"""
         """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate the response to the test.\n"""
 
-    """functions: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used.
+    """functions: This field must only be filled out in case the 'function_calling' method is intended to be used.
     If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:\n
 
             - Function Name (name): This is the identifier used to refer to this function within the context of your code.\n
@@ -474,7 +476,7 @@ def main():
 
                 - Required (required): An array listing the properties that are required within the parameter object. (optional)\n"""
 
-    """function_call: This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be 
+    """function_call: This field must only be filled out in case the 'function_calling' method is intended to be 
         used. If another method is used, it must not be filled out.\n"""
 
 """prompts: You have two options, either provide your list of prompts or generate them following the instructions below.\n"""

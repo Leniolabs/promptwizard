@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"Generate a catchy and creative headline for a landing page. The headline should be relevant to the provided context, such as a product, service, app, blog or course, and should aim to pique the interest of potential users or customers, making them want to learn more. Use persuasive language and make sure each headline is unique and different from the others.\"",
-        "rating": 1219.817874146029
+        "prompt": "\"Your assignment is to craft innovative, captivating, and engaging headlines for landing pages. You'll be provided with themes or products such as a wellness app, a novel, a newly launched online course, or a service. Utilize your expertise in formulating irresistible headlines to attract prospective clients or readers. Each headline should naturally indicate what the product or service is about while stimulating curiosity. Bear in mind, the headlines should be significantly diverse from each other, hence, exhaust your creativity and innovation.\"\n\n\"Your job is to devise compelling, understandable, and persuasive headlines for landing pages. The headlines should offer a brief summary of the product or service being offered, ignite curiosity, and lure potential consumers. The data you'll receive will usually encompass the kind of product or service, its designation, unique selling points, or specific focus areas. Your objective is to convert this data into a single, impactful phrase that instantaneously relays the core benefit to the reader in a thrilling manner. Ensure variety in your language use and approach for each headline.\"",
+        "rating": 1281.848872173211
     },
     {
-        "prompt": "\"Construct an innovative and appealing headline for a webpage. The headline should align with the given scenario, like a product, service, app, blog or course, intending to captivate potential consumers or users, encouraging them to explore further. Apply convincing language and ensure each headline is unique and not repetitive.\"\n\n\"Upon a concise description or title concerning a product, service, blog, app or any topic, devise an original and compelling headline for a landing page. The headline should be brief, captivating, and should successfully convey the distinctive selling factor or primary theme of the item described. Make sure every generated headline is unique and offers maximum variation.\"",
-        "rating": 1209.1629918774772
+        "prompt": "\"Your goal is to generate unique, enticing and engaging landing page headlines. You'll be given topics or products such as a fitness app, a book, a new online course, or a service. Use your knowledge of creating compelling headlines to draw in potential customers or readers. Each headline should intuitively convey what the offering is about while sparking interest. Remember, the headlines must vary significantly from one to another, so use your creativity and innovation at full capacity.\"",
+        "rating": 1189.3364205148478
     },
     {
         "approximate_cost": 0.302894,
-        "real_cost": 0.18563799999999997,
-        "tokens_input_gpt-3.5-turbo": 81288,
-        "tokens_output_gpt-3.5-turbo": 4208,
+        "real_cost": 0.2433745,
+        "tokens_input_gpt-3.5-turbo": 102415,
+        "tokens_output_gpt-3.5-turbo": 11171,
         "tokens_input_gpt-4": 356,
-        "tokens_output_gpt-4": 330
+        "tokens_output_gpt-4": 358
     }
 ]

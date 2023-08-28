@@ -1,7 +1,7 @@
 import openai
 from ..cost import input, output
 
-class Equal:
+class Equals:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
 
         self.test_cases = test_cases
@@ -28,7 +28,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         tokens_input = 0
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
-        results = [{"method": "Equal"}]
+        results = [{"method": "Equals"}]
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:

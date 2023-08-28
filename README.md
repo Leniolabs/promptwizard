@@ -81,15 +81,15 @@ test:
         Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
         equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
         second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
-        value is allowed as a response. the form of your test cases has to be, in case of selecting the elovalue.Elo method:
+        value is allowed as a response. the form of your test cases has to be, in case of selecting the Elo method:
             -'Test1'
             -'Test2'...
-        If you choose the methods classification.Classification, equal.Equal, includes.Includes they must be of the form:
+        If you choose the methods Classification, Equals, Includes they must be of the form:
             -inout: 'Test1'
             output: 'Answer1'
             -inout: 'Test2'
             output: 'Answer2'
-        And in case the method is function_calling.functionCalling:
+        And in case the method is function_calling:
             -inout: 'Test1'
             output1: 'name_function'
             output2: 'variable'
@@ -98,9 +98,9 @@ test:
             output2: 'variable'"""
 
     description: """Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
-        you are going to use the 'elovalue.Elo' method"""
-    method: """Here, you select the evaluation method for your prompts. You must choose between 'elovalue.Elo',
-        'classification.Classification', 'equal.Equal', 'includes.Includes' and 'function_calling.functionCalling'."""
+        you are going to use the 'Elo' method"""
+    method: """Here, you select the evaluation method for your prompts. You must choose between 'Elo',
+        'Classification', 'Equals', 'Includes' and 'function_calling'."""
 
     model:
         name: """The name of the GPT model you will use to evaluate the prompts."""

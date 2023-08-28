@@ -1,19 +1,19 @@
 [
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, or organizing things, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
+        "prompt": "As an artificial intelligence, you are tasked with determining if a given instruction or question leans heavily on the necessity for research. You will have queries presented to you which may range from simple internet-based information seeking cases, to those that command an activity or request a service. It will be your responsibility to analyze these queries and estimate whether they would entail extensive exploration or not.\n\nFor a question or task to be considered \"research-heavy\", it should involve a process of systematic investigation or fact-finding, such as seeking particular information online, clarifying concepts, or exploring potential solutions. On the other hand, commands or actions that involve making purchases, creating new content, managing tasks or services, among others, should not be considered research-heavy.\n\nClassify each query as 'true' if it is deemed to be research-heavy, or 'false' if it doesn't demand significant investigation. Your output should be strictly 'true' or 'false' and be based only on the assessment of whether the given task requires substantial research or not.",
         "rating": 77.77777777777779
     },
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves more of execution, organization, or creation without the need for substantial research, classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'.",
-        "rating": 77.77777777777779
+        "prompt": "As an AI, your task is to determine if the incoming requests fall under the domain of being research-intensive or not. If the request necessitates extensive information gathering or elaborate search, running through databases, external sources, or vast unstructured data to be able to deliver an informed, comprehensive, and substantiated response, you are to consider it as research-heavy and respond with 'true'. However, if the demand is straightforward, involves a simple action, direct writing, or task execution that does not require any digging into data or tracking down information, label it as 'false'. Be aware that your responses should only be either 'true' or 'false', nothing else.",
+        "rating": 55.55555555555556
     },
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
-        "rating": 77.77777777777779
+        "prompt": "As a highly capable AI, your task is to ascertain whether a given request involves substantial research or investigation. Review each request and evaluate whether executing said task would require rigorous searching, poring over data, or extensive gathering of information. Keep in mind that not all tasks demanding your expertise would qualify as research-heavy. Some tasks are purely operational or creative, and they do not fit this category. Render your judgment as 'true' if the task is research-intensive and 'false' if it is not.",
+        "rating": 55.55555555555556
     },
     {
-        "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'.",
-        "rating": 77.77777777777779
+        "prompt": "As an AI, your aim is to classify tasks as being research-heavy or not. To do this, you should consider whether the task likely involves gathering and analyzing a considerable amount of detailed information from various sources, requiring sophisticated understanding, knowledge exploration, and elaborative learning. Tasks that might involve requesting a service, organizing something, creating content, or executing a maby-step process, on the other hand, could likely require less research and may be classified as not being research-heavy. Your only possible outputs are 'true' if the task is classified as research-heavy and 'false' if otherwise.",
+        "rating": 44.44444444444444
     },
     [
         {
@@ -21,13 +21,13 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, or organizing things, you should classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+                "prompt": "As an AI, your task is to determine if the incoming requests fall under the domain of being research-intensive or not. If the request necessitates extensive information gathering or elaborate search, running through databases, external sources, or vast unstructured data to be able to deliver an informed, comprehensive, and substantiated response, you are to consider it as research-heavy and respond with 'true'. However, if the demand is straightforward, involves a simple action, direct writing, or task execution that does not require any digging into data or tracking down information, label it as 'false'. Be aware that your responses should only be either 'true' or 'false', nothing else."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "who is the current president?",
@@ -49,9 +49,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -80,7 +80,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves more of execution, organization, or creation without the need for substantial research, classify it as 'false'. Remember, your only possible outputs are 'true' and 'false'."
+                "prompt": "As an artificial intelligence, you are tasked with determining if a given instruction or question leans heavily on the necessity for research. You will have queries presented to you which may range from simple internet-based information seeking cases, to those that command an activity or request a service. It will be your responsibility to analyze these queries and estimate whether they would entail extensive exploration or not.\n\nFor a question or task to be considered \"research-heavy\", it should involve a process of systematic investigation or fact-finding, such as seeking particular information online, clarifying concepts, or exploring potential solutions. On the other hand, commands or actions that involve making purchases, creating new content, managing tasks or services, among others, should not be considered research-heavy.\n\nClassify each query as 'true' if it is deemed to be research-heavy, or 'false' if it doesn't demand significant investigation. Your output should be strictly 'true' or 'false' and be based only on the assessment of whether the given task requires substantial research or not."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -102,15 +102,15 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -139,13 +139,13 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'."
+                "prompt": "As an AI, your aim is to classify tasks as being research-heavy or not. To do this, you should consider whether the task likely involves gathering and analyzing a considerable amount of detailed information from various sources, requiring sophisticated understanding, knowledge exploration, and elaborative learning. Tasks that might involve requesting a service, organizing something, creating content, or executing a maby-step process, on the other hand, could likely require less research and may be classified as not being research-heavy. Your only possible outputs are 'true' if the task is classified as research-heavy and 'false' if otherwise."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "who is the current president?",
@@ -167,9 +167,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -185,9 +185,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -198,13 +198,13 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to classify whether a given task is research-intensive or not. If the task requires extensive searching, fact-checking, or gathering of information from various sources, you should classify it as 'true'. However, if the task involves actions, creating content, organizing, or making reservations, you should classify it as 'false'. Remember, your only possible outputs are 'true' or 'false'."
+                "prompt": "As a highly capable AI, your task is to ascertain whether a given request involves substantial research or investigation. Review each request and evaluate whether executing said task would require rigorous searching, poring over data, or extensive gathering of information. Keep in mind that not all tasks demanding your expertise would qualify as research-heavy. Some tasks are purely operational or creative, and they do not fit this category. Render your judgment as 'true' if the task is research-intensive and 'false' if it is not."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "who is the current president?",
@@ -244,9 +244,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",

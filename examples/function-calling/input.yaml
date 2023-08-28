@@ -23,7 +23,7 @@ test:
           output1: 'open_file'
           output2: 'JSON'
 
-    method: function_calling.functionCalling
+    method: function_calling
 
     model:
         name: 'gpt-3.5-turbo'
@@ -120,4 +120,9 @@ prompts:
 
 
     iterations:
-        number: 0
+        number: 1
+        model:
+
+            name: 'gpt-4'
+            temperature: 0.9
+            max_tokens: 500

@@ -14,7 +14,7 @@ test:
     
 
     description: "Generate a landing page headline."
-    method: elovalue.Elo
+    method: Elo
 
     model:
         name: 'gpt-3.5-turbo'
@@ -24,7 +24,6 @@ test:
 prompts:
 
     generation:
-        description: "Generate a landing page headline."
         number: 4
         constraints: 'None'
         model:
@@ -36,5 +35,5 @@ prompts:
         number: 1
         model:
             name: 'gpt-4'
-            temperature: 0.9
+            temperature: 0.8
             max_tokens: 500

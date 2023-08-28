@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, and nothing more.",
-        "rating": 100.0
-    },
-    {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the discovered word, created by sequentially joining the initial letters of each word in the sentence. Remember to maintain the order of the letters as they appear in the sentence. Your response should be concise and only contain the hidden word, without any additional explanation or context.",
+        "prompt": "As an AI, you need to form a single word by taking the first letter from each word in the provided sentence. The order of these letters as they appear in the sentence will determine the order of the letters in the resulting word. You are required to do this while maintaining a logical structure and coherent thought process. Every step and thought leading to your decision should be explained.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the word that is formed by this process. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure that you don't miss any words. Your response should be a single word, without any additional explanation or context.",
+        "prompt": "As an AI, you're asked to perform a task involving words. Each task consists of a sentence where you will need to form a word by collecting the first letters of each word in the sentence. Construct your output by following the sequence of the sentence to maintain the order of the letters. Be attentive to punctuation and spacing -- don't let them interfere with your process. Your output should be solely the word generated from the initial letters of each word in the sentence. Above all, ensure that your responses respect the need for correctness, order, and conciseness.",
         "rating": 80.0
     },
     {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, like a detective uncovering a secret code.",
+        "prompt": "As an AI, your task is to find the hidden message in a text by assembling a word from the first letters of each of the words given in an input sentence. When you receive an input sentence, step by step, look at the first letter of each word. Then, sequentially join all these letters together to create a new word. Remember: the output should only be this newly formed word and nothing else. If there are punctuation or special characters alongside the words, ignore them during this process. Be precise and efficient, this is not a guessing game, follow the process and extract the hidden messages using your powerful algorithmic capability.\n",
+        "rating": 80.0
+    },
+    {
+        "prompt": "You are an intelligent being skilled in deciphering codes, especially those hidden in sentences. Your particular task here is to construct a word, not just any word, but a unique one that is made by stringing together the initial letters of the words contained within each sentence provided. This word might be a common one or it could be rather unusual. You must approach this task with methodical precision, ensuring that you dig into each sentence, extract the correct initials, and combine them in the strict order that they appear. Reflect on the crafted word and once you're certain of its correctness, present it as your final output. Note: You should generate only one word from each sentence.",
         "rating": 60.0
     },
     [
@@ -21,19 +21,54 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the discovered word, created by sequentially joining the initial letters of each word in the sentence. Remember to maintain the order of the letters as they appear in the sentence. Your response should be concise and only contain the hidden word, without any additional explanation or context."
+                "prompt": "As an AI, you need to form a single word by taking the first letter from each word in the provided sentence. The order of these letters as they appear in the sentence will determine the order of the letters in the resulting word. You are required to do this while maintaining a logical structure and coherent thought process. Every step and thought leading to your decision should be explained."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "tracor",
+                "answer": "To form a single word by taking the first letter from each word in the sentence \"The red acrobat closed the orange raft,\" I will carefully analyze the sentence and consider the logical structure and coherent thought process.\n\n1. \"The\" - The first word in the sentence is \"The.\" I will take the first letter \"T\" and keep it in mind.\n\n2. \"red\" - The second word is \"red.\" I will take the first letter \"r\" and add it to the letter \"T\" that I already have.\n\n3. \"acrobat\" - The third word is \"acrobat.\" I will take the first letter \"a\" and add it to the letters \"Tr\" that I already have.\n\n4. \"closed\" - The fourth word is \"closed.\" I will take the first letter \"c\" and add it to the letters \"Tra\" that I already have.\n\n5. \"the\" - The fifth word is \"the.\" I will take the first letter \"t\" and add it to the letters \"Trac\" that I already have.\n\n6. \"orange\" - The sixth word is \"orange.\" I will take the first letter \"o\" and add it to the letters \"Tract\" that I already have.\n\n7. \"raft\" - The seventh and final word is \"raft.\" I will take the first letter \"r\" and add it to the letters \"Tracto\" that I already have.\n\nBy following this logical structure and coherent thought process, I have formed the word \"Tractor\" by taking the first letter from each word in the sentence \"The red acrobat closed the orange raft.\"",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATION",
+                "answer": "To form a single word by taking the first letter from each word in the sentence, I will analyze the sentence and consider the logical structure and coherent thought process.\n\n1. \"Honey\" - The first letter is \"H\".\n2. \"your\" - The first letter is \"y\".\n3. \"daring\" - The first letter is \"d\".\n4. \"rationale\" - The first letter is \"r\".\n5. \"asserts\" - The first letter is \"a\".\n6. \"typical\" - The first letter is \"t\".\n7. \"ignorance\" - The first letter is \"i\".\n8. \"or\" - The first letter is \"o\".\n9. \"neglect\" - The first letter is \"n\".\n\nConsidering the order of the letters in the sentence, the resulting word is \"Hydrantoin\".",
                 "ideal": "hydration",
+                "result": false
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "To form a single word by taking the first letter from each word in the sentence \"Rare obnoxiousness searches elevation,\" I will analyze the sentence and consider the logical structure and coherent thought process.\n\n1. \"Rare\" - The first word in the sentence. I will take the first letter \"R\" and keep it as the first letter of the resulting word.\n\n2. \"obnoxiousness\" - The second word in the sentence. I will take the first letter \"O\" and consider its position in relation to the previous letter \"R.\" Since \"O\" comes after \"R,\" I will place it as the second letter in the resulting word.\n\n3. \"searches\" - The third word in the sentence. I will take the first letter \"S\" and consider its position in relation to the previous letters \"R\" and \"O.\" Since \"S\" comes after both \"R\" and \"O,\" I will place it as the third letter in the resulting word.\n\n4. \"elevation\" - The fourth word in the sentence. I will take the first letter \"E\" and consider its position in relation to the previous letters \"R,\" \"O,\" and \"S.\" Since \"E\" comes after all three letters, I will place it as the fourth letter in the resulting word.\n\nBy following this logical structure and coherent thought process, the resulting word formed by taking the first letter from each word in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE.\"",
+                "ideal": "rose",
                 "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "To form a single word by taking the first letter from each word in the sentence \"Late into geometry he theorised,\" I will analyze the sentence and consider the logical structure and coherent thought process.\n\n1. \"Late\" - The first letter is \"L.\"\n2. \"Into\" - The first letter is \"I.\"\n3. \"Geometry\" - The first letter is \"G.\"\n4. \"He\" - The first letter is \"H.\"\n5. \"Theorised\" - The first letter is \"T.\"\n\nNow, I will arrange these letters in the order they appear in the sentence: L-I-G-H-T.\n\nTherefore, the resulting word is \"LIGHT.\"",
+                "ideal": "light",
+                "result": true
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "To form a single word by taking the first letter from each word in the sentence \"Dear Elena find irregular new energies,\" I will analyze the sentence and consider the logical structure and coherent thought process.\n\n1. \"Dear\" - The first letter is \"D.\"\n2. \"Elena\" - The first letter is \"E.\"\n3. \"find\" - The first letter is \"F.\"\n4. \"irregular\" - The first letter is \"I.\"\n5. \"new\" - The first letter is \"N.\"\n6. \"energies\" - The first letter is \"E.\"\n\nNow, I need to determine the order of these letters in the resulting word. Since the sentence does not provide any specific instructions or context, I will consider the logical flow of the words.\n\nThe sentence starts with \"Dear Elena,\" which implies a personal address or salutation. Following that, the word \"find\" suggests an action or task. Then, the word \"irregular\" indicates that the energies being sought are not regular or normal. Finally, the word \"new\" suggests that these energies are different or recently discovered. \n\nConsidering this logical flow, I will arrange the letters in the resulting word as follows:\n\n\"D\" - \"E\" - \"F\" - \"I\" - \"N\" - \"E\"\n\nTherefore, the resulting word is \"DEFINE.\"",
+                "ideal": "define",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, you're asked to perform a task involving words. Each task consists of a sentence where you will need to form a word by collecting the first letters of each word in the sentence. Construct your output by following the sequence of the sentence to maintain the order of the letters. Be attentive to punctuation and spacing -- don't let them interfere with your process. Your output should be solely the word generated from the initial letters of each word in the sentence. Above all, ensure that your responses respect the need for correctness, order, and conciseness."
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "TRACTOR",
+                "ideal": "tractor",
+                "result": true
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "HYDRATING",
+                "ideal": "hydration",
+                "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
@@ -56,105 +91,70 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the word that is formed by this process. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure that you don't miss any words. Your response should be a single word, without any additional explanation or context."
+                "prompt": "You are an intelligent being skilled in deciphering codes, especially those hidden in sentences. Your particular task here is to construct a word, not just any word, but a unique one that is made by stringing together the initial letters of the words contained within each sentence provided. This word might be a common one or it could be rather unusual. You must approach this task with methodical precision, ensuring that you dig into each sentence, extract the correct initials, and combine them in the strict order that they appear. Reflect on the crafted word and once you're certain of its correctness, present it as your final output. Note: You should generate only one word from each sentence."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "tracator",
+                "answer": "TRACTOR",
                 "ideal": "tractor",
-                "result": false
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATION",
-                "ideal": "hydration",
                 "result": true
             },
             {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "HYDRATING",
+                "ideal": "hydration",
+                "result": false
+            },
+            {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "The word formed by stringing together the initial letters of the words in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "LEGIT",
                 "ideal": "light",
-                "result": true
+                "result": false
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
+                "answer": "The word formed by stringing together the initial letters of the words in the sentence \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, and nothing more."
+                "prompt": "As an AI, your task is to find the hidden message in a text by assembling a word from the first letters of each of the words given in an input sentence. When you receive an input sentence, step by step, look at the first letter of each word. Then, sequentially join all these letters together to create a new word. Remember: the output should only be this newly formed word and nothing else. If there are punctuation or special characters alongside the words, ignore them during this process. Be precise and efficient, this is not a guessing game, follow the process and extract the hidden messages using your powerful algorithmic capability.\n"
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The hidden message is \"TRACTOR\".",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATION",
-                "ideal": "hydration",
-                "result": true
-            },
-            {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "Light",
-                "ideal": "light",
-                "result": true
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
-                "ideal": "define",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, like a detective uncovering a secret code."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "The hidden word is \"tracor\".",
-                "ideal": "tractor",
-                "result": false
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRASTIN",
+                "answer": "The hidden message in the sentence is \"HYDRATING\".",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The hidden word is \"ROSE\".",
+                "answer": "The hidden message in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "The hidden message in the sentence is \"LIGHT\".",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The hidden word is \"DEFINE\".",
+                "answer": "The hidden message in the sentence \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }

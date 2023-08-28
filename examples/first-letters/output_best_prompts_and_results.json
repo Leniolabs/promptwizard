@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together in the order they appear. Your output should be a single word, without any spaces or punctuation. Remember to maintain the order of the letters as they appear in the sentence. Be meticulous and ensure you don't miss any words. Your task is to reveal the hidden word, and nothing more.",
+        "prompt": "\"As an AI, your task is to create a single word by extracting the first letter from each word in the given sentence. The sequence of these letters must reflect their original order in the sentence. Your logical reasoning and consistency in producing the final output must be kept in mind. Explain every step leading to your conclusion.\"\n\n\"As an AI entity, you're tasked to work with a series of words contained within a sentence. From this sentence, construct a new word by gathering the initial letters of each word following the sentence's order. Be careful with punctuation and spaces, ensuring they do not disrupt your process. Your final output should be the word formed from these initial letters. Remember, coherence, precision, and brevity should be maintained in your responses.\"",
         "rating": 100.0
     },
     {
-        "prompt": "As an AI, your task is to decipher a hidden word from a given sentence. This word is formed by taking the first letter of each word in the sentence and combining them together. Your output should be the discovered word, created by sequentially joining the initial letters of each word in the sentence. Remember to maintain the order of the letters as they appear in the sentence. Your response should be concise and only contain the hidden word, without any additional explanation or context.",
+        "prompt": "As an AI, you need to form a single word by taking the first letter from each word in the provided sentence. The order of these letters as they appear in the sentence will determine the order of the letters in the resulting word. You are required to do this while maintaining a logical structure and coherent thought process. Every step and thought leading to your decision should be explained.",
         "rating": 80.0
     },
     {
-        "approximate_cost": 0.16283,
-        "real_cost": 0.03639,
-        "tokens_input_gpt-3.5-turbo": 2280,
-        "tokens_output_gpt-3.5-turbo": 60,
-        "tokens_input_gpt-4": 335,
-        "tokens_output_gpt-4": 380
+        "approximate_cost": 0.24799500000000002,
+        "real_cost": 0.10672699999999999,
+        "tokens_input_gpt-3.5-turbo": 5850,
+        "tokens_output_gpt-3.5-turbo": 3301,
+        "tokens_input_gpt-4": 1009,
+        "tokens_output_gpt-4": 1018
     }
 ]

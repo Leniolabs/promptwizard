@@ -25,7 +25,7 @@ class FirstFormatTestCaseSchema(Schema):
     description = fields.Str(required=True)
     @validates("method")
     def validate_method(self, value):
-        expected_method = "elovalue.Elo"
+        expected_method = "Elo"
         if value != expected_method:
             raise ValidationError(f"Method must be '{expected_method}'.")
 
@@ -39,9 +39,9 @@ class SecondFormatTestCaseSchema(Schema):
         model = fields.Nested(ModelSchema)
         @validates("method")
         def validate_method(self, value):
-            expected_method1 = "classification.Classification"
-            expected_method2 = "equal.Equal"
-            expected_method3 = "includes.Includes"
+            expected_method1 = "Classification"
+            expected_method2 = "Equals"
+            expected_method3 = "Includes"
             if value != expected_method1 and value != expected_method2 and value != expected_method3:
                 raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' or '{expected_method3}'.")
 
@@ -68,7 +68,7 @@ class ThirdFormatTestCaseSchema(Schema):
                     raise ValidationError("Each test case must consist of 3 strings, the first one being the specific test case, the second one the correct function to use, and the third one the correct variable.")
         @validates("method")
         def validate_method(self, value):
-            expected_method = "function_calling.functionCalling"
+            expected_method = "function_calling"
             if value != expected_method:
                 raise ValidationError(f"Method must be '{expected_method}'.")
             

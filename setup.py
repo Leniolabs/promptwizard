@@ -5,7 +5,7 @@ with open('cli/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.11',
+    version='1.4.12',
     packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml'],
     python_requires='>=3.7',
     long_description=long_description,

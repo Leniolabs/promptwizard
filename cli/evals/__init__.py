@@ -1,4 +1,4 @@
 from .elovalue import *
 from .classification import *
-from .equal import *
+from .equals import *
 from .includes import *

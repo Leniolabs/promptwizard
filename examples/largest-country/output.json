@@ -21,7 +21,7 @@
     },
     [
         {
-            "method": "Equal"
+            "method": "Equals"
         },
         [
             {
@@ -278,7 +278,7 @@
             },
             {
                 "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "The country with the largest territorial extension among South Africa, Colombia, Ethiopia, and Bolivia is Bolivia.",
+                "answer": "The country with the largest territorial extension among South Africa, Colombia, Ethiopia, and Bolivia is Ethiopia.",
                 "ideal": "South Africa",
                 "result": false
             }
