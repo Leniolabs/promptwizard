@@ -18,7 +18,7 @@ class ModelSchema(Schema):
             if not (1 <= value):
                 raise ValidationError("'max_tokens' must be an integer greater than 0.")
 
-class FirstFormatTestCaseSchema(Schema):
+class EloFormatTestCaseSchema(Schema):
     cases = fields.List(fields.Str(required=True))
     method = fields.Str(required=True)
     model = fields.Nested(ModelSchema)
@@ -29,12 +29,12 @@ class FirstFormatTestCaseSchema(Schema):
         if value != expected_method:
             raise ValidationError(f"Method must be '{expected_method}'.")
 
-class TestCaseSchema(Schema):
+class ClaEqInTestCaseSchema(Schema):
     inout = fields.String(required=True)
     output = fields.String(required=True)
 
-class SecondFormatTestCaseSchema(Schema):
-        cases = fields.List(fields.Nested(TestCaseSchema), required=True)
+class ClaEqInFormatTestCaseSchema(Schema):
+        cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
         @validates("method")
@@ -45,21 +45,21 @@ class SecondFormatTestCaseSchema(Schema):
             if value != expected_method1 and value != expected_method2 and value != expected_method3:
                 raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' or '{expected_method3}'.")
 
-class ThirdFormatFunctionSchema(Schema):
+class FunctionCallingFormatFunctionSchema(Schema):
         name = fields.Str(required=True)
         description = fields.Str(required=True)
         parameters = fields.Dict(required=True)
 
-class CaseSchema(Schema):
+class FunctionCallingTestCaseSchema(Schema):
     inout = fields.Str(required=True)
     output1 = fields.Str(required=True)
     output2 = fields.Str(required=True)
 
-class ThirdFormatTestCaseSchema(Schema):
-        cases = fields.List(fields.Nested(CaseSchema))
+class FunctionCallingFormatTestCaseSchema(Schema):
+        cases = fields.List(fields.Nested(FunctionCallingTestCaseSchema))
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
-        functions = fields.List(fields.Nested(ThirdFormatFunctionSchema))
+        functions = fields.List(fields.Nested(FunctionCallingFormatFunctionSchema))
         function_call = fields.Str(required=True)
         @validates("cases")
         def validate_cases_list(self, cases):
@@ -103,16 +103,16 @@ class PromptSchema(Schema):
         
 
 
-class ConfigSchema3(Schema):
-        test = fields.Nested(ThirdFormatTestCaseSchema, required=True)
+class ValidationFunctionCalling(Schema):
+        test = fields.Nested(FunctionCallingFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
 
-class ConfigSchema2(Schema):
-        test = fields.Nested(SecondFormatTestCaseSchema, required=True)
+class ValidationClaEqIn(Schema):
+        test = fields.Nested(ClaEqInFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
 
 
-class ConfigSchema1(Schema):
-        test = fields.Nested(FirstFormatTestCaseSchema, required=True)
+class ValidationElo(Schema):
+        test = fields.Nested(EloFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
         

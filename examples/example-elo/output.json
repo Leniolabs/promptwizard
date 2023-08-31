@@ -1,0 +1,426 @@
+[
+    {
+        "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+        "rating": 1215.049487011625
+    },
+    {
+        "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+        "rating": 1210.4012599853552
+    },
+    {
+        "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+        "rating": 1209.314026064743
+    },
+    {
+        "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+        "rating": 1165.2352269382768
+    },
+    [
+        {
+            "description": "generate titles that promote our lenio talk.",
+            "method": "ELO"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n\"Unlocking After Effects: Transform Your Videos with Easy and Powerful Techniques\"\n\"After Effects Demystified: Elevate Your Videos with Simple Tricks and Professional Results\"\n\"From Novice to Pro: Unleashing the Hidden Potential of After Effects for Stunning Video",
+            "prompt2": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation2": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"\n\"Unlocking the Power of After Effects: Simple Tricks for Stunning Videos\"\n\"Elevate Your Videos: Unleashing the Potential of After Effects\"\n\"After Effects Demystified: Essential Tricks for Professional Video Enhancement\"\n\"From Novice to Pro: Unveiling the",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Green Thumb's Secret: Unleashing the Magic to Nurture Thriving Plants and Blossoming Children\"",
+            "prompt2": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation2": "\"Nurturing Nature: Unlocking the Secrets to Growing Thriving Plants and Cultivating Green Thumbs in Children\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Recycling Revolution: Unveiling the Power of Small Actions for a Sustainable Future\"",
+            "prompt2": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation2": "\"The Recycling Revolution: Unveiling the Power of Small Daily Actions for a Sustainable Future\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Joy at Work\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for Recharging and Thriving\"\n3. \"Finding Your Work-Life Harmony: Unlocking the Key to Sustainable Success\"\n4. \"Breaking Free from Burnout: Emp",
+            "prompt2": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Unraveling the Mysteries of Job Burnout and Finding Practical Solutions\"\n3. \"The Burnout Dilemma: Unlocking the Key to Work-Life Balance and Effective",
+            "winner": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\""
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n\"Unlocking the Secrets of After Effects: Elevate Your Videos with Ease\"\n\"After Effects Demystified: Effortlessly Transform Your Videos into Professional Masterpieces\"\n\"From Novice to Pro: Unveiling the Hidden Gems of After Effects for Stunning",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Secrets of After Effects: Simple Tricks for Stunning Videos\"\n3. \"Level Up Your Video Editing Game: Essential After Effects Techniques\"\n4. \"From Novice to Pro: Easy Tips for Professional Video Enhancement in After Effects\"\n5",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Green Thumb's Secret: Unleashing the Magic to Nurture Thriving Plants and Blossoming Children\"",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "\"Green Thumb Secrets: Nurturing Children from Your Plants for Thriving Growth\"",
+            "winner": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\""
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Recycling Revolution: Unveiling the Power of Small Actions for a Sustainable Future\"",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Joy at Work\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for Recharging and Thriving\"\n3. \"Finding Your Work-Life Harmony: Unlocking the Key to Sustainable Success\"\n4. \"Breaking Free from Burnout: Emp",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"Revive and Thrive: Finding Balance in Work and Life\"\n3. \"From Burnout to Bliss: Unleashing the Power of Effective Communication\"\n4. \"Reclaim Your Energy: Conquering Job Exhaustion with Practical Strategies\"\n5.",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n\"Unlocking the Secrets of After Effects: Transform Your Videos with Ease and Professionalism\"\n\"After Effects Demystified: Simple Tricks for Stunning Video Enhancements\"\n\"From Novice to Pro: Unleashing the Hidden Potential of After Effects for Video Enhancement",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Editing\"\n2. \"From Novice to Pro: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Unlocking the Secrets of Professional Video Editing\"\n4. \"Level Up Your Video Editing Game: Essential After Effects Tricks",
+            "winner": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\""
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Green Thumb's Secret: Unleashing the Magic to Nurture Thriving Plants and Blossoming Children\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unlocking the Green Thumb: A Practical Guide to Cultivating Thriving Plants and Growing Healthy Children\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "\"The Recycling Revolution: Unveiling the Power of Small Actions for a Sustainable Future\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unveiling the Recycling Revolution: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "generation1": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Joy at Work\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for Recharging and Thriving\"\n3. \"Finding Your Work-Life Harmony: Unlocking the Key to Sustainable Success\"\n4. \"Breaking Free from Burnout: Emp",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Energy\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for a Happier, Healthier Work Life\"\n3. \"Finding Light in the Darkness: Overcoming Burnout and Rediscovering Passion\"\n4. \"The Burnout Battle:",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"\n\"Unlocking the Power of After Effects: Simple Tricks for Stunning Videos\"\n\"Elevate Your Videos: Unleashing the Potential of After Effects\"\n\"After Effects Demystified: Essential Tricks for Professional Video Enhancement\"\n\"From Novice to Pro: Unveiling the",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Secrets of After Effects: Simple Tricks for Stunning Videos\"\n3. \"Level Up Your Video Editing Game: Essential After Effects Techniques\"\n4. \"From Novice to Pro: Easy Tips for Professional Video Enhancement in After Effects\"\n5",
+            "winner": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\""
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"Nurturing Nature: Unlocking the Secrets to Growing Thriving Plants and Cultivating Green Thumbs in Children\"",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "\"Green Thumb Parenting: Nurturing Children and Plants for Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"The Recycling Revolution: Unveiling the Power of Small Daily Actions for a Greener Future\"",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Unraveling the Mysteries of Job Burnout and Finding Practical Solutions\"\n3. \"The Burnout Dilemma: Unlocking the Key to Work-Life Balance and Effective",
+            "prompt2": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"Revive and Thrive: Finding Balance in Work and Life\"\n3. \"From Burnout to Bliss: Unleashing the Power of Effective Communication\"\n4. \"Reclaim Your Energy: Conquering Job Exhaustion with Practical Strategies\"\n5.",
+            "winner": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\""
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"\n\"Unlocking the Power of After Effects: Simple Tricks for Stunning Videos\"\n\"Elevate Your Videos: Unleashing the Potential of After Effects\"\n\"After Effects Demystified: Essential Tricks for Professional Video Enhancement\"\n\"From Novice to Pro: Unveiling the",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Editing\"\n2. \"From Novice to Pro: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Unlocking the Secrets of Professional Video Editing\"\n4. \"Level Up Your Video Editing Game: Essential After Effects Tricks",
+            "winner": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\""
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"Nurturing Nature: Unlocking the Secrets to Growing Thriving Plants and Cultivating Green Thumbs in Children\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unlocking the Green Thumb: A Practical Guide to Cultivating Thriving Plants and Growing Healthy Children\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "\"The Recycling Revolution: Unveiling the Power of Small Daily Actions for a Greener Future\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unveiling the Recycling Revolution: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Unraveling the Mysteries of Job Burnout and Finding Practical Solutions\"\n3. \"The Burnout Dilemma: Unlocking the Key to Work-Life Balance and Effective",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Energy\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for a Happier, Healthier Work Life\"\n3. \"Finding Light in the Darkness: Overcoming Burnout and Rediscovering Passion\"\n4. \"The Burnout Battle:",
+            "winner": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\""
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation1": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Secrets of After Effects: Simple Tricks for Stunning Videos\"\n3. \"Level Up Your Video Editing Game: Essential After Effects Techniques\"\n4. \"From Novice to Pro: Easy and Effective After Effects Hacks\"\n5. \"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Editing\"\n2. \"From Novice to Pro: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Unlocking the Secrets of Professional Video Editing\"\n4. \"Level Up Your Video Editing Game: Essential After Effects Tricks",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation1": "\"Green Thumb Secrets: Nurturing Children from Your Plants for Thriving Growth\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unlocking the Green Thumb: A Practical Guide to Cultivating Thriving Plants and Growing Children\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation1": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "\"Unveiling the Recycling Revolution: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"Revive and Thrive: Finding Balance in Work and Life\"\n3. \"From Burnout to Bliss: Unleashing the Power of Effective Communication\"\n4. \"Reclaim Your Energy: Conquering Job Exhaustion with Practical Strategies\"\n5.",
+            "prompt2": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "generation2": "1. \"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Energy\"\n2. \"Cracking the Code of Job Exhaustion: Strategies for a Happier, Healthier Work Life\"\n3. \"Finding Light in the Darkness: Overcoming Burnout and Rediscovering Passion\"\n4. \"The Burnout Battle:",
+            "winner": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\""
+        }
+    ],
+    [
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1216.0
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1215.263693206478
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1230.5950719527063
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1228.52564568921
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1226.6439124464075
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1209.4193145924821
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1209.7787007121146
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1210.10500135677
+        },
+        {
+            "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+            "elo": 1210.4012599853552
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1200.736306793522
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1185.4049280472937
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1187.47435431079
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1189.3560875535925
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1205.1094501443242
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1203.418196355863
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1201.881126143294
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1184.4844344663184
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1187.0140534730187
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1189.316001631174
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1191.4099366988419
+        },
+        {
+            "prompt": "\"Generate a catchy and appealing title for each provided lenio talk description. Your title should effectively summarize the content of the talk and attract potential viewers. Make sure to convey the main objectives of the talks in an enticing way. Each title should be unique and different from each other. You cannot use the same phrase or wording in multiple titles.\"",
+            "elo": 1209.314026064743
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1200.0
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1184.0
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1168.2466374092683
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1169.9378911977294
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1171.4749614102984
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1188.8716530872741
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1174.129533006363
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1176.7246896685583
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1179.0865638685682
+        },
+        {
+            "prompt": "\"Generate compelling and engaging titles for our upcoming Lenio Talks, based on the briefs provided. Make sure each title is unique, captivating, and gives a glimpse into what the talk will be about. Your titles should prompt curiosity and interest, making people eager to attend our talks.\"",
+            "elo": 1165.2352269382768
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1217.2245978539254
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1216.8652117342929
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1216.5389110896376
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1216.2426524610523
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1230.9847725419634
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1228.3896158797681
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1226.0277416797583
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1239.8790786100496
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1237.3494596033493
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1235.047511445194
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1232.9535763775261
+        },
+        {
+            "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+            "elo": 1215.049487011625
+        }
+    ]
+]

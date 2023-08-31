@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
+        "rating": 1250.133217822758
+    },
+    {
+        "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
+        "rating": 1213.668640060996
+    },
+    {
+        "approximate_cost": 0.278396,
+        "real_cost": 0.1269905,
+        "tokens_input_gpt-3.5-turbo": 42755,
+        "tokens_output_gpt-3.5-turbo": 4639,
+        "tokens_input_gpt-4": 385,
+        "tokens_output_gpt-4": 272
+    }
+]

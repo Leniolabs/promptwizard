@@ -2,7 +2,7 @@ import argparse
 import os
 import json
 import matplotlib.pyplot as plt
-from . import generation, iteration
+from .prompt_generation import generation, iteration
 from .evals import elovalue, classification, equals, includes, function_calling
 from .approximate_cost import cost
 import yaml
@@ -15,16 +15,20 @@ from pathlib import Path
 
 def valid_yaml(file_name):
     
+    # initialize validation
     valid = True
 
+    # Open the YAML file and load its content
     with open(file_name, 'r') as file:
         content = yaml.safe_load(file)
 
+    # Check if 'method' is defined in 'test' section
     if 'method' not in content['test']:
         valid = False
         print("Validation error:")
-        print({'test': {'method': ['Must be defined']}})
+        print({'test': {'method': ['Must be defined']}}) # Notify about the missing method
     
+    # Handle prompts related information
     if 'generation' in content['prompts']:
         if 'number' in content['prompts']['generation']:
             number_of_prompts = content['prompts']['generation']['number']
@@ -33,6 +37,7 @@ def valid_yaml(file_name):
     if 'list' in content['prompts']:
         number_of_prompts = len(content['prompts']['list'])
 
+    # Handle prompts iteration and best_prompts validation
     if 'iterations' in content['prompts']:
         if 'best_prompts' in content['prompts']['iterations']:
             best_prompts = content['prompts']['iterations']['best_prompts']
@@ -43,24 +48,28 @@ def valid_yaml(file_name):
             print("Validation error:")
             print({'prompts': {'iterations': {'best_prompts':{'test': {'method': ['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}}}})
             return valid
-
+    # Allowed test method names
     allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo']
+
+    # Check if the selected 'method' is valid
     if 'method' in content['test']:
         if content['test']['method'] == 'function_calling':
-            config_schema = validation.ConfigSchema3()
+            config_schema = validation.ValidationFunctionCalling()
 
         if content['test']['method'] == 'Classification' or content['test']['method'] == 'Equals' or content['test']['method'] == 'Includes':
-            config_schema = validation.ConfigSchema2()
+            config_schema = validation.ValidationClaEqIn()
 
         if content['test']['method'] == 'Elo':
-            config_schema = validation.ConfigSchema1()
+            config_schema = validation.ValidationElo()
         
+        # Check if the selected method is in the allowed names
         if content['test']['method'] not in allowed_names:
             valid = False
             error_message = f"Must be one of the following: {', '.join(allowed_names)}"
             print("Validation error:")
             print({'test': {'method': [error_message]}})
 
+        # Validate content using the appropriate schema
         if content['test']['method'] in allowed_names:
             errors = config_schema.validate(content)
             if not errors:
@@ -86,13 +95,12 @@ def read_yaml(file_name):
     return content
 
 def approximate_cost(file):
-    # Extract the 'yaml_file' attribute from the input 'file' object
+    # Extract the absolute path of the YAML file from the input 'file' object
     yaml_file_path = os.path.abspath(file)
-    # Read the content of the YAML file
+    # Read the content of the YAML file using the 'read_yaml' function
     yaml_content = read_yaml(yaml_file_path)
 
-    # Extract the 'description', 'test_cases', 'number_of_prompts', 'candidate_model', 'generation_model',
-    # 'generation_model_temperature', 'generation_model_max_tokens', and 'method' from the YAML content
+    # Extract essential information from the YAML content
     method = yaml_content['test']['method']
     if method == 'Elo':
         description = yaml_content['test']['description']
@@ -143,7 +151,7 @@ def approximate_cost(file):
         model_iteration = 'None'
         model_iteration_max_tokens = 0
 
-    
+    # Calculate approximate cost based on the extracted information and the 'cost' module
     if method == 'function_calling':
         approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens)
     if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes':
@@ -152,13 +160,12 @@ def approximate_cost(file):
 
 def run_evaluation(file, approximate_cost):
 
-    # Extract the 'yaml_file' attribute from the input 'file' object
+    # Extract the absolute path of the YAML file from the input 'file' object
     yaml_file_path = os.path.abspath(file)
-    # Read the content of the YAML file
+    # Read the content of the YAML file using the 'read_yaml' function
     yaml_content = read_yaml(yaml_file_path)
 
-    # Extract the 'description', 'test_cases', 'number_of_prompts', 'candidate_model', 'generation_model',
-    # 'generation_model_temperature', 'generation_model_max_tokens', and 'method' from the YAML content
+    # Extract essential information from the YAML content
     method = yaml_content['test']['method']
     if method == 'Elo':
         description = yaml_content['test']['description']
@@ -220,6 +227,7 @@ def run_evaluation(file, approximate_cost):
     tokens_input_gpt35 = 0
     tokens_output_gpt35 = 0
 
+    # Determine the class corresponding to the selected method
     if method == 'Elo':
         class_method = elovalue.Elo
     if method == 'Classification':
@@ -238,7 +246,8 @@ def run_evaluation(file, approximate_cost):
         object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, functions, function_call, best_prompts)
     if method == 'Elo':
         object_class = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, best_prompts)
-    # Checks if the prompts to evaluate already exist and if not, creates them
+
+    # Checks if prompts exist, and generates them if necessary
     if prompts_value == []:
         if prompt_constrainst != 'None':
             prompts_generation_cost = generation.generate_candidate_prompts(object_class.system_gen_system_prompt, object_class.test_cases, description, object_class.model_generation, object_class.model_generation_temperature, model_generation_max_tokens, object_class.number_of_prompts, prompt_constrainst)
@@ -261,6 +270,7 @@ def run_evaluation(file, approximate_cost):
                 tokens_input_gpt4 = tokens_input_gpt4 + prompts_generation_cost[2]
                 tokens_output_gpt4 = tokens_output_gpt4 + prompts_generation_cost[3]
     
+    # Initialize an object for evaluation
     if method == 'function_calling':
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, functions, function_call, best_prompts)
     if method == 'Elo':
@@ -268,7 +278,7 @@ def run_evaluation(file, approximate_cost):
     if method != 'function_calling' and method != 'Elo':
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts)
 
-    # Evaluate the prompts
+    # Evaluate the prompts and gather results
     results = evaluable_object.evaluate_optimal_prompt()
     cost = cost + results[2]
     if model_test == 'gpt-4':
@@ -309,6 +319,8 @@ def run_evaluation(file, approximate_cost):
     with open(output_json_path, "w") as json_file:
         json.dump(results[0], json_file, indent=4)
     print(f"Result saved in: {output_json_path}")
+
+    # Make iterations if it's necessary
     old_prompts = results[1]
     number_of_iteration = 1
     if method != 'Elo':
@@ -389,6 +401,8 @@ def run_evaluation(file, approximate_cost):
             iterations = iterations - 1
             number_of_iteration = number_of_iteration + 1
             old_prompts = new_results[1]
+    # Ends the calculation of consumed tokens and stores this information
+
     if model_generation == 'gpt-4':
         tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_gen
         tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_gen
@@ -401,6 +415,7 @@ def run_evaluation(file, approximate_cost):
     if model_test == 'gpt-3.5-turbo':
         tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_test
         tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_test
+    
     filename = f'output_best_prompts_and_results.json'
     json_file_path = os.path.join(yaml_folder, filename)
     tokens_and_cost = {
@@ -520,25 +535,35 @@ def main():
     args = parser.parse_args()
 
     try:
-        
+        # Define a function to check if a given path is valid
         def valid_path(path):
             try:
                 Path(path)
                 return True
             except (ValueError, TypeError):
                 return False
+        # Check if the provided environment path is valid
         if valid_path(args.env_path):
+            # Load environment variables from the specified path
             dotenv.load_dotenv(dotenv_path=args.env_path)
         else:
+            # Load environment variables from the default '.env' file in the current working directory
             dotenv.load_dotenv(dotenv_path=os.getcwd()+'/.env')
         
     except FileNotFoundError:
+        # Handle the case where the .env file is not found
         print("Error: The .env file was not found in your directory.")
         exit(1)
+
+    # Check if the OPENAI_API_TYPE environment variable is set to "azure"
     if os.getenv("OPENAI_API_TYPE") == "azure":
+
+        # Check if OPENAI_API_BASE is not defined when using the "azure" API type
         if os.getenv("OPENAI_API_BASE") is None:
             print("Error: OPENAI_API_BASE is required when OPENAI_API_TYPE is 'azure'")
             exit(1)
+
+        # Check if OPENAI_API_VERSION is not defined when using the "azure" API type
         if os.getenv("OPENAI_API_VERSION") is None:
             print("Error: OPENAI_API_VERSION is required when OPENAI_API_TYPE is 'azure'")
             exit(1)
@@ -554,12 +579,17 @@ def main():
             "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY")
         }
 
+    # Check if the optional string argument is set to "don't run"
     if args.optional_string == "don't run":
+        # Check if the provided YAML file is valid
         if (valid_yaml(args.yaml_file)):
+            # Calculate the approximate cost of the evaluation based on the YAML file
             approximate = approximate_cost(args.yaml_file)
             print(f"The cost of your evaluation will be approximately {approximate} dollars.")
     else:
+        # Check if the provided YAML file is valid
         if (valid_yaml(args.yaml_file)):
+            # Calculate the approximate cost of the evaluation based on the YAML file
             approximate = approximate_cost(args.yaml_file)
             print(f"The cost of your evaluation will be approximately {approximate} dollars.")
             run_evaluation(args.yaml_file, approximate)

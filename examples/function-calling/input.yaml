@@ -14,7 +14,7 @@ test:
           output1: 'print_file'
           output2: 'JPEG'
         - inout: 'Please convert the PowerPoint presentation to a PDF for sharing.'
-          output1: 'convert'
+          output1: 'convert_file'
           output2: 'PPTX'
         - inout: "They're editing a CSV file to update the product inventory."
           output1: 'edit_file'

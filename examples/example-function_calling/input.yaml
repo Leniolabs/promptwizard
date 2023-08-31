@@ -1,0 +1,46 @@
+test:
+  cases:
+    - inout: 'design a logo for AI meetings'
+      output1: 'design_logo'
+      output2: 'AI meetings'
+    - inout: 'Write a Python script to analyze sales data.'
+      output1: 'write_script'
+      output2: 'Python'
+  method: function_calling
+  model:
+    name: 'gpt-3.5-turbo'
+    temperature: 0.8
+    max_tokens: 500
+  functions: [
+    - name: "design_logo",
+      description: "Design a logo for a creative project.",
+      parameters:
+        type: "object",
+        properties:
+          task_type:
+            type: "string",
+            description: "Project for which you want to create a logo.",
+        required: ["task_type"],
+    - name: "write_script",
+      description: "Write a script for data analysis.",
+      parameters:
+        type: "object",
+        properties:
+          task_type:
+            type: "string",
+            enum: ['Python', 'R', 'MATLAB', 'Java', 'Javascript', 'C#'],
+            description: "Programming language for the script.",
+        required: ["task_type"],
+  ]
+  function_call: 'auto'
+
+prompts:
+  list:
+    - "You're an AI specialized in creative tasks. Your job is to interpret task descriptions and provide the corresponding action and task type. The output should be an array with the function name as the first element and the task type as the second element. For example, if asked to design a logo, the function and variable could be 'design_logo' and 'graphics' respectively."
+    - "As an AI creative assistant, you're given various creative tasks. Your role is to understand the tasks and provide the right function and task type. For instance, if you're asked to create a webpage, your output should be ['create_webpage', 'HTML']. Focus on correctly identifying both the function and the task type."
+  iterations:
+    number: 1
+    model:
+      name: 'gpt-4'
+      temperature: 0.9
+      max_tokens: 500

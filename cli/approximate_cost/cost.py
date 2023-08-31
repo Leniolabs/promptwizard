@@ -46,9 +46,12 @@ def num_tokens_from_messages(messages, model):
     return num_tokens
 
 def approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations):
-    tokens_input = 0
-    tokens_output = 0
+    tokens_input = 0 # Initialize a variable to count input tokens
+    tokens_output = 0 # Initialize a variable to count output tokens
+
+    # Check the method type to determine the system-generated prompt
     if prompts_value == []:
+
         if method == 'Includes':
             system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
@@ -59,7 +62,8 @@ def approximate_cost_generation(test_cases, method, model_test, model_test_max_t
         Specify in the prompts that you generate that they give a step-by-step response.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
-        elif method == 'Equals':
+            
+        if method == 'Equals':
             system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
 In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
@@ -69,7 +73,8 @@ Remember that the prompt should only allow the AI to answer the answer and nothi
 You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified. I repeat, do not include the test cases.
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
-        elif method == 'Classification':
+
+        if method == 'Classification':
             system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
         The prompts you will be generating will be for classifiers, with 'true' and 'false' being the only possible outputs.
@@ -79,7 +84,8 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
-        elif method == 'Elo':
+            
+        if method == 'Elo':
             system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
 The prompts you will be generating will be for freeform tasks, such as generating a landing page headline, an intro paragraph, solving a math problem, etc.
@@ -89,7 +95,8 @@ In your generated prompt, you should describe how the AI should behave in plain 
 You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
-        elif method == 'function_calling':
+
+        if method == 'function_calling':
             system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
 
 In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
@@ -97,6 +104,8 @@ In your generated prompt, you should describe how the AI should behave in plain 
 You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
+
+        # Create a message list based on the prompt change requirement
         if prompt_change != 'None':
             message = [
                     {"role": "system", "content": system_gen_system_prompt + ' ' + prompt_change},

@@ -1,8 +1,6 @@
 README.md
 setup.py
 cli/__init__.py
-cli/generation.py
-cli/iteration.py
 cli/main.py
 cli/approximate_cost/__init__.py
 cli/approximate_cost/cost.py
@@ -16,6 +14,9 @@ cli/evals/elovalue.py
 cli/evals/equals.py
 cli/evals/function_calling.py
 cli/evals/includes.py
+cli/prompt_generation/__init__.py
+cli/prompt_generation/generation.py
+cli/prompt_generation/iteration.py
 cli/validation_yaml/__init__.py
 cli/validation_yaml/validation.py
 lenio_ai_prompt_engineer.egg-info/PKG-INFO
