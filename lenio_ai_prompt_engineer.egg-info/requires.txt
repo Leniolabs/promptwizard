@@ -5,3 +5,10 @@ numpy
 marshmallow
 tiktoken>=0.4.0
 tenacity
+zipp
+six
+aiohttp
+urllib3
+certifi
+tqdm
+python-dotenv

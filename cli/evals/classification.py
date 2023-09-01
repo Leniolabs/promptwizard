@@ -3,6 +3,24 @@ from ..cost import input, output
 
 class Classification:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
+        
+        """
+        Initialize a Classification instance.
+
+        Args:
+            test_cases (list): List of test cases to evaluate.
+            number_of_prompts (int): Number of prompts to generate and/or test.
+            model_test (str): The language model used for testing.
+            model_test_temperature (float): The temperature parameter for the testing model.
+            model_test_max_tokens (int): The maximum number of tokens allowed for the testing model.
+            model_generation (str): The language model used for generating prompts.
+            model_generation_temperature (float): The temperature parameter for the generation model.
+            prompts (list): List of prompts to evaluate.
+            best_prompts (int): Number of best prompts to consider.
+
+        Note:
+            The 'system_gen_system_prompt' attribute is predefined within the class constructor.
+        """
 
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
@@ -24,6 +42,19 @@ class Classification:
         self.best_prompts = best_prompts
 
     def test_candidate_prompts(self):
+
+        """
+        Test a list of candidate prompts with test cases and evaluate their performance.
+
+        Returns:
+            tuple: A tuple containing the following elements:
+                - List of results and statistics.
+                - List of best-performing prompts.
+                - Cost of generating and testing prompts.
+                - Tokens used for input.
+                - Tokens used for output.
+        """
+
         cost = 0
         tokens_input = 0
         tokens_output = 0
@@ -82,4 +113,12 @@ class Classification:
         return sorted_data, best_prompts, cost, tokens_input, tokens_output
     
     def evaluate_optimal_prompt(self):
+        
+        """
+        Evaluate the optimal prompt by testing candidate prompts and selecting the best ones.
+
+        Returns:
+            tuple: A tuple containing the result data, best prompts, cost, input tokens used, and output tokens used.
+        """
+
         return self.test_candidate_prompts()

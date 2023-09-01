@@ -1,0 +1,40 @@
+[
+    {
+        "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less.",
+        "rating": 100.0
+    },
+    [
+        {
+            "method": "Function_calling"
+        },
+        [
+            {
+                "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less."
+            },
+            {
+                "test": "design a logo for AI meetings",
+                "answer": {
+                    "function": "design_logo",
+                    "variable": "AI meetings"
+                },
+                "ideal": {
+                    "function": "design_logo",
+                    "variable": "AI meetings"
+                },
+                "result": true
+            },
+            {
+                "test": "Write a Python script to analyze sales data.",
+                "answer": {
+                    "function": "write_script",
+                    "variable": "Python"
+                },
+                "ideal": {
+                    "function": "write_script",
+                    "variable": "Python"
+                },
+                "result": true
+            }
+        ]
+    ]
+]

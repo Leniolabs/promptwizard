@@ -4,6 +4,26 @@ from ..cost import input, output
 class Equals:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
 
+        """
+        Initializes an instance of the Equals class.
+
+        Args:
+            test_cases (list): A list of test cases, each containing 'inout' and 'output' fields.
+            number_of_prompts (int): The number of prompts to evaluate.
+            model_test (str): The name of the GPT model used for testing.
+            model_test_temperature (float): The temperature setting for testing.
+            model_test_max_tokens (int): The maximum number of tokens for testing.
+            model_generation (str): The name of the GPT model used for prompt generation.
+            model_generation_temperature (float): The temperature setting for prompt generation.
+            prompts (list): A list of prompts to evaluate.
+            best_prompts (int): The number of best prompts to select.
+
+        Note:
+            The 'system_gen_system_prompt' attribute is predefined within the class constructor.
+
+        Initializes the Equals class with the provided parameters.
+        """
+
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
         self.model_test = model_test
@@ -24,6 +44,17 @@ You will be graded based on the performance of your prompt... but don't cheat! Y
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
     def test_candidate_prompts(self):
+
+        """
+        Test candidate prompts against provided test cases.
+
+        Returns:
+            tuple: A tuple containing data list, best prompts, cost, input tokens used, and output tokens used.
+
+        This method evaluates a set of prompts by generating responses using a GPT model and comparing the generated
+        responses to expected outputs from test cases. It returns information about the performance of each prompt.
+        """
+
         cost = 0
         tokens_input = 0
         tokens_output = 0
@@ -78,4 +109,15 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         return sorted_data, best_prompts, cost, tokens_input, tokens_output
     
     def evaluate_optimal_prompt(self):
+
+        """
+        Evaluate and determine the optimal prompt.
+
+        Returns:
+            tuple: A tuple containing data list, best prompts, cost, input tokens used, and output tokens used.
+
+        This method evaluates the candidate prompts using the `test_candidate_prompts` method and returns the
+        evaluation results, including the best prompts and their performance.
+        """
+        
         return self.test_candidate_prompts()

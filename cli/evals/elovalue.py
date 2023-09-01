@@ -11,6 +11,26 @@ N_RETRIES = 3  # number of times to retry a call to the ranking model if it fail
 
 class Elo:
     def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
+
+        """
+        Initialize an Elo instance.
+
+        Args:
+            description (str): Description of the use-case.
+            test_cases (list): List of test cases to evaluate.
+            number_of_prompts (int): Number of prompts to generate and test.
+            model_test (str): The language model used for testing.
+            model_test_temperature (float): The temperature parameter for the testing model.
+            model_test_max_tokens (int): The maximum number of tokens allowed for the testing model.
+            model_generation (str): The language model used for generating prompts.
+            model_generation_temperature (float): The temperature parameter for the generation model.
+            prompts (list): List of prompts to evaluate.
+            best_prompts (int): Number of best prompts to consider.
+
+        Note:
+            The 'system_gen_system_prompt' and 'ranking_system_prompt' attribute is predefined within the class constructor.
+        """
+
         self.description = description
         self.test_cases = test_cases
         self.number_of_prompts = number_of_prompts
@@ -45,9 +65,34 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         self.best_prompts = best_prompts
 
     def expected_score(self, r1, r2):
+
+        """
+        Calculate the expected score based on Elo rating.
+
+        Args:
+            r1 (float): Elo rating of the first prompt.
+            r2 (float): Elo rating of the second prompt.
+
+        Returns:
+            float: Expected score.
+        """
+
         return 1 / (1 + 10**((r2 - r1) / 400))
 
     def update_elo(self, r1, r2, score1):
+
+        """
+        Update Elo ratings based on the match outcome.
+
+        Args:
+            r1 (float): Elo rating of the first prompt.
+            r2 (float): Elo rating of the second prompt.
+            score1 (float): Score of the first prompt.
+
+        Returns:
+            tuple: Updated Elo ratings for the first and second prompt.
+        """
+
         e1 = self.expected_score(r1, r2)
         e2 = self.expected_score(r2, r1)
         return r1 + K * (score1 - e1), r2 + K * ((1 - score1) - e2)
@@ -55,6 +100,19 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
     # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
     def get_score(self, test_case, pos1, pos2):
+
+        """
+        Get the score of two prompts.
+
+        Args:
+            test_case (str): The test case.
+            pos1 (str): Prompt 1.
+            pos2 (str): Prompt 2.
+
+        Returns:
+            tuple: A tuple containing score, cost, input tokens used, and output tokens used.
+        """
+
         score = openai.ChatCompletion.create(
             model=self.model_test,
             messages=[
@@ -80,6 +138,18 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
     @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
     def get_generation(self, prompt, test_case):
+
+        """
+        Generate a response using a prompt and a test case.
+
+        Args:
+            prompt (str): The prompt.
+            test_case (str): The test case.
+
+        Returns:
+            tuple: A tuple containing generated response, cost, input tokens used, and output tokens used.
+        """
+
         generation = openai.ChatCompletion.create(
             model=self.model_test,
             messages=[
@@ -97,6 +167,14 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         return generation.choices[0].message.content, cost, tokens_input, tokens_output
 
     def test_candidate_prompts(self):
+
+        """
+        Test candidate prompts using Elo ratings and generate rankings.
+
+        Returns:
+            tuple: A tuple containing prompt ratings, battle results, Elo ratings, cost, input tokens used, and output tokens used.
+        """
+        
         cost = 0
         tokens_input = 0
         tokens_output = 0
@@ -189,11 +267,26 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
 
     def evaluate_optimal_prompt(self): 
+
+        """
+        Evaluate and determine the optimal prompt based on Elo ratings.
+
+        Returns:
+            tuple: A tuple containing data list, best prompts, Elo ratings, cost, input tokens used, and output tokens used.
+
+        This method calculates Elo ratings for a set of prompts, ranks them based on their Elo ratings, and returns
+        information about the best prompts and the evaluation results.
+        """
+        
+        # Calculate Elo ratings and gather evaluation results
         prompt_ratings = self.test_candidate_prompts()
+        # Prepare a data list for prompts and ratings, sorted by rating in descending order
         data_list = []
         for prompt, rating in sorted(prompt_ratings[0].items(), key=lambda item: item[1], reverse=True):
             data_list.append({"prompt": prompt, "rating": rating})
+        # Append the battle results and Elo ratings to the data list
         data_list.append(prompt_ratings[1])
         data_list.append(prompt_ratings[2])
+        # Select the best prompts based on the specified count
         best_prompts = data_list[:self.best_prompts]
         return data_list, best_prompts, prompt_ratings[3], prompt_ratings[4], prompt_ratings[5]

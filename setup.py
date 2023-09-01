@@ -17,7 +17,14 @@ setup(
         'numpy',
         'marshmallow',
         'tiktoken>=0.4.0',
-        'tenacity'
+        'tenacity',
+        'zipp',
+        'six',
+        'aiohttp',
+        'urllib3',
+        'certifi',
+        'tqdm',
+        'python-dotenv'
     ],
     entry_points={
         'console_scripts': [

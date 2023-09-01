@@ -146,16 +146,21 @@ def approximate_cost(file):
         if not 'model' in yaml_content['prompts']['iterations']:
             model_iteration = 'None'
             model_iteration_max_tokens = 0
+        if 'best_prompts' in yaml_content['prompts']['iterations']:
+            best_prompts = yaml_content['prompts']['iterations']['best_prompts']
+        if not 'best_prompts' in yaml_content['prompts']['iterations']:
+            best_prompts = 2
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
         model_iteration = 'None'
         model_iteration_max_tokens = 0
+        best_prompts = 2
 
     # Calculate approximate cost based on the extracted information and the 'cost' module
     if method == 'function_calling':
-        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens)
+        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
     if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes':
-        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens)
+        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
     return approximate_cost
 
 def run_evaluation(file, approximate_cost):

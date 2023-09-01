@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "As an AI, your task is to interpret a given command and identify the appropriate function and variables within it. The command could be anything from designing a logo to writing a script. Your job is to dissect the command, understand the action required (which will be your function), and identify the key elements or subjects involved (which will be your variables). Remember, your output should only be the function and variables, nothing more, nothing less.",
+        "rating": 100.0
+    },
+    {
+        "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less.",
+        "rating": 100.0
+    },
+    {
+        "approximate_cost": 0.188589,
+        "real_cost": 0.05570549999999999,
+        "tokens_input_gpt-3.5-turbo": 2197,
+        "tokens_output_gpt-3.5-turbo": 195,
+        "tokens_input_gpt-4": 742,
+        "tokens_output_gpt-4": 496
+    }
+]

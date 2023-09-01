@@ -30,83 +30,61 @@ test:
         temperature: 0.8
         max_tokens: 500
 
-    functions: [
-        {
-            "name": "save_file",
-            "description": "Save the changes made to your file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "file_type": {
-                        "type": "string",
-                        "enum": ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON'],
-                        "description": "File type on which actions are being performed."
-                    }
-                },
-                "required": ["file_type"],
-            }
-        },
-        {
-            "name": "open_file",
-            "description": "Open the specified file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "file_type": {
-                        "type": "string",
-                        "enum": ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON'],
-                        "description": "File type on which actions are being performed."
-                    }
-                },
-                "required": ["file_type"],
-            }
-        },
-        {
-            "name": "print_file",
-            "description": "Print the specified file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "file_type": {
-                        "type": "string",
-                        "enum": ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON'],
-                        "description": "File type on which actions are being performed."
-                    }
-                },
-                "required": ["file_type"],
-            }
-        },
-        {
-            "name": "convert_file",
-            "description": "Convert the specified file to an another type of file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "file_type": {
-                        "type": "string",
-                        "enum": ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON'],
-                        "description": "File type on which actions are being performed."
-                    }
-                },
-                "required": ["file_type"],
-            }
-        },
-        {
-            "name": "edit_file",
-            "description": "Edit the specified file.",
-            "parameters": {
-                "type": "object",
-                "properties": {
-                    "file_type": {
-                        "type": "string",
-                        "enum": ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON'],
-                        "description": "File type on which actions are being performed."
-                    }
-                },
-                "required": ["file_type"],
-            }
-        },
-    ]
+    functions:
+        - name: "save_file"
+          description: "Save the changes made to your file."
+          parameters:
+            type: "object"
+            properties:
+                file_type:
+                    type: "string"
+                    enum: ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON']
+                    description: "File type on which actions are being performed."
+            required: ["file_type"]
+        
+        - name: "open_file"
+          description: "Open the specified file."
+          parameters:
+            type: "object"
+            properties:
+                file_type:
+                    type: "string"
+                    enum: ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON']
+                    description: "File type on which actions are being performed."
+            required: ["file_type"]
+
+        - name: "print_file"
+          description: "Print the specified file."
+          parameters:
+            type: "object"
+            properties:
+                file_type":
+                    type: "string"
+                    enum: ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON']
+                    description: "File type on which actions are being performed."
+            required: ["file_type"]
+
+        - name: "convert_file"
+          description: "Convert the specified file to an another type of file."
+          parameters:
+            type: "object"
+            properties:
+                file_type":
+                    type: "string"
+                    enum: ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON']
+                    description: "File type on which actions are being performed."
+            required: ["file_type"]
+
+        - name: "edit_file"
+          description: "Edit the specified file."
+          parameters:
+            type: "object"
+            properties:
+                file_type:
+                    type: "string"
+                    enum: ['PDF', 'DOCX', 'XLSX', 'JPEG', 'GIF', 'PNG', 'PPTX', 'CSV', 'JSON']
+                    description: "File type on which actions are being performed."
+            required: ["file_type"]
     function_call: "auto"
     
 
