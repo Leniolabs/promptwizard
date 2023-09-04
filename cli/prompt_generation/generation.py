@@ -1,5 +1,5 @@
 import openai
-from ..cost import input, output
+from cli.cost import input, output
 
 def generate_candidate_prompts(system_gen_system_prompt, test_cases, description, model_generation, model_generation_temperature, model_generation_max_tokens, number_of_prompts, prompt_features=None):
         

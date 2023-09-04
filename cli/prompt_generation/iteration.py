@@ -1,5 +1,5 @@
 from . import generation
-from ..evals import elovalue, classification, equals, includes, function_calling
+from cli.evals import elovalue, classification, equals, includes, function_calling
 
 
 def iterations(test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts_and_rating, method, functions, function_call, description=None, best_prompts=2):

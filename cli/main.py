@@ -2,16 +2,18 @@ import argparse
 import os
 import json
 import matplotlib.pyplot as plt
-from .prompt_generation import generation, iteration
-from .evals import elovalue, classification, equals, includes, function_calling
-from .approximate_cost import cost
+from cli.prompt_generation import generation, iteration
+from cli.evals import elovalue, classification, equals, includes, function_calling
+from cli.approximate_cost import cost
 import yaml
 import textwrap
 import numpy as np
 from collections import defaultdict
 import dotenv
-from .validation_yaml import validation
+from cli.validation_yaml import validation
 from pathlib import Path
+from constants import constants
+import openai
 
 def valid_yaml(file_name):
     
@@ -554,6 +556,10 @@ def main():
         else:
             # Load environment variables from the default '.env' file in the current working directory
             dotenv.load_dotenv(dotenv_path=os.getcwd()+'/.env')
+        if os.getenv(constants.OPENAI_API_KEY):
+            openai.api_key = os.getenv(constants.OPENAI_API_KEY)
+        else:
+            raise Exception("No API key provided into enviroment variables, please configure OPENAI_API_KEY")
         
     except FileNotFoundError:
         # Handle the case where the .env file is not found
@@ -575,7 +581,7 @@ def main():
     if os.getenv("OPENAI_API_BASE") != None and os.getenv("OPENAI_API_TYPE") != None and os.getenv("OPENAI_API_VERSION") != None:
         openai_env = {
         "OPENAI_API_BASE": os.getenv("OPENAI_API_BASE"),
-        "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY"),
+        constants.OPENAI_API_KEY: os.getenv(constants.OPENAI_API_KEY),
         "OPENAI_API_TYPE": os.getenv("OPENAI_API_TYPE"),
         "OPENAI_API_VERSION": os.getenv("OPENAI_API_VERSION")
         }
