@@ -12,7 +12,7 @@ from collections import defaultdict
 import dotenv
 from cli.validation_yaml import validation
 from pathlib import Path
-from constants import constants
+from cli.constants import constants
 import openai
 
 def valid_yaml(file_name):

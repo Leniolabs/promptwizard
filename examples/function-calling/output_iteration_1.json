@@ -1,11 +1,11 @@
 [
     {
-        "prompt": "As an AI developed to assist in tasks related to file operations, your responsibility is to interpret any given sentence that signifies a task, and translate it into the command that aligns with the function you'd carry out. The response ought to be delivered as an array, the first element being the function name, and the second one indicating the file type you're engaged with. The function name can be something like 'open_file' for launching a file or 'save_file' for preserving a file. The variable could indicate the variety of file such as 'PDF', 'DOCX', and so forth. Be observant of the context to pick the appropriate function and variable.",
-        "rating": 100.0
+        "prompt": "As an AI engineered to facilitate operations involving files, your duty is to decode a stated sentence that outlines a task, and yield the corresponding command that aligns with the function you would carry out. The answer should be formatted as an array, with the initial element representing the function name, and the second element indicating the variable that symbolizes the file type you're interacting with. The function name might be 'open_file' for the act of opening a file or 'save_file' when it comes to saving a file. The variable might denote the file category such as 'PDF', 'DOCX', and so on. Carefully consider the context to pick the right function and variable.",
+        "rating": 71.42857142857143
     },
     {
-        "prompt": "As an AI engineered to facilitate tasks related to file operations, it is your responsibility to comprehend a task description provided in a sentence and return the equivalent command that would define the operation you'd conduct. This response should be arranged as an array; the initial element being the function name, and the subsequent element standing for the file type variable that you're interacting with. The function name could be 'open_file' for the act of opening a file or 'save_file' for preserving a file. The variable might denote the file format - 'PDF', 'DOCX', and so forth. Keep the context in mind to opt for the applicable function and variable.",
-        "rating": 100.0
+        "prompt": "As an AI engineered to handle file operation duties, your task is to decode a provided phrase outlining a task, and then render the equivalent command that aligns with the operation you would conduct. The resulting command must be formatted as an array. The initial element should signify the function name, and the subsequent element should denote the variable indicating the file type you're handling. The function name may be 'open_file' for the act of opening a file or 'save_file' for the act of saving a file. The variable could specify the file type such as 'PDF', 'DOCX', etc. Consider the context to determine the right function and variable.",
+        "rating": 57.14285714285714
     },
     [
         {
@@ -13,7 +13,7 @@
         },
         [
             {
-                "prompt": "As an AI developed to assist in tasks related to file operations, your responsibility is to interpret any given sentence that signifies a task, and translate it into the command that aligns with the function you'd carry out. The response ought to be delivered as an array, the first element being the function name, and the second one indicating the file type you're engaged with. The function name can be something like 'open_file' for launching a file or 'save_file' for preserving a file. The variable could indicate the variety of file such as 'PDF', 'DOCX', and so forth. Be observant of the context to pick the appropriate function and variable."
+                "prompt": "As an AI engineered to facilitate operations involving files, your duty is to decode a stated sentence that outlines a task, and yield the corresponding command that aligns with the function you would carry out. The answer should be formatted as an array, with the initial element representing the function name, and the second element indicating the variable that symbolizes the file type you're interacting with. The function name might be 'open_file' for the act of opening a file or 'save_file' when it comes to saving a file. The variable might denote the file category such as 'PDF', 'DOCX', and so on. Carefully consider the context to pick the right function and variable."
             },
             {
                 "test": "The goal is to read a PDF file about climate change.",
@@ -77,32 +77,26 @@
             },
             {
                 "test": "They're editing a CSV file to update the product inventory.",
-                "answer": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "edit_file",
                     "variable": "CSV"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "The task is to analyze the data in a JSON file using Python.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "open_file",
                     "variable": "JSON"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             }
         ],
         [
             {
-                "prompt": "As an AI engineered to facilitate tasks related to file operations, it is your responsibility to comprehend a task description provided in a sentence and return the equivalent command that would define the operation you'd conduct. This response should be arranged as an array; the initial element being the function name, and the subsequent element standing for the file type variable that you're interacting with. The function name could be 'open_file' for the act of opening a file or 'save_file' for preserving a file. The variable might denote the file format - 'PDF', 'DOCX', and so forth. Keep the context in mind to opt for the applicable function and variable."
+                "prompt": "As an AI engineered to handle file operation duties, your task is to decode a provided phrase outlining a task, and then render the equivalent command that aligns with the operation you would conduct. The resulting command must be formatted as an array. The initial element should signify the function name, and the subsequent element should denote the variable indicating the file type you're handling. The function name may be 'open_file' for the act of opening a file or 'save_file' for the act of saving a file. The variable could specify the file type such as 'PDF', 'DOCX', etc. Consider the context to determine the right function and variable."
             },
             {
                 "test": "The goal is to read a PDF file about climate change.",
@@ -130,15 +124,12 @@
             },
             {
                 "test": "He needs to review an Excel spreadsheet containing sales data.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "XLSX"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "open_file",
                     "variable": "XLSX"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "She is trying to print a high-resolution image for the art exhibition.",
@@ -166,27 +157,21 @@
             },
             {
                 "test": "They're editing a CSV file to update the product inventory.",
-                "answer": {
-                    "function": "edit_file",
-                    "variable": "CSV"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "edit_file",
                     "variable": "CSV"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "The task is to analyze the data in a JSON file using Python.",
-                "answer": {
-                    "function": "open_file",
-                    "variable": "JSON"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "open_file",
                     "variable": "JSON"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             }
         ]
     ]
