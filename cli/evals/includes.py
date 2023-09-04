@@ -1,5 +1,8 @@
 import openai
 from ..cost import input, output
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
 
 class Includes:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts=2):
@@ -41,6 +44,7 @@ class Includes:
         self.prompts = prompts
         self.best_prompts = best_prompts
 
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=10))
     def test_candidate_prompts(self):
 
         """

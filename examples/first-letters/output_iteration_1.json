@@ -1,11 +1,7 @@
 [
     {
-        "prompt": "Your mission is to uncover a concealed word within a sentence. This word is formed by using the first letter of each word in the sequence. To successfully decipher, pluck the initial letter from each word and concatenate them. Your output should be the hidden word, formed from these initial letters, in its correct sequence. Be cautious not to include any additional characters, empty spaces, or punctuation marks, just the secret word.",
-        "rating": 100.0
-    },
-    {
-        "prompt": "In this task, you're an expert cryptographer tasked with uncovering a hidden word concealed in a string of sentences. This covert word is constructed through an acronym approach: the initial letter of each word, when combined in their original sequence, formulates the covert word. Your mission is to unveil this word, using only the first letters from each word in the sentence. Your output should solely consist of this deciphered word, omitting any supplementary characters, spaces or punctuation. \n\nYou have been provided with a sequence of sentences. In these sentences, every word encases a single letter that contributes to fabricating a new, readable English word. Your mission, should you choose to accept it, is to construct this new word by extracting the first letter from each word in the sentence and arranging them in the order they appear. Examine each word carefully and ensure that no word is overlooked. Your output should present this newly constructed word, adhering strictly to the sequence of the words in the sentence. Please note that your output should contain only this constructed word, nothing more, nothing less.",
-        "rating": 80.0
+        "prompt": "Suppose you find yourself in a virtual world of language manipulation - your target being the creation of an unprecedented word. Your tool? The first letter of each word in a sentence, blend them in the original order to fabricate your unique lexeme. Be sure to process each word separately, maintaining the original sequence, and carefully crafting an output that sounds like a genuine English word. This is not a random task but one of careful construction. Avoid altering any part of the original sentence or its structure and extract only the first letters. The word you present in response to this task must encapsulate the spirit of the original sentence and make sure it retains a comprehensible meaning in English.",
+        "rating": 60.0
     },
     [
         {
@@ -13,19 +9,19 @@
         },
         [
             {
-                "prompt": "Your mission is to uncover a concealed word within a sentence. This word is formed by using the first letter of each word in the sequence. To successfully decipher, pluck the initial letter from each word and concatenate them. Your output should be the hidden word, formed from these initial letters, in its correct sequence. Be cautious not to include any additional characters, empty spaces, or punctuation marks, just the secret word."
+                "prompt": "Suppose you find yourself in a virtual world of language manipulation - your target being the creation of an unprecedented word. Your tool? The first letter of each word in a sentence, blend them in the original order to fabricate your unique lexeme. Be sure to process each word separately, maintaining the original sequence, and carefully crafting an output that sounds like a genuine English word. This is not a random task but one of careful construction. Avoid altering any part of the original sentence or its structure and extract only the first letters. The word you present in response to this task must encapsulate the spirit of the original sentence and make sure it retains a comprehensible meaning in English."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The hidden word is \"TRACTOR\".",
+                "answer": "Tracor",
                 "ideal": "tractor",
-                "result": true
+                "result": false
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATION",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
-                "result": true
+                "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
@@ -41,42 +37,7 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "DEFINE",
-                "ideal": "define",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "In this task, you're an expert cryptographer tasked with uncovering a hidden word concealed in a string of sentences. This covert word is constructed through an acronym approach: the initial letter of each word, when combined in their original sequence, formulates the covert word. Your mission is to unveil this word, using only the first letters from each word in the sentence. Your output should solely consist of this deciphered word, omitting any supplementary characters, spaces or punctuation. \n\nYou have been provided with a sequence of sentences. In these sentences, every word encases a single letter that contributes to fabricating a new, readable English word. Your mission, should you choose to accept it, is to construct this new word by extracting the first letter from each word in the sentence and arranging them in the order they appear. Examine each word carefully and ensure that no word is overlooked. Your output should present this newly constructed word, adhering strictly to the sequence of the words in the sentence. Please note that your output should contain only this constructed word, nothing more, nothing less."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "The covert word is \"TRACTOR\".",
-                "ideal": "tractor",
-                "result": true
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATING",
-                "ideal": "hydration",
-                "result": false
-            },
-            {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The hidden word is \"ROSE\".",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
-                "ideal": "light",
-                "result": true
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "The hidden word in the sentence is \"DEFINE\".",
+                "answer": "Defining the task at hand, I shall embark on a linguistic journey to create a word that encapsulates the essence of the sentence \"Dear Elena find irregular new energies.\" Extracting the first letters of each word, I have \"DEFINE.\" This newly formed word carries the meaning of the original sentence, as it represents the act of defining or giving meaning to something. It also retains a comprehensible meaning in English, making it a suitable creation for this virtual world of language manipulation.",
                 "ideal": "define",
                 "result": true
             }

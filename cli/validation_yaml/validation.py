@@ -107,6 +107,19 @@ class IterationsSchema(Schema):
             if not (0 <= value):
                 raise ValidationError("'number' must be an integer equal or greater than 0.")
 
+class GenerationModelEloSchema(Schema):
+        # Schema for defining generation settings
+        model = fields.Nested(ModelSchema)
+        number = fields.Integer(missing=4) # Default number of prompts is 4
+        constraints = fields.Str()
+        description = fields.Str()
+
+        @validates("number")
+        def validate_number_iterations(self, value):
+            # Validate that 'number' is an integer equal to or greater than 4
+            if not (value >= 4):
+                raise ValidationError("'number' must be an integer equal or greater than 4.")
+
 class GenerationModelSchema(Schema):
         # Schema for defining generation settings
         model = fields.Nested(ModelSchema)
@@ -119,12 +132,24 @@ class GenerationModelSchema(Schema):
             # Validate that 'number' is an integer equal to or greater than 4
             if not (value >= 4):
                 raise ValidationError("'number' must be an integer equal or greater than 4.")
-
+            
 class PromptSchema(Schema):
         # Schema for defining prompts
         list = fields.List(fields.Str())
         iterations = fields.Nested(IterationsSchema)
         generation = fields.Nested(GenerationModelSchema)
+
+        @validates("list")
+        def validate_my_list_length(self, value):
+            # Validate that the prompt list has at least 4 elements
+            if value is not None and len(value) < 4:
+                raise ValidationError("The list should have at least 4 elements.")
+
+class PromptEloSchema(Schema):
+        # Schema for defining prompts
+        list = fields.List(fields.Str())
+        iterations = fields.Nested(IterationsSchema)
+        generation = fields.Nested(GenerationModelEloSchema)
 
         @validates("list")
         def validate_my_list_length(self, value):
@@ -147,4 +172,4 @@ class ValidationClaEqIn(Schema):
 class ValidationElo(Schema):
         # Schema for validating 'Elo' test cases and prompts
         test = fields.Nested(EloFormatTestCaseSchema, required=True)
-        prompts = fields.Nested(PromptSchema, required=True)
+        prompts = fields.Nested(PromptEloSchema, required=True)

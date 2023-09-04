@@ -1,5 +1,8 @@
 import openai
 from ..cost import input, output
+from tenacity import retry, stop_after_attempt, wait_exponential
+
+N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
 
 class Equals:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
@@ -43,6 +46,7 @@ You will be graded based on the performance of your prompt... but don't cheat! Y
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=10))
     def test_candidate_prompts(self):
 
         """

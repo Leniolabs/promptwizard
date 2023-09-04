@@ -31,7 +31,7 @@ prompts:
 
     iterations:
         number: 2
-        best_prompts: 2
+        best_prompts: 3
         model:
 
             name: 'gpt-4'

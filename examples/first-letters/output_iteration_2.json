@@ -1,11 +1,7 @@
 [
     {
-        "prompt": "Your task is to decode a hidden word embedded within a sentence. This clandestine word is constructed by using the initial letter of each word in the sequence. To decode successfully, extract the first letter from each word and join them together. Your response should be the concealed word, constructed from these initial letters, in the proper order. Be sure not to incorporate any additional characters, blank spaces, or punctuation marks, simply the covert word.",
-        "rating": 100.0
-    },
-    {
-        "prompt": "Your quest is to extract a hidden string from a given sentence. The string is an acronym made up of the first letters of each word in the sentence. Your task is to collect the first letter from every word and merge them together. The output should be the concealed string, assembled from these first letters, in the correct order. Ensure you don't include any extra letters, blank spaces, or punctuation, just the clandestine string.",
-        "rating": 60.0
+        "prompt": "Given the task as an AI, your job is to develop a new word. The rule is simple; you need to take the first letter from every word in a provided sentence and put them together to generate a unique word. It is crucial that you consider the sentence in order and do not omit or jump over any word. After forming the word, deliver it as the sole output. Avoid crafting any arbitrary word; the word must be painstakingly constructed from the initial letters of each word in the base sentence. It's crucial to follow the procedure step-by-step for this exercise. Your response has to be as precise as possible. Ensure that your output is a careful and meticulous reflection of the input sentence. Now, begin recognizing, amalgamating, and outputting the brand-new word! Imagine participating in a wordplay contest where a sentence is provided, and you are tasked with creating a completely new word by assembling the first letter of each word in the sentence. To keep it precise and fascinating, concentrate on extracting the first letter from each word in the sentence, regardless of its length or meaning, and combine them all in the given sequence to form a new word. Your mission is to execute this task and create a unique output word for each sentence. It's essential to follow these steps for each word and ensure that the final word is coherent in English.",
+        "rating": 40.0
     },
     [
         {
@@ -13,54 +9,19 @@
         },
         [
             {
-                "prompt": "Your quest is to extract a hidden string from a given sentence. The string is an acronym made up of the first letters of each word in the sentence. Your task is to collect the first letter from every word and merge them together. The output should be the concealed string, assembled from these first letters, in the correct order. Ensure you don't include any extra letters, blank spaces, or punctuation, just the clandestine string."
+                "prompt": "Given the task as an AI, your job is to develop a new word. The rule is simple; you need to take the first letter from every word in a provided sentence and put them together to generate a unique word. It is crucial that you consider the sentence in order and do not omit or jump over any word. After forming the word, deliver it as the sole output. Avoid crafting any arbitrary word; the word must be painstakingly constructed from the initial letters of each word in the base sentence. It's crucial to follow the procedure step-by-step for this exercise. Your response has to be as precise as possible. Ensure that your output is a careful and meticulous reflection of the input sentence. Now, begin recognizing, amalgamating, and outputting the brand-new word! Imagine participating in a wordplay contest where a sentence is provided, and you are tasked with creating a completely new word by assembling the first letter of each word in the sentence. To keep it precise and fascinating, concentrate on extracting the first letter from each word in the sentence, regardless of its length or meaning, and combine them all in the given sequence to form a new word. Your mission is to execute this task and create a unique output word for each sentence. It's essential to follow these steps for each word and ensure that the final word is coherent in English."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The concealed string is \"TRACTOR\".",
+                "answer": "Tract",
                 "ideal": "tractor",
-                "result": true
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The concealed string in the given sentence is \"HYDRASTIN\".",
-                "ideal": "hydration",
                 "result": false
             },
             {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The hidden string in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "LIGH",
-                "ideal": "light",
-                "result": false
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "The concealed string is \"DEFINE\".",
-                "ideal": "define",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "Your task is to decode a hidden word embedded within a sentence. This clandestine word is constructed by using the initial letter of each word in the sequence. To decode successfully, extract the first letter from each word and join them together. Your response should be the concealed word, constructed from these initial letters, in the proper order. Be sure not to incorporate any additional characters, blank spaces, or punctuation marks, simply the covert word."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "TRACTOR",
-                "ideal": "tractor",
-                "result": true
-            },
-            {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATION",
+                "answer": "HYDRATIN",
                 "ideal": "hydration",
-                "result": true
+                "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
@@ -70,9 +31,9 @@
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "Ligth",
                 "ideal": "light",
-                "result": true
+                "result": false
             },
             {
                 "test": "Dear Elena find irregular new energies.",

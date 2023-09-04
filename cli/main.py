@@ -45,10 +45,10 @@ def valid_yaml(file_name):
             best_prompts = content['prompts']['iterations']['best_prompts']
         if not 'best_prompts' in content['prompts']['iterations']:
             best_prompts = 2
-        if best_prompts < 2 or best_prompts > number_of_prompts:
+        if best_prompts < 2 or best_prompts >= number_of_prompts:
             valid = False
             print("Validation error:")
-            print({'prompts': {'iterations': {'best_prompts':{'test': {'method': ['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}}}})
+            print({'prompts': {'iterations': {'best_prompts':['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}})
             return valid
     # Allowed test method names
     allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo']

@@ -1,13 +1,13 @@
 import openai
 from tqdm import tqdm
 import itertools
-from tenacity import retry, stop_after_attempt, wait_exponential
+from tenacity import retry, stop_after_attempt, wait_fixed
 from ..cost import input, output
 
 # K is a constant factor that determines how much ratings change
 K = 32
 
-N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
+N_RETRIES = 1  # number of times to retry a call to the ranking model if it fails
 
 class Elo:
     def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
@@ -98,7 +98,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         return r1 + K * (score1 - e1), r2 + K * ((1 - score1) - e2)
 
     # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def get_score(self, test_case, pos1, pos2):
 
         """
@@ -112,7 +112,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         Returns:
             tuple: A tuple containing score, cost, input tokens used, and output tokens used.
         """
-
+        
         score = openai.ChatCompletion.create(
             model=self.model_test,
             messages=[
@@ -136,7 +136,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         cost = cost_input + cost_output
         return score.choices[0].message.content, cost, tokens_input, tokens_output
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=70))
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def get_generation(self, prompt, test_case):
 
         """
@@ -166,6 +166,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         cost = cost_input + cost_output
         return generation.choices[0].message.content, cost, tokens_input, tokens_output
 
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def test_candidate_prompts(self):
 
         """
@@ -265,7 +266,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         pbar.close()
         return prompt_ratings, battles, elo_prompt_sorted, cost, tokens_input, tokens_output
 
-
+    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def evaluate_optimal_prompt(self): 
 
         """
