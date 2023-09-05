@@ -1,7 +1,7 @@
 [
     {
-        "prompt": "Given the task as an AI, your job is to develop a new word. The rule is simple; you need to take the first letter from every word in a provided sentence and put them together to generate a unique word. It is crucial that you consider the sentence in order and do not omit or jump over any word. After forming the word, deliver it as the sole output. Avoid crafting any arbitrary word; the word must be painstakingly constructed from the initial letters of each word in the base sentence. It's crucial to follow the procedure step-by-step for this exercise. Your response has to be as precise as possible. Ensure that your output is a careful and meticulous reflection of the input sentence. Now, begin recognizing, amalgamating, and outputting the brand-new word! Imagine participating in a wordplay contest where a sentence is provided, and you are tasked with creating a completely new word by assembling the first letter of each word in the sentence. To keep it precise and fascinating, concentrate on extracting the first letter from each word in the sentence, regardless of its length or meaning, and combine them all in the given sequence to form a new word. Your mission is to execute this task and create a unique output word for each sentence. It's essential to follow these steps for each word and ensure that the final word is coherent in English.",
-        "rating": 40.0
+        "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\"",
+        "rating": 80.0
     },
     [
         {
@@ -9,17 +9,17 @@
         },
         [
             {
-                "prompt": "Given the task as an AI, your job is to develop a new word. The rule is simple; you need to take the first letter from every word in a provided sentence and put them together to generate a unique word. It is crucial that you consider the sentence in order and do not omit or jump over any word. After forming the word, deliver it as the sole output. Avoid crafting any arbitrary word; the word must be painstakingly constructed from the initial letters of each word in the base sentence. It's crucial to follow the procedure step-by-step for this exercise. Your response has to be as precise as possible. Ensure that your output is a careful and meticulous reflection of the input sentence. Now, begin recognizing, amalgamating, and outputting the brand-new word! Imagine participating in a wordplay contest where a sentence is provided, and you are tasked with creating a completely new word by assembling the first letter of each word in the sentence. To keep it precise and fascinating, concentrate on extracting the first letter from each word in the sentence, regardless of its length or meaning, and combine them all in the given sequence to form a new word. Your mission is to execute this task and create a unique output word for each sentence. It's essential to follow these steps for each word and ensure that the final word is coherent in English."
+                "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\""
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tract",
+                "answer": "Tractortor",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATIN",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
@@ -31,9 +31,9 @@
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "Ligth",
+                "answer": "LIGHT",
                 "ideal": "light",
-                "result": false
+                "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",

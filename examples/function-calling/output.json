@@ -9,7 +9,7 @@
     },
     {
         "prompt": "As an advanced AI, your task is to identify the operation to be performed and the type of file involved, in a given statement. The operation can either be opening or saving a file. The type of file will be specified in the statement as well; it can be a PDF, DOCX, or any other type. After processing the statement, you should generate a response that consists of the particular function to be called along with the variable which represents the file type. For instance, if the operation is to open a PDF file, the function and variable could be `open_file` and `PDF` respectively.\n\nYour response should only be the function call, and it must be in this format: `function_variable`. All responses must be in the context of file operations. Remember, your goal is to accurately identify the function and variable from the given statement. Be careful to accurately reflect the function and the type of file involved.",
-        "rating": 57.14285714285714
+        "rating": 71.42857142857143
     },
     {
         "prompt": "As an AI, you are interacting with a user who is performing various tasks on their computer. The user describes their current action in a sentence, and your task is to interpret that action and provide the appropriate function and the variable type in a simple format. \n\nThe function will be the primary action the user is taking, such as opening a file, saving a file, etc., and the variable will be corresponding data type or file format, such as PDF, DOCX, etc. The format of your output should be: ['function', 'variable']. \n\nThe function refers to the computer operation that needs to be performed, such as 'open_file' for opening a document or 'save_file' for saving changes to a file. The variable refers to the format of the file being used, such as 'PDF' or 'DOCX'. \n\nEnsure your interpretation of the user's action is accurate, and your response aligns with the given format.",
@@ -147,12 +147,15 @@
             },
             {
                 "test": "She is trying to print a high-resolution image for the art exhibition.",
-                "answer": "not a function call",
+                "answer": {
+                    "function": "print_file",
+                    "variable": "JPEG"
+                },
                 "ideal": {
                     "function": "print_file",
                     "variable": "JPEG"
                 },
-                "result": "Received text data instead of JSON."
+                "result": true
             },
             {
                 "test": "Please convert the PowerPoint presentation to a PDF for sharing.",

@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an artificial intelligence, you are tasked with determining if a given instruction or question leans heavily on the necessity for research. You will have queries presented to you which may range from simple internet-based information seeking cases, to those that command an activity or request a service. It will be your responsibility to analyze these queries and estimate whether they would entail extensive exploration or not.\n\nFor a question or task to be considered \"research-heavy\", it should involve a process of systematic investigation or fact-finding, such as seeking particular information online, clarifying concepts, or exploring potential solutions. On the other hand, commands or actions that involve making purchases, creating new content, managing tasks or services, among others, should not be considered research-heavy.\n\nClassify each query as 'true' if it is deemed to be research-heavy, or 'false' if it doesn't demand significant investigation. Your output should be strictly 'true' or 'false' and be based only on the assessment of whether the given task requires substantial research or not.",
-        "rating": 77.77777777777779
+        "prompt": "Consider a set of tasks. Your goal is to evaluate whether each task is research-intensive or not. If a task would require extensive searching, reading, or information gathering to be performed effectively, then label it as 'true'. These could be tasks like finding specialized information on a webpage, answering complex questions, or explaining complex theories. If a task doesn't need research and is more about action, like ordering food, making reservations, writing a speech, or organizing files, then label it as 'false'. Remember, you're not actually tasked with doing the research or carrying out these tasks. Your role here is to make judgements about the level of research required to perform each task well.",
+        "rating": 66.66666666666666
     },
     {
-        "prompt": "As an AI, your task is to determine if the incoming requests fall under the domain of being research-intensive or not. If the request necessitates extensive information gathering or elaborate search, running through databases, external sources, or vast unstructured data to be able to deliver an informed, comprehensive, and substantiated response, you are to consider it as research-heavy and respond with 'true'. However, if the demand is straightforward, involves a simple action, direct writing, or task execution that does not require any digging into data or tracking down information, label it as 'false'. Be aware that your responses should only be either 'true' or 'false', nothing else.",
+        "prompt": "As an AI, you need to analyze the given tasks and identify if they are research intensive or not. A task is considered research-heavy if it requires gathering and analyzing a significant amount of information, in-depth exploration of a topic or extensive online investigation. Quick lookup, answering general knowledge questions or relaying well established facts do not fall into the category of research intensive tasks. Your outputs should only be 'true' if the task is research-intensive and 'false' if it is not. Be judicious considering the nuances of each task.",
         "rating": 55.55555555555556
     },
     {
-        "prompt": "As a highly capable AI, your task is to ascertain whether a given request involves substantial research or investigation. Review each request and evaluate whether executing said task would require rigorous searching, poring over data, or extensive gathering of information. Keep in mind that not all tasks demanding your expertise would qualify as research-heavy. Some tasks are purely operational or creative, and they do not fit this category. Render your judgment as 'true' if the task is research-intensive and 'false' if it is not.",
+        "prompt": "As an AI, determine whether a task mentioned in the input primarily involves intensive research and information gathering. You should determine if the task would require you to extensively search, analyze, or explain certain topics, facts, or pieces of information. Your output must be either 'true' if the task is research-heavy or 'false' if the task is not based on extensive research, but more action-oriented or execution-based tasks.",
         "rating": 55.55555555555556
     },
     {
-        "prompt": "As an AI, your aim is to classify tasks as being research-heavy or not. To do this, you should consider whether the task likely involves gathering and analyzing a considerable amount of detailed information from various sources, requiring sophisticated understanding, knowledge exploration, and elaborative learning. Tasks that might involve requesting a service, organizing something, creating content, or executing a maby-step process, on the other hand, could likely require less research and may be classified as not being research-heavy. Your only possible outputs are 'true' if the task is classified as research-heavy and 'false' if otherwise.",
+        "prompt": "As an AI, your responsibility is to differentiate between tasks that are research-intensive and those that are not. You will be given a wide range of tasks, each requiring a different level of dedication, time, and information gathering. Your objective is to classify these tasks based on whether they require substantial research or not. If a task implies deep probing into data, knowledge, or insights, answer 'true'. On the contrary, if the task involves execution, performance, or organization without a considerable need for research or knowledge extraction, answer 'false'. Your response must exclusively be either 'true' or 'false'.",
         "rating": 44.44444444444444
     },
     [
@@ -21,13 +21,13 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to determine if the incoming requests fall under the domain of being research-intensive or not. If the request necessitates extensive information gathering or elaborate search, running through databases, external sources, or vast unstructured data to be able to deliver an informed, comprehensive, and substantiated response, you are to consider it as research-heavy and respond with 'true'. However, if the demand is straightforward, involves a simple action, direct writing, or task execution that does not require any digging into data or tracking down information, label it as 'false'. Be aware that your responses should only be either 'true' or 'false', nothing else."
+                "prompt": "Consider a set of tasks. Your goal is to evaluate whether each task is research-intensive or not. If a task would require extensive searching, reading, or information gathering to be performed effectively, then label it as 'true'. These could be tasks like finding specialized information on a webpage, answering complex questions, or explaining complex theories. If a task doesn't need research and is more about action, like ordering food, making reservations, writing a speech, or organizing files, then label it as 'false'. Remember, you're not actually tasked with doing the research or carrying out these tasks. Your role here is to make judgements about the level of research required to perform each task well."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -80,13 +80,13 @@
         ],
         [
             {
-                "prompt": "As an artificial intelligence, you are tasked with determining if a given instruction or question leans heavily on the necessity for research. You will have queries presented to you which may range from simple internet-based information seeking cases, to those that command an activity or request a service. It will be your responsibility to analyze these queries and estimate whether they would entail extensive exploration or not.\n\nFor a question or task to be considered \"research-heavy\", it should involve a process of systematic investigation or fact-finding, such as seeking particular information online, clarifying concepts, or exploring potential solutions. On the other hand, commands or actions that involve making purchases, creating new content, managing tasks or services, among others, should not be considered research-heavy.\n\nClassify each query as 'true' if it is deemed to be research-heavy, or 'false' if it doesn't demand significant investigation. Your output should be strictly 'true' or 'false' and be based only on the assessment of whether the given task requires substantial research or not."
+                "prompt": "As an AI, you need to analyze the given tasks and identify if they are research intensive or not. A task is considered research-heavy if it requires gathering and analyzing a significant amount of information, in-depth exploration of a topic or extensive online investigation. Quick lookup, answering general knowledge questions or relaying well established facts do not fall into the category of research intensive tasks. Your outputs should only be 'true' if the task is research-intensive and 'false' if it is not. Be judicious considering the nuances of each task."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "who is the current president?",
@@ -126,9 +126,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -139,7 +139,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your aim is to classify tasks as being research-heavy or not. To do this, you should consider whether the task likely involves gathering and analyzing a considerable amount of detailed information from various sources, requiring sophisticated understanding, knowledge exploration, and elaborative learning. Tasks that might involve requesting a service, organizing something, creating content, or executing a maby-step process, on the other hand, could likely require less research and may be classified as not being research-heavy. Your only possible outputs are 'true' if the task is classified as research-heavy and 'false' if otherwise."
+                "prompt": "As an AI, determine whether a task mentioned in the input primarily involves intensive research and information gathering. You should determine if the task would require you to extensively search, analyze, or explain certain topics, facts, or pieces of information. Your output must be either 'true' if the task is research-heavy or 'false' if the task is not based on extensive research, but more action-oriented or execution-based tasks."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -161,9 +161,9 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "write a speech on the danger of cults",
@@ -198,7 +198,7 @@
         ],
         [
             {
-                "prompt": "As a highly capable AI, your task is to ascertain whether a given request involves substantial research or investigation. Review each request and evaluate whether executing said task would require rigorous searching, poring over data, or extensive gathering of information. Keep in mind that not all tasks demanding your expertise would qualify as research-heavy. Some tasks are purely operational or creative, and they do not fit this category. Render your judgment as 'true' if the task is research-intensive and 'false' if it is not."
+                "prompt": "As an AI, your responsibility is to differentiate between tasks that are research-intensive and those that are not. You will be given a wide range of tasks, each requiring a different level of dedication, time, and information gathering. Your objective is to classify these tasks based on whether they require substantial research or not. If a task implies deep probing into data, knowledge, or insights, answer 'true'. On the contrary, if the task involves execution, performance, or organization without a considerable need for research or knowledge extraction, answer 'false'. Your response must exclusively be either 'true' or 'false'."
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -226,9 +226,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",

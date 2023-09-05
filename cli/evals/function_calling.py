@@ -1,9 +1,7 @@
 from ..openai_calls import openai_call
 import json
 from ..cost import input, output
-from tenacity import retry, stop_after_attempt, wait_exponential
-
-N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
+import concurrent.futures
 
 class functionCalling:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, functions, function_call, best_prompts):
@@ -50,7 +48,18 @@ You will be graded based on the performance of your prompt... but don't cheat! Y
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=10))
+    def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature, functions, function_call):
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": f"{test_case['inout']}"}
+        ]
+        response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, None, functions, function_call)
+        partial_tokens_input = response["usage"]["prompt_tokens"]
+        partial_tokens_output = response["usage"]["completion_tokens"]
+        response_content = response
+        
+        return partial_tokens_input, partial_tokens_output, response_content, test_case['output1'], test_case['output2']
+
     def test_candidate_prompts(self):
 
         """
@@ -68,49 +77,56 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
         results = [{"method": "Function_calling"}]
-        for prompt in self.prompts:
-            prompt_and_results = [{"prompt": prompt}]
-            for test_case in self.test_cases:
-                model=self.model_test,
-                messages=[
-                    {"role": "system", "content": prompt},
-                    {"role": "user", "content": f"{test_case['inout']}"}
-                ],
-                functions=self.functions,
-                function_call=self.function_call,
-                max_tokens=self.model_test_max_tokens,
-                temperature=self.model_test_temperature,
-                response = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, None, functions, function_call)
-                if "function_call" in response['choices'][0]['message']:
-                # Update model results
-                    json_object = json.loads(str(response['choices'][0]['message']['function_call']['arguments']))
 
-                    def extract_keys_and_values(json_list):
-                        all_keys = list(json_object.keys())
-                        key_value_pairs = [json_object[key]for key in all_keys]
-                        return all_keys, key_value_pairs[0]
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures = []
 
-                    if test_case['output1'] == response.choices[0].message.function_call.name and extract_keys_and_values(json_object)[1] == test_case['output2']:
-                        prompt_results[prompt]['correct'] += 1
-                    prompt_results[prompt]['total'] += 1
-                    if test_case['output1'] == response.choices[0].message.function_call.name and test_case['output2'] == extract_keys_and_values(json_object)[1]:
-                        a = True
-                    if test_case['output1'] == response.choices[0].message.function_call.name and not (test_case['output2'] == extract_keys_and_values(json_object)[1]):
-                        a = 'variable error'
-                    if not (test_case['output1'] == response.choices[0].message.function_call.name) and test_case['output2'] == extract_keys_and_values(json_object)[1]:
-                        a = 'function error'
-                    if not (test_case['output1'] == response.choices[0].message.function_call.name) and (not test_case['output2'] == extract_keys_and_values(json_object)[1]):
-                        a = 'function and variable error'
-                    prompt_and_results.append({"test": test_case['inout'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{test_case['output1']}", "variable": f"{test_case['output2']}"}, "result": a})
-                partial_tokens_input = response["usage"]["prompt_tokens"]
-                partial_tokens_output = response["usage"]["completion_tokens"]
-                tokens_input = tokens_input + partial_tokens_input
-                tokens_output = tokens_output + partial_tokens_output
-                if "function_call" not in response['choices'][0]['message']:
-                    prompt_and_results.append({"test": test_case['inout'], "answer": 'not a function call', "ideal": {"function": f"{test_case['output1']}", "variable": f"{test_case['output2']}"}, "result": 'Received text data instead of JSON.'})
-                    prompt_results[prompt]['total'] += 1
-            results.append(prompt_and_results)
-            prompt_and_results = []
+            for prompt in self.prompts:
+                prompt_and_results = [{"prompt": prompt}]
+                for test_case in self.test_cases:
+                    future = executor.submit(
+                        self.process_prompt,
+                        prompt,
+                        test_case,
+                        self.model_test,
+                        self.model_test_max_tokens,
+                        self.model_test_temperature,
+                        self.functions,
+                        self.function_call
+                    )
+                    futures.append(future)
+                    partial_tokens_input, partial_tokens_output, response, ideal_output1, ideal_output2 = future.result()
+                    tokens_input += partial_tokens_input
+                    tokens_output += partial_tokens_output
+
+                    if "function_call" in response['choices'][0]['message']:
+                    # Update model results
+                        json_object = json.loads(str(response['choices'][0]['message']['function_call']['arguments']))
+
+                        def extract_keys_and_values(json_list):
+                            all_keys = list(json_object.keys())
+                            key_value_pairs = [json_object[key]for key in all_keys]
+                            return all_keys, key_value_pairs[0]
+
+                        if ideal_output1 == response.choices[0].message.function_call.name and extract_keys_and_values(json_object)[1] == ideal_output2:
+                            prompt_results[prompt]['correct'] += 1
+                        prompt_results[prompt]['total'] += 1
+                        if ideal_output1 == response.choices[0].message.function_call.name and ideal_output2 == extract_keys_and_values(json_object)[1]:
+                            a = True
+                        if ideal_output1 == response.choices[0].message.function_call.name and not (ideal_output2 == extract_keys_and_values(json_object)[1]):
+                            a = 'variable error'
+                        if not (ideal_output1 == response.choices[0].message.function_call.name) and ideal_output2 == extract_keys_and_values(json_object)[1]:
+                            a = 'function error'
+                        if not (ideal_output1 == response.choices[0].message.function_call.name) and (not ideal_output2 == extract_keys_and_values(json_object)[1]):
+                            a = 'function and variable error'
+                        prompt_and_results.append({"test": test_case['inout'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": a})
+                    if "function_call" not in response['choices'][0]['message']:
+                        prompt_and_results.append({"test": test_case['inout'], "answer": 'not a function call', "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": 'Received text data instead of JSON.'})
+                        prompt_results[prompt]['total'] += 1
+
+                results.append(prompt_and_results)
+                prompt_and_results = []
+
         cost_input = input.cost(tokens_input, self.model_test)
         cost_output = output.cost(tokens_output, self.model_test)
         cost = cost + cost_input + cost_output

@@ -1,8 +1,6 @@
 from ..openai_calls import openai_call
 from ..cost import input, output
-from tenacity import retry, stop_after_attempt, wait_exponential
-
-N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
+import concurrent.futures
 
 class Equals:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
@@ -46,7 +44,18 @@ You will be graded based on the performance of your prompt... but don't cheat! Y
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=10))
+    def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature):
+        messages = [
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": f"{test_case['inout']}"}
+        ]
+        response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1)
+        partial_tokens_input = response["usage"]["prompt_tokens"]
+        partial_tokens_output = response["usage"]["completion_tokens"]
+        result_content = response.choices[0].message.content
+        
+        return partial_tokens_input, partial_tokens_output, result_content, test_case['output']
+
     def test_candidate_prompts(self):
 
         """
@@ -64,29 +73,33 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         tokens_output = 0
         prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
         results = [{"method": "Equals"}]
-        for prompt in self.prompts:
-            prompt_and_results = [{"prompt": prompt}]
-            for test_case in self.test_cases:
-                model=self.model_test,
-                messages=[
-                    {"role": "system", "content": prompt},
-                    {"role": "user", "content": f"{test_case['inout']}"}
-                ],
-                max_tokens=self.model_test_max_tokens,
-                temperature=self.model_test_temperature,
-                response = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1)
-                partial_tokens_input = response["usage"]["prompt_tokens"]
-                partial_tokens_output = response["usage"]["completion_tokens"]
-                tokens_input = tokens_input + partial_tokens_input
-                tokens_output = tokens_output + partial_tokens_output
+        with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+            futures = []
 
-                # Update model results
-                if response.choices[0].message.content.lower() == test_case['output'].lower():
-                    prompt_results[prompt]['correct'] += 1
-                prompt_results[prompt]['total'] += 1
-                prompt_and_results.append({"test": test_case['inout'], "answer": response.choices[0].message.content, "ideal": test_case['output'], "result": response.choices[0].message.content.lower() == test_case['output'].lower()})
-            results.append(prompt_and_results)
-            prompt_and_results = []
+            for prompt in self.prompts:
+                prompt_and_results = [{"prompt": prompt}]
+                for test_case in self.test_cases:
+                    future = executor.submit(
+                        self.process_prompt,
+                        prompt,
+                        test_case,
+                        self.model_test,
+                        self.model_test_max_tokens,
+                        self.model_test_temperature
+                    )
+                    futures.append(future)
+                    partial_tokens_input, partial_tokens_output, result_content, ideal_output = future.result()
+                    tokens_input += partial_tokens_input
+                    tokens_output += partial_tokens_output
+
+                    if ideal_output.lower() == result_content.lower():
+                        prompt_results[prompt]['correct'] += 1
+                    prompt_results[prompt]['total'] += 1
+
+                    prompt_and_results.append({"test": test_case['inout'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() == result_content.lower()})
+                
+                results.append(prompt_and_results)
+                prompt_and_results = []
 
         cost_input = input.cost(tokens_input, self.model_test)
         cost_output = output.cost(tokens_output, self.model_test)

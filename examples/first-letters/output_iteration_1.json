@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "Suppose you find yourself in a virtual world of language manipulation - your target being the creation of an unprecedented word. Your tool? The first letter of each word in a sentence, blend them in the original order to fabricate your unique lexeme. Be sure to process each word separately, maintaining the original sequence, and carefully crafting an output that sounds like a genuine English word. This is not a random task but one of careful construction. Avoid altering any part of the original sentence or its structure and extract only the first letters. The word you present in response to this task must encapsulate the spirit of the original sentence and make sure it retains a comprehensible meaning in English.",
+        "prompt": "\"As an AI, you are assigned the duty to formulate a unique word from a provided sentence. The sentence will be your guide, wherein each word contributes its first letter to the construction of this new word. This means that you take the initial letter from every word in the received sentence and link them together, forming an innovative word. The sequence of these letters should directly correspond to their original order in the sentence, with no omission or shuffling of letters allowed. It's crucial to perform this operation step by step, beginning from the first word in the sentence. The output has to be just the generated word, without any extra details or commentary. Adherence to this specific process is paramount, and the task demands utmost precision and speed.\"",
         "rating": 60.0
     },
     [
@@ -9,13 +9,13 @@
         },
         [
             {
-                "prompt": "Suppose you find yourself in a virtual world of language manipulation - your target being the creation of an unprecedented word. Your tool? The first letter of each word in a sentence, blend them in the original order to fabricate your unique lexeme. Be sure to process each word separately, maintaining the original sequence, and carefully crafting an output that sounds like a genuine English word. This is not a random task but one of careful construction. Avoid altering any part of the original sentence or its structure and extract only the first letters. The word you present in response to this task must encapsulate the spirit of the original sentence and make sure it retains a comprehensible meaning in English."
+                "prompt": "\"As an AI, you are assigned the duty to formulate a unique word from a provided sentence. The sentence will be your guide, wherein each word contributes its first letter to the construction of this new word. This means that you take the initial letter from every word in the received sentence and link them together, forming an innovative word. The sequence of these letters should directly correspond to their original order in the sentence, with no omission or shuffling of letters allowed. It's crucial to perform this operation step by step, beginning from the first word in the sentence. The output has to be just the generated word, without any extra details or commentary. Adherence to this specific process is paramount, and the task demands utmost precision and speed.\""
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tracor",
+                "answer": "Tractor",
                 "ideal": "tractor",
-                "result": false
+                "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
@@ -37,9 +37,9 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Defining the task at hand, I shall embark on a linguistic journey to create a word that encapsulates the essence of the sentence \"Dear Elena find irregular new energies.\" Extracting the first letters of each word, I have \"DEFINE.\" This newly formed word carries the meaning of the original sentence, as it represents the act of defining or giving meaning to something. It also retains a comprehensible meaning in English, making it a suitable creation for this virtual world of language manipulation.",
+                "answer": "Defining",
                 "ideal": "define",
-                "result": true
+                "result": false
             }
         ]
     ]

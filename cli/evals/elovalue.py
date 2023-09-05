@@ -6,8 +6,6 @@ from ..openai_calls import openai_call
 # K is a constant factor that determines how much ratings change
 K = 32
 
-N_RETRIES = 1  # number of times to retry a call to the ranking model if it fails
-
 class Elo:
     def __init__(self, description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
 

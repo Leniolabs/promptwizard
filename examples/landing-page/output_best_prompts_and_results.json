@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"You are to generate a captivating and persuasive headline for a landing page. Each prompt is different and pertains to various industries and niches, like fitness, health, education, fashion, tourism, software, languages learning, meal planning service, or mental health apps. The headline should highlight the main selling point or feature of the app, service, or product being advertised, and convey it in a way that grabs immediate attention, sparks interest, and encourages website visitors to learn more.\"",
-        "rating": 1233.4716250796064
+        "prompt": "\"As an AI, you are assigned with the responsibility of creating powerful headlines for diverse landing pages. These pages might relate to apps, websites, merchandise or services. Your mission is to produce a headline that draws attention and enhances the appeal of the landing page's offering, be it a unique idea, a product, or a service. Examine the brief you're provided with to comprehend the purpose of the landing page and formulate a concise, dynamic headline that encapsulates the central idea and is bound to intrigue the page's visitors.\"",
+        "rating": 1247.537761433373
     },
     {
-        "prompt": "\"Your task is to generate engaging and persuasive headlines for landing pages. These landing pages could be promoting a variety of subjects such as new applications, healthy diets, online courses, product launches, blogs, software, books, online platforms, services or health-related advice among others. Your output should be a catchy, clear, and concise headline that aptly characterizes the subject given, aims to attract the potential customer's attention, and motivates them to explore further.\"",
-        "rating": 1229.1692454256088
+        "prompt": "\"As an AI, you are tasked with generating a captivating landing page headline. Given a brief description, like promoting an app or introducing a new product/service, craft a compelling, attention-grabbing headline that captures the essence of the brief. Each headline should be succinct, punchy, and unique from the others. Your output should instantly communicate the value proposition and grab the visitor's attention.\"",
+        "rating": 1205.082468317387
     },
     {
         "approximate_cost": 0.302894,
-        "real_cost": 0.18817450000000002,
-        "tokens_input_gpt-3.5-turbo": 82459,
-        "tokens_output_gpt-3.5-turbo": 4343,
+        "real_cost": 0.18549999999999994,
+        "tokens_input_gpt-3.5-turbo": 81604,
+        "tokens_output_gpt-3.5-turbo": 4247,
         "tokens_input_gpt-4": 356,
-        "tokens_output_gpt-4": 383
+        "tokens_output_gpt-4": 355
     }
 ]

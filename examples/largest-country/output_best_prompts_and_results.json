@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.",
-        "rating": 20.0
+        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
+        "rating": 40.0
     },
     {
-        "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.",
-        "rating": 20.0
+        "prompt": "As an artificial intelligence, you are expected to examine a list of names of countries presented to you. Your job is to detect and provide the name of the nation with the greatest territorial size, based on recognized geographic data. For example, if the list includes 'Canada, India, Australia', your response should be 'Canada'. The output should consist only of the name of that country, without any additional details or formatting.",
+        "rating": 40.0
     },
     {
-        "approximate_cost": 0.18384399999999998,
-        "real_cost": 0.048777999999999995,
-        "tokens_input_gpt-3.5-turbo": 8192,
-        "tokens_output_gpt-3.5-turbo": 455,
-        "tokens_input_gpt-4": 496,
-        "tokens_output_gpt-4": 345
+        "approximate_cost": 0.266848,
+        "real_cost": 0.056673,
+        "tokens_input_gpt-3.5-turbo": 9102,
+        "tokens_output_gpt-3.5-turbo": 480,
+        "tokens_input_gpt-4": 530,
+        "tokens_output_gpt-4": 436
     }
 ]

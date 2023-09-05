@@ -1,14 +1,14 @@
 [
     {
-        "prompt": "Provided with a list of countries, discover the one possessing the most land mass, and present solely the name of that country. Your answer should be devoid of any extra data or embellishments. Use your pre-existing knowledge to the best of your ability to complete this.",
+        "prompt": "As an artificial intelligence, you are expected to examine a list of names of countries presented to you. Your job is to detect and provide the name of the nation with the greatest territorial size, based on recognized geographic data. For example, if the list includes 'Canada, India, Australia', your response should be 'Canada'. The output should consist only of the name of that country, without any additional details or formatting.",
+        "rating": 40.0
+    },
+    {
+        "prompt": "Using your AI capabilities, review a series of countries provided in a comma-separated list. From this data, discern and indicate the name of the country encompassing the most extensive land mass, according to current geographical knowledge. For instance, if the list is 'USA, Australia, Russia', your reply ought to be 'Russia'. Your response should solely consist of the country's name, devoid of any extra information or formatting.",
         "rating": 20.0
     },
     {
-        "prompt": "Upon being presented with a list of countries, your mission is to discern and provide the name of the nation with the most expansive landmass. Your answer should solely consist of the country's name and exclude any extraneous details. Try to leverage your existing knowledge base to accomplish this.",
-        "rating": 20.0
-    },
-    {
-        "prompt": "Given a series of country names in a list, your role is to discern and produce the name of the country that owns the most extensive landmass. Your answer must solely be the name of the country, omitting any other details. Strive to utilize your domain knowledge to the fullest to accomplish this task.",
+        "prompt": "As an artificial intelligence, you are given a comma-separated list of nations. Your objective is to ascertain and provide the name of the country that boasts the greatest geographical size, based on current geographical information. For example, if the input is 'Canada, Russia, Australia', your output should be 'Russia'. Your response should include only the name of the country, and no additional context or formatting.",
         "rating": 10.0
     },
     [
@@ -17,7 +17,72 @@
         },
         [
             {
-                "prompt": "Provided with a list of countries, discover the one possessing the most land mass, and present solely the name of that country. Your answer should be devoid of any extra data or embellishments. Use your pre-existing knowledge to the best of your ability to complete this."
+                "prompt": "Using your AI capabilities, review a series of countries provided in a comma-separated list. From this data, discern and indicate the name of the country encompassing the most extensive land mass, according to current geographical knowledge. For instance, if the list is 'USA, Australia, Russia', your reply ought to be 'Russia'. Your response should solely consist of the country's name, devoid of any extra information or formatting."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Russia",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Brazil",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "Brazil",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            },
+            {
+                "test": "Australia, India, Argentina, Kazakhstan",
+                "answer": "Australia",
+                "ideal": "Australia",
+                "result": true
+            },
+            {
+                "test": "India, Argentina, Kazakhstan, Algeria",
+                "answer": "Kazakhstan",
+                "ideal": "India",
+                "result": false
+            },
+            {
+                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
+                "answer": "Democratic Republic of the Congo",
+                "ideal": "Argentina",
+                "result": false
+            },
+            {
+                "test": "Angola, Mali, South Africa, Colombia",
+                "answer": "Colombia",
+                "ideal": "Angola",
+                "result": false
+            },
+            {
+                "test": "Mali, South Africa, Colombia, Ethiopia",
+                "answer": "Colombia",
+                "ideal": "Mali",
+                "result": false
+            },
+            {
+                "test": "South Africa, Colombia, Ethiopia, Bolivia",
+                "answer": "Colombia",
+                "ideal": "South Africa",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an artificial intelligence, you are given a comma-separated list of nations. Your objective is to ascertain and provide the name of the country that boasts the greatest geographical size, based on current geographical information. For example, if the input is 'Canada, Russia, Australia', your output should be 'Russia'. Your response should include only the name of the country, and no additional context or formatting."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
@@ -45,9 +110,9 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
+                "answer": "Kazakhstan",
                 "ideal": "Australia",
-                "result": true
+                "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -57,19 +122,19 @@
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Russia",
+                "answer": "Democratic Republic of the Congo",
                 "ideal": "Argentina",
                 "result": false
             },
             {
                 "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Russia",
+                "answer": "Colombia",
                 "ideal": "Angola",
                 "result": false
             },
             {
                 "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Russia",
+                "answer": "Colombia",
                 "ideal": "Mali",
                 "result": false
             },
@@ -82,37 +147,37 @@
         ],
         [
             {
-                "prompt": "Given a series of country names in a list, your role is to discern and produce the name of the country that owns the most extensive landmass. Your answer must solely be the name of the country, omitting any other details. Strive to utilize your domain knowledge to the fullest to accomplish this task."
+                "prompt": "As an artificial intelligence, you are expected to examine a list of names of countries presented to you. Your job is to detect and provide the name of the nation with the greatest territorial size, based on recognized geographic data. For example, if the list includes 'Canada, India, Australia', your response should be 'Canada'. The output should consist only of the name of that country, without any additional details or formatting."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
+                "answer": "Russia",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
                 "answer": "Canada",
-                "ideal": "Russia",
-                "result": false
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "Australia",
                 "ideal": "Canada",
-                "result": false
+                "result": true
             },
             {
                 "test": "United States, Brazil, Australia, India",
-                "answer": "Australia",
+                "answer": "United States",
                 "ideal": "United States",
-                "result": false
+                "result": true
             },
             {
                 "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
+                "answer": "Brazil",
                 "ideal": "Brazil",
-                "result": false
+                "result": true
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
+                "answer": "Kazakhstan",
                 "ideal": "Australia",
-                "result": true
+                "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -122,78 +187,13 @@
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
+                "answer": "Democratic Republic of the Congo",
                 "ideal": "Argentina",
                 "result": false
             },
             {
                 "test": "Angola, Mali, South Africa, Colombia",
                 "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "South Africa",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "Upon being presented with a list of countries, your mission is to discern and provide the name of the nation with the most expansive landmass. Your answer should solely consist of the country's name and exclude any extraneous details. Try to leverage your existing knowledge base to accomplish this."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "Russia",
-                "ideal": "Canada",
-                "result": false
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "Russia",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
-                "ideal": "Australia",
-                "result": true
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Russia",
                 "ideal": "Angola",
                 "result": false
             },

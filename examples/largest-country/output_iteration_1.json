@@ -1,14 +1,14 @@
 [
     {
-        "prompt": "Upon receiving a list of countries, your task is to pinpoint and provide the name of the country possessing the most extensive landmass. Ensure your answer consists solely of the country's name, devoid of other details. Employ your domain knowledge to successfully complete this task.",
-        "rating": 20.0
-    },
-    {
-        "prompt": "In the data you're provided with, you'll find a series of country names. Your mission is to determine which of these countries possesses the greatest landmass. Only the name of the country should be returned, nothing more. Use your existing geographical knowledge to meet this challenge.",
+        "prompt": "As an AI, your job is to evaluate a given comma-separated list of countries and determine which one among them has the largest geographical area. For example, if given 'USA, India, Canada', your response should be 'Canada'. Your response should strictly include only the country name with no additional details or formatting.",
         "rating": 10.0
     },
     {
-        "prompt": "You will be provided with a set of names of various countries. Your mission is to ascertain and return the name of the country that possesses the greatest land mass. Ensure that your answer contains solely the name of the country, excluding any additional details. Try to make the most out of the knowledge base at your disposal for this task.",
+        "prompt": "\"Given a list of countries, your job as an AI is to discern which country possesses the greatest geographical size. For example, in a list such as 'India, Canada, Sweden', your answer should be 'Canada'. Your response should be the name of the country only, with no extra details or format.",
+        "rating": 10.0
+    },
+    {
+        "prompt": "As an intelligent system, you're tasked with scrutinizing a string of country names. Your responsibility is to pinpoint and reply with the name of the country possessing the most land mass, based on established geographical information. If you're given a string like 'Russia, Canada, Australia', your response should be 'Russia'.",
         "rating": 10.0
     },
     [
@@ -17,7 +17,7 @@
         },
         [
             {
-                "prompt": "Upon receiving a list of countries, your task is to pinpoint and provide the name of the country possessing the most extensive landmass. Ensure your answer consists solely of the country's name, devoid of other details. Employ your domain knowledge to successfully complete this task."
+                "prompt": "As an AI, your job is to evaluate a given comma-separated list of countries and determine which one among them has the largest geographical area. For example, if given 'USA, India, Canada', your response should be 'Canada'. Your response should strictly include only the country name with no additional details or formatting."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
@@ -45,9 +45,9 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
+                "answer": "Kazakhstan",
                 "ideal": "Australia",
-                "result": true
+                "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -82,13 +82,13 @@
         ],
         [
             {
-                "prompt": "In the data you're provided with, you'll find a series of country names. Your mission is to determine which of these countries possesses the greatest landmass. Only the name of the country should be returned, nothing more. Use your existing geographical knowledge to meet this challenge."
+                "prompt": "\"Given a list of countries, your job as an AI is to discern which country possesses the greatest geographical size. For example, in a list such as 'India, Canada, Sweden', your answer should be 'Canada'. Your response should be the name of the country only, with no extra details or format."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Canada",
+                "answer": "Russia",
                 "ideal": "Russia",
-                "result": false
+                "result": true
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
@@ -110,9 +110,9 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
+                "answer": "Kazakhstan",
                 "ideal": "Australia",
-                "result": true
+                "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -122,19 +122,19 @@
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
+                "answer": "Democratic Republic of the Congo",
                 "ideal": "Argentina",
                 "result": false
             },
             {
                 "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "South Africa",
+                "answer": "Colombia",
                 "ideal": "Angola",
                 "result": false
             },
             {
                 "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "South Africa",
+                "answer": "Colombia",
                 "ideal": "Mali",
                 "result": false
             },
@@ -147,23 +147,23 @@
         ],
         [
             {
-                "prompt": "You will be provided with a set of names of various countries. Your mission is to ascertain and return the name of the country that possesses the greatest land mass. Ensure that your answer contains solely the name of the country, excluding any additional details. Try to make the most out of the knowledge base at your disposal for this task."
+                "prompt": "As an intelligent system, you're tasked with scrutinizing a string of country names. Your responsibility is to pinpoint and reply with the name of the country possessing the most land mass, based on established geographical information. If you're given a string like 'Russia, Canada, Australia', your response should be 'Russia'."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Canada",
+                "answer": "Russia",
                 "ideal": "Russia",
-                "result": false
+                "result": true
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "Australia",
+                "answer": "Brazil",
                 "ideal": "Canada",
                 "result": false
             },
             {
                 "test": "United States, Brazil, Australia, India",
-                "answer": "Australia",
+                "answer": "Brazil",
                 "ideal": "United States",
                 "result": false
             },
@@ -175,9 +175,9 @@
             },
             {
                 "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
+                "answer": "The country with the most land mass among the given options is Kazakhstan.",
                 "ideal": "Australia",
-                "result": true
+                "result": false
             },
             {
                 "test": "India, Argentina, Kazakhstan, Algeria",
@@ -187,7 +187,7 @@
             },
             {
                 "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
+                "answer": "Democratic Republic of the Congo",
                 "ideal": "Argentina",
                 "result": false
             },

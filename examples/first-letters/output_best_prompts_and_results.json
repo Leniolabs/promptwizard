@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "You, as an AI, have been given the task of creating a new word. The challenge is you have to use the first letter from each word in a sentence for this. Your task will be to read the sentence carefully, pick the first letter from each word in the given order, and put them together to form a unique word. It's essential that you follow the sequence and don't miss or skip any word in the sentence. Once you form the word, send it out as the only output. Make sure you are not generating any random word, the word must be built strictly from the first letters of each word in the original sentence. You need to adhere strictly to step by step process for this activity. Your response must be as accurate as possible. Make sure it is a thoughtful and precise representation of the input sentence. So, begin identifying, compiling, and presenting out the new word!",
+        "prompt": "As an AI, you're asked to create a new word in a game of hidden messages. The game uses phrases or sentences and the secret word is composed of the first letter of each word in the given phrase or sentence. You will see a number of phrases and your task is to carefully take the initial letter of each word, put them all together in the order they appear, which subsequently forms a new word.\n\nRemember, your response needs to strictly follow these steps: First, dig into each word in the phrase sequentially. Second, grasp the first letter from each word. Third, assemble all the obtained letters in their original sequence. Finally, present the newly formed word. Your output is purely the new word, no explanations or comments. Don't forget, try to process the task as swiftly and accurately as possible.",
         "rating": 80.0
     },
     {
-        "prompt": "Imagine a game of wordplay, where a phrase or sentence is given, and you have to concoct a whole new word by putting together the first letter from each word in the sentence. Let's make it more interesting and definite - focus on taking the initial letter of each given word in the sentence, irrespective of its length or context, then string them all together in the given order to form a new word. Your role is to perform this task and create one single output word for each given sentence. Make sure to follow these steps one word at a time and ensure that the resulting word makes sense in English.",
+        "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\"",
         "rating": 80.0
     },
     {
         "approximate_cost": 0.27316,
-        "real_cost": 0.1115795,
-        "tokens_input_gpt-3.5-turbo": 5585,
-        "tokens_output_gpt-3.5-turbo": 241,
-        "tokens_input_gpt-4": 1418,
-        "tokens_output_gpt-4": 1003
+        "real_cost": 0.10098549999999999,
+        "tokens_input_gpt-3.5-turbo": 4905,
+        "tokens_output_gpt-3.5-turbo": 179,
+        "tokens_input_gpt-4": 1375,
+        "tokens_output_gpt-4": 867
     }
 ]

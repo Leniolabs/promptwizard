@@ -1,11 +1,11 @@
 [
     {
-        "prompt": "As an AI, you are to decide whether a given command or inquiry is dependent on substantial research or not. You will be given a variety of questions, from those requiring basic online information searching to tasks demanding a service or action. You need to evaluate each and decide whether it involves deep exploratory work. If the query obliges methodical investigation or fact-finding such as online data searches, concept clarification, or solution discovery, it's considered \"research-intensive\". Conversely, tasks involving purchases, content creation, or task management should not be deemed research-intensive. Categorize each query as 'true' if it's assessed as research-heavy, and 'false' if it doesn't require profound investigation. Only respond with 'true' or 'false' based on the evaluation of the task's research demand.",
-        "rating": 77.77777777777779
+        "prompt": "Examine a series of tasks and determine the level of research required for each. If a task necessitates substantial investigation, reading, or data collection to be executed efficiently, label it as 'true'. Examples might include locating specific information on a website, answering complex inquiries, or outlining intricate theories. If a task involves more execution than research, such as ordering a meal, booking appointments, drafting a speech, or arranging files, label it as 'false'. Bear in mind, you are not responsible for conducting the research or completing the tasks, but rather to determine the extent of research needed for each task's successful completion.",
+        "rating": 66.66666666666666
     },
     {
-        "prompt": "\"As an AI system, your mission is to evaluate whether the incoming tasks or questions necessitate a substantial amount of research or not. If the task involves comprehensive data gathering, deep investigation through varied sources, or navigating through extensive unstructured data to provide a well-rounded and detailed reply, then it should be considered as a 'research-intensive' task, and the output should be 'true'. Conversely, if the requirement is simplistic, involves straightforward actions or tasks that don't require data mining or information retrieval, such tasks should be labelled as 'false'. Remember, your return must strictly be 'true' or 'false' and should be solely based on your judgment of whether the given task demands a significant amount of research or not.\"",
-        "rating": 55.55555555555556
+        "prompt": "\"Your mission is to scrutinize a list of tasks and decide whether they are research-oriented or not. You should classify a task as 'true' if it entails substantial exploration, data collection, or comprehensive reading. This could encompass activities like sourcing specific data from a website, answering intricate queries, or giving detailed explanations of complex theories. Conversely, label a task as 'false' if it doesn't necessitate research and is more action-oriented, such as booking a table at a restaurant, composing a discourse, or organizing documents. Bear in mind, your responsibilities here don't include conducting the research or executing these tasks, instead, your obligation is to determine the level of research required for each task.\"",
+        "rating": 66.66666666666666
     },
     [
         {
@@ -13,13 +13,13 @@
         },
         [
             {
-                "prompt": "\"As an AI system, your mission is to evaluate whether the incoming tasks or questions necessitate a substantial amount of research or not. If the task involves comprehensive data gathering, deep investigation through varied sources, or navigating through extensive unstructured data to provide a well-rounded and detailed reply, then it should be considered as a 'research-intensive' task, and the output should be 'true'. Conversely, if the requirement is simplistic, involves straightforward actions or tasks that don't require data mining or information retrieval, such tasks should be labelled as 'false'. Remember, your return must strictly be 'true' or 'false' and should be solely based on your judgment of whether the given task demands a significant amount of research or not.\""
+                "prompt": "Examine a series of tasks and determine the level of research required for each. If a task necessitates substantial investigation, reading, or data collection to be executed efficiently, label it as 'true'. Examples might include locating specific information on a website, answering complex inquiries, or outlining intricate theories. If a task involves more execution than research, such as ordering a meal, booking appointments, drafting a speech, or arranging files, label it as 'false'. Bear in mind, you are not responsible for conducting the research or completing the tasks, but rather to determine the extent of research needed for each task's successful completion."
             },
             {
                 "test": "Find the best contact email on this site.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "who is the current president?",
@@ -41,9 +41,9 @@
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -59,9 +59,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "Explain the theory of relativity.",
@@ -72,7 +72,7 @@
         ],
         [
             {
-                "prompt": "As an AI, you are to decide whether a given command or inquiry is dependent on substantial research or not. You will be given a variety of questions, from those requiring basic online information searching to tasks demanding a service or action. You need to evaluate each and decide whether it involves deep exploratory work. If the query obliges methodical investigation or fact-finding such as online data searches, concept clarification, or solution discovery, it's considered \"research-intensive\". Conversely, tasks involving purchases, content creation, or task management should not be deemed research-intensive. Categorize each query as 'true' if it's assessed as research-heavy, and 'false' if it doesn't require profound investigation. Only respond with 'true' or 'false' based on the evaluation of the task's research demand."
+                "prompt": "\"Your mission is to scrutinize a list of tasks and decide whether they are research-oriented or not. You should classify a task as 'true' if it entails substantial exploration, data collection, or comprehensive reading. This could encompass activities like sourcing specific data from a website, answering intricate queries, or giving detailed explanations of complex theories. Conversely, label a task as 'false' if it doesn't necessitate research and is more action-oriented, such as booking a table at a restaurant, composing a discourse, or organizing documents. Bear in mind, your responsibilities here don't include conducting the research or executing these tasks, instead, your obligation is to determine the level of research required for each task.\""
             },
             {
                 "test": "Find the best contact email on this site.",
@@ -94,15 +94,15 @@
             },
             {
                 "test": "what are some ways a doctor could use an assistant?",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "true",
-                "result": false
+                "result": true
             },
             {
                 "test": "write a speech on the danger of cults",
-                "answer": "false",
+                "answer": "true",
                 "ideal": "false",
-                "result": true
+                "result": false
             },
             {
                 "test": "Make a reservation at The Accent for 9pm",
@@ -118,9 +118,9 @@
             },
             {
                 "test": "Find the highest-rated Italian restaurant near me.",
-                "answer": "true",
+                "answer": "false",
                 "ideal": "true",
-                "result": true
+                "result": false
             },
             {
                 "test": "Explain the theory of relativity.",
