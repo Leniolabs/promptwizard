@@ -1,4 +1,4 @@
-import openai
+from ..openai_calls import openai_call
 import json
 from ..cost import input, output
 from tenacity import retry, stop_after_attempt, wait_exponential
@@ -71,17 +71,16 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:
-                response = openai.ChatCompletion.create(
-                    model="gpt-3.5-turbo",
-                    messages=[
-                        {"role": "system", "content": prompt},
-                        {"role": "user", "content": f"{test_case['inout']}"}
-                    ],
-                    functions=self.functions,
-                    function_call=self.function_call,
-                    max_tokens=self.model_test_max_tokens,
-                    temperature=self.model_test_temperature,
-                )
+                model=self.model_test,
+                messages=[
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": f"{test_case['inout']}"}
+                ],
+                functions=self.functions,
+                function_call=self.function_call,
+                max_tokens=self.model_test_max_tokens,
+                temperature=self.model_test_temperature,
+                response = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, None, functions, function_call)
                 if "function_call" in response['choices'][0]['message']:
                 # Update model results
                     json_object = json.loads(str(response['choices'][0]['message']['function_call']['arguments']))

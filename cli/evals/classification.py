@@ -1,6 +1,5 @@
-import openai
+from ..openai_calls import openai_call
 from ..cost import input, output
-from tenacity import retry, stop_after_attempt, wait_exponential
 
 N_RETRIES = 3  # number of times to retry a call to the ranking model if it fails
 
@@ -44,7 +43,6 @@ class Classification:
         self.prompts = prompts
         self.best_prompts = best_prompts
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_exponential(multiplier=1, min=4, max=10))
     def test_candidate_prompts(self):
 
         """
@@ -67,19 +65,18 @@ class Classification:
         for prompt in self.prompts:
             prompt_and_results = [{"prompt": prompt}]
             for test_case in self.test_cases:
-                response = openai.ChatCompletion.create(
-                    model=self.model_test,
-                    messages=[
-                        {"role": "system", "content": prompt},
-                        {"role": "user", "content": f"{test_case['inout']}"}
-                    ],
-                    logit_bias={
-                        '1904': 100,  # 'true' token
-                        '3934': 100,  # 'false' token
-                    },
-                    max_tokens=self.model_test_max_tokens,
-                    temperature=self.model_test_temperature,
-                )
+                model=self.model_test
+                messages=[
+                    {"role": "system", "content": prompt},
+                    {"role": "user", "content": f"{test_case['inout']}"}
+                ],
+                logit_bias={
+                    '1904': 100,  # 'true' token
+                    '3934': 100,  # 'false' token
+                }
+                max_tokens=self.model_test_max_tokens
+                temperature=self.model_test_temperature
+                response = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, logit_bias)
                 partial_tokens_input = response["usage"]["prompt_tokens"]
                 partial_tokens_output = response["usage"]["completion_tokens"]
                 tokens_input = tokens_input + partial_tokens_input

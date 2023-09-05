@@ -1,8 +1,7 @@
-import openai
 from tqdm import tqdm
 import itertools
-from tenacity import retry, stop_after_attempt, wait_fixed
 from ..cost import input, output
+from ..openai_calls import openai_call
 
 # K is a constant factor that determines how much ratings change
 K = 32
@@ -97,8 +96,6 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         e2 = self.expected_score(r2, r1)
         return r1 + K * (score1 - e1), r2 + K * ((1 - score1) - e2)
 
-    # Get Score - retry up to N_RETRIES times, waiting exponentially between retries.
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def get_score(self, test_case, pos1, pos2):
 
         """
@@ -113,22 +110,23 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             tuple: A tuple containing score, cost, input tokens used, and output tokens used.
         """
         
-        score = openai.ChatCompletion.create(
-            model=self.model_test,
-            messages=[
+        model=self.model_test
+        messages=[
                 {"role": "system", "content": self.ranking_system_prompt},
                 {"role": "user", "content": f"""Task: {self.description.strip()}
     Prompt: {test_case}
     Generation A: {pos1}
     Generation B: {pos2}"""}
-            ],
-            logit_bias={
+        ]
+        logit_bias={
                 '32': 100,  # 'A' token
                 '33': 100,  # 'B' token
-            },
-            max_tokens=1,
-            temperature=self.model_test_temperature,
-        )
+            }
+        max_tokens=1
+        temperature=self.model_test_temperature
+
+        score = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, logit_bias)
+
         tokens_input = score["usage"]["prompt_tokens"]
         tokens_output = score["usage"]["completion_tokens"]
         cost_input = input.cost(tokens_input, self.model_test)
@@ -136,7 +134,6 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         cost = cost_input + cost_output
         return score.choices[0].message.content, cost, tokens_input, tokens_output
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def get_generation(self, prompt, test_case):
 
         """
@@ -150,15 +147,16 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
             tuple: A tuple containing generated response, cost, input tokens used, and output tokens used.
         """
 
-        generation = openai.ChatCompletion.create(
-            model=self.model_test,
-            messages=[
-                {"role": "system", "content": prompt},
-                {"role": "user", "content": f"{test_case}"}
-            ],
-            max_tokens=self.model_test_max_tokens,
-            temperature=self.model_test_temperature,
-        )
+        model=self.model_test
+        messages=[
+            {"role": "system", "content": prompt},
+            {"role": "user", "content": f"{test_case}"}
+        ]
+        max_tokens=self.model_test_max_tokens
+        temperature=self.model_test_temperature
+
+        generation = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1)
+
         tokens_input = generation["usage"]["prompt_tokens"]
         tokens_output = generation["usage"]["completion_tokens"]
         cost_input = input.cost(tokens_input, self.model_test)
@@ -166,7 +164,6 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         cost = cost_input + cost_output
         return generation.choices[0].message.content, cost, tokens_input, tokens_output
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def test_candidate_prompts(self):
 
         """
@@ -266,7 +263,6 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         pbar.close()
         return prompt_ratings, battles, elo_prompt_sorted, cost, tokens_input, tokens_output
 
-    @retry(stop=stop_after_attempt(N_RETRIES), wait=wait_fixed(5))
     def evaluate_optimal_prompt(self): 
 
         """

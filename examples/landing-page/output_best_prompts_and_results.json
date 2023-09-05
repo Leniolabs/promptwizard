@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"Your assignment is to craft innovative, captivating, and engaging headlines for landing pages. You'll be provided with themes or products such as a wellness app, a novel, a newly launched online course, or a service. Utilize your expertise in formulating irresistible headlines to attract prospective clients or readers. Each headline should naturally indicate what the product or service is about while stimulating curiosity. Bear in mind, the headlines should be significantly diverse from each other, hence, exhaust your creativity and innovation.\"\n\n\"Your job is to devise compelling, understandable, and persuasive headlines for landing pages. The headlines should offer a brief summary of the product or service being offered, ignite curiosity, and lure potential consumers. The data you'll receive will usually encompass the kind of product or service, its designation, unique selling points, or specific focus areas. Your objective is to convert this data into a single, impactful phrase that instantaneously relays the core benefit to the reader in a thrilling manner. Ensure variety in your language use and approach for each headline.\"",
-        "rating": 1281.848872173211
+        "prompt": "\"You are to generate a captivating and persuasive headline for a landing page. Each prompt is different and pertains to various industries and niches, like fitness, health, education, fashion, tourism, software, languages learning, meal planning service, or mental health apps. The headline should highlight the main selling point or feature of the app, service, or product being advertised, and convey it in a way that grabs immediate attention, sparks interest, and encourages website visitors to learn more.\"",
+        "rating": 1233.4716250796064
     },
     {
-        "prompt": "\"Your goal is to generate unique, enticing and engaging landing page headlines. You'll be given topics or products such as a fitness app, a book, a new online course, or a service. Use your knowledge of creating compelling headlines to draw in potential customers or readers. Each headline should intuitively convey what the offering is about while sparking interest. Remember, the headlines must vary significantly from one to another, so use your creativity and innovation at full capacity.\"",
-        "rating": 1189.3364205148478
+        "prompt": "\"Your task is to generate engaging and persuasive headlines for landing pages. These landing pages could be promoting a variety of subjects such as new applications, healthy diets, online courses, product launches, blogs, software, books, online platforms, services or health-related advice among others. Your output should be a catchy, clear, and concise headline that aptly characterizes the subject given, aims to attract the potential customer's attention, and motivates them to explore further.\"",
+        "rating": 1229.1692454256088
     },
     {
         "approximate_cost": 0.302894,
-        "real_cost": 0.2433745,
-        "tokens_input_gpt-3.5-turbo": 102415,
-        "tokens_output_gpt-3.5-turbo": 11171,
+        "real_cost": 0.18817450000000002,
+        "tokens_input_gpt-3.5-turbo": 82459,
+        "tokens_output_gpt-3.5-turbo": 4343,
         "tokens_input_gpt-4": 356,
-        "tokens_output_gpt-4": 358
+        "tokens_output_gpt-4": 383
     }
 ]
