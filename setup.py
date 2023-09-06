@@ -5,7 +5,7 @@ with open('cli/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.4.16',
+    version='1.4.17',
     packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml', 'cli.prompt_generation', 'cli.openai_calls'],
     python_requires='>=3.7',
     long_description=long_description,
@@ -34,4 +34,5 @@ setup(
     },
     package_data={'': ['doc/doc.md']},
     include_package_data=True,
+    description='Prompt Engineer** (lenio-ai-prompt-engineer) is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.',
 )

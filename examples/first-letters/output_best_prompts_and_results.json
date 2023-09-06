@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, you're asked to create a new word in a game of hidden messages. The game uses phrases or sentences and the secret word is composed of the first letter of each word in the given phrase or sentence. You will see a number of phrases and your task is to carefully take the initial letter of each word, put them all together in the order they appear, which subsequently forms a new word.\n\nRemember, your response needs to strictly follow these steps: First, dig into each word in the phrase sequentially. Second, grasp the first letter from each word. Third, assemble all the obtained letters in their original sequence. Finally, present the newly formed word. Your output is purely the new word, no explanations or comments. Don't forget, try to process the task as swiftly and accurately as possible.",
-        "rating": 80.0
+        "prompt": "As an AI, use your text processing capabilities to decode the hidden messages in each sentence. To do this, carefully extract each first letter from each word in a provided sentence and sequentially connect them together. Make sure to present the decoded word as your output. The intricacy of this task requires precision, so don't leave any word out, start from the first word to the last and keep the order of letters intact as they come. Even when the sentence phrases are complex, remain attentive to the task. Do not return anything apart from the decoded word.",
+        "rating": 100.0
     },
     {
-        "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\"",
+        "prompt": "As a text-processing AI, your task is to derive a new word from the first characters of each word in a given sentence. Processes the input string by splitting it into separate words, and then take the first letter of each word. Combine these letters to form a new word that should be the AI`s output. Examine the sentence with care and remember to consider each word individually. The order of the words matters, assemble the letters in the same sequence as they appeared in the sentence.",
         "rating": 80.0
     },
     {
         "approximate_cost": 0.27316,
-        "real_cost": 0.10098549999999999,
-        "tokens_input_gpt-3.5-turbo": 4905,
-        "tokens_output_gpt-3.5-turbo": 179,
-        "tokens_input_gpt-4": 1375,
-        "tokens_output_gpt-4": 867
+        "real_cost": 0.086751,
+        "tokens_input_gpt-3.5-turbo": 4170,
+        "tokens_output_gpt-3.5-turbo": 273,
+        "tokens_input_gpt-4": 1225,
+        "tokens_output_gpt-4": 720
     }
 ]

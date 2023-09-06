@@ -6,7 +6,7 @@ from tenacity import (
     wait_random_exponential,
 )  # for exponential backoff
 
-@backoff.on_exception(backoff.expo, openai.error.RateLimitError)
+@backoff.on_exception(backoff.expo, openai.error.RateLimitError, max_time=60)
 def create_chat_completion(model, messages, max_tokens, temperature, number_of_prompts, logit_bias=None, functions=None, function_call=None):
     if (logit_bias==None and functions==None):
         respond = openai.ChatCompletion.create(

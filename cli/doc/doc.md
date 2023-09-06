@@ -1,9 +1,5 @@
 # Prompt Engineer
 
-## Description
-
-**Prompt Engineer** (lenio-ai-prompt-engineer) is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.
-
 ## Features
 
 - Evaluate custom prompts using different evaluation methods.
@@ -39,6 +35,7 @@ lenio-ai-prompt-engineer YAML_FILE_PATH
 ```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH --env_path .env_FILE_PATH
 ```
+Respond 'Y' when asked if you want to continue.
 
 The evaluation result will be saved in an output.json file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot scatter_plot.png will also be saved in the same folder as the YAML file. A larger number of files will also be generated if you have indicated in your yaml file that you want to perform iterations.
 
@@ -330,12 +327,13 @@ Remember that when you generate your prompts you can use the `constraints` key t
 If you want to know how much it will cost to run your evaluation, simply enter:
 
 ```bash
-lenio-ai-prompt-engineer YAML_FILE_PATH "don't run"
+lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
 Or
 ```bash
-lenio-ai-prompt-engineer YAML_FILE_PATH "don't run" --env_path .env_FILE_PATH
+lenio-ai-prompt-engineer YAML_FILE_PATH --env_path .env_FILE_PATH
 ```
+and simply answer 'N' when asked if you want to continue.
 
 The other option to know the cost is to carry out the steps that we explained in the `Usage` section.
 Otherwise, run your evaluation and you'll receive the same notification about the approximate cost, along with the real final cost at the end. In the final JSON file, in addition to seeing the top 2 prompts with the best results, you will also have this same information about the costs and the number of tokens effectively consumed for both GPT-3.5-turbo and GPT-4.

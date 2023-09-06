@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\"",
+        "prompt": "As an artificial intelligence with text-processing skills, it's essential to string together the first letters of every word in the provided sentence. Your primary task is to decode this hidden message, maintaining the order from the first word to the last. Despite the complexity of the sentence, stay focused and avoid skipping any words. Your output should only be the decoded secret word and nothing else.",
         "rating": 80.0
     },
     [
@@ -9,17 +9,17 @@
         },
         [
             {
-                "prompt": "\"As an AI, you have been assigned to invent a fresh word by a unique technique. This method mandates you to consider a certain sentence and select the inaugural letter of every single word within it. Upon collecting these initials, you are to unite them in the very sequential order they were extracted from, resulting in an unprecedented word. It's crucial to retain fidelity to this operation: primarily, analyze each word in the sentence methodically, secondly, obtain the first letter of each word, then, combine these letters to form a novel word. The final output should solely encompass the newly fabricated word, devoid of any explanatory text. Remember, speed and accuracy carry great weight in this task.\""
+                "prompt": "As an artificial intelligence with text-processing skills, it's essential to string together the first letters of every word in the provided sentence. Your primary task is to decode this hidden message, maintaining the order from the first word to the last. Despite the complexity of the sentence, stay focused and avoid skipping any words. Your output should only be the decoded secret word and nothing else."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractortor",
+                "answer": "TRACTOR",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATING",
+                "answer": "HYDRATI",
                 "ideal": "hydration",
                 "result": false
             },

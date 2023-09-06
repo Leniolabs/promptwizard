@@ -537,7 +537,6 @@ def main():
             """temperature: The temperature of the GPT model you will use to generate the prompts.\n"""
             """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.""")
     
-    parser.add_argument("optional_string", help="Optional string parameter.", nargs='?', default=None)
     parser.add_argument("--env_path", help="Path to the .env file.", default=None)
     args = parser.parse_args()
 
@@ -590,20 +589,16 @@ def main():
             "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY")
         }
 
-    # Check if the optional string argument is set to "don't run"
-    if args.optional_string == "don't run":
-        # Check if the provided YAML file is valid
-        if (valid_yaml(args.yaml_file)):
-            # Calculate the approximate cost of the evaluation based on the YAML file
-            approximate = approximate_cost(args.yaml_file)
-            print(f"The cost of your evaluation will be approximately {approximate} dollars.")
-    else:
-        # Check if the provided YAML file is valid
-        if (valid_yaml(args.yaml_file)):
-            # Calculate the approximate cost of the evaluation based on the YAML file
-            approximate = approximate_cost(args.yaml_file)
-            print(f"The cost of your evaluation will be approximately {approximate} dollars.")
+    # Check if the provided YAML file is valid
+    if (valid_yaml(args.yaml_file)):
+        # Calculate the approximate cost of the evaluation based on the YAML file
+        approximate = approximate_cost(args.yaml_file)
+        print(f"The cost of your evaluation will be approximately {approximate} dollars.")
+        user_input = input("Continue? (Y/N): ").strip().lower()
+        if user_input == "y":
             run_evaluation(args.yaml_file, approximate)
+        else:
+            print("Execution aborted.")
 
 if __name__ == "__main__":
     main()

@@ -50,6 +50,7 @@ lenio-ai-prompt-engineer YAML_FILE_PATH
 ```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH --env_path .env_FILE_PATH
 ```
+Respond 'Y' when asked if you want to continue.
 
 3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML file. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file. A larger number of files will also be generated if you have indicated in your yaml file that you want to perform iterations.
 
@@ -62,6 +63,7 @@ lenio-ai-prompt-engineer YAML_FILE_PATH --env_path .env_FILE_PATH
 ```bash
 lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
+Respond 'Y' when asked if you want to continue.
 
 3. The evaluation result will be saved in an `output.json` file in the same folder as the YAML folder. If you choose the Elo method for prompt evaluation, a scatter plot `scatter_plot.png` will also be saved in the same folder as the YAML file.
 
@@ -176,7 +178,8 @@ Remember that when you generate your prompts you can use the `constraints` key t
 If you want to know how much it will cost to run your evaluation, simply enter:
 
 ```bash
-lenio-ai-prompt-engineer YAML_FILE_PATH "don't run"
+lenio-ai-prompt-engineer YAML_FILE_PATH
 ```
+and simply answer 'N' when asked if you want to continue.
 
-Otherwise, run your evaluation and you'll receive the same notification about the approximate cost, along with the real final cost at the end. In the final JSON file, in addition to seeing the top prompts with the best results, you will also have this same information about the costs and the number of tokens effectively consumed for both GPT-3.5-turbo and GPT-4.
+Otherwise, respond 'Y' and run your evaluation and you'll receive the approximate cost, along with the real final cost at the end. In the final JSON file, in addition to seeing the top prompts with the best results, you will also have this same information about the costs and the number of tokens effectively consumed for both GPT-3.5-turbo and GPT-4.

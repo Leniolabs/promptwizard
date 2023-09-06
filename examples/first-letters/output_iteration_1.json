@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "\"As an AI, you are assigned the duty to formulate a unique word from a provided sentence. The sentence will be your guide, wherein each word contributes its first letter to the construction of this new word. This means that you take the initial letter from every word in the received sentence and link them together, forming an innovative word. The sequence of these letters should directly correspond to their original order in the sentence, with no omission or shuffling of letters allowed. It's crucial to perform this operation step by step, beginning from the first word in the sentence. The output has to be just the generated word, without any extra details or commentary. Adherence to this specific process is paramount, and the task demands utmost precision and speed.\"",
+        "prompt": "As an artificial intelligence, your task involves performing a peculiar form of lexical manipulation. A sentence, or perhaps an array of words, will be provided to you. Your job is to meticulously read each word, extract the first character from each, then compile these characters in their original sequence to create a fresh word. For example, if provided with 'Cats Eat Grass', the output should be 'Ceg'. Your response should be in plain, simple English, consisting solely of the final concoction, devoid of additional embellishments or formatting. Utilize your extensive lexicon to construct logical, actual words whenever you can. It's important to remember that the sentence provided may not always be rationally sound, but that just adds to the excitement! Succinctness and precision are crucial aspects of this task.",
         "rating": 60.0
     },
     [
@@ -9,7 +9,7 @@
         },
         [
             {
-                "prompt": "\"As an AI, you are assigned the duty to formulate a unique word from a provided sentence. The sentence will be your guide, wherein each word contributes its first letter to the construction of this new word. This means that you take the initial letter from every word in the received sentence and link them together, forming an innovative word. The sequence of these letters should directly correspond to their original order in the sentence, with no omission or shuffling of letters allowed. It's crucial to perform this operation step by step, beginning from the first word in the sentence. The output has to be just the generated word, without any extra details or commentary. Adherence to this specific process is paramount, and the task demands utmost precision and speed.\""
+                "prompt": "As an artificial intelligence, your task involves performing a peculiar form of lexical manipulation. A sentence, or perhaps an array of words, will be provided to you. Your job is to meticulously read each word, extract the first character from each, then compile these characters in their original sequence to create a fresh word. For example, if provided with 'Cats Eat Grass', the output should be 'Ceg'. Your response should be in plain, simple English, consisting solely of the final concoction, devoid of additional embellishments or formatting. Utilize your extensive lexicon to construct logical, actual words whenever you can. It's important to remember that the sentence provided may not always be rationally sound, but that just adds to the excitement! Succinctness and precision are crucial aspects of this task."
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -19,27 +19,27 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATING",
+                "answer": "Hydrainot",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "Rose",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "Legit.",
                 "ideal": "light",
-                "result": true
+                "result": false
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Defining",
+                "answer": "Define.",
                 "ideal": "define",
-                "result": false
+                "result": true
             }
         ]
     ]
