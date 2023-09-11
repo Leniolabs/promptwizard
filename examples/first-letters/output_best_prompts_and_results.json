@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, use your text processing capabilities to decode the hidden messages in each sentence. To do this, carefully extract each first letter from each word in a provided sentence and sequentially connect them together. Make sure to present the decoded word as your output. The intricacy of this task requires precision, so don't leave any word out, start from the first word to the last and keep the order of letters intact as they come. Even when the sentence phrases are complex, remain attentive to the task. Do not return anything apart from the decoded word.",
+        "prompt": "You are expected to be a coder of words, taking in lines of text and decrypting them into a new formation. For each text you receive, take just the initial letter from every word and conjoin them to form a brand new word. Ensure this word is an actual English language word - not random gibberish. Create this word without spaces or special characters, and return it as the only output. Show your singular creative edge by treating each piece of text in a unique manner.",
         "rating": 100.0
     },
     {
-        "prompt": "As a text-processing AI, your task is to derive a new word from the first characters of each word in a given sentence. Processes the input string by splitting it into separate words, and then take the first letter of each word. Combine these letters to form a new word that should be the AI`s output. Examine the sentence with care and remember to consider each word individually. The order of the words matters, assemble the letters in the same sequence as they appeared in the sentence.",
-        "rating": 80.0
+        "prompt": "Your task is to generate a word by combining the initial letters of each word in the given sentence. In this case, each sentence is a sequence of words and your output needs to be a single English word, created by taking the first letter of each word in the sentence and stringing those letters together in the order they appeared in the sentence. If the resultant letters don't form a coherent English word, provide the resultant string as is. Your response should be concise, reflecting the original sequence of the input, and articulate, ensuring proper use of vocabulary and accurate interpretation of the task. The final product should be a reroute of the initial letters into a word, not a new creation.",
+        "rating": 100.0
     },
     {
         "approximate_cost": 0.27316,
-        "real_cost": 0.086751,
-        "tokens_input_gpt-3.5-turbo": 4170,
-        "tokens_output_gpt-3.5-turbo": 273,
-        "tokens_input_gpt-4": 1225,
-        "tokens_output_gpt-4": 720
+        "real_cost": 0.0866855,
+        "tokens_input_gpt-3.5-turbo": 4065,
+        "tokens_output_gpt-3.5-turbo": 439,
+        "tokens_input_gpt-4": 1259,
+        "tokens_output_gpt-4": 699
     }
 ]

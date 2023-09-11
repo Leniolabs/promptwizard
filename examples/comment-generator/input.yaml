@@ -1,0 +1,43 @@
+test:
+
+    cases: 
+        - "def quick_sort(arr):
+    if len(arr) <= 1:
+        return arr
+    else:
+        pivot = arr[0]
+        less = [x for x in arr[1:] if x <= pivot]
+        greater = [x for x in arr[1:] if x > pivot]
+        return quick_sort(less) + [pivot] + quick_sort(greater)
+"
+        - "def binary_search(arr, target):
+    left, right = 0, len(arr) - 1
+
+    while left <= right:
+        mid = (left + right)
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            left = mid + 1
+        else:
+            right = mid - 1
+
+    return -1"
+            
+
+    description: "Given a code of an algorithm, generates relevant comments to explain it"
+    method: Elo
+
+    model:
+        name: 'gpt-3.5-turbo'
+        temperature: 0.8
+        max_tokens: 2000
+
+prompts:
+
+    generation:
+        number: 4
+        model:
+            name: 'gpt-4'
+            temperature: 1.5
+            max_tokens: 500

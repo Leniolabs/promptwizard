@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "\"Your task is to make programming codes more understandable and approachable. Given a piece of code, typically of an algorithm, generate concise and relevant comments that describe the different parts of the code. Use your AI capabilities to analyze and understand the code. Your output should explain the code's logic, purpose, and functionality in plain English. This will help to increase code readability and maintainability for programmers who might use or modify this code in the future.\"",
+        "rating": 1211.9828615047177
+    },
+    {
+        "prompt": "\"Given a provided code snippet for a specific algorithm, your task is to generate relevant and insightful comments that explain what each part of the code does. Your job is to break down the code into understandable steps, highlighting its functionality, the input it takes, and the output it produces. Make sure your explanations are clear, concise, and understandable for all levels of coding experience. Avoid including any jargon without explanation. Aim to create comments that would help a programmer of any level understand the logic and operations that are happening in the algorithm.\"",
+        "rating": 1202.413447423492
+    },
+    {
+        "approximate_cost": 0.14659099999999997,
+        "real_cost": 0.08472450000000001,
+        "tokens_input_gpt-3.5-turbo": 24363,
+        "tokens_output_gpt-3.5-turbo": 6990,
+        "tokens_input_gpt-4": 396,
+        "tokens_output_gpt-4": 372
+    }
+]

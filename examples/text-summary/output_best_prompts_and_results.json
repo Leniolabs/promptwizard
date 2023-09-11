@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "\"Consider the given piece of text as a narrative that needs to be condensed. Your task is to read and understand all the details, emotions, and events in the text, and then provide a concise yet comprehensive summary. This summary should maintain the core essence of the narrative, include all critical events and details, express the emotional tone where relevant, and filter out any extraneous details or descriptions. Lastly, your summary needs to be entirely in your own words, while ensuring that it provides a complete understanding of the original text.\"",
+        "rating": 1200.0
+    },
+    {
+        "prompt": "\"Given a piece of text, you need to generate a concise summary that encapsulates the key points, themes, and outcomes of the text. Your summary should effectively outline the main narrative or argument, distilling it into a clear, brief synopsis. Be attentive to significant details, and ensure to maintain the essence of the original text while avoiding any form of redundancy or repetition.\"",
+        "rating": 1200.0
+    },
+    {
+        "approximate_cost": 0.198065,
+        "real_cost": 0.162526,
+        "tokens_input_gpt-3.5-turbo": 53116,
+        "tokens_output_gpt-3.5-turbo": 3476,
+        "tokens_input_gpt-4": 1954,
+        "tokens_output_gpt-4": 288
+    }
+]

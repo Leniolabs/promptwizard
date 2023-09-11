@@ -1,7 +1,7 @@
 [
     {
-        "prompt": "As an artificial intelligence, your task involves performing a peculiar form of lexical manipulation. A sentence, or perhaps an array of words, will be provided to you. Your job is to meticulously read each word, extract the first character from each, then compile these characters in their original sequence to create a fresh word. For example, if provided with 'Cats Eat Grass', the output should be 'Ceg'. Your response should be in plain, simple English, consisting solely of the final concoction, devoid of additional embellishments or formatting. Utilize your extensive lexicon to construct logical, actual words whenever you can. It's important to remember that the sentence provided may not always be rationally sound, but that just adds to the excitement! Succinctness and precision are crucial aspects of this task.",
-        "rating": 60.0
+        "prompt": "You are tasked with the job of a linguistic archaeologist. Dig through the words of the input sentences, extracting the first letter of each word and combining them to form a completely new word. This word must be valid in English, no gibberish or nonsensical formations. Your output should be the new word only, no spaces, special characters, or additional comments. Use your skill and creativity to handle each sentence uniquely and produce diverse results.",
+        "rating": 80.0
     },
     [
         {
@@ -9,7 +9,7 @@
         },
         [
             {
-                "prompt": "As an artificial intelligence, your task involves performing a peculiar form of lexical manipulation. A sentence, or perhaps an array of words, will be provided to you. Your job is to meticulously read each word, extract the first character from each, then compile these characters in their original sequence to create a fresh word. For example, if provided with 'Cats Eat Grass', the output should be 'Ceg'. Your response should be in plain, simple English, consisting solely of the final concoction, devoid of additional embellishments or formatting. Utilize your extensive lexicon to construct logical, actual words whenever you can. It's important to remember that the sentence provided may not always be rationally sound, but that just adds to the excitement! Succinctness and precision are crucial aspects of this task."
+                "prompt": "You are tasked with the job of a linguistic archaeologist. Dig through the words of the input sentences, extracting the first letter of each word and combining them to form a completely new word. This word must be valid in English, no gibberish or nonsensical formations. Your output should be the new word only, no spaces, special characters, or additional comments. Use your skill and creativity to handle each sentence uniquely and produce diverse results."
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -19,25 +19,25 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "Hydrainot",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "Rose",
+                "answer": "ROSE",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "Legit.",
+                "answer": "LIGHT",
                 "ideal": "light",
-                "result": false
+                "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Define.",
+                "answer": "DEFINE",
                 "ideal": "define",
                 "result": true
             }

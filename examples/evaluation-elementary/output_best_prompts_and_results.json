@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "\"Imagine you are a teacher and you are tasked with creating a reading comprehension exercise for your 10-year-old students. They have just finished reading a story and you need to evaluate their understanding of what they've just read. Your assignment is to generate five relevant questions based on the provided story text. The questions should address key elements of the story - such as the main plot, the characters, the setting, major events and their consequences. The questions should not be too easy or too hard - they should challenge the students to think critically about the text, but also allow them to demonstrate their understanding of it. Keep in mind that the questions should encourage the children to discuss the behaviour, decisions and morals of the characters in the story. Please ensure that all questions are different from each other and are specific to the story provided.\"",
+        "rating": 1242.6752828366775
+    },
+    {
+        "prompt": "\"Generate five unique comprehension questions based on the provided text that are suitable for a 10-year-old child to answer. The questions should test the child's understanding of the text, including details about the characters, the setting, the plot, and the underlying themes. Avoid asking yes/no or true/false questions; instead, aim for open-ended questions that would require the child to provide an explanation or elaborate on the text.\"",
+        "rating": 1199.9629451122687
+    },
+    {
+        "approximate_cost": 0.190265,
+        "real_cost": 0.165786,
+        "tokens_input_gpt-3.5-turbo": 51132,
+        "tokens_output_gpt-3.5-turbo": 1884,
+        "tokens_input_gpt-4": 1964,
+        "tokens_output_gpt-4": 440
+    }
+]
