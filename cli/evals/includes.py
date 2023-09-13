@@ -93,11 +93,11 @@ class Includes:
                     tokens_input += partial_tokens_input
                     tokens_output += partial_tokens_output
 
-                    if all(word in result_content.lower() for word in ideal_output.lower()):
+                    if ideal_output.lower() in result_content.lower():
                         prompt_results[prompt]['correct'] += 1
                     prompt_results[prompt]['total'] += 1
 
-                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": all(word in result_content.lower() for word in ideal_output.lower())})
+                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() in result_content.lower()})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []
