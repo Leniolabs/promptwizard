@@ -1,13 +1,13 @@
 test:
 
     cases:
-        - inout: 'Russia, Canada, United States, Brazil'
+        - input: 'Russia, Canada, United States, Brazil'
           output: 'Russia'
-        - inout: 'Canada, United States, Brazil, Australia'
+        - input: 'Canada, United States, Brazil, Australia'
           output: 'Canada'
-        - inout: 'United States, Brazil, Australia, India'
+        - input: 'United States, Brazil, Australia, India'
           output: 'United States'
-        - inout: 'Brazil, Australia, India, Argentina'
+        - input: 'Brazil, Australia, India, Argentina'
           output: 'Brazil'
 
     method: Includes
@@ -15,7 +15,7 @@ test:
     model:
         name: 'gpt-3.5-turbo'
         temperature: 0.8
-        max_tokens: 1000
+        max_tokens: 20
 
 prompts:
 

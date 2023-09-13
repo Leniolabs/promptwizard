@@ -1,7 +1,7 @@
 [
     {
         "prompt": "Given a list of country names, select the biggest one.",
-        "rating": 0.0
+        "rating": 25.0
     },
     {
         "prompt": "Your task is to identify the country with the largest territorial extension from the given names.",
@@ -17,7 +17,7 @@
     },
     [
         {
-            "method": "Equals"
+            "method": "Includes"
         },
         [
             {
@@ -33,7 +33,7 @@
                 "test": "Canada, United States, Brazil, Australia",
                 "answer": "The biggest country among the given options is Canada.",
                 "ideal": "Canada",
-                "result": false
+                "result": true
             },
             {
                 "test": "United States, Brazil, Australia, India",

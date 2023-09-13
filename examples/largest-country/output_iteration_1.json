@@ -1,19 +1,19 @@
 [
     {
-        "prompt": "From the provided list of nations, pick the one with the largest geographical area.",
-        "rating": 0.0
+        "prompt": "From a provided list of countries, determine which one has the most expansive territory.",
+        "rating": 75.0
     },
     {
-        "prompt": "From a provided list of nations, identify the one with the most land area.",
+        "prompt": "From a provided list of nations, determine which one has the greatest land area.",
         "rating": 0.0
     },
     [
         {
-            "method": "Equals"
+            "method": "Includes"
         },
         [
             {
-                "prompt": "From the provided list of nations, pick the one with the largest geographical area."
+                "prompt": "From a provided list of nations, determine which one has the greatest land area."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
@@ -23,7 +23,7 @@
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "The nation with the largest geographical area from the provided list is Russia.",
+                "answer": "Australia",
                 "ideal": "Canada",
                 "result": false
             },
@@ -35,36 +35,36 @@
             },
             {
                 "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
+                "answer": "Australia has the greatest land area among the provided nations.",
                 "ideal": "Brazil",
                 "result": false
             }
         ],
         [
             {
-                "prompt": "From a provided list of nations, identify the one with the most land area."
+                "prompt": "From a provided list of countries, determine which one has the most expansive territory."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Canada",
+                "answer": "The country with the most expansive territory from the provided list is Russia.",
                 "ideal": "Russia",
-                "result": false
+                "result": true
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "Australia",
+                "answer": "The country with the most expansive territory from the provided list is Russia.",
                 "ideal": "Canada",
-                "result": false
+                "result": true
             },
             {
                 "test": "United States, Brazil, Australia, India",
-                "answer": "Australia",
+                "answer": "The country with the most expansive territory from the provided list is Russia.",
                 "ideal": "United States",
-                "result": false
+                "result": true
             },
             {
                 "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
+                "answer": "Australia has the most expansive territory among the provided countries.",
                 "ideal": "Brazil",
                 "result": false
             }

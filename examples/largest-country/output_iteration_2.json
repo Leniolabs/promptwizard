@@ -1,37 +1,37 @@
 [
     {
-        "prompt": "From a provided list of nations, identify the one with the most extensive territory.",
-        "rating": 0.0
+        "prompt": "Given an array of nations, identify the one with the most extensive land area.",
+        "rating": 75.0
     },
     {
-        "prompt": "From a provided list of countries, determine the one with the most land area.",
-        "rating": 0.0
+        "prompt": "From a given array of nations, identify the one with the largest land area.",
+        "rating": 25.0
     },
     [
         {
-            "method": "Equals"
+            "method": "Includes"
         },
         [
             {
-                "prompt": "From a provided list of nations, identify the one with the most extensive territory."
+                "prompt": "Given an array of nations, identify the one with the most extensive land area."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "The nation with the most extensive territory from the provided list is Russia.",
+                "answer": "The nation with the most extensive land area among Russia, Canada, United States, and Brazil is Russia",
                 "ideal": "Russia",
-                "result": false
+                "result": true
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "The nation with the most extensive territory from the provided list is Russia.",
+                "answer": "The nation with the most extensive land area among Canada, United States, Brazil, and Australia is Russia",
                 "ideal": "Canada",
-                "result": false
+                "result": true
             },
             {
                 "test": "United States, Brazil, Australia, India",
-                "answer": "The nation with the most extensive territory from the provided list is Russia.",
+                "answer": "The nation with the most extensive land area among the given options is Russia.",
                 "ideal": "United States",
-                "result": false
+                "result": true
             },
             {
                 "test": "Brazil, Australia, India, Argentina",
@@ -42,13 +42,13 @@
         ],
         [
             {
-                "prompt": "From a provided list of countries, determine the one with the most land area."
+                "prompt": "From a given array of nations, identify the one with the largest land area."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "The country with the most land area from the provided list is Russia.",
+                "answer": "The nation with the largest land area from the given array is Russia.",
                 "ideal": "Russia",
-                "result": false
+                "result": true
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
