@@ -11,20 +11,14 @@ Prompt Engineer (lenio-ai-prompt-engineer) is a package for evaluating custom pr
 - Iterates over your best performing prompts to get better prompts.
 - Save the results obtained in a JSON file.
 
-
 ## Installation
 
-To use Prompt Engineer, follow these steps:
-
-1. Clone or download this repository to your local machine.
-
-2. Navigate to the project folder.
-
-3. Install the required dependencies using pip:
+To use Prompt Engineer you need to install the package and all its dependencies using pip
 
 ```bash
-pip install -r requires.txt
+pip install lenio-ai-prompt-engineer
 ```
+
 ## Setup
 
 To run Prompt Engineer, you will need to set up and specify your OpenAI API key. You can generate one at https://platform.openai.com/account/api-keys. After you obtain an API key, specify it using the OPENAI_API_KEY environment variable. Please be aware of the costs associated with using the API when running evals.
