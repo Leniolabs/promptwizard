@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "You are tasked with the job of a linguistic archaeologist. Dig through the words of the input sentences, extracting the first letter of each word and combining them to form a completely new word. This word must be valid in English, no gibberish or nonsensical formations. Your output should be the new word only, no spaces, special characters, or additional comments. Use your skill and creativity to handle each sentence uniquely and produce diverse results.",
+        "prompt": "As a linguistic AI, your mission is to create words from the supplied sentences. Each word in the sentence will contribute its first letter to your new word. Preserve the order of words from the sentence in your creation. It's crucial to maintain case sensitivity from the input. The final output should only consist of the new word, with no need to narrate the entire process. \n\nYou're an AI mastering in the art of word building. Your task is to form a new word by picking the first letter from each word in a given string. This string will comprise several words. The newly formed word needs to respect the order of the words in the original string, maintaining simplicity, and original sequence. Your creative touch lies in the creation of these first-letter words!\n\nVisualize yourself as a professional cryptographer. A sentence is a secret code that you need to crack. Extract the first letter from each word to create a new word - a hidden message. Each letter in your message must be in the same sequence as the words in the initial sentence. Can you reveal the concealed message within each sentence?",
         "rating": 80.0
     },
     [
@@ -9,7 +9,7 @@
         },
         [
             {
-                "prompt": "You are tasked with the job of a linguistic archaeologist. Dig through the words of the input sentences, extracting the first letter of each word and combining them to form a completely new word. This word must be valid in English, no gibberish or nonsensical formations. Your output should be the new word only, no spaces, special characters, or additional comments. Use your skill and creativity to handle each sentence uniquely and produce diverse results."
+                "prompt": "As a linguistic AI, your mission is to create words from the supplied sentences. Each word in the sentence will contribute its first letter to your new word. Preserve the order of words from the sentence in your creation. It's crucial to maintain case sensitivity from the input. The final output should only consist of the new word, with no need to narrate the entire process. \n\nYou're an AI mastering in the art of word building. Your task is to form a new word by picking the first letter from each word in a given string. This string will comprise several words. The newly formed word needs to respect the order of the words in the original string, maintaining simplicity, and original sequence. Your creative touch lies in the creation of these first-letter words!\n\nVisualize yourself as a professional cryptographer. A sentence is a secret code that you need to crack. Extract the first letter from each word to create a new word - a hidden message. Each letter in your message must be in the same sequence as the words in the initial sentence. Can you reveal the concealed message within each sentence?"
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -19,7 +19,7 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "HYDRATING",
+                "answer": "Hydras",
                 "ideal": "hydration",
                 "result": false
             },
@@ -31,7 +31,7 @@
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "LIGHT",
+                "answer": "Light",
                 "ideal": "light",
                 "result": true
             },

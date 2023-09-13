@@ -1,19 +1,19 @@
 [
     {
-        "prompt": "You are expected to be a coder of words, taking in lines of text and decrypting them into a new formation. For each text you receive, take just the initial letter from every word and conjoin them to form a brand new word. Ensure this word is an actual English language word - not random gibberish. Create this word without spaces or special characters, and return it as the only output. Show your singular creative edge by treating each piece of text in a unique manner.",
+        "prompt": "As an AI assistant, your task is to assist with constructing words from given sentences. You do this by extracting the initial letters of each word in the sentence to form a new word. Arrange these letters you've collected in the order that they appear in the sentence to generate your final word. Please ensure you maintain the case sensitivity as presented in the input. Provide a step-by-step approach to how you arrived at your final word. Your output should contain only the final word without explaining the entire process.",
         "rating": 100.0
     },
     {
-        "prompt": "Your task is to generate a word by combining the initial letters of each word in the given sentence. In this case, each sentence is a sequence of words and your output needs to be a single English word, created by taking the first letter of each word in the sentence and stringing those letters together in the order they appeared in the sentence. If the resultant letters don't form a coherent English word, provide the resultant string as is. Your response should be concise, reflecting the original sequence of the input, and articulate, ensuring proper use of vocabulary and accurate interpretation of the task. The final product should be a reroute of the initial letters into a word, not a new creation.",
+        "prompt": "You are a wordsmith AI and you have a unique task. You will be given a string which consists of multiple words. You need to create a new word using the initial letters of these words. Each word in the string contributes its first letter to form this new word. Please proceed systematically and ensure that the new word formed is in the same order as the sequence of the words in the string. Don't introduce any extra letters or shuffle the original order. Remember, the elegance is in maintaining the simplicity and the sequence. Good luck crafting these initial-letter words!",
         "rating": 100.0
     },
     {
-        "prompt": "As an AI, you have been instructed to decipher a unique word hidden within each sentence that is provided to you. This clandestine word is constructed by taking the initial letter from every word in the sentence, and uniting them in the same order as they appear, forming a completely new term. Be sure to maintain the sequence, or the encoded word may be lost. Following this pattern, your task is to reveal the concealed word from each interpreted sentence. Your output should solely be the hidden word, without any additional comments or explanations. Take it step by step, taking the first letter from each word, combining them, and concluding by presenting your final answer. Be diligent, ensure accuracy, and execute your task adeptly.",
+        "prompt": "Imagine that you are a master codebreaker. Each sentence is a cryptic message and your task is to decipher it. Look at each word and pick the initial letter. After selecting the first letter from each word, put them together to form a completely new word. This word is the hidden message within the sentence. You are expected to leave no letters behind and the order of letters in the message must mirror the order of the words in the original sentence. Can you uncover the hidden message within each sentence?",
         "rating": 80.0
     },
     {
-        "prompt": "Create a new word from the input you're given by taking the first letter of each word in the input text, without spaces in between. The resulting word should not have any kind of punctuation, and your reply should be in pure lowercase. Step by step, you should read each word separately, isolate the initial letter, and then string these letters together. The produced word may or may not make sense in English, but it's crucially important that you provide a sequence of letters that follows the original rule.",
-        "rating": 60.0
+        "prompt": "As an AI, you are tasked to play with words. Given a sentence, your role is to form a new word from the initial letters of each word in the sentence. Follow these steps:\n\n1. Read the input sentence carefully.\n2. Highlight the first letter of each word in the sentence.\n3. Concatenate these selected front letters together, in the order they appear in the sentence.\n4. Output this newly formed word.\n\nKeep in mind, you should not rearrange or shuffle the letters. Maintain the sequence exactly as it appears in the input sentence. You are only allowed to create words from the alpha characters provided. Be ready to display your letter parsing abilities, and remember, every letter counts!",
+        "rating": 80.0
     },
     [
         {
@@ -21,46 +21,81 @@
         },
         [
             {
-                "prompt": "You are expected to be a coder of words, taking in lines of text and decrypting them into a new formation. For each text you receive, take just the initial letter from every word and conjoin them to form a brand new word. Ensure this word is an actual English language word - not random gibberish. Create this word without spaces or special characters, and return it as the only output. Show your singular creative edge by treating each piece of text in a unique manner."
+                "prompt": "As an AI assistant, your task is to assist with constructing words from given sentences. You do this by extracting the initial letters of each word in the sentence to form a new word. Arrange these letters you've collected in the order that they appear in the sentence to generate your final word. Please ensure you maintain the case sensitivity as presented in the input. Provide a step-by-step approach to how you arrived at your final word. Your output should contain only the final word without explaining the entire process."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The resulting word is \"TRACTOR\".",
+                "answer": "Step 1: Extract the initial letters of each word in the sentence:\nT, r, a, c, t, o, t, o, r, a, f\n\nStep 2: Arrange the collected letters in the order they appear in the sentence:\nTractotoraf\n\nFinal word: Tractotoraf",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The decrypted word for the given text is \"HYDRATING\".",
+                "answer": "Step 1: Extract the initial letters of each word in the sentence:\nH - y - d - r - a - s - t - i - n - o - n\n\nStep 2: Arrange the collected letters in the order they appear in the sentence:\nHydrastinon\n\nFinal word: Hydrastinon",
                 "ideal": "hydration",
                 "result": true
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The decrypted word is \"ROSE\".",
+                "answer": "Step 1: Extract the initial letters of each word in the sentence:\nR + o + s + e\n\nStep 2: Arrange the collected letters in the order they appear in the sentence:\nRose\n\nFinal word: Rose",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "The decrypted word is \"LIGHT\".",
+                "answer": "Step 1: Extract the initial letters of each word in the sentence:\nL I G H T\n\nStep 2: Arrange the collected letters in the order they appear in the sentence:\nL I G H T\n\nFinal word: LIGHT",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The decrypted word is \"DEFINE\".",
+                "answer": "Step 1: Extract the initial letters of each word in the sentence:\nD E F I N E N E\n\nStep 2: Arrange the collected letters in the order they appear in the sentence:\nDEFINE\n\nFinal word: DEFINE",
                 "ideal": "define",
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As an AI, you have been instructed to decipher a unique word hidden within each sentence that is provided to you. This clandestine word is constructed by taking the initial letter from every word in the sentence, and uniting them in the same order as they appear, forming a completely new term. Be sure to maintain the sequence, or the encoded word may be lost. Following this pattern, your task is to reveal the concealed word from each interpreted sentence. Your output should solely be the hidden word, without any additional comments or explanations. Take it step by step, taking the first letter from each word, combining them, and concluding by presenting your final answer. Be diligent, ensure accuracy, and execute your task adeptly."
+                "prompt": "You are a wordsmith AI and you have a unique task. You will be given a string which consists of multiple words. You need to create a new word using the initial letters of these words. Each word in the string contributes its first letter to form this new word. Please proceed systematically and ensure that the new word formed is in the same order as the sequence of the words in the string. Don't introduce any extra letters or shuffle the original order. Remember, the elegance is in maintaining the simplicity and the sequence. Good luck crafting these initial-letter words!"
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The new word formed using the initial letters of the given string is \"TRACTOR\".",
+                "ideal": "tractor",
+                "result": true
+            },
+            {
+                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
+                "answer": "The new word formed using the initial letters of the words in the string is: HYDRATING",
+                "ideal": "hydration",
+                "result": true
+            },
+            {
+                "test": "Rare obnoxiousness searches elevation.",
+                "answer": "The new word formed using the initial letters of the words \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
+                "ideal": "rose",
+                "result": true
+            },
+            {
+                "test": "Late into geometry he theorised.",
+                "answer": "Let's create the new word using the initial letters of each word in the given string:\n\nLate into geometry he theorised.\n\nThe initial letters of each word are:\n\nL i g h t\n\nSo, the new word formed is \"LIGHT\".",
+                "ideal": "light",
+                "result": true
+            },
+            {
+                "test": "Dear Elena find irregular new energies.",
+                "answer": "The initial letters of the words \"Dear Elena find irregular new energies\" form the word \"DEFINE\".",
+                "ideal": "define",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "Imagine that you are a master codebreaker. Each sentence is a cryptic message and your task is to decipher it. Look at each word and pick the initial letter. After selecting the first letter from each word, put them together to form a completely new word. This word is the hidden message within the sentence. You are expected to leave no letters behind and the order of letters in the message must mirror the order of the words in the original sentence. Can you uncover the hidden message within each sentence?"
+            },
+            {
+                "test": "The red acrobat closed the orange raft",
+                "answer": "TRACTOR",
                 "ideal": "tractor",
                 "result": true
             },
@@ -91,70 +126,35 @@
         ],
         [
             {
-                "prompt": "Create a new word from the input you're given by taking the first letter of each word in the input text, without spaces in between. The resulting word should not have any kind of punctuation, and your reply should be in pure lowercase. Step by step, you should read each word separately, isolate the initial letter, and then string these letters together. The produced word may or may not make sense in English, but it's crucially important that you provide a sequence of letters that follows the original rule."
+                "prompt": "As an AI, you are tasked to play with words. Given a sentence, your role is to form a new word from the initial letters of each word in the sentence. Follow these steps:\n\n1. Read the input sentence carefully.\n2. Highlight the first letter of each word in the sentence.\n3. Concatenate these selected front letters together, in the order they appear in the sentence.\n4. Output this newly formed word.\n\nKeep in mind, you should not rearrange or shuffle the letters. Maintain the sequence exactly as it appears in the input sentence. You are only allowed to create words from the alpha characters provided. Be ready to display your letter parsing abilities, and remember, every letter counts!"
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "tracotor",
+                "answer": "The resulting word from the initial letters of each word in the sentence is: TRACTOR",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "hydrating",
+                "answer": "HYDRATIGN",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "roses",
+                "answer": "The newly formed word is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "lityht",
-                "ideal": "light",
-                "result": false
-            },
-            {
-                "test": "Dear Elena find irregular new energies.",
-                "answer": "define",
-                "ideal": "define",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "Your task is to generate a word by combining the initial letters of each word in the given sentence. In this case, each sentence is a sequence of words and your output needs to be a single English word, created by taking the first letter of each word in the sentence and stringing those letters together in the order they appeared in the sentence. If the resultant letters don't form a coherent English word, provide the resultant string as is. Your response should be concise, reflecting the original sequence of the input, and articulate, ensuring proper use of vocabulary and accurate interpretation of the task. The final product should be a reroute of the initial letters into a word, not a new creation."
-            },
-            {
-                "test": "The red acrobat closed the orange raft",
-                "answer": "The initial letters of the words in the sentence \"The red acrobat closed the orange raft\" can be combined to form the word \"tracor\".",
-                "ideal": "tractor",
-                "result": true
-            },
-            {
-                "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The initial letters of the words in the sentence \"Honey your daring rationale asserts typical ignorance or neglect\" can be combined to form the word \"HYDRATION\".",
-                "ideal": "hydration",
-                "result": true
-            },
-            {
-                "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The initial letters of the words in the sentence \"Rare obnoxiousness searches elevation\" can be rearranged to form the word \"ROSE\".",
-                "ideal": "rose",
-                "result": true
-            },
-            {
-                "test": "Late into geometry he theorised.",
-                "answer": "The initial letters of the words in the sentence \"Late into geometry he theorised\" can be rearranged to form the word \"LIGHT\".",
+                "answer": "Let's form a new word from the initial letters of each word in the sentence:\n\nL + i + g + h + t\n\nThe newly formed word is \"Light\".",
                 "ideal": "light",
                 "result": true
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "The initial letters of the words in the sentence \"Dear Elena find irregular new energies\" can be rearranged to form the word \"DEFINE\".",
+                "answer": "DEFINE",
                 "ideal": "define",
                 "result": true
             }

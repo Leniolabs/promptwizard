@@ -30,10 +30,3 @@ prompts:
             name: 'gpt-4'
             temperature: 1.5
             max_tokens: 500
-
-    iterations:
-        number: 1
-        model:
-            name: 'gpt-4'
-            temperature: 0.8
-            max_tokens: 500

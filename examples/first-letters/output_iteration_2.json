@@ -1,7 +1,7 @@
 [
     {
-        "prompt": "Your challenge is to devise an English word from the first letter of every word in a provided sentence. The sentence is a string of words, and your output should be one concise, authentic English word, created by extracting the first letter from each word and assembling them in the sequence they originally appeared. If the resulting string doesn't form a genuine English word, present the resulting string as it is. Your final output should be a reflection of the original input sequence, demonstrating expertise in the use of language and correct comprehension of the task. The newly formed word should not be a concoction, but a reorganization of the initial letters.",
-        "rating": 100.0
+        "prompt": "\"As an AI equipped with linguistic skills, your mission is to generate words from provided sentences. Accomplish this by utilizing the first letter of each word in the sentence to construct a unique word. Organize these acquired letters in their original sequence to produce your final word. It's important that the case sensitivity of the original sentence is observed in your output. Detail your method of arriving at your final word in a systematic manner. Your answer should consist solely of the final word, omitting any elaborate explanations of the process.\" \"As an AI specializing in language manipulation, your task is to form a word from a given string of multiple words. This is achieved by creating a distinct word utilizing the first letter from each word in the input string. Every word adds its opening letter to the formation of this new word. It's crucial to maintain a logical approach and ensure the new word reproduces the same sequence as the input words. The inclusion of extra characters or altering the original sequence is not permitted. Bear in mind that the beauty lies in preserving the simplicity and order of the sequence as you creatively generate these initial-letter words!\"",
+        "rating": 80.0
     },
     [
         {
@@ -9,23 +9,23 @@
         },
         [
             {
-                "prompt": "Your challenge is to devise an English word from the first letter of every word in a provided sentence. The sentence is a string of words, and your output should be one concise, authentic English word, created by extracting the first letter from each word and assembling them in the sequence they originally appeared. If the resulting string doesn't form a genuine English word, present the resulting string as it is. Your final output should be a reflection of the original input sequence, demonstrating expertise in the use of language and correct comprehension of the task. The newly formed word should not be a concoction, but a reorganization of the initial letters."
+                "prompt": "\"As an AI equipped with linguistic skills, your mission is to generate words from provided sentences. Accomplish this by utilizing the first letter of each word in the sentence to construct a unique word. Organize these acquired letters in their original sequence to produce your final word. It's important that the case sensitivity of the original sentence is observed in your output. Detail your method of arriving at your final word in a systematic manner. Your answer should consist solely of the final word, omitting any elaborate explanations of the process.\" \"As an AI specializing in language manipulation, your task is to form a word from a given string of multiple words. This is achieved by creating a distinct word utilizing the first letter from each word in the input string. Every word adds its opening letter to the formation of this new word. It's crucial to maintain a logical approach and ensure the new word reproduces the same sequence as the input words. The inclusion of extra characters or altering the original sequence is not permitted. Bear in mind that the beauty lies in preserving the simplicity and order of the sequence as you creatively generate these initial-letter words!\""
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "The resulting word from the first letters of each word in the sentence \"The red acrobat closed the orange raft\" is \"tractor.\"",
+                "answer": "Tractor",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "The resulting word from the first letters of each word in the sentence is \"HYDRASTIN\". Although \"HYDRASTIN\" is not a recognized English word, it is a valid rearrangement of the original letters. This demonstrates an understanding of the task and the ability to create a concise word from the given sentence.",
+                "answer": "Hydrating",
                 "ideal": "hydration",
-                "result": true
+                "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "The resulting word from the first letter of each word in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
+                "answer": "ROSE",
                 "ideal": "rose",
                 "result": true
             },
@@ -37,7 +37,7 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Defining a genuine English word from the initial letters of each word in the provided sentence, \"Dear Elena find irregular new energies,\" proves to be a challenging endeavor. After extracting the first letter from each word and assembling them in their original sequence, the resulting string \"DEFINE\" does not align with an authentic English word. Therefore, I present the resulting string as it is, \"DEFINE,\" acknowledging that it does not form a genuine English word.",
+                "answer": "Defining",
                 "ideal": "define",
                 "result": true
             }

@@ -16,7 +16,7 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 max_tokens=max_tokens,
                 n = number_of_prompts,
                 temperature=temperature,
-                timeout=10,
+                request_timeout=60,
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")
@@ -31,7 +31,7 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 temperature=temperature,
                 functions=functions,
                 function_call=function_call,
-                timeout=10,
+                request_timeout=60,
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")
@@ -45,7 +45,7 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 n = number_of_prompts,
                 temperature=temperature,
                 logit_bias=logit_bias,
-                timeout=10,
+                request_timeout=60,
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")

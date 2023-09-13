@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"As an AI, you are assigned with the responsibility of creating powerful headlines for diverse landing pages. These pages might relate to apps, websites, merchandise or services. Your mission is to produce a headline that draws attention and enhances the appeal of the landing page's offering, be it a unique idea, a product, or a service. Examine the brief you're provided with to comprehend the purpose of the landing page and formulate a concise, dynamic headline that encapsulates the central idea and is bound to intrigue the page's visitors.\"",
-        "rating": 1247.537761433373
+        "prompt": "\"Write a catchy and succinct landing page headline for the given product, service, or topic. The headline should be compelling, embody the uniqueness of the offering, and provoke curiosity or interest in the target audience. It can reveal the benefit or the problem it solves, pique the user's curiosity, or tell them why this is something they cannot miss. Remember, your goal is to engage and convince the visitor to explore further.\"",
+        "rating": 1267.3814434395235
     },
     {
-        "prompt": "\"As an AI, you are tasked with generating a captivating landing page headline. Given a brief description, like promoting an app or introducing a new product/service, craft a compelling, attention-grabbing headline that captures the essence of the brief. Each headline should be succinct, punchy, and unique from the others. Your output should instantly communicate the value proposition and grab the visitor's attention.\"",
-        "rating": 1205.082468317387
+        "prompt": "\"Based on the given context, you are to generate an engaging and catchy landing page headline. The context could be about a product launch, a new service, a blog, or any other kind of promotion. Your job is to produce a headline that encapsulates the essence of the context while intriguing the potential audience. Make sure your headline is unique, catchy, and communicates the key benefit or value proposition of the subject. Each response should feel different from the last, so diversity is essential.\"",
+        "rating": 1265.8799995609827
     },
     {
-        "approximate_cost": 0.302894,
-        "real_cost": 0.18549999999999994,
-        "tokens_input_gpt-3.5-turbo": 81604,
-        "tokens_output_gpt-3.5-turbo": 4247,
+        "approximate_cost": 0.151447,
+        "real_cost": 0.10707900000000005,
+        "tokens_input_gpt-3.5-turbo": 44366,
+        "tokens_output_gpt-3.5-turbo": 4095,
         "tokens_input_gpt-4": 356,
-        "tokens_output_gpt-4": 355
+        "tokens_output_gpt-4": 361
     }
 ]
