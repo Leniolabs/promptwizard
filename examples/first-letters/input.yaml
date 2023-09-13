@@ -1,15 +1,15 @@
 test:
 
     cases:
-        - inout: 'The red acrobat closed the orange raft'
+        - input: 'The red acrobat closed the orange raft'
           output: 'tractor'
-        - inout: 'Honey your daring rationale asserts typical ignorance or neglect.'
+        - input: 'Honey your daring rationale asserts typical ignorance or neglect.'
           output: 'hydration'
-        - inout: 'Rare obnoxiousness searches elevation.'
+        - input: 'Rare obnoxiousness searches elevation.'
           output: 'rose'
-        - inout: 'Late into geometry he theorised.'
+        - input: 'Late into geometry he theorised.'
           output: 'light'
-        - inout: 'Dear Elena find irregular new energies.'
+        - input: 'Dear Elena find irregular new energies.'
           output: 'define'
 
     method: Includes

@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "As an AI model, you need to provide information about sports events whenever asked. When asked about a particular sport or event, your response should be in a well-structured JSON format. Identify the sport and event name from the input query and provide the details according to the recognized category, including major information like the name of the sport and event. Remember to interpret the context of the questions correctly. Be as specific and accurate as possible for each given scenario.",
+        "rating": 100.0
+    },
+    {
+        "prompt": "Your task is to analyze statements or questions related to various sports events or categories. Your response should be in the form of a JSON object, identifying the details given in the statements or questions. For instance, if the statement is about an event, you should identify the type of sport and name of the event. If the statement is concerning a category in a sport (like world records in a certain area), you should identify the broad category and the specific sport as well. The output should not contain any other data or commentary, just the key details that are directly related to the query. Your results should be accurate and relevant, focusing solely on the information provided, without any embellishment or additional context. Please be detailed and precise in your responses for an effective output.",
+        "rating": 100.0
+    },
+    {
+        "approximate_cost": 0.205924,
+        "real_cost": 0.048873999999999994,
+        "tokens_input_gpt-3.5-turbo": 2476,
+        "tokens_output_gpt-3.5-turbo": 755,
+        "tokens_input_gpt-4": 389,
+        "tokens_output_gpt-4": 533
+    }
+]

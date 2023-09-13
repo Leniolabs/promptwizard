@@ -1,9 +1,9 @@
 test:
 
     cases:
-        - inout: 'San Carlos de Bariloche, Argentina'
+        - input: 'San Carlos de Bariloche, Argentina'
           output: 'snow covered mountains crystal clear lakes Rio Negro Argentina excursions gastronomy family activities Cerro Catedral'
-        - inout: 'Puerto Iguazú, Argentina'
+        - input: 'Puerto Iguazú, Argentina'
           output: 'Iguazu Falls jungle train unique experience boat trip walkways National Park'
 
     method: Includes

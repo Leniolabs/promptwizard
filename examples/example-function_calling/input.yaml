@@ -1,9 +1,9 @@
 test:
   cases:
-    - inout: 'design a logo for AI meetings'
+    - input: 'design a logo for AI meetings'
       output1: 'design_logo'
       output2: 'AI meetings'
-    - inout: 'Write a Python script to analyze sales data.'
+    - input: 'Write a Python script to analyze sales data.'
       output1: 'write_script'
       output2: 'Python'
   method: function_calling

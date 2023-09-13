@@ -45,7 +45,7 @@ class Classification:
     def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature):
         messages = [
             {"role": "system", "content": prompt},
-            {"role": "user", "content": f"{test_case['inout']}"}
+            {"role": "user", "content": f"{test_case['input']}"}
         ]
         logit_bias={
                     '1904': 100,  # 'true' token
@@ -101,7 +101,7 @@ class Classification:
                         prompt_results[prompt]['correct'] += 1
                     prompt_results[prompt]['total'] += 1
 
-                    prompt_and_results.append({"test": test_case['inout'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() == result_content.lower()})
+                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() == result_content.lower()})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []

@@ -41,7 +41,7 @@ class EloFormatTestCaseSchema(Schema):
 
 class ClaEqInTestCaseSchema(Schema):
     # Schema for individual test cases with 'Classification', 'Equals', and 'Includes' methods
-    inout = fields.String(required=True)
+    input = fields.String(required=True)
     output = fields.String(required=True)
 
 class ClaEqInFormatTestCaseSchema(Schema):
@@ -69,7 +69,7 @@ class FunctionCallingFormatFunctionSchema(Schema):
 
 class FunctionCallingTestCaseSchema(Schema):
     # Schema for defining function attributes used in 'function_calling' method
-    inout = fields.Str(required=True)
+    input = fields.Str(required=True)
     output1 = fields.Str(required=True)
     output2 = fields.Str(required=True)
 

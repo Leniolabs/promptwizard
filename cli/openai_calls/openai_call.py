@@ -9,30 +9,45 @@ from tenacity import (
 @backoff.on_exception(backoff.expo, openai.error.RateLimitError, max_time=60)
 def create_chat_completion(model, messages, max_tokens, temperature, number_of_prompts, logit_bias=None, functions=None, function_call=None):
     if (logit_bias==None and functions==None):
-        respond = openai.ChatCompletion.create(
-            model=model,
-            messages=messages,
-            max_tokens=max_tokens,
-            n = number_of_prompts,
-            temperature=temperature,
-        )
+        try:
+            respond = openai.ChatCompletion.create(
+                model=model,
+                messages=messages,
+                max_tokens=max_tokens,
+                n = number_of_prompts,
+                temperature=temperature,
+                timeout=10,
+            )
+        except openai.error.OpenAIError as e:
+            print(f"Error in request: {e}")
+
     elif functions!=None:
-        respond = openai.ChatCompletion.create(
-            model=model,
-            messages=messages,
-            max_tokens=max_tokens,
-            n = number_of_prompts,
-            temperature=temperature,
-            functions=functions,
-            function_call=function_call
-        )
+        try:
+            respond = openai.ChatCompletion.create(
+                model=model,
+                messages=messages,
+                max_tokens=max_tokens,
+                n = number_of_prompts,
+                temperature=temperature,
+                functions=functions,
+                function_call=function_call,
+                timeout=10,
+            )
+        except openai.error.OpenAIError as e:
+            print(f"Error in request: {e}")
+
     else:
-        respond = openai.ChatCompletion.create(
-            model=model,
-            messages=messages,
-            max_tokens=max_tokens,
-            n = number_of_prompts,
-            temperature=temperature,
-            logit_bias=logit_bias
-        )
+        try:
+            respond = openai.ChatCompletion.create(
+                model=model,
+                messages=messages,
+                max_tokens=max_tokens,
+                n = number_of_prompts,
+                temperature=temperature,
+                logit_bias=logit_bias,
+                timeout=10,
+            )
+        except openai.error.OpenAIError as e:
+            print(f"Error in request: {e}")
+            
     return respond

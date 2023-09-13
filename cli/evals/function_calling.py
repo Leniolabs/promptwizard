@@ -10,7 +10,7 @@ class functionCalling:
         Initializes an instance of the functionCalling class.
 
         Args:
-            test_cases (list): A list of test cases, each containing 'inout', 'output1', and 'output2' fields.
+            test_cases (list): A list of test cases, each containing 'input', 'output1', and 'output2' fields.
             number_of_prompts (int): The number of prompts to evaluate.
             model_test (str): The name of the GPT model used for testing.
             model_test_temperature (float): The temperature setting for testing.
@@ -51,7 +51,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
     def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature, functions, function_call):
         messages = [
             {"role": "system", "content": prompt},
-            {"role": "user", "content": f"{test_case['inout']}"}
+            {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, None, functions, function_call)
         partial_tokens_input = response["usage"]["prompt_tokens"]
@@ -119,9 +119,9 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                             a = 'function error'
                         if not (ideal_output1 == response.choices[0].message.function_call.name) and (not ideal_output2 == extract_keys_and_values(json_object)[1]):
                             a = 'function and variable error'
-                        prompt_and_results.append({"test": test_case['inout'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": a})
+                        prompt_and_results.append({"test": test_case['input'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": a})
                     if "function_call" not in response['choices'][0]['message']:
-                        prompt_and_results.append({"test": test_case['inout'], "answer": 'not a function call', "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": 'Received text data instead of JSON.'})
+                        prompt_and_results.append({"test": test_case['input'], "answer": 'not a function call', "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": 'Received text data instead of JSON.'})
                         prompt_results[prompt]['total'] += 1
 
                 results.append(prompt_and_results)

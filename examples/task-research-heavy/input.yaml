@@ -1,23 +1,23 @@
 test:
 
     cases:
-        - inout: 'Find the best contact email on this site.'
+        - input: 'Find the best contact email on this site.'
           output: 'true'
-        - inout: 'who is the current president?'
+        - input: 'who is the current president?'
           output: 'true'
-        - inout: 'order me a pizza'
+        - input: 'order me a pizza'
           output: 'false'
-        - inout: 'what are some ways a doctor could use an assistant?'
+        - input: 'what are some ways a doctor could use an assistant?'
           output: 'true'
-        - inout: 'write a speech on the danger of cults'
+        - input: 'write a speech on the danger of cults'
           output: 'false'
-        - inout: 'Make a reservation at The Accent for 9pm'
+        - input: 'Make a reservation at The Accent for 9pm'
           output: 'false'
-        - inout: 'organize my google drive'
+        - input: 'organize my google drive'
           output: 'false'
-        - inout: 'Find the highest-rated Italian restaurant near me.'
+        - input: 'Find the highest-rated Italian restaurant near me.'
           output: 'true'
-        - inout: 'Explain the theory of relativity.'
+        - input: 'Explain the theory of relativity.'
           output: 'true'
 
     method: Classification

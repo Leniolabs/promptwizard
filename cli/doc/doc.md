@@ -63,15 +63,15 @@ test:
             -'Test1'
             -'Test2'...
         If you choose the methods Classification, Equals, Includes they must be of the form:
-            -inout: 'Test1'
+            -input: 'Test1'
             output: 'Answer1'
-            -inout: 'Test2'
+            -input: 'Test2'
             output: 'Answer2'
         And in case the method is function_calling:
-            -inout: 'Test1'
+            -input: 'Test1'
             output1: 'name_function'
             output2: 'variable'
-            -inout: 'Test2'
+            -input: 'Test2'
             output1: 'name_function'
             output2: 'variable'"""
 
@@ -152,25 +152,25 @@ In case the YAML file you wish to evaluate has errors in its structure, don't wo
 test:
 
     cases:
-        - inout: 'The goal is to read a PDF file about climate change.'
+        - input: 'The goal is to read a PDF file about climate change.'
           output1: 'open_file'
           output2: 'PDF'
-        - inout: 'You want to save the changes made to your .docx file.'
+        - input: 'You want to save the changes made to your .docx file.'
           output1: 'save_file'
           output2: 'DOCX'
-        - inout: 'He needs to review an Excel spreadsheet containing sales data.'
+        - input: 'He needs to review an Excel spreadsheet containing sales data.'
           output1: 'open_file'
           output2: 'XLSX'
-        - inout: 'She is trying to print a high-resolution image for the art exhibition.'
+        - input: 'She is trying to print a high-resolution image for the art exhibition.'
           output1: 'print_file'
           output2: 'JPEG'
-        - inout: 'Please convert the PowerPoint presentation to a PDF for sharing.'
+        - input: 'Please convert the PowerPoint presentation to a PDF for sharing.'
           output1: 'convert'
           output2: 'PPTX'
-        - inout: "They're editing a CSV file to update the product inventory."
+        - input: "They're editing a CSV file to update the product inventory."
           output1: 'edit_file'
           output2: 'CSV'
-        - inout: 'The task is to analyze the data in a JSON file using Python.'
+        - input: 'The task is to analyze the data in a JSON file using Python.'
           output1: 'open_file'
           output2: 'JSON'
 
@@ -279,15 +279,15 @@ This is another example:
 test:
 
     cases:
-        - inout: 'The red acrobat closed the orange raft'
+        - input: 'The red acrobat closed the orange raft'
           output: 'tractor'
-        - inout: 'Honey your daring rationale asserts typical ignorance or neglect.'
+        - input: 'Honey your daring rationale asserts typical ignorance or neglect.'
           output: 'hydration'
-        - inout: 'Rare obnoxiousness searches elevation.'
+        - input: 'Rare obnoxiousness searches elevation.'
           output: 'rose'
-        - inout: 'Late into geometry he theorised.'
+        - input: 'Late into geometry he theorised.'
           output: 'light'
-        - inout: 'Dear Elena find irregular new energies.'
+        - input: 'Dear Elena find irregular new energies.'
           output: 'define'
 
     method: includes.Includes

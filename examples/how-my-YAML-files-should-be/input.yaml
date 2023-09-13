@@ -10,15 +10,15 @@ test:
             -'Test1'
             -'Test2'...
         If you choose the methods classification.Classification, equal.Equal, includes.Includes they must be of the form:
-            -inout: 'Test1'
+            -input: 'Test1'
             output: 'Answer1'
-            -inout: 'Test2'
+            -input: 'Test2'
             output: 'Answer2'
         And in case the method is function_calling.functionCalling:
-            -inout: 'Test1'
+            -input: 'Test1'
             output1: 'name_function'
             output2: 'variable'
-            -inout: 'Test2'
+            -input: 'Test2'
             output1: 'name_function'
             output2: 'variable'"""
 

@@ -108,10 +108,10 @@ def approximate_cost(file):
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
     if method == 'Classification' or method == 'Includes' or method == 'Equals':
-        input_output_pairs = [(case['inout'], case['output']) for case in test_cases]
+        input_output_pairs = [(case['input'], case['output']) for case in test_cases]
         test_cases = input_output_pairs
     if method == 'function_calling':
-        result_list = [[case['inout'], case['output1'], case['output2']] for case in test_cases]
+        result_list = [[case['input'], case['output1'], case['output2']] for case in test_cases]
         test_cases = result_list
     model_test = yaml_content['test']['model']['name']
     model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
@@ -455,15 +455,15 @@ def main():
             -'Test1'\n
             -'Test2'...\n
         If you choose the methods Classification, Equals, Includes they must be of the form:\n
-            -inout: 'Test1'\n
+            -input: 'Test1'\n
             output: 'Answer1'\n
-            -inout: 'Test2'\n
+            -input: 'Test2'\n
             output: 'Answer2'\n
         And in case the method is function_calling:\n
-            -inout: 'Test1'\n
+            -input: 'Test1'\n
             output1: 'name_function'\n
             output2: 'variable'\n
-            -inout: 'Test2'\n
+            -input: 'Test2'\n
             output1: 'name_function'\n
             output2: 'variable'\n"""
 

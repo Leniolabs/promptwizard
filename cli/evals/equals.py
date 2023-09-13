@@ -9,7 +9,7 @@ class Equals:
         Initializes an instance of the Equals class.
 
         Args:
-            test_cases (list): A list of test cases, each containing 'inout' and 'output' fields.
+            test_cases (list): A list of test cases, each containing 'input' and 'output' fields.
             number_of_prompts (int): The number of prompts to evaluate.
             model_test (str): The name of the GPT model used for testing.
             model_test_temperature (float): The temperature setting for testing.
@@ -47,7 +47,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
     def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature):
         messages = [
             {"role": "system", "content": prompt},
-            {"role": "user", "content": f"{test_case['inout']}"}
+            {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1)
         partial_tokens_input = response["usage"]["prompt_tokens"]
@@ -96,7 +96,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                         prompt_results[prompt]['correct'] += 1
                     prompt_results[prompt]['total'] += 1
 
-                    prompt_and_results.append({"test": test_case['inout'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() == result_content.lower()})
+                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": ideal_output.lower() == result_content.lower()})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []

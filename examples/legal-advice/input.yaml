@@ -1,9 +1,9 @@
 test:
 
     cases:
-        - inout: 'A customer wants to proceed with the adoption of children.'
+        - input: 'A customer wants to proceed with the adoption of children.'
           output: 'family home study rights obligations parents children'
-        - inout: 'A user needs information about the divorce process in their state.'
+        - input: 'A user needs information about the divorce process in their state.'
           output: 'Separation agreement Divorce Child support Mediation'
 
     method: Includes

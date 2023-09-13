@@ -45,7 +45,7 @@ class Includes:
     def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature):
         messages = [
             {"role": "system", "content": prompt},
-            {"role": "user", "content": f"{test_case['inout']}"}
+            {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1)
         partial_tokens_input = response["usage"]["prompt_tokens"]
@@ -97,7 +97,7 @@ class Includes:
                         prompt_results[prompt]['correct'] += 1
                     prompt_results[prompt]['total'] += 1
 
-                    prompt_and_results.append({"test": test_case['inout'], "answer": result_content, "ideal": ideal_output, "result": all(word in result_content.lower() for word in ideal_output.lower())})
+                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": all(word in result_content.lower() for word in ideal_output.lower())})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []
