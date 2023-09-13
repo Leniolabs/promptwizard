@@ -18,8 +18,8 @@ test:
 prompts:
 
     generation:
-        number: 5
+        number: 4
         model:
             name: 'gpt-4'
             temperature: 1.5
-            max_tokens: 500
+            max_tokens: 250

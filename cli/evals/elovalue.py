@@ -2,7 +2,6 @@ from tqdm import tqdm
 import itertools
 from ..cost import input, output
 from ..openai_calls import openai_call
-import multiprocessing
 
 
 # K is a constant factor that determines how much ratings change
@@ -277,10 +276,7 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
         
         # Calculate Elo ratings and gather evaluation results
         
-        num_processes = 4
-
-        with multiprocessing.Pool(processes=num_processes) as pool:
-            prompt_ratings = pool.map(self.test_candidate_prompts, [self] * num_processes)
+        prompt_ratings = self.test_candidate_prompts()
         # Prepare a data list for prompts and ratings, sorted by rating in descending order
         data_list = []
         for prompt, rating in sorted(prompt_ratings[0].items(), key=lambda item: item[1], reverse=True):

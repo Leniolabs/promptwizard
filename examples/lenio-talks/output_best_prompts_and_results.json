@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"Given a succinct description of a certain Lenio talk, your task is to create compelling, engaging, and unique titles that perfectly encapsulate the topic at hand. The titles should be catchy and appealing to attract diverse audiences and stir interest about the discussed subject. Remember, the title acts as an introduction to the content, hence it should encapsulate the essence of the talk itself but at the same time maintaining an aura of intrigue to spark curiosity. You should not repeat any title. Embrace creativity and utilize a broad vocabulary for enhanced appeal.\"",
-        "rating": 1256.004381623105
+        "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+        "rating": 1212.907904287107
     },
     {
-        "prompt": "\"Taking into consideration that you are an AI, your task is to transform the given descriptions into compelling, unique, and engaging titles that would intrigue and attract potential audience for our Lenio talks. The primary objective is to pique their curiosity, invoking a strong urge to explore the topic further. You should construct short and captivating titles, making sure to display an expansive range of vocabulary. Also, don't forget to retain the focal theme and spirit of the given descriptions in the generated titles. Remember to keep the titles distinct and diverse.\"",
-        "rating": 1219.9420422643798
+        "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+        "rating": 1208.951305007044
     },
     {
         "approximate_cost": 0.169198,
-        "real_cost": 0.09535500000000002,
-        "tokens_input_gpt-3.5-turbo": 34226,
-        "tokens_output_gpt-3.5-turbo": 3003,
+        "real_cost": 0.097049,
+        "tokens_input_gpt-3.5-turbo": 34710,
+        "tokens_output_gpt-3.5-turbo": 3157,
         "tokens_input_gpt-4": 389,
-        "tokens_output_gpt-4": 439
+        "tokens_output_gpt-4": 450
     }
 ]

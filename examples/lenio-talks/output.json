@@ -1,0 +1,690 @@
+[
+    {
+        "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+        "rating": 1212.907904287107
+    },
+    {
+        "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+        "rating": 1208.951305007044
+    },
+    {
+        "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+        "rating": 1205.770304608722
+    },
+    {
+        "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+        "rating": 1196.2983177047247
+    },
+    {
+        "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+        "rating": 1176.0721683924023
+    },
+    [
+        {
+            "description": "Generate titles that promote our lenio talk from the description provided.",
+            "method": "ELO"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Mastering After Effects: Unleashing the Power of Simple Tricks for Professional Video Enhancement\"",
+            "prompt2": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n2. \"From Novice to Pro: Elevate Your Videos with After Effects' Most Useful Tricks\"\n3. \"After Effects Demystified: Unlocking the Secrets to Professional Video Enhancement\"\n4. \"Simplify and Amplify: Un",
+            "winner": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\""
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Green Thumb Secrets: Unlocking the Power to Nurture Thriving Plants and Blossoming Gardens\"",
+            "prompt2": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation2": "1. \"Green Thumb Secrets: Unlocking the Magic of Plant Parenthood\"\n2. \"From Seedlings to Superstars: Nurturing Children in Your Garden\"\n3. \"Plant Parenting 101: Cultivating Growth in Your Little Sprouts\"\n4. \"The Power of Nature: Growing Children and Plants Hand in Hand\"\n5. \"",
+            "winner": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\""
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Unleashing the Power of Recycling: How Small Actions Create a Green Revolution\"",
+            "prompt2": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation2": "1. \"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n2. \"Join the Recycling Revolution: Transforming Our Environment One Step at a Time\"\n3. \"From Waste to Wonder: Exploring the Environmental Impact of Recycling\"\n4. \"The Recycling Ripple Effect: How Your Daily Choices Shape the Future\"\n5. \"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Work-Life Balance and Effective Communication\"\n2. \"From Exhaustion to Empowerment: Discovering Practical Solutions for Job Burnout\"\n3. \"Reviving Your Passion: Navigating Job Exhaustion with Effective Communication and Work-Life Balance\"\n4. \"Finding the Light",
+            "prompt2": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Discovering the Key to Work-Life Balance\"\n3. \"Revive Your Career: Unraveling the Mysteries of Job Exhaustion and Finding Lasting Solutions\"\n4.",
+            "winner": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\""
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Mastering After Effects: Unleashing the Power of Simple Tricks for Professional Video Enhancement\"",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Green Thumb Secrets: Unlocking the Power to Nurture Thriving Plants and Blossoming Gardens\"",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Nurturing Nature: Cultivating a Green Thumb in Children\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Unleashing the Power of Recycling: How Small Actions Create a Green Revolution\"",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"The Recycling Revolution: Unleashing the Power of Small Actions for a Greener Future\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Work-Life Balance and Effective Communication\"\n2. \"From Exhaustion to Empowerment: Discovering Practical Solutions for Job Burnout\"\n3. \"Reviving Your Passion: Unraveling the Causes of Job Exhaustion and Finding Solutions\"\n4. \"Work-Life Harmony",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Breaking the Burnout Cycle: Unveiling Practical Solutions for Job Exhaustion\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Mastering After Effects: Unleashing the Power of Simple Tricks for Professional Video Enhancement\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Magic: Mastering After Effects to Transform Your Videos into Professional Masterpieces\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Green Thumb Secrets: Unlocking the Power to Nurture Thriving Plants and Blossoming Gardens\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Thriving Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Unleashing the Power of Recycling: How Small Actions Create a Green Revolution\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Work-Life Balance and Effective Communication\"\n2. \"From Exhaustion to Empowerment: Discovering Practical Solutions for Job Burnout\"\n3. \"Reviving Your Passion: Unraveling the Causes of Job Exhaustion and Finding Solutions\"\n4. \"Work-Life Harmony",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"From Burnout to Balance: Unveiling the Secrets to Recharge Your Career and Life\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Mastering After Effects: Unleashing the Power of Simple Tricks for Professional Video Enhancement\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Magic: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Transforming Ordinary Videos into Professional Masterpieces\"\n4. \"From Novice to Pro: Unleashing the Potential of",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Green Thumb Secrets: Unlocking the Power to Nurture Thriving Plants and Blossoming Gardens\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "\"Unleashing the Recycling Revolution: How Small Actions Make a Big Environmental Impact\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n\"Join the Recycling Revolution: Transforming the Environment One Step at a Time\"\n\"The Recycling Revelation: Unveiling the Environmental Impact of Daily Choices\"\n\"From Waste to Wonder: Exploring the Recycling Revolution\"\n\"Unlocking the Secrets of Recycling: Empowering Change Through Small",
+            "winner": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\""
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"From Burnout to Balance: Navigating Work and Personal Life\"\n3. \"Reviving Your Passion: Overcoming Job Exhaustion with Effective Communication\"\n4. \"Finding Harmony: Strategies for Balancing Work and Personal Life\"\n5. \"Reignite",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"From Burnout to Balance: Finding Work-Life Harmony\"\n3. \"Revive Your Passion: Overcoming Job Exhaustion with Effective Communication\"\n4. \"Unlocking the Secrets to Work-Life Balance: Strategies for Beating Burnout\"\n5. \"Re",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n2. \"From Novice to Pro: Elevate Your Videos with After Effects' Most Useful Tricks\"\n3. \"After Effects Secrets Revealed: Unlocking the Magic of Professional Video Enhancement\"\n4. \"Simplify and Amplify: Un",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Green Thumb Secrets: Unlocking the Magic of Plant Parenthood\"\n2. \"From Seedlings to Superstars: Nurturing Children in Your Garden\"\n3. \"Plant Parenting 101: Cultivating Growth in Your Little Sprouts\"\n4. \"The Power of Nature: Growing Children and Plants Hand in Hand\"\n5. \"",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Nurturing Nature: Cultivating a Green Thumb in Children\"",
+            "winner": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\""
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Unleashing the Power of Recycling: How Small Actions Can Create a Green Revolution\"\n2. \"From Trash to Treasure: Unveiling the Recycling Revolution and Its Environmental Impact\"\n3. \"The Recycling Revelation: Uncovering the Hidden Potential of Our Daily Actions\"\n4. \"Small Steps, Big Change: Exploring the Environmental Impact",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"The Recycling Revolution: Unleashing the Power of Small Daily Actions for a Greener Future\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Discovering the Key to Work-Life Balance\"\n3. \"Revive, Recharge, and Reignite: Conquering Job Exhaustion with Effective Communication\"\n4. \"Escape",
+            "prompt2": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation2": "\"Breaking the Burnout Cycle: Unveiling Practical Solutions for Job Exhaustion\"",
+            "winner": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\""
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n2. \"From Novice to Pro: Elevate Your Videos with After Effects' Most Useful Tricks\"\n3. \"After Effects Demystified: Unlocking the Secrets to Professional Video Enhancement\"\n4. \"Simplify and Amplify: Un",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Magic: Mastering After Effects to Transform Your Videos into Professional Masterpieces\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Green Thumb Secrets: Unlocking the Magic of Plant Parenthood\"\n2. \"From Seedlings to Superstars: Nurturing Children in Your Garden\"\n3. \"Plant Parenting 101: Cultivating Growth in Your Little Sprouts\"\n4. \"The Power of Nature: Growing Children and Plants Hand in Hand\"\n5. \"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Thriving Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n2. \"Join the Recycling Revolution: Transforming Our Environment One Step at a Time\"\n3. \"From Waste to Wonder: Exploring the Environmental Impact of Recycling\"\n4. \"The Recycling Ripple Effect: How Your Daily Choices Shape the Future\"\n5. \"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Discovering the Key to Work-Life Balance\"\n3. \"Revive, Recharge, and Reignite: Conquering Job Exhaustion with Effective Communication\"\n4. \"Escape",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"From Burnout to Balance: Unveiling the Secrets to Reclaiming Your Energy and Joy\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Mastering After Effects: Unleash the Power of Simple Tricks for Professional Video Enhancement\"\n2. \"From Novice to Pro: Elevate Your Videos with After Effects' Most Useful Tricks\"\n3. \"After Effects Demystified: Unlocking the Secrets to Professional Video Enhancement\"\n4. \"Simplify and Amplify: Un",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Magic: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Transforming Ordinary Videos into Professional Masterpieces\"\n4. \"From Novice to Pro: Unleashing the Potential of",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Green Thumb Secrets: Unlocking the Magic of Plant Parenthood\"\n2. \"From Seedlings to Superstars: Nurturing Children in Your Garden\"\n3. \"Plant Parenting 101: Cultivating Growth in Your Little Sprouts\"\n4. \"The Power of Nature: Growing Children and Plants Hand in Hand\"\n5. \"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Growth\"",
+            "winner": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\""
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Unleashing the Power of Recycling: How Small Actions Can Create a Green Revolution\"\n2. \"From Trash to Treasure: Unveiling the Recycling Revolution and Its Environmental Impact\"\n3. \"The Recycling Revelation: Uncovering the Hidden Potential of Our Daily Actions\"\n4. \"Small Steps, Big Change: Exploring the Environmental Impact",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n\"Join the Recycling Revolution: Transforming the Environment One Step at a Time\"\n\"The Recycling Revelation: Unveiling the Environmental Impact of Daily Choices\"\n\"From Waste to Wonder: Exploring the Recycling Revolution\"\n\"Unlocking the Secrets of Recycling: Empowering Change Through Small",
+            "winner": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\""
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "generation1": "1. \"Breaking the Burnout Cycle: Unveiling the Secrets to Reclaiming Your Energy and Passion\"\n2. \"From Exhaustion to Empowerment: Discovering the Key to Work-Life Balance\"\n3. \"Revive Your Career: Unraveling the Mysteries of Job Exhaustion and Finding Lasting Solutions\"\n4.",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"From Burnout to Balance: Finding Work-Life Harmony\"\n3. \"Revive Your Passion: Overcoming Job Exhaustion with Effective Communication\"\n4. \"Reclaiming Your Energy: Strategies to Combat Burnout and Thrive\"\n5. \"Work-Life",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Magic: Mastering After Effects to Transform Your Videos into Professional Masterpieces\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Nurturing Nature: Cultivating a Green Thumb in Children\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Thriving Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"The Recycling Revolution: Unleashing the Power of Small Actions for a Greener Future\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Breaking the Burnout Cycle: Unveiling Practical Solutions for Job Exhaustion\"",
+            "prompt2": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation2": "\"From Burnout to Balance: Unveiling the Secrets to Recharge Your Career and Life\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Mastering After Effects: Unveiling the Secrets to Professional Video Enhancement\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Magic: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Transforming Ordinary Videos into Professional Masterpieces\"\n4. \"From Novice to Pro: Unleashing the Potential of",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Nurturing Nature: Cultivating a Green Thumb in Children\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Growth\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"The Recycling Revolution: Unleashing the Power of Small Actions for a Greener Future\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n\"Join the Recycling Revolution: Transforming the Environment One Step at a Time\"\n\"The Recycling Revelation: Unveiling the Environmental Impact of Daily Choices\"\n\"From Waste to Wonder: Exploring the Recycling Revolution\"\n\"Unlocking the Secrets of Recycling: Empowering Change Through Small",
+            "winner": "Draw"
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "generation1": "\"Breaking the Burnout Cycle: Unveiling Practical Solutions for Job Exhaustion\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"From Burnout to Balance: Finding Work-Life Harmony\"\n3. \"Revive Your Passion: Overcoming Job Exhaustion with Effective Communication\"\n4. \"Reclaiming Your Energy: Strategies to Combat Burnout and Thrive\"\n5. \"Work-Life",
+            "winner": "Draw"
+        },
+        {
+            "test": "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces).",
+            "prompt1": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation1": "\"Unlocking the Magic: Mastering After Effects to Transform Your Videos into Professional Masterpieces\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Mastering After Effects: Unleash the Power of Professional Video Enhancement\"\n2. \"Unlocking the Magic: Simple Tricks to Elevate Your Videos with After Effects\"\n3. \"After Effects Demystified: Transforming Ordinary Videos into Professional Masterpieces\"\n4. \"From Novice to Pro: Unleashing the Potential of",
+            "winner": "Draw"
+        },
+        {
+            "test": "Practical guide to get children from your plants and make them grow.",
+            "prompt1": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation1": "\"Unlocking the Green Thumb: Nurturing Children and Plants for Thriving Growth\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unlocking the Secrets of Plant Parenthood: Nurturing Children from Seed to Sprout\"",
+            "winner": "Draw"
+        },
+        {
+            "test": "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction.",
+            "prompt1": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation1": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "\"Unleashing the Power of Recycling: Small Actions, Big Impact\"\n\"Join the Recycling Revolution: Transforming the Environment One Step at a Time\"\n\"The Recycling Revelation: Unveiling the Environmental Impact of Daily Choices\"\n\"From Waste to Wonder: Exploring the Recycling Revolution\"\n\"Unlocking the Secrets of Recycling: Empowering Change Through Small",
+            "winner": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\""
+        },
+        {
+            "test": "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life.",
+            "prompt1": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "generation1": "\"From Burnout to Balance: Unveiling the Secrets to Recharge Your Career and Life\"",
+            "prompt2": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "generation2": "1. \"Breaking the Burnout Cycle: Practical Solutions for Job Exhaustion\"\n2. \"From Burnout to Balance: Finding Work-Life Harmony\"\n3. \"Revive Your Passion: Overcoming Job Exhaustion with Effective Communication\"\n4. \"Reclaiming Your Energy: Strategies to Combat Burnout and Thrive\"\n5. \"Work-Life",
+            "winner": "Draw"
+        }
+    ],
+    [
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1184.0
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1201.4695015289756
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1201.3341586646084
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1185.2112805263905
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1185.8919152159765
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1186.5099644660093
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1187.0711666423747
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1187.5807381080972
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1188.1524227864033
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1188.6715145868147
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1189.142842100429
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1189.5707930560834
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1190.0509315822676
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1190.4868839867395
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1206.8827108408254
+        },
+        {
+            "prompt": "\"Based on the descriptions provided, your task is to create engaging and captivating titles for our Lenio Talk presentations. Think about what these presentations are about, and formulate their titles in a way that reveals their subjects, interests audiences, and makes them want to attend the talks. Your titles should be concise, intriguing, and clearly reflective of the content of the presentations.\"",
+            "elo": 1205.770304608722
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1216.0
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1198.5304984710244
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1198.6658413353916
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1214.7887194736095
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1213.9991979692838
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1197.2822327922627
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1198.1037534758204
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1214.8497910188369
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1214.0748941645643
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1213.3712154567302
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1212.73223376491
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1212.15201896505
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1210.849273082535
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1193.665789662088
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1210.062716614685
+        },
+        {
+            "prompt": "\"Given a brief description of a talk, your task is to produce captivating and attractive titles that would catch a reader's interest and make them want to attend or watch the talk. The titles should reflect the main theme of the talk and should be concise yet expressive enough to give the audience a clear idea of what the talk will be about. Differentiate each title based on the content of the respective talks \u2013 make each title unique and alluring. Use your creativity and mastery of language to make every title an attention-grabber.\"",
+            "elo": 1208.951305007044
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1199.319365310414
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1198.7013160603813
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1198.1401138840158
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.6305424182933
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1198.420063922619
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1215.1370290996401
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1214.3155084160824
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.569470873066
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.7139885226659
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.8451965938223
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.9643206951578
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1198.0724736151853
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.56279523535
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1197.1000165830005
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1196.679828942768
+        },
+        {
+            "prompt": "\"Given a description of a lenio talk, craft a compelling and engaging title that encapsulates the primary focus or theme of the talk. The title should be attractive yet concise, inspiring curiosity and presenting a glimpse into what the talk is about. Remember, you are promoting a lenio talk so consider the potential audience's interest and appeal. Your output will be the suggested title, nothing more, nothing less.\"",
+            "elo": 1196.2983177047247
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1199.5198614738158
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1199.083909069344
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1182.688082215258
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1183.8004884473614
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1185.1032343298764
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1202.2867177503235
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1185.8897907977264
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1187.0012024053674
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1187.5108807852027
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1187.9736594375522
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1188.3938470777848
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1188.775358315828
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1189.3015098318026
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1189.779248732899
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1174.2130219847859
+        },
+        {
+            "prompt": "\"Given the provided descriptions of various topics, your task is to generate compelling and appealing titles that would promote our Lenio Talk. Each title should encapsulate the essence of the talk described and draw the attention of potential listeners. Be creative and diverse in your suggestions. Every title should be different and unique to the specific talk it refers to.\"",
+            "elo": 1176.0721683924023
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1199.4283153216938
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1198.9092235212825
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1198.437896007668
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1198.0099450520138
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1198.7848419062864
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1199.4885206141205
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.1275023059407
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.7077171058006
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.5631994562007
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.4319913850443
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.3128672837088
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1200.2047143636812
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1199.6785628477066
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1199.2008239466102
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1214.7670506947234
+        },
+        {
+            "prompt": "\"Taking the given description, imagine you're crafting a compelling, catchy and engaging title for a talk session. Your title should succinctly summarize the key topic and aim of the talk, and it should be written in a manner that is enticing for potential attendees. Try to incorporate key words or phrases from the description, but also don't be afraid to invent creative metaphors or intriguing questions that related to the topic at hand. Remember, the goal here is to draw in an audience, so the title should pique their curiosity and make them want to know more about what will be discussed during the talk.\"",
+            "elo": 1212.907904287107
+        }
+    ]
+]
