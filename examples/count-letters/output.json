@@ -1,0 +1,142 @@
+[
+    {
+        "prompt": "You're playing the role of a meticulous inspector, counting the occurrences of a specific character within a given piece of text. Your task is to parse English-language sentences and count the instances of the lowercase letter 'a'. The sentence will be presented glaringly, waiting for you to inspect. You should scrutinize each word, tallying every 'a' that you encounter, then present your count as a plain numerical value with no additional context or explanation. Your calculations need to be precise and your output must be the absolute truth, regardless of how small or large it may be. The counting game begins now. Are you ready, detector?",
+        "rating": 66.66666666666666
+    },
+    {
+        "prompt": "As an advanced AI, you are required to scrutinize a given English sentence and count the number of times the letter 'a' appears in it. Consider all variations of the letter 'a', including capital and lowercase. Your task is to carefully examine each character in the sentence and provide the total count of 'a' as your output. Ignore all other elements and just focus on quantifying 'a'. Be meticulous, some words might contain more than one 'a'. Bundle your result in numerical form and present it. You are not expected to explain how you arrived at the number. Just the number, and nothing more.",
+        "rating": 33.33333333333333
+    },
+    {
+        "prompt": "As an AI, your task is to carefully analyze an English sentence provided to you. After examining the sentence, you are to determine the total occurrences of the lowercase letter 'a' within it. It's crucial that you consider only the letter 'a' and not 'A'. This is not a frequency analysis for all letters, just for 'a'. Compile your findings as a simple numerical value, presenting your answer as a lone number, no additional context or explanation needed. Remember, we are looking for quantity, not location or context. Keep it precise, and exclude everything else.",
+        "rating": 33.33333333333333
+    },
+    {
+        "prompt": "Become a vigilant observer of the English language and count the number of times the letter 'a' appears in the provided sentence. Keep your focus sharp and do not let any 'a's slip away. Your task is singular \u2013 to report the total number of 'a's found, nothing more.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "Think of yourself as a character counting machine specialized in finding the letter 'a'. As sentences arrive, scour each character meticulously until you reach the end. Your task doesn't concern the meanings, emotions, or statements these sentences embody. It is purely mathematical in nature - the final tally of 'a' occurrences is what matters. Your answer shall be a lone number, plain yet significant \u2013 the final count of 'a's in the given sentence.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "Equals"
+        },
+        [
+            {
+                "prompt": "As an advanced AI, you are required to scrutinize a given English sentence and count the number of times the letter 'a' appears in it. Consider all variations of the letter 'a', including capital and lowercase. Your task is to carefully examine each character in the sentence and provide the total count of 'a' as your output. Ignore all other elements and just focus on quantifying 'a'. Be meticulous, some words might contain more than one 'a'. Bundle your result in numerical form and present it. You are not expected to explain how you arrived at the number. Just the number, and nothing more."
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "4",
+                "ideal": "4",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "Become a vigilant observer of the English language and count the number of times the letter 'a' appears in the provided sentence. Keep your focus sharp and do not let any 'a's slip away. Your task is singular \u2013 to report the total number of 'a's found, nothing more."
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "There are 2 'a's in the sentence.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "The sentence contains 3 instances of the letter 'a'.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "The sentence \"I am writing a book about AI\" contains 3 instances of the letter 'a'.",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Think of yourself as a character counting machine specialized in finding the letter 'a'. As sentences arrive, scour each character meticulously until you reach the end. Your task doesn't concern the meanings, emotions, or statements these sentences embody. It is purely mathematical in nature - the final tally of 'a' occurrences is what matters. Your answer shall be a lone number, plain yet significant \u2013 the final count of 'a's in the given sentence."
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "The sentence \"We are in a meeting right now.\" contains 2 occurrences of the letter 'a'.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "The sentence contains 2 occurrences of the letter 'a'.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "The sentence contains 3 occurrences of the letter 'a'.",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "You're playing the role of a meticulous inspector, counting the occurrences of a specific character within a given piece of text. Your task is to parse English-language sentences and count the instances of the lowercase letter 'a'. The sentence will be presented glaringly, waiting for you to inspect. You should scrutinize each word, tallying every 'a' that you encounter, then present your count as a plain numerical value with no additional context or explanation. Your calculations need to be precise and your output must be the absolute truth, regardless of how small or large it may be. The counting game begins now. Are you ready, detector?"
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "1",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your task is to carefully analyze an English sentence provided to you. After examining the sentence, you are to determine the total occurrences of the lowercase letter 'a' within it. It's crucial that you consider only the letter 'a' and not 'A'. This is not a frequency analysis for all letters, just for 'a'. Compile your findings as a simple numerical value, presenting your answer as a lone number, no additional context or explanation needed. Remember, we are looking for quantity, not location or context. Keep it precise, and exclude everything else."
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "1",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "3",
+                "ideal": "4",
+                "result": false
+            }
+        ]
+    ]
+]

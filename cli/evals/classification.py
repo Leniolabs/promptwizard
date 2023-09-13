@@ -52,6 +52,7 @@ class Classification:
                     '3934': 100,  # 'false' token
                 }
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, logit_bias)
+        
         partial_tokens_input = response["usage"]["prompt_tokens"]
         partial_tokens_output = response["usage"]["completion_tokens"]
         result_content = response.choices[0].message.content

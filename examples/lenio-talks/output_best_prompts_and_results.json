@@ -1,0 +1,18 @@
+[
+    {
+        "prompt": "\"Given a succinct description of a certain Lenio talk, your task is to create compelling, engaging, and unique titles that perfectly encapsulate the topic at hand. The titles should be catchy and appealing to attract diverse audiences and stir interest about the discussed subject. Remember, the title acts as an introduction to the content, hence it should encapsulate the essence of the talk itself but at the same time maintaining an aura of intrigue to spark curiosity. You should not repeat any title. Embrace creativity and utilize a broad vocabulary for enhanced appeal.\"",
+        "rating": 1256.004381623105
+    },
+    {
+        "prompt": "\"Taking into consideration that you are an AI, your task is to transform the given descriptions into compelling, unique, and engaging titles that would intrigue and attract potential audience for our Lenio talks. The primary objective is to pique their curiosity, invoking a strong urge to explore the topic further. You should construct short and captivating titles, making sure to display an expansive range of vocabulary. Also, don't forget to retain the focal theme and spirit of the given descriptions in the generated titles. Remember to keep the titles distinct and diverse.\"",
+        "rating": 1219.9420422643798
+    },
+    {
+        "approximate_cost": 0.169198,
+        "real_cost": 0.09535500000000002,
+        "tokens_input_gpt-3.5-turbo": 34226,
+        "tokens_output_gpt-3.5-turbo": 3003,
+        "tokens_input_gpt-4": 389,
+        "tokens_output_gpt-4": 439
+    }
+]

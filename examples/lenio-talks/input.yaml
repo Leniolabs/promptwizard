@@ -1,0 +1,25 @@
+test:
+
+    cases: 
+        - "We'll go through some of the most useful, powerful, and simple tricks you can do with After Effects to enhance videos and make things look professional without the hassle (that is after you've taken some time to get comfortable with Adobe's interfaces)."
+        - "Practical guide to get children from your plants and make them grow."
+        - "Discovering the recycling revolution and how our small daily actions can have a significant impact on the environmental direction."
+        - "On this occasion we will discuss the possible reasons for job exhaustion or famous burnout and how to find practical solutions to get out of it. We will discuss the importance of effective communication and the need to balance work and personal life."
+    
+
+    description: "Generate titles that promote our lenio talk from the description provided."
+    method: Elo
+
+    model:
+        name: 'gpt-3.5-turbo'
+        temperature: 0.8
+        max_tokens: 70
+
+prompts:
+
+    generation:
+        number: 5
+        model:
+            name: 'gpt-4'
+            temperature: 1.5
+            max_tokens: 500

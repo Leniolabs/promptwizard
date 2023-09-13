@@ -1,23 +1,19 @@
 [
     {
-        "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'.",
-        "rating": 40.0
+        "prompt": "Given a list of country names, select the biggest one.",
+        "rating": 0.0
     },
     {
-        "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output.",
-        "rating": 30.0
+        "prompt": "Your task is to identify the country with the largest territorial extension from the given names.",
+        "rating": 0.0
     },
     {
-        "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this.",
-        "rating": 20.0
+        "prompt": "Your goal is to correctly select, from a list of country names provided to you, the name of the country with the largest land area.",
+        "rating": 0.0
     },
     {
-        "prompt": "As an AI, your task is to identify the country with the largest territorial extension from a list of countries given to you. Analyze the list and provide a single output: the name of the country that covers the largest land area.",
-        "rating": 20.0
-    },
-    {
-        "prompt": "You will be provided with a list of country names. Your task is to identify and respond with the name of the country that has the largest land area from the given list. You should not provide any explanations or additional details, just the name of the country.",
-        "rating": 10.0
+        "prompt": "According to the information you have, select the country with the largest territory from the list.",
+        "rating": 0.0
     },
     [
         {
@@ -25,279 +21,77 @@
         },
         [
             {
-                "prompt": "Given a list of country names, your task is to identify and return the name of the country that has the largest territory. Your response must only be the name of the country and no other information. Do your best to use your available domain knowledge to achieve this."
+                "prompt": "Given a list of country names, select the biggest one."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "Russia",
-                "ideal": "Canada",
-                "result": false
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "Australia",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Australia",
-                "ideal": "Australia",
-                "result": true
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to identify the country with the largest territorial extension from a list of countries given to you. Analyze the list and provide a single output: the name of the country that covers the largest land area."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "The country with the largest territorial extension from the given list is Russia.",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "The country with the largest territorial extension from the given list is Russia.",
-                "ideal": "Canada",
-                "result": false
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "The country with the largest territorial extension from the given list is Russia.",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "The country with the largest territorial extension from the given list is Australia.",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "The country with the largest territorial extension from the given list is Kazakhstan.",
-                "ideal": "Australia",
-                "result": false
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "The country with the largest territorial extension from the given list is Kazakhstan.",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "The country with the largest territorial extension from the given list is Kazakhstan.",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "The country with the largest territorial extension from the given list is Angola.",
-                "ideal": "Angola",
-                "result": true
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "The country with the largest territorial extension from the given list is Ethiopia.",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "The country with the largest territorial extension from the given list is Bolivia.",
-                "ideal": "South Africa",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "You will be provided with a list of country names. Your task is to identify and respond with the name of the country that has the largest land area from the given list. You should not provide any explanations or additional details, just the name of the country."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "Russia",
-                "ideal": "Canada",
-                "result": false
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "Russia",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Kazakhstan",
-                "ideal": "Australia",
-                "result": false
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "As an AI, your task is to scan a list of country names given to you. You must identify and respond with the name of the country that has the largest territorial extension, based on known geographical data. For instance, if you get a list like 'France, China, Brazil', you need to respond 'China'."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "The country with the largest territorial extension among the given list is Russia.",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "The country with the largest territorial extension among the given list is Canada.",
-                "ideal": "Canada",
-                "result": true
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "The country with the largest territorial extension among the given list is Russia.",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "The country with the largest territorial extension among Australia, India, Argentina, and Kazakhstan is Kazakhstan.",
-                "ideal": "Australia",
-                "result": true
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "The country with the largest territorial extension among the given list is Kazakhstan.",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "The country with the largest territorial extension among the given list is Kazakhstan.",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "South Africa",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "The country with the largest territorial extension among the given list is Ethiopia.",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "The country with the largest territorial extension among South Africa, Colombia, Ethiopia, and Bolivia is Ethiopia.",
-                "ideal": "South Africa",
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "You will see a list of country names separated by commas. From this list, determine which country has the largest land area, and return only the name of that country. No additional information or formatting should be included in your output."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
                 "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The biggest country among the given options is Canada.",
                 "ideal": "Canada",
-                "result": true
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The biggest country among the given options is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Your task is to identify the country with the largest territorial extension from the given names."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Australia",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The country with the largest territorial extension among the given names is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Your goal is to correctly select, from a list of country names provided to you, the name of the country with the largest land area."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Australia",
+                "ideal": "Canada",
+                "result": false
             },
             {
                 "test": "United States, Brazil, Australia, India",
@@ -310,41 +104,34 @@
                 "answer": "Australia",
                 "ideal": "Brazil",
                 "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "According to the information you have, select the country with the largest territory from the list."
             },
             {
-                "test": "Australia, India, Argentina, Kazakhstan",
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The country with the largest territory from the list is Russia.",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
                 "answer": "Australia",
-                "ideal": "Australia",
-                "result": true
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
+                "ideal": "United States",
                 "result": false
             },
             {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
                 "result": false
             }
         ]

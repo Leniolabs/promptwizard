@@ -1,0 +1,61 @@
+[
+    {
+        "prompt": "\"In your role as a careful AI analyzer, you are to tally up the frequency of the lowercase letter 'a' present in a delineated English sentence. Your mandate is to methodically parse the text, paying heed to each instance of the letter 'a'. Ensure that only lowercase 'a' is counted, disregarding the capitalized version. The result should be a solitary numerical figure signifying the count of the letter 'a', requiring no further contextual information or explanation about the process. Your analysis must be precise, counting each 'a', no matter how minuscule or abundant it may be. It's a challenge of quantification, not interpretation or location. Attention to detail is imperative, and now, let the counting challenge commence.\"",
+        "rating": 0.0
+    },
+    {
+        "prompt": "\"You've been assigned the role of an observant investigator, tasked with calculating the frequency of a specific character in a given English sentence. Your mission is to meticulously sift through the words, identifying and counting the appearances of the lowercase 'a'. The sentence will stand before you, ready for your thorough inspection. You are to consider each character, tallying up all instances of 'a', and then produce your count as a clear numerical value. Precision is required in your evaluation, and your presented figure needs to embody the true count, whether it's a minuscule or massive figure. The challenge commences now. Are you prepared, you master identifier?\"",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "Equals"
+        },
+        [
+            {
+                "prompt": "\"In your role as a careful AI analyzer, you are to tally up the frequency of the lowercase letter 'a' present in a delineated English sentence. Your mandate is to methodically parse the text, paying heed to each instance of the letter 'a'. Ensure that only lowercase 'a' is counted, disregarding the capitalized version. The result should be a solitary numerical figure signifying the count of the letter 'a', requiring no further contextual information or explanation about the process. Your analysis must be precise, counting each 'a', no matter how minuscule or abundant it may be. It's a challenge of quantification, not interpretation or location. Attention to detail is imperative, and now, let the counting challenge commence.\""
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "The frequency of the lowercase letter 'a' in the given sentence is 1.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "The frequency of the lowercase letter 'a' in the given sentence is 2.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "The frequency of the lowercase letter 'a' in the given sentence is 2.",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "\"You've been assigned the role of an observant investigator, tasked with calculating the frequency of a specific character in a given English sentence. Your mission is to meticulously sift through the words, identifying and counting the appearances of the lowercase 'a'. The sentence will stand before you, ready for your thorough inspection. You are to consider each character, tallying up all instances of 'a', and then produce your count as a clear numerical value. Precision is required in your evaluation, and your presented figure needs to embody the true count, whether it's a minuscule or massive figure. The challenge commences now. Are you prepared, you master identifier?\""
+            },
+            {
+                "test": "We are in a meeting right now.",
+                "answer": "Yes, I am prepared to begin the investigation. Let me analyze the sentence and count the occurrences of the lowercase 'a'.\n\nAfter careful examination, I have determined that the sentence \"We are in a meeting right now\" contains a total of 2 instances of the lowercase 'a'.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use \"Prompt Engineer\".",
+                "answer": "I see that you are learning how to use \"Prompt Engineer\". However, in order for me to calculate the frequency of the character 'a' in the given sentence, I need you to provide me with a sentence to analyze. Please provide the sentence you would like me to evaluate.",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI.",
+                "answer": "In the sentence \"I am writing a book about AI.\", the lowercase 'a' appears twice.",
+                "ideal": "4",
+                "result": false
+            }
+        ]
+    ]
+]

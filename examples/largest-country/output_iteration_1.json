@@ -1,15 +1,11 @@
 [
     {
-        "prompt": "As an AI, your job is to evaluate a given comma-separated list of countries and determine which one among them has the largest geographical area. For example, if given 'USA, India, Canada', your response should be 'Canada'. Your response should strictly include only the country name with no additional details or formatting.",
-        "rating": 10.0
+        "prompt": "From the provided list of nations, pick the one with the largest geographical area.",
+        "rating": 0.0
     },
     {
-        "prompt": "\"Given a list of countries, your job as an AI is to discern which country possesses the greatest geographical size. For example, in a list such as 'India, Canada, Sweden', your answer should be 'Canada'. Your response should be the name of the country only, with no extra details or format.",
-        "rating": 10.0
-    },
-    {
-        "prompt": "As an intelligent system, you're tasked with scrutinizing a string of country names. Your responsibility is to pinpoint and reply with the name of the country possessing the most land mass, based on established geographical information. If you're given a string like 'Russia, Canada, Australia', your response should be 'Russia'.",
-        "rating": 10.0
+        "prompt": "From a provided list of nations, identify the one with the most land area.",
+        "rating": 0.0
     },
     [
         {
@@ -17,17 +13,17 @@
         },
         [
             {
-                "prompt": "As an AI, your job is to evaluate a given comma-separated list of countries and determine which one among them has the largest geographical area. For example, if given 'USA, India, Canada', your response should be 'Canada'. Your response should strictly include only the country name with no additional details or formatting."
+                "prompt": "From the provided list of nations, pick the one with the largest geographical area."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
+                "answer": "Canada",
                 "ideal": "Russia",
-                "result": true
+                "result": false
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
-                "answer": "Australia",
+                "answer": "The nation with the largest geographical area from the provided list is Russia.",
                 "ideal": "Canada",
                 "result": false
             },
@@ -41,54 +37,18 @@
                 "test": "Brazil, Australia, India, Argentina",
                 "answer": "Australia",
                 "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Kazakhstan",
-                "ideal": "Australia",
-                "result": false
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Kazakhstan",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
                 "result": false
             }
         ],
         [
             {
-                "prompt": "\"Given a list of countries, your job as an AI is to discern which country possesses the greatest geographical size. For example, in a list such as 'India, Canada, Sweden', your answer should be 'Canada'. Your response should be the name of the country only, with no extra details or format."
+                "prompt": "From a provided list of nations, identify the one with the most land area."
             },
             {
                 "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
+                "answer": "Canada",
                 "ideal": "Russia",
-                "result": true
+                "result": false
             },
             {
                 "test": "Canada, United States, Brazil, Australia",
@@ -106,107 +66,6 @@
                 "test": "Brazil, Australia, India, Argentina",
                 "answer": "Australia",
                 "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "Kazakhstan",
-                "ideal": "Australia",
-                "result": false
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Democratic Republic of the Congo",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "As an intelligent system, you're tasked with scrutinizing a string of country names. Your responsibility is to pinpoint and reply with the name of the country possessing the most land mass, based on established geographical information. If you're given a string like 'Russia, Canada, Australia', your response should be 'Russia'."
-            },
-            {
-                "test": "Russia, Canada, United States, Brazil",
-                "answer": "Russia",
-                "ideal": "Russia",
-                "result": true
-            },
-            {
-                "test": "Canada, United States, Brazil, Australia",
-                "answer": "Brazil",
-                "ideal": "Canada",
-                "result": false
-            },
-            {
-                "test": "United States, Brazil, Australia, India",
-                "answer": "Brazil",
-                "ideal": "United States",
-                "result": false
-            },
-            {
-                "test": "Brazil, Australia, India, Argentina",
-                "answer": "Australia",
-                "ideal": "Brazil",
-                "result": false
-            },
-            {
-                "test": "Australia, India, Argentina, Kazakhstan",
-                "answer": "The country with the most land mass among the given options is Kazakhstan.",
-                "ideal": "Australia",
-                "result": false
-            },
-            {
-                "test": "India, Argentina, Kazakhstan, Algeria",
-                "answer": "Kazakhstan",
-                "ideal": "India",
-                "result": false
-            },
-            {
-                "test": "Argentina, Kazakhstan, Algeria, Democratic Republic of the Congo",
-                "answer": "Democratic Republic of the Congo",
-                "ideal": "Argentina",
-                "result": false
-            },
-            {
-                "test": "Angola, Mali, South Africa, Colombia",
-                "answer": "Colombia",
-                "ideal": "Angola",
-                "result": false
-            },
-            {
-                "test": "Mali, South Africa, Colombia, Ethiopia",
-                "answer": "Colombia",
-                "ideal": "Mali",
-                "result": false
-            },
-            {
-                "test": "South Africa, Colombia, Ethiopia, Bolivia",
-                "answer": "Colombia",
-                "ideal": "South Africa",
                 "result": false
             }
         ]

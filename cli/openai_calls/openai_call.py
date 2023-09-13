@@ -20,6 +20,7 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")
+            raise
 
     elif functions!=None:
         try:
@@ -35,6 +36,7 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")
+            raise
 
     else:
         try:
@@ -49,5 +51,6 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
             )
         except openai.error.OpenAIError as e:
             print(f"Error in request: {e}")
+            raise
             
     return respond
