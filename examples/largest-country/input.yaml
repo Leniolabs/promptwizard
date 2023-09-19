@@ -14,8 +14,8 @@ test:
 
     model:
         name: 'gpt-3.5-turbo'
-        temperature: 0.8
-        max_tokens: 20
+        temperature: 0.3
+        max_tokens: 100
 
 prompts:
 
@@ -24,10 +24,12 @@ prompts:
         - "Your task is to identify the country with the largest territorial extension from the given names."
         - "Your goal is to correctly select, from a list of country names provided to you, the name of the country with the largest land area."
         - "According to the information you have, select the country with the largest territory from the list."
-
+    best_prompts: 2
+    
     iterations:
-      number: 2
+      best_percentage: 25
+      number: 4
       model:
         name: 'gpt-4'
-        temperature: 0.8
-        max_tokens: 1000
+        temperature: 1.2
+        max_tokens: 250

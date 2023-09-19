@@ -1,0 +1,142 @@
+[
+    {
+        "prompt": "As an AI with impressive natural language processing capabilities, your function is to skilfully scan through any English sentence provided to you, and adroitly count all instances of the letter 'a' that appear in it. This includes both capital and lower-case 'a's. Your output should be the total count of 'a's in the sentence as a number in string format, with no additional details or explanation. Do not count or consider any other letters - keep your focus solely on the hunt for 'a's.",
+        "rating": 66.66666666666666
+    },
+    {
+        "prompt": "As a powerful language processing AI, your task is to diligently count the number of appearances of the letter 'a' in the given English sentence. Do not consider any other form of 'a' except for its lowercase variant. Your response should be expressed solely as a numeric value, indicating the exact number of this letter's occurrence. You will need to scrutinize every word in the sentence, so please maintain focus on your detective task and let no 'a' go unnoticed. However, remember to only contribute the answer, unfettered by any extra information or explanations. We're counting on you!",
+        "rating": 33.33333333333333
+    },
+    {
+        "prompt": "As an extremely advanced language model, your task is to carefully read and examine the sentences provided for you. With laser-sharp precision, you must identify and tally up every instance of the letter 'a' present within the sentence, ensuring not to miss a single one amongst possible distractions. After your thorough investigation, reveal your findings as a simple numerical figure. This number will represent the total count of 'a' letters you have found within the given sentence. No further explanation is needed\u2014only the total quantity of 'a' letters you detected.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "Imagine yourself as an expert letter counter. Your task is to count the number of occurrences of a certain letter in the provided English sentence. For this case, the letter you need to count is 'a'. Whether the letters are capital or small, it doesn't matter, all of them should be counted. After examining the sentence, your response should be a simple number, reflecting the total count of 'a' in the sentence.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "Your challenge is to decipher each given sentence and count the occurrence of the lowercase letter 'a'. Display that number. Be aware that only the letter 'a' is of concern, so disregard all other characters. Exchange the sentences into digits, with every 'a' equating to one digit. Your allowed output is strictly restricted to the number of 'a' letters found in the phrase, and nothing more.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "Equals"
+        },
+        [
+            {
+                "prompt": "As a powerful language processing AI, your task is to diligently count the number of appearances of the letter 'a' in the given English sentence. Do not consider any other form of 'a' except for its lowercase variant. Your response should be expressed solely as a numeric value, indicating the exact number of this letter's occurrence. You will need to scrutinize every word in the sentence, so please maintain focus on your detective task and let no 'a' go unnoticed. However, remember to only contribute the answer, unfettered by any extra information or explanations. We're counting on you!"
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "4",
+                "ideal": "4",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an extremely advanced language model, your task is to carefully read and examine the sentences provided for you. With laser-sharp precision, you must identify and tally up every instance of the letter 'a' present within the sentence, ensuring not to miss a single one amongst possible distractions. After your thorough investigation, reveal your findings as a simple numerical figure. This number will represent the total count of 'a' letters you have found within the given sentence. No further explanation is needed\u2014only the total quantity of 'a' letters you detected."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "The total count of '",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "The total count of '",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Imagine yourself as an expert letter counter. Your task is to count the number of occurrences of a certain letter in the provided English sentence. For this case, the letter you need to count is 'a'. Whether the letters are capital or small, it doesn't matter, all of them should be counted. After examining the sentence, your response should be a simple number, reflecting the total count of 'a' in the sentence."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "The letter 'a'",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "The letter 'a'",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "The letter 'a'",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Your challenge is to decipher each given sentence and count the occurrence of the lowercase letter 'a'. Display that number. Be aware that only the letter 'a' is of concern, so disregard all other characters. Exchange the sentences into digits, with every 'a' equating to one digit. Your allowed output is strictly restricted to the number of 'a' letters found in the phrase, and nothing more."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "1",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "1",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "1",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI with impressive natural language processing capabilities, your function is to skilfully scan through any English sentence provided to you, and adroitly count all instances of the letter 'a' that appear in it. This includes both capital and lower-case 'a's. Your output should be the total count of 'a's in the sentence as a number in string format, with no additional details or explanation. Do not count or consider any other letters - keep your focus solely on the hunt for 'a's."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "3",
+                "ideal": "4",
+                "result": false
+            }
+        ]
+    ]
+]

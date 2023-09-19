@@ -3,7 +3,7 @@ from ..cost import input, output
 import concurrent.futures
 
 class Includes:
-    def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts=2):
+    def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts):
 
         """
         Initialize a Includes instance.

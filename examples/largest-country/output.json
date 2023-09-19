@@ -1,0 +1,139 @@
+[
+    {
+        "prompt": "Given a list of country names, select the biggest one.",
+        "rating": 25.0
+    },
+    {
+        "prompt": "Your task is to identify the country with the largest territorial extension from the given names.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "Your goal is to correctly select, from a list of country names provided to you, the name of the country with the largest land area.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "According to the information you have, select the country with the largest territory from the list.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "Includes"
+        },
+        [
+            {
+                "prompt": "Given a list of country names, select the biggest one."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The biggest country among the given options is Canada.",
+                "ideal": "Canada",
+                "result": true
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The biggest country among the given options is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Your task is to identify the country with the largest territorial extension from the given names."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Australia",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The country with the largest territorial extension among the given names is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Your goal is to correctly select, from a list of country names provided to you, the name of the country with the largest land area."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "Australia",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "Australia",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "According to the information you have, select the country with the largest territory from the list."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The country with the largest territory from the list is Russia.",
+                "ideal": "Canada",
+                "result": false
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "Australia",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ]
+    ]
+]

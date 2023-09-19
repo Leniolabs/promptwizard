@@ -1,0 +1,73 @@
+[
+    {
+        "prompt": "Using an input list of countries, identify the one with the largest territorial surface area.",
+        "rating": 75.0
+    },
+    {
+        "prompt": "From a group of country names, identify the largest one.",
+        "rating": 25.0
+    },
+    [
+        {
+            "method": "Includes"
+        },
+        [
+            {
+                "prompt": "Using an input list of countries, identify the one with the largest territorial surface area."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "The country with the largest territorial surface area among the given options is Russia.",
+                "ideal": "Russia",
+                "result": true
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The country with the largest territorial surface area among Canada, United States, Brazil, and Australia is Russia.",
+                "ideal": "Canada",
+                "result": true
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The country with the largest territorial surface area among the given options is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "The country with the largest territorial surface area among Brazil, Australia, India, and Argentina is Australia.",
+                "ideal": "Brazil",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "From a group of country names, identify the largest one."
+            },
+            {
+                "test": "Russia, Canada, United States, Brazil",
+                "answer": "Canada",
+                "ideal": "Russia",
+                "result": false
+            },
+            {
+                "test": "Canada, United States, Brazil, Australia",
+                "answer": "The largest country from the given options is Canada.",
+                "ideal": "Canada",
+                "result": true
+            },
+            {
+                "test": "United States, Brazil, Australia, India",
+                "answer": "The largest country among the given options is Russia.",
+                "ideal": "United States",
+                "result": false
+            },
+            {
+                "test": "Brazil, Australia, India, Argentina",
+                "answer": "Australia",
+                "ideal": "Brazil",
+                "result": false
+            }
+        ]
+    ]
+]

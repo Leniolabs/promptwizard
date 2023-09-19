@@ -181,6 +181,10 @@ def run_evaluation(file, approximate_cost):
     model_test = yaml_content['test']['model']['name']
     model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
     model_test_temperature = int(yaml_content['test']['model']['temperature'])
+    if 'best_prompts' in yaml_content['prompts']:
+        best_prompts = yaml_content['prompts']['best_prompts']
+    if not 'best_prompts' in yaml_content['prompts']:
+        best_prompts = 2
     if 'list' in yaml_content['prompts']:
         prompts_value = yaml_content['prompts']['list']
         number_of_prompts = len(prompts_value)
@@ -209,7 +213,10 @@ def run_evaluation(file, approximate_cost):
         model_generation_temperature = 0
     if 'functions' in yaml_content['test']:
         functions = yaml_content['test']['functions']
-        function_call = yaml_content['test']['function_call']
+        if 'function_call' in yaml_content['test']:
+            function_call = yaml_content['test']['function_call']
+        else:
+            function_call = 'auto'
     if 'iterations' in yaml_content['prompts']:
         iterations = int(yaml_content['prompts']['iterations']['number'])
         if 'model' in yaml_content['prompts']['iterations']:
@@ -217,15 +224,20 @@ def run_evaluation(file, approximate_cost):
             model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
             model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
         if not 'model' in yaml_content['prompts']['iterations']:
-            model_iteration = 'None'
-            model_iteration_max_tokens = 0
-        if 'best_prompts' in yaml_content['prompts']['iterations']:
-            best_prompts = yaml_content['prompts']['iterations']['best_prompts']
-        if not 'best_prompts' in yaml_content['prompts']['iterations']:
-            best_prompts = 2
+            if 'generation' in yaml_content['prompts']:
+                model_iteration = model_generation
+                model_iteration_max_tokens = model_generation_max_tokens
+                model_iteration_temperature = model_generation_temperature
+            else:
+                model_iteration = 'gpt-4'
+                model_iteration_max_tokens = 300
+                model_iteration_temperature = 1.2
+        if 'best_percentage' in yaml_content['prompts']['iterations']:
+            best_percentage = yaml_content['prompts']['iterations']['best_percentage']
+        if not 'best_percentage' in yaml_content['prompts']['iterations']:
+            best_percentage = 100
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
-        best_prompts = 2
 
         
     cost = 0
@@ -335,7 +347,14 @@ def run_evaluation(file, approximate_cost):
         tokens_output_gen = 0
         tokens_input_test = 0
         tokens_output_test = 0
-        while iterations > 0:
+        all_have_rating_percentage = True
+        # Iterate through the list of elements and check the 'rating' value.
+        for element in old_prompts:
+            if element["rating"] < best_percentage:
+                all_have_rating_percentage = False
+                break  # If an element with a different rating is found, stop the iteration.
+        while (iterations > 0 and (not all_have_rating_percentage)):
+            print(f"Prompts from iteration number {number_of_iteration}")
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
@@ -360,13 +379,19 @@ def run_evaluation(file, approximate_cost):
             combine_prompts.append(new_results[1])
             combined_data = [item for sublist in combine_prompts for item in sublist]
             sorted_data = sorted(combined_data, key=lambda x: x['rating'], reverse=True)
-            old_prompts = [sorted_data[0], sorted_data[1]]
+            old_prompts = sorted_data[:best_prompts]
+            all_have_rating_percentage = True
+            for element in old_prompts:
+                if element["rating"] < best_percentage:
+                    all_have_rating_percentage = False
+                    break  # If an element with a different rating is found, stop the iteration.
     if method == 'Elo':
         tokens_input_gen = 0
         tokens_output_gen = 0
         tokens_input_test = 0
         tokens_output_test = 0
         while iterations > 0:
+            print(f"Prompts from iteration number {number_of_iteration}")
             prompt_contents = [item['prompt'] for item in old_prompts]
             filename = f'output_iteration_{number_of_iteration}.json'
             json_file_path = os.path.join(yaml_folder, filename)

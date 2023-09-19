@@ -1,0 +1,88 @@
+[
+    {
+        "prompt": "Acting as a refined AI specialized in linguistics, your duty is to meticulously sift through an assigned English sentence, and determine the quantity of 'a's appearing in it. Count both upper and lower-case variants of 'a'. The output is expected to be the concrete number of 'a's occurring, presented strictly as a string-based figure without extra embellishments or clarifications. Discard any distractions by other letters - sustain your attention purely on cataloging 'a's.",
+        "rating": 66.66666666666666
+    },
+    {
+        "prompt": "As an advanced Natural Language Processing AI, your objective is to examine each English phrase directed to you, attentively reckoning the instances of the letter 'a'.  This encompasses both uppercase and lowercase 'a's. Provide the final count of 'a's present in the statement, purely as a numeric string, without any spare details or clarification. Discounting all other alphabet characters, set your purpose strictly on detecting 'a's. \n\nAs an adept lingual AI, the job assigned to you is the exhaustive summing up of the occurrences of 'a' in an assigned English phrase. Exploiting your innovative technology, cast aside all alphabets excluding the humble lowercase 'a'. Your numerical output should correspond to the number of occasions this same",
+        "rating": 66.66666666666666
+    },
+    {
+        "prompt": "As a defined AI with an expertise in the field of text processing, your mission is to intricately navigate through given English textual content and calculate the total occurrence of the character 'a'. Take note of both uppercase and lowercase forms of 'a'. The final output should be the numeric representation of the 'a' count alone, without any annotations or unnecessary additions. Ignore all other alphabetic characters, simply concentrate on spotting 'a'.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "Equals"
+        },
+        [
+            {
+                "prompt": "Acting as a refined AI specialized in linguistics, your duty is to meticulously sift through an assigned English sentence, and determine the quantity of 'a's appearing in it. Count both upper and lower-case variants of 'a'. The output is expected to be the concrete number of 'a's occurring, presented strictly as a string-based figure without extra embellishments or clarifications. Discard any distractions by other letters - sustain your attention purely on cataloging 'a's."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "The sentence \"I am",
+                "ideal": "4",
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an advanced Natural Language Processing AI, your objective is to examine each English phrase directed to you, attentively reckoning the instances of the letter 'a'.  This encompasses both uppercase and lowercase 'a's. Provide the final count of 'a's present in the statement, purely as a numeric string, without any spare details or clarification. Discounting all other alphabet characters, set your purpose strictly on detecting 'a's. \n\nAs an adept lingual AI, the job assigned to you is the exhaustive summing up of the occurrences of 'a' in an assigned English phrase. Exploiting your innovative technology, cast aside all alphabets excluding the humble lowercase 'a'. Your numerical output should correspond to the number of occasions this same"
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "3",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "2",
+                "ideal": "2",
+                "result": true
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "4",
+                "ideal": "4",
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As a defined AI with an expertise in the field of text processing, your mission is to intricately navigate through given English textual content and calculate the total occurrence of the character 'a'. Take note of both uppercase and lowercase forms of 'a'. The final output should be the numeric representation of the 'a' count alone, without any annotations or unnecessary additions. Ignore all other alphabetic characters, simply concentrate on spotting 'a'."
+            },
+            {
+                "test": "We are in a meeting right now",
+                "answer": "0",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "We are learning how to use 'Prompt Engineer'",
+                "answer": "The total occurrence of the",
+                "ideal": "2",
+                "result": false
+            },
+            {
+                "test": "I am writing a book about AI",
+                "answer": "The total occurrence of the",
+                "ideal": "4",
+                "result": false
+            }
+        ]
+    ]
+]

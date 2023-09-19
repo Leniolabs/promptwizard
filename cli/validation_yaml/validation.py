@@ -97,15 +97,21 @@ class FunctionCallingFormatTestCaseSchema(Schema):
             
 class IterationsSchema(Schema):
         # Schema for defining iteration settings
-        number = fields.Integer(strict=True, missing=0)
-        best_prompts = fields.Integer(strict=True)
+        number = fields.Integer(strict=True, required=True)
         model = fields.Nested(ModelSchema)
+        best_percentage = fields.Float()
 
         @validates("number")
         def validate_number_iterations(self, value):
             # Validate that 'number' is a non-negative integer
             if not (0 <= value):
                 raise ValidationError("'number' must be an integer equal or greater than 0.")
+        
+        @validates("best_percentage")
+        def validate_best_percentage(self, value):
+            # Validate that 'best_percentage' is a float between 0 and 100 (inclusive)
+            if not (0 < value <= 100):
+                raise ValidationError("'best_percentage' must be a float stricter than 0 and less than or equal to 100.")
 
 class GenerationModelEloSchema(Schema):
         # Schema for defining generation settings
@@ -138,6 +144,7 @@ class PromptSchema(Schema):
         list = fields.List(fields.Str())
         iterations = fields.Nested(IterationsSchema)
         generation = fields.Nested(GenerationModelSchema)
+        best_prompts = fields.Integer(strict=True)
 
         @validates("list")
         def validate_my_list_length(self, value):
