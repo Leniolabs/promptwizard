@@ -1,4 +1,4 @@
-from marshmallow import Schema, fields, ValidationError, validates, validates_schema
+from marshmallow import Schema, fields, ValidationError, validates
 
 class ModelSchema(Schema):
         # Schema for defining the GPT model attributes
@@ -38,11 +38,22 @@ class EloFormatTestCaseSchema(Schema):
         expected_method = "Elo"
         if value != expected_method:
             raise ValidationError(f"Method must be '{expected_method}'.")
+        
+class CodeTestCaseSchema(Schema):
+
+    input = fields.String(required=True)
+    arguments = fields.Raw(required=True)
+    output = fields.Raw(required=True)
 
 class ClaEqInTestCaseSchema(Schema):
     # Schema for individual test cases with 'Classification', 'Equals', and 'Includes' methods
     input = fields.String(required=True)
     output = fields.String(required=True)
+
+class JSONTestCaseSchema(Schema):
+
+    input = fields.String(required=True)
+    output = fields.Dict(required=True)
 
 class ClaEqInFormatTestCaseSchema(Schema):
         # Schema for test cases formatted for 'Classification', 'Equals', and 'Includes' methods
@@ -58,6 +69,22 @@ class ClaEqInFormatTestCaseSchema(Schema):
             expected_method3 = "Includes"
             if value != expected_method1 and value != expected_method2 and value != expected_method3:
                 raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' or '{expected_method3}'.")
+
+class CodeFormatTestCaseSchema(Schema):
+        cases = fields.List(fields.Nested(CodeTestCaseSchema), required=True)
+        method = fields.Str(required=True)
+        model = fields.Nested(ModelSchema)
+
+        @validates("method")
+        def validate_method(self, value):
+            expected_methods = ['code_generation']
+            if value not in expected_methods:
+                raise ValidationError(f"Method must be one of those '{expected_methods}'.")
+            
+class JSONFormatTestCaseSchema(Schema):
+        cases = fields.List(fields.Nested(JSONTestCaseSchema), required=True)
+        method = fields.Str(required=True)
+        model = fields.Nested(ModelSchema)
 
 class FunctionCallingFormatFunctionSchema(Schema):
         name = fields.Str(required=True)
@@ -180,3 +207,13 @@ class ValidationElo(Schema):
         # Schema for validating 'Elo' test cases and prompts
         test = fields.Nested(EloFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptEloSchema, required=True)
+
+class ValidationCode(Schema):
+        # Schema for validating 'code_generation' test cases and prompts
+        test = fields.Nested(CodeFormatTestCaseSchema, required=True)
+        prompts = fields.Nested(PromptSchema, required=True)
+
+class ValidationJSON(Schema):
+    # Schema for validating 'json_validation' test cases and prompts
+    test = fields.Nested(JSONFormatTestCaseSchema, required=True)
+    prompts = fields.Nested(PromptSchema, required=True)

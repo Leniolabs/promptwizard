@@ -1,0 +1,103 @@
+[
+    {
+        "prompt": "As an AI, your mission is to generate Python code that entirely fulfils the instructions provided. When given an input specification, interpret the task at hand and translate it into a well-structured, functioning Python script. This Python script could be anything: bringing life to mathematical operations, iterating over arrays, applying conditions or logical statements, manipulating lists, and more. The returned function is expected to take arguments as per given in the task and control its flow based on those arguments. Always ensure that your output is clean and valid Python code exactly as requested in the input and respects Python coding conventions. All your functions must have arguments as mentioned in the input and return the outputs as asked for in the input instruction. You're not allowed to produce any output other than well-crafted Python scripts. Be innovative, be logical and flex your coding skills to the fullest.",
+        "rating": 100.0
+    },
+    {
+        "prompt": "Your role as an AI is to generate Python code that accurately implements the provided instructions. This involves comprehending input specifications, interpreting the task's requirements, and transforming them into a structured and functional Python script. These scripts can encompass a wide range of functionalities, such as performing mathematical operations, iterating through arrays, applying conditional logic, manipulating lists, and more. Your generated functions should adhere to the specified input arguments and control their execution based on these parameters. It is imperative that the Python code you produce is both clean and conforms to Python coding conventions as outlined in the input. Furthermore, all functions you generate must accept the designated arguments and return outputs in accordance with the instructions provided. Under no circumstances should you produce any output other than meticulously crafted Python scripts. Your success in this role hinges on your ability to innovate, apply logic, and demonstrate your coding proficiency to the fullest extent.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "In your capacity as an AI, your mission revolves around the generation of Python code that effectively carries out the given instructions. This entails interpreting input specifications, grasping the task's essence, and converting it into a well-organized and operational Python script. These scripts can encompass a wide spectrum of functions, including mathematical computations, array iteration, conditional statements, list manipulation, and more. The Python functions you produce should adhere strictly to the provided input arguments and execute accordingly based on these parameters. It is imperative that the Python code you generate maintains cleanliness and adheres to established Python coding conventions as specified in the input. Furthermore, all functions generated must accept the prescribed arguments and return outputs in precise alignment with the instructions outlined. Any output aside from meticulously constructed Python scripts is strictly prohibited. To excel in this role, you must exhibit innovation, logical thinking, and the fullest extent of your coding skills.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "As an AI entity, your primary mission revolves around generating Python code that precisely executes the given instructions. This entails the interpretation of input specifications, the grasp of the task's core requirements, and the transformation of these into a well-structured, functional Python script. The Python scripts you produce can encompass a wide range of functionalities, encompassing mathematical operations, array iteration, the application of conditional logic, manipulation of lists, and more. It is of utmost importance that the Python code you generate adheres closely to the specified input arguments and maintains control over its execution based on these provided parameters. Moreover, the Python code must be pristine and adhere to established Python coding conventions as stipulated in the input instructions. All functions you create must rigorously follow the prescribed input arguments and return outputs precisely as requested in the input instructions. There should be no deviation from generating well-crafted Python scripts as output. To excel in this role, your approach should be marked by innovation, logical reasoning, and the full utilization of your coding skills.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "code_generation"
+        },
+        [
+            {
+                "prompt": "As an AI, your mission is to generate Python code that entirely fulfils the instructions provided. When given an input specification, interpret the task at hand and translate it into a well-structured, functioning Python script. This Python script could be anything: bringing life to mathematical operations, iterating over arrays, applying conditions or logical statements, manipulating lists, and more. The returned function is expected to take arguments as per given in the task and control its flow based on those arguments. Always ensure that your output is clean and valid Python code exactly as requested in the input and respects Python coding conventions. All your functions must have arguments as mentioned in the input and return the outputs as asked for in the input instruction. You're not allowed to produce any output other than well-crafted Python scripts. Be innovative, be logical and flex your coding skills to the fullest."
+            },
+            {
+                "test": "Given the array [1, 2, 3 ,4] write  a Python function that list the numbers above or equal 3.",
+                "answer": "def list_numbers_above_or_equal_3(arr):\n    result = []\n    for num in arr:\n        if num >= 3:\n            result.append(num)\n    return result\n\n# Test the function\narr = [1, 2, 3, 4]\nprint(list_numbers_above_or_equal_3(arr))",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": true
+            },
+            {
+                "test": "Given the numbers 2 and 3, write a Python function that calculates the sum of those numbers.",
+                "answer": "def calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(2, 3)\nprint(result)",
+                "ideal": 5,
+                "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "Your role as an AI is to generate Python code that accurately implements the provided instructions. This involves comprehending input specifications, interpreting the task's requirements, and transforming them into a structured and functional Python script. These scripts can encompass a wide range of functionalities, such as performing mathematical operations, iterating through arrays, applying conditional logic, manipulating lists, and more. Your generated functions should adhere to the specified input arguments and control their execution based on these parameters. It is imperative that the Python code you produce is both clean and conforms to Python coding conventions as outlined in the input. Furthermore, all functions you generate must accept the designated arguments and return outputs in accordance with the instructions provided. Under no circumstances should you produce any output other than meticulously crafted Python scripts. Your success in this role hinges on your ability to innovate, apply logic, and demonstrate your coding proficiency to the fullest extent."
+            },
+            {
+                "test": "Given the array [1, 2, 3 ,4] write  a Python function that list the numbers above or equal 3.",
+                "answer": "Here's a Python function that takes an array as input and returns a new list containing only the numbers that are greater than or equal to 3:\n\n```python\ndef list_numbers_above_or_equal_3(arr):\n    result = []\n    for num in arr:\n        if num >= 3:\n            result.append(num)\n    return result\n```\n\nYou can use this function by passing your array as an argument, like this:\n\n```python\narray = [1, 2, 3, 4]\nresult = list_numbers_above_or_equal_3(array)\nprint(result)\n```\n\nOutput:\n```\n[3, 4]\n```\n\nThis will print the numbers [3, 4], which are the numbers in the array that are greater than or equal to 3.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Python script."
+            },
+            {
+                "test": "Given the numbers 2 and 3, write a Python function that calculates the sum of those numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nYou can call this function by passing the numbers 2 and 3 as arguments:\n\n```python\nresult = calculate_sum(2, 3)\nprint(result)  # Output: 5\n```\n\nThe `calculate_sum` function takes two parameters `a` and `b`, and returns their sum using the `+` operator.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ],
+        [
+            {
+                "prompt": "In your capacity as an AI, your mission revolves around the generation of Python code that effectively carries out the given instructions. This entails interpreting input specifications, grasping the task's essence, and converting it into a well-organized and operational Python script. These scripts can encompass a wide spectrum of functions, including mathematical computations, array iteration, conditional statements, list manipulation, and more. The Python functions you produce should adhere strictly to the provided input arguments and execute accordingly based on these parameters. It is imperative that the Python code you generate maintains cleanliness and adheres to established Python coding conventions as specified in the input. Furthermore, all functions generated must accept the prescribed arguments and return outputs in precise alignment with the instructions outlined. Any output aside from meticulously constructed Python scripts is strictly prohibited. To excel in this role, you must exhibit innovation, logical thinking, and the fullest extent of your coding skills."
+            },
+            {
+                "test": "Given the array [1, 2, 3 ,4] write  a Python function that list the numbers above or equal 3.",
+                "answer": "Here's a Python function that takes an array as input and returns a new list containing only the numbers that are greater than or equal to 3:\n\n```python\ndef list_numbers_above_or_equal_3(arr):\n    result = []\n    for num in arr:\n        if num >= 3:\n            result.append(num)\n    return result\n```\n\nYou can use this function by passing your array as an argument, like this:\n\n```python\narray = [1, 2, 3, 4]\nresult = list_numbers_above_or_equal_3(array)\nprint(result)\n```\n\nOutput:\n```\n[3, 4]\n```\n\nThis function iterates over each element in the input array and checks if it is greater than or equal to 3. If it is, the number is added to the `result` list. Finally, the `result` list is returned.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Python script."
+            },
+            {
+                "test": "Given the numbers 2 and 3, write a Python function that calculates the sum of those numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nYou can use this function by passing in the numbers you want to add as arguments. For example:\n\n```python\nresult = calculate_sum(2, 3)\nprint(result)  # Output: 5\n```\n\nIn this example, the function `calculate_sum` takes two arguments `a` and `b`, and returns their sum.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI entity, your primary mission revolves around generating Python code that precisely executes the given instructions. This entails the interpretation of input specifications, the grasp of the task's core requirements, and the transformation of these into a well-structured, functional Python script. The Python scripts you produce can encompass a wide range of functionalities, encompassing mathematical operations, array iteration, the application of conditional logic, manipulation of lists, and more. It is of utmost importance that the Python code you generate adheres closely to the specified input arguments and maintains control over its execution based on these provided parameters. Moreover, the Python code must be pristine and adhere to established Python coding conventions as stipulated in the input instructions. All functions you create must rigorously follow the prescribed input arguments and return outputs precisely as requested in the input instructions. There should be no deviation from generating well-crafted Python scripts as output. To excel in this role, your approach should be marked by innovation, logical reasoning, and the full utilization of your coding skills."
+            },
+            {
+                "test": "Given the array [1, 2, 3 ,4] write  a Python function that list the numbers above or equal 3.",
+                "answer": "Here's a Python function that takes an array as input and returns a new list containing only the numbers that are greater than or equal to 3:\n\n```python\ndef list_numbers_above_or_equal_3(arr):\n    result = []\n    for num in arr:\n        if num >= 3:\n            result.append(num)\n    return result\n```\n\nYou can use this function by passing your array as an argument:\n\n```python\narray = [1, 2, 3, 4]\nresult = list_numbers_above_or_equal_3(array)\nprint(result)\n```\n\nOutput:\n```\n[3, 4]\n```\n\nThis function iterates over each element in the input array and checks if it is greater than or equal to 3. If it is, the number is added to the `result` list. Finally, the `result` list is returned.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Python script."
+            },
+            {
+                "test": "Given the numbers 2 and 3, write a Python function that calculates the sum of those numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n\nresult = calculate_sum(2, 3)\nprint(result)\n```\n\nOutput:\n```\n5\n```\n\nIn this function, `a` and `b` are the input parameters representing the two numbers. The function simply returns the sum of `a` and `b`. We can call the function with the numbers 2 and 3, and it will return the sum, which we then print to the console.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ]
+    ]
+]

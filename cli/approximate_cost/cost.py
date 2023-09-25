@@ -105,6 +105,27 @@ You will be graded based on the performance of your prompt... but don't cheat! Y
 
 Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
+        if method == 'code_generation':
+            system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
+
+In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
+
+You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
+
+Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
+
+        if method == 'json_validation':
+           system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
+
+        In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative in with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
+
+        You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
+
+        Clarify in your prompts that you are going to believe that the result of the execution has to be a json object and nothing more, no explanation is necessary.
+
+        Most importantly, output NOTHING but the prompt. Do not include anything else in your message.""" 
+
+
         # Create a message list based on the prompt change requirement
         if prompt_change != 'None':
             message = [
@@ -128,7 +149,7 @@ def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens,
     tokens_output = 0 # Initialize a variable to count output tokens
 
     # Check the evaluation method to determine token counts
-    if method == 'Classification' or method == 'Equals' or method == 'Includes':
+    if method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'code_generation' or method == 'json_validation':
         for test_case in test_cases:
             for i in range(number_of_prompts):
                 # Calculate input token count for classification, equals, or includes methods
@@ -173,7 +194,7 @@ def approximate_cost_iterations(test_cases, method, model_test, model_test_max_t
     cost = 0 # Initialize a variable to store the total cost
 
     # Check the evaluation method to determine the cost calculation strategy
-    if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'function_calling':
+    if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'function_calling' or method == 'code_generation' or method == 'json_validation':
         while iterations > 0:
             # Calculate the cost for the current iteration and add it to the accumulated cost
             cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', model_iteration, model_iteration_max_tokens, iterations, functions) + cost

@@ -1,0 +1,131 @@
+[
+    {
+        "prompt": "As an AI, your task is to analyze and extract vital information from an email text. You will be given a string of email, including senders, receivers, the subject, and the body of the email. Your function is as follows:\n\n1. Identify & extract the 'From:' field. This is the sender's email address.\n2. Identify & extract the 'To:' field. This is the recipient's email address.\n3. Identify & extract the 'Subject:' field. This is the subject of the email.\n4. Everything after the 'Subject:' field is considered the body of the email. Extract this as well.\n\nKeep in each components can include only one piece of data. Therefore, after 'From:', extract ONLY the email address; after 'To:', ONLY the recipient's address; after 'Subject:', ONLY the subject line; and the body should be everything else until the end of the input string.\n\nPlease encapsulate the data you extract into a JSON object, outputting the JSON object in the following order: 'sender', 'recipient', 'subject', 'body'. Each piece of extracted data should be the respective values of these fields. All characters in the input string should be treated as plain text with no special formatting. Do not provide any additional commentary or interpretation of the data, just parse and present it in the stipulated JSON format.",
+        "rating": 50.0
+    },
+    {
+        "prompt": "As an advanced AI intelligence, your task is to extract the most pertinent data from emails provided as input. Your program's response must be formatted as a JSON object.\n\nYou'll examine the details of each email, identifying and extracting elements such as the sender's email address (\"From:\"), recipient's email address (\"To:\"), email subject (\"Subject:\") and the body of the email. Be mindful of the precise boundaries of each element. The start and end of an email's body may not always be explicitly marked, so interpret the body text as extending from the end of the \"Subject:\" line to the final line of text.\n\nThe output JSON object should contain the following key-value pairs: \n- 'sender': the sender's email address,\n- 'recipient': the recipient's email address,\n- 'subject': the subject of the email,\n- 'body': the complete body of the email.\n\nEnsure the output consists solely of the JSON object. It requires no further explanation or elaboration, and should not be embedded within additional text or formatting.",
+        "rating": 50.0
+    },
+    {
+        "prompt": "Imagine you are a sophisticated AI application capable of extracting key information from email content. You are asked to obtain the sender's email, the recipient's email, the subject of the email, and the body of the email. However, there are certain rules that you must follow:\n\n1. The sender's email can be found after the \"From:\" label. \n2. The recipient's email can be found after the \"To:\" label. \n3. The subject of the email can be found after the \"Subject:\" label. \n4. The body is the part that comes after the subject and begins with salutations (such as 'Hi', 'Dear', etc.).\n\nRemember, you are requested to provide your responses in JSON format. The format is expected to be as follows:\n\n{\n\"sender\": \"sender's email\",\n\"recipient\": \"recipient's email\",\n\"subject\": \"subject of the email\",\n\"body\": \"body of the email\"\n}\n\nThe email is well formatted, and the sender, recipient, subject, and body are distinguishable within the content. There will be cases where white lines divide sections of the email, but don't be disoriented. Always provide a JSON object as output, and ensure that the output contains nothing but the important details from the email.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "As an AI, your task is to break down a block of email text into the key components that compose it: the sender, recipient, subject, and body. The emails are formatted traditionally with 'From:', 'To:', and 'Subject:' fields in the beginning. The sender is identified after the 'From:' and before the 'To:', the recipient is identified after the 'To:' and before the 'Subject:', and the subject is identified after the 'Subject:' and before the email's body begins. Any text after the 'Subject:' is the email's body. You are to return these components in a JSON object with the key-value pairings of 'sender', 'recipient', 'subject', and 'body'. It's vital that you only return the requested information and no additions or assumptions are made about the content of the email.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "JSON_validation"
+        },
+        [
+            {
+                "prompt": "As an AI, your task is to analyze and extract vital information from an email text. You will be given a string of email, including senders, receivers, the subject, and the body of the email. Your function is as follows:\n\n1. Identify & extract the 'From:' field. This is the sender's email address.\n2. Identify & extract the 'To:' field. This is the recipient's email address.\n3. Identify & extract the 'Subject:' field. This is the subject of the email.\n4. Everything after the 'Subject:' field is considered the body of the email. Extract this as well.\n\nKeep in each components can include only one piece of data. Therefore, after 'From:', extract ONLY the email address; after 'To:', ONLY the recipient's address; after 'Subject:', ONLY the subject line; and the body should be everything else until the end of the input string.\n\nPlease encapsulate the data you extract into a JSON object, outputting the JSON object in the following order: 'sender', 'recipient', 'subject', 'body'. Each piece of extracted data should be the respective values of these fields. All characters in the input string should be treated as plain text with no special formatting. Do not provide any additional commentary or interpretation of the data, just parse and present it in the stipulated JSON format."
+            },
+            {
+                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
+                "answer": "{\"sender\": \"juan@example.com\", \"recipient\": \"maria@example.com\", \"subject\": \"Team Meeting\", \"body\": \"Hi Maria,\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"}",
+                "ideal": {
+                    "sender": "juan@example.com",
+                    "recipient": "maria@example.com",
+                    "subject": "Team Meeting",
+                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
+                },
+                "result": true
+            },
+            {
+                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
+                "answer": "{\"sender\": \"contact@company.com\", \"recipient\": \"sales@customer.com\", \"subject\": \"Order Confirmation\", \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"}",
+                "ideal": {
+                    "sender": "contact@company.com",
+                    "recipient": "sales@customer.com",
+                    "subject": "Order Confirmation",
+                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "Imagine you are a sophisticated AI application capable of extracting key information from email content. You are asked to obtain the sender's email, the recipient's email, the subject of the email, and the body of the email. However, there are certain rules that you must follow:\n\n1. The sender's email can be found after the \"From:\" label. \n2. The recipient's email can be found after the \"To:\" label. \n3. The subject of the email can be found after the \"Subject:\" label. \n4. The body is the part that comes after the subject and begins with salutations (such as 'Hi', 'Dear', etc.).\n\nRemember, you are requested to provide your responses in JSON format. The format is expected to be as follows:\n\n{\n\"sender\": \"sender's email\",\n\"recipient\": \"recipient's email\",\n\"subject\": \"subject of the email\",\n\"body\": \"body of the email\"\n}\n\nThe email is well formatted, and the sender, recipient, subject, and body are distinguishable within the content. There will be cases where white lines divide sections of the email, but don't be disoriented. Always provide a JSON object as output, and ensure that the output contains nothing but the important details from the email."
+            },
+            {
+                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
+                "answer": "{\n\"sender\": \"juan@example.com\",\n\"recipient\": \"maria@example.com\",\n\"subject\": \"Team Meeting\",\n\"body\": \"Can we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"\n}",
+                "ideal": {
+                    "sender": "juan@example.com",
+                    "recipient": "maria@example.com",
+                    "subject": "Team Meeting",
+                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
+                },
+                "result": false
+            },
+            {
+                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
+                "answer": "{\n\"sender\": \"contact@company.com\",\n\"recipient\": \"sales@customer.com\",\n\"subject\": \"Order Confirmation\",\n\"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"\n}",
+                "ideal": {
+                    "sender": "contact@company.com",
+                    "recipient": "sales@customer.com",
+                    "subject": "Order Confirmation",
+                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an advanced AI intelligence, your task is to extract the most pertinent data from emails provided as input. Your program's response must be formatted as a JSON object.\n\nYou'll examine the details of each email, identifying and extracting elements such as the sender's email address (\"From:\"), recipient's email address (\"To:\"), email subject (\"Subject:\") and the body of the email. Be mindful of the precise boundaries of each element. The start and end of an email's body may not always be explicitly marked, so interpret the body text as extending from the end of the \"Subject:\" line to the final line of text.\n\nThe output JSON object should contain the following key-value pairs: \n- 'sender': the sender's email address,\n- 'recipient': the recipient's email address,\n- 'subject': the subject of the email,\n- 'body': the complete body of the email.\n\nEnsure the output consists solely of the JSON object. It requires no further explanation or elaboration, and should not be embedded within additional text or formatting."
+            },
+            {
+                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
+                "answer": "{\"sender\": \"juan@example.com\", \"recipient\": \"maria@example.com\", \"subject\": \"Team Meeting\", \"body\": \"Hi Maria,\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"}",
+                "ideal": {
+                    "sender": "juan@example.com",
+                    "recipient": "maria@example.com",
+                    "subject": "Team Meeting",
+                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
+                },
+                "result": true
+            },
+            {
+                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
+                "answer": "{\"sender\": \"contact@company.com\", \"recipient\": \"sales@customer.com\", \"subject\": \"Order Confirmation\", \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"}",
+                "ideal": {
+                    "sender": "contact@company.com",
+                    "recipient": "sales@customer.com",
+                    "subject": "Order Confirmation",
+                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your task is to break down a block of email text into the key components that compose it: the sender, recipient, subject, and body. The emails are formatted traditionally with 'From:', 'To:', and 'Subject:' fields in the beginning. The sender is identified after the 'From:' and before the 'To:', the recipient is identified after the 'To:' and before the 'Subject:', and the subject is identified after the 'Subject:' and before the email's body begins. Any text after the 'Subject:' is the email's body. You are to return these components in a JSON object with the key-value pairings of 'sender', 'recipient', 'subject', and 'body'. It's vital that you only return the requested information and no additions or assumptions are made about the content of the email."
+            },
+            {
+                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
+                "answer": "{\n  \"sender\": \"juan@example.com\",\n  \"recipient\": \"maria@example.com\",\n  \"subject\": \"Team Meeting\",\n  \"body\": \"Hi Maria,\\n\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\n\\nRegards, Juan\"\n}",
+                "ideal": {
+                    "sender": "juan@example.com",
+                    "recipient": "maria@example.com",
+                    "subject": "Team Meeting",
+                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
+                },
+                "result": false
+            },
+            {
+                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
+                "answer": "{\n  \"sender\": \"contact@company.com\",\n  \"recipient\": \"sales@customer.com\",\n  \"subject\": \"Order Confirmation\",\n  \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"\n}",
+                "ideal": {
+                    "sender": "contact@company.com",
+                    "recipient": "sales@customer.com",
+                    "subject": "Order Confirmation",
+                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            }
+        ]
+    ]
+]

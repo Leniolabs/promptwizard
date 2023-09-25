@@ -23,9 +23,3 @@ prompts:
       max_tokens: 150
     description: "How many 'a' letters are there in the sentence?"
   
-  iterations:
-    number: 2
-    model:
-      name: 'gpt-4'
-      temperature: 1.2
-      max_tokens: 150

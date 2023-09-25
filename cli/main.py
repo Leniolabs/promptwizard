@@ -3,7 +3,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 from cli.prompt_generation import generation, iteration
-from cli.evals import elovalue, classification, equals, includes, function_calling
+from cli.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation
 from cli.approximate_cost import cost
 import yaml
 import textwrap
@@ -51,7 +51,7 @@ def valid_yaml(file_name):
             print({'prompts': {'iterations': {'best_prompts':['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}})
             return valid
     # Allowed test method names
-    allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo']
+    allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo', 'code_generation', 'json_validation']
 
     # Check if the selected 'method' is valid
     if 'method' in content['test']:
@@ -63,6 +63,12 @@ def valid_yaml(file_name):
 
         if content['test']['method'] == 'Elo':
             config_schema = validation.ValidationElo()
+
+        if content['test']['method'] == 'code_generation':
+            config_schema = validation.ValidationCode()
+
+        if content['test']['method'] == 'json_validation':
+            config_schema = validation.ValidationJSON()
         
         # Check if the selected method is in the allowed names
         if content['test']['method'] not in allowed_names:
@@ -107,11 +113,14 @@ def approximate_cost(file):
     if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
-    if method == 'Classification' or method == 'Includes' or method == 'Equals':
+    if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'json_validation':
         input_output_pairs = [(case['input'], case['output']) for case in test_cases]
         test_cases = input_output_pairs
     if method == 'function_calling':
         result_list = [[case['input'], case['output1'], case['output2']] for case in test_cases]
+        test_cases = result_list
+    if method == 'code_generation':
+        result_list = [[case['input'], case['arguments'], case['output']] for case in test_cases]
         test_cases = result_list
     model_test = yaml_content['test']['model']['name']
     model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
@@ -161,7 +170,7 @@ def approximate_cost(file):
     # Calculate approximate cost based on the extracted information and the 'cost' module
     if method == 'function_calling':
         approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
-    if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes':
+    if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'code_generation' or method == 'json_validation':
         approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
     return approximate_cost
 
@@ -238,6 +247,7 @@ def run_evaluation(file, approximate_cost):
             best_percentage = 100
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
+        best_percentage = 100
 
         
     cost = 0
@@ -249,14 +259,24 @@ def run_evaluation(file, approximate_cost):
     # Determine the class corresponding to the selected method
     if method == 'Elo':
         class_method = elovalue.Elo
+
     if method == 'Classification':
         class_method = classification.Classification
+
     if method == 'Equals':
         class_method = equals.Equals
+
     if method == 'Includes':
         class_method = includes.Includes
+
     if method == 'function_calling':
         class_method = function_calling.functionCalling
+
+    if method == 'code_generation':
+        class_method = code_generation.codeGeneration
+
+    if method == 'json_validation':
+        class_method = json_validation.jsonValidation
 
     # Initialize an object of the class obtained from the 'method'
     if method != 'function_calling' and method != 'Elo':

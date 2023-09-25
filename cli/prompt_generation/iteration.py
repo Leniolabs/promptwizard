@@ -1,5 +1,5 @@
 from . import generation
-from cli.evals import elovalue, classification, equals, includes, function_calling
+from cli.evals import elovalue, classification, equals, includes, function_calling, functions, code_generation, json_validation
 
 
 def iterations(test_cases, new_number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, model_generation_max_tokens, old_prompts_and_rating, method, functions, function_call, description=None, best_prompts=2):
@@ -22,6 +22,10 @@ def iterations(test_cases, new_number_of_prompts, model_test, model_test_tempera
         class_method = includes.Includes
     if method == 'function_calling':
          class_method = function_calling.functionCalling
+    if method == 'code_generation':
+        class_method = code_generation.codeGeneration
+    if method == 'json_validation':
+        class_method = json_validation.jsonValidation
 
     # Generate new prompts if the method is not 'Elo'
     if method != 'Elo':
