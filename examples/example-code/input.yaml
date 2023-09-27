@@ -1,12 +1,53 @@
 test:
     cases:
-        - input: 'Given the array [1, 2, 3 ,4] write  a Python function that list the numbers above or equal 3.'
+        - input: 'Write a Javascript function that list the numbers above or equal 3.'
           arguments: ([1, 2, 3, 4], )
           output: [3, 4]
-        - input: 'Given the numbers 2 and 3, write a Python function that calculates the sum of those numbers.'
+        - input: 'Write a Python function that calculates the sum of two numbers.'
           arguments: (2, 3)
           output: 5
-        
+        - input: 'Write a Python function that calculates the area of a triangle.'
+          arguments: (5, 6)
+          output: 15.0
+        - input: 'Write a Javascript function that finds even numbers in a list.'
+          arguments: ([1, 2, 3, 4, 5, 6], )
+          output: [2, 4, 6]
+        - input: 'Write a Python function that calculates the average of a list of numbers.'
+          arguments: ([10, 20, 30, 40, 50], )
+          output: 30
+        - input: 'Write a JavaScript function that checks if a string is a palindrome.'
+          arguments: ('racecar', )
+          output: true
+        - input: 'Write a Python function that finds the maximum number in a list.'
+          arguments: ([10, 25, 7, 45, 32], )
+          output: 45
+        - input: 'Write a Javascript function that calculates the factorial of a number.'
+          arguments: (5, )
+          output: 120
+        - input: 'Write a Python function that checks if a number is prime.'
+          arguments: (7, )
+          output: true
+        - input: 'Write a JavaScript function that concatenates two strings.'
+          arguments: ('Hello', 'World')
+          output: 'HelloWorld'
+        - input: 'Write a Python function that counts the number of vowels in a string.'
+          arguments: ('Hello World', )
+          output: 3
+        - input: 'Write a Javascript function that reverses a list.'
+          arguments: ([1, 2, 3, 4, 5], )
+          output: [5, 4, 3, 2, 1]
+        - input: 'Write a Python function that divides two numbers.'
+          arguments: (10, 2)
+          output: 5
+        - input: 'Write a JavaScript function that finds the length of a string.'
+          arguments: ('Hello', )
+          output: 5
+        - input: 'Write a Python function that calculates the area of a circle.'
+          arguments: (5, )
+          output: 78.54
+        - input: 'Write a JavaScript function that finds the largest number in a 2D array.'
+          arguments: ([[10, 5, 8], [2, 15, 7], [20, 12, 9]], )
+          output: 20
 
     method: code_generation
 
@@ -17,8 +58,17 @@ test:
 
 prompts:
 
-    list:
-        - "As an AI, your mission is to generate Python code that entirely fulfils the instructions provided. When given an input specification, interpret the task at hand and translate it into a well-structured, functioning Python script. This Python script could be anything: bringing life to mathematical operations, iterating over arrays, applying conditions or logical statements, manipulating lists, and more. The returned function is expected to take arguments as per given in the task and control its flow based on those arguments. Always ensure that your output is clean and valid Python code exactly as requested in the input and respects Python coding conventions. All your functions must have arguments as mentioned in the input and return the outputs as asked for in the input instruction. You're not allowed to produce any output other than well-crafted Python scripts. Be innovative, be logical and flex your coding skills to the fullest."
-        - "Your role as an AI is to generate Python code that accurately implements the provided instructions. This involves comprehending input specifications, interpreting the task's requirements, and transforming them into a structured and functional Python script. These scripts can encompass a wide range of functionalities, such as performing mathematical operations, iterating through arrays, applying conditional logic, manipulating lists, and more. Your generated functions should adhere to the specified input arguments and control their execution based on these parameters. It is imperative that the Python code you produce is both clean and conforms to Python coding conventions as outlined in the input. Furthermore, all functions you generate must accept the designated arguments and return outputs in accordance with the instructions provided. Under no circumstances should you produce any output other than meticulously crafted Python scripts. Your success in this role hinges on your ability to innovate, apply logic, and demonstrate your coding proficiency to the fullest extent."
-        - "In your capacity as an AI, your mission revolves around the generation of Python code that effectively carries out the given instructions. This entails interpreting input specifications, grasping the task's essence, and converting it into a well-organized and operational Python script. These scripts can encompass a wide spectrum of functions, including mathematical computations, array iteration, conditional statements, list manipulation, and more. The Python functions you produce should adhere strictly to the provided input arguments and execute accordingly based on these parameters. It is imperative that the Python code you generate maintains cleanliness and adheres to established Python coding conventions as specified in the input. Furthermore, all functions generated must accept the prescribed arguments and return outputs in precise alignment with the instructions outlined. Any output aside from meticulously constructed Python scripts is strictly prohibited. To excel in this role, you must exhibit innovation, logical thinking, and the fullest extent of your coding skills."
-        - "As an AI entity, your primary mission revolves around generating Python code that precisely executes the given instructions. This entails the interpretation of input specifications, the grasp of the task's core requirements, and the transformation of these into a well-structured, functional Python script. The Python scripts you produce can encompass a wide range of functionalities, encompassing mathematical operations, array iteration, the application of conditional logic, manipulation of lists, and more. It is of utmost importance that the Python code you generate adheres closely to the specified input arguments and maintains control over its execution based on these provided parameters. Moreover, the Python code must be pristine and adhere to established Python coding conventions as stipulated in the input instructions. All functions you create must rigorously follow the prescribed input arguments and return outputs precisely as requested in the input instructions. There should be no deviation from generating well-crafted Python scripts as output. To excel in this role, your approach should be marked by innovation, logical reasoning, and the full utilization of your coding skills."
+    generation:
+      number: 4
+      model:
+        name: 'gpt-4'
+        temperature: 1.2
+        max_tokens: 150
+      description: "Write a function in the corresponding programming language."
+    iterations:
+      number: 2
+      model:
+
+            name: 'gpt-4'
+            temperature: 0.7
+            max_tokens: 250

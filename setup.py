@@ -25,7 +25,8 @@ setup(
         'certifi',
         'tqdm',
         'python-dotenv',
-        'backoff'
+        'backoff',
+        'js2py'
     ],
     entry_points={
         'console_scripts': [

@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to analyze and extract vital information from an email text. You will be given a string of email, including senders, receivers, the subject, and the body of the email. Your function is as follows:\n\n1. Identify & extract the 'From:' field. This is the sender's email address.\n2. Identify & extract the 'To:' field. This is the recipient's email address.\n3. Identify & extract the 'Subject:' field. This is the subject of the email.\n4. Everything after the 'Subject:' field is considered the body of the email. Extract this as well.\n\nKeep in each components can include only one piece of data. Therefore, after 'From:', extract ONLY the email address; after 'To:', ONLY the recipient's address; after 'Subject:', ONLY the subject line; and the body should be everything else until the end of the input string.\n\nPlease encapsulate the data you extract into a JSON object, outputting the JSON object in the following order: 'sender', 'recipient', 'subject', 'body'. Each piece of extracted data should be the respective values of these fields. All characters in the input string should be treated as plain text with no special formatting. Do not provide any additional commentary or interpretation of the data, just parse and present it in the stipulated JSON format.",
-        "rating": 50.0
+        "prompt": "As an AI, your goal is to extract key pieces of information from the given email data. Your task is to identify and fetch the sender, recipient, subject matter, and the main body of the email and present this information as a JSON object. \n\nYou will be given a string representation of the email. From this, you need to carefully examine and parse out the sender's address (after \"From: \"), the recipient's address (after \"To: \"), the subject of the email (after \"Subject: \"), and the message body (the content following these initial headers). Note that the email and subject line declarations will always end in a space, and the body of the email begins after the \"Subject:\" line.\n\nFinally, formulate a JSON",
+        "rating": 20.0
     },
     {
-        "prompt": "As an advanced AI intelligence, your task is to extract the most pertinent data from emails provided as input. Your program's response must be formatted as a JSON object.\n\nYou'll examine the details of each email, identifying and extracting elements such as the sender's email address (\"From:\"), recipient's email address (\"To:\"), email subject (\"Subject:\") and the body of the email. Be mindful of the precise boundaries of each element. The start and end of an email's body may not always be explicitly marked, so interpret the body text as extending from the end of the \"Subject:\" line to the final line of text.\n\nThe output JSON object should contain the following key-value pairs: \n- 'sender': the sender's email address,\n- 'recipient': the recipient's email address,\n- 'subject': the subject of the email,\n- 'body': the complete body of the email.\n\nEnsure the output consists solely of the JSON object. It requires no further explanation or elaboration, and should not be embedded within additional text or formatting.",
-        "rating": 50.0
+        "prompt": "Imagine you are an advanced AI, engineered to extract vital details from an email text. Your objective is to pinpoint and extract the sender, recipient, subject, and the principal text of the email, and represent these details in a JSON structure. \n\nYou would be given a string representation of an email. From it, you are to parse the sender's email address (post \"From: \"), the recipient's email address (post \"To: \"), the subject of the email (post \"Subject: \"), and the main body of the email (the text succeeding these initial headers). Keep in mind that the email and subject line markers will always culminate in a space, and the email body commences post the \"Subject:\" line. \n\nIn the end, organize your findings into a JSON object, accurately tagging 'sender', 'recipient', 'subject', and 'body'. Your final output should be devoid of any additional data or remarks.",
+        "rating": 20.0
     },
     {
-        "approximate_cost": 0.008546,
-        "real_cost": 0.004369,
-        "tokens_input_gpt-3.5-turbo": 2254,
-        "tokens_output_gpt-3.5-turbo": 494,
-        "tokens_input_gpt-4": 0,
-        "tokens_output_gpt-4": 0
+        "approximate_cost": 0.47962199999999994,
+        "real_cost": 0.24841450000000004,
+        "tokens_input_gpt-3.5-turbo": 28643,
+        "tokens_output_gpt-3.5-turbo": 10835,
+        "tokens_input_gpt-4": 3492,
+        "tokens_output_gpt-4": 1317
     }
 ]

@@ -4,6 +4,8 @@ import ast
 import concurrent.futures
 from ..evals import functions
 import builtins
+import js2py
+import re
 
 class codeGeneration:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts=2):
@@ -98,8 +100,9 @@ class codeGeneration:
                     partial_tokens_input, partial_tokens_output, result_content, ideal_output = future.result()
                     tokens_input += partial_tokens_input
                     tokens_output += partial_tokens_output  
-
-                    try:
+                    
+                    if 'python' in test_case['input'].lower():
+                        try:
                         
                             
                             with open("cli/evals/functions.py", "w") as file:
@@ -139,11 +142,67 @@ class codeGeneration:
                                 prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Final result incorrect."})
                                 prompt_results[prompt]['total'] += 1
 
-                    except:
+                        except:
 
-                        prompt_results[prompt]['total'] += 1
-                        prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Python script."})
-                
+                            prompt_results[prompt]['total'] += 1
+                            prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Python script."})
+                    
+                    if 'javascript' in test_case['input'].lower():
+                        
+                        try:
+                            file = "cli/evals/functions.js"
+                            with open("cli/evals/functions.js", "w") as file:
+                                file.write(result_content)
+
+                            with open("cli/evals/functions.js", "r") as f:
+                                js_code = f.read()
+                            
+                            context = js2py.EvalJs()
+
+                            context.execute(js_code)
+
+                            functions = re.findall(r"function\s+(\w+)\s*\(", js_code)
+
+                            for function_name in functions:
+                                
+                                js_function = context.eval(function_name)
+                                result = js_function(*eval(test_case['arguments']))
+                            
+                                def convert_to_native(js_object, target_type):
+                                
+                                    conversion_functions = {
+                                        int: lambda x: int(x),
+                                        float: lambda x: float(x),
+                                        str: lambda x: str(x),
+                                        bool: lambda x: bool(x),
+                                        list: lambda x: list(x),
+                                        dict: lambda x: dict(x),
+                                        tuple: lambda x: tuple(x),
+                            
+                                    }
+
+                                
+                                    if target_type in conversion_functions:
+                                
+                                        conversion_function = conversion_functions[target_type]
+                                        result = conversion_function(js_object)
+                                        return result
+                                    
+                                final_result = convert_to_native(result, type(ideal_output))
+
+                            if final_result == ideal_output:
+                                prompt_results[prompt]['correct'] += 1
+                                prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": True})
+                                prompt_results[prompt]['total'] += 1
+                            if final_result != ideal_output:
+                                prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Final result incorrect."})
+                                prompt_results[prompt]['total'] += 1
+
+                        except:
+
+                            prompt_results[prompt]['total'] += 1
+                            prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Javascript script."})
+
                 results.append(prompt_and_results)
                 prompt_and_results = []
 

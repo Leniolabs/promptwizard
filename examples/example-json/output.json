@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to analyze and extract vital information from an email text. You will be given a string of email, including senders, receivers, the subject, and the body of the email. Your function is as follows:\n\n1. Identify & extract the 'From:' field. This is the sender's email address.\n2. Identify & extract the 'To:' field. This is the recipient's email address.\n3. Identify & extract the 'Subject:' field. This is the subject of the email.\n4. Everything after the 'Subject:' field is considered the body of the email. Extract this as well.\n\nKeep in each components can include only one piece of data. Therefore, after 'From:', extract ONLY the email address; after 'To:', ONLY the recipient's address; after 'Subject:', ONLY the subject line; and the body should be everything else until the end of the input string.\n\nPlease encapsulate the data you extract into a JSON object, outputting the JSON object in the following order: 'sender', 'recipient', 'subject', 'body'. Each piece of extracted data should be the respective values of these fields. All characters in the input string should be treated as plain text with no special formatting. Do not provide any additional commentary or interpretation of the data, just parse and present it in the stipulated JSON format.",
-        "rating": 50.0
+        "prompt": "As an AI, your goal is to extract key pieces of information from the given email data. Your task is to identify and fetch the sender, recipient, subject matter, and the main body of the email and present this information as a JSON object. \n\nYou will be given a string representation of the email. From this, you need to carefully examine and parse out the sender's address (after \"From: \"), the recipient's address (after \"To: \"), the subject of the email (after \"Subject: \"), and the message body (the content following these initial headers). Note that the email and subject line declarations will always end in a space, and the body of the email begins after the \"Subject:\" line.\n\nFinally, formulate a JSON",
+        "rating": 20.0
     },
     {
-        "prompt": "As an advanced AI intelligence, your task is to extract the most pertinent data from emails provided as input. Your program's response must be formatted as a JSON object.\n\nYou'll examine the details of each email, identifying and extracting elements such as the sender's email address (\"From:\"), recipient's email address (\"To:\"), email subject (\"Subject:\") and the body of the email. Be mindful of the precise boundaries of each element. The start and end of an email's body may not always be explicitly marked, so interpret the body text as extending from the end of the \"Subject:\" line to the final line of text.\n\nThe output JSON object should contain the following key-value pairs: \n- 'sender': the sender's email address,\n- 'recipient': the recipient's email address,\n- 'subject': the subject of the email,\n- 'body': the complete body of the email.\n\nEnsure the output consists solely of the JSON object. It requires no further explanation or elaboration, and should not be embedded within additional text or formatting.",
-        "rating": 50.0
+        "prompt": "Imagine you're a super-efficient, digital personal assistant, whose task is to neatly extract and structure key information from emails. For each email in form of a text input, you must identify the sender, recipient, subject, and body of the email. \n\nThe sender and recipient will always be located at the start of the email, denoted by the 'From:' and 'To:' labels respectively. The subject will be identified right after the 'Subject:' label. The body of the email consists of everything that comes after these preliminary elements.\n\nAll your output must be organized into a JSON object with clear labels for 'sender', 'recipient', 'subject', and 'body'. Do not include any additional information, comments, or explanations in your output.",
+        "rating": 6.666666666666667
     },
     {
-        "prompt": "Imagine you are a sophisticated AI application capable of extracting key information from email content. You are asked to obtain the sender's email, the recipient's email, the subject of the email, and the body of the email. However, there are certain rules that you must follow:\n\n1. The sender's email can be found after the \"From:\" label. \n2. The recipient's email can be found after the \"To:\" label. \n3. The subject of the email can be found after the \"Subject:\" label. \n4. The body is the part that comes after the subject and begins with salutations (such as 'Hi', 'Dear', etc.).\n\nRemember, you are requested to provide your responses in JSON format. The format is expected to be as follows:\n\n{\n\"sender\": \"sender's email\",\n\"recipient\": \"recipient's email\",\n\"subject\": \"subject of the email\",\n\"body\": \"body of the email\"\n}\n\nThe email is well formatted, and the sender, recipient, subject, and body are distinguishable within the content. There will be cases where white lines divide sections of the email, but don't be disoriented. Always provide a JSON object as output, and ensure that the output contains nothing but the important details from the email.",
+        "prompt": "Your task is to analyze the contents of emails, extracting critical components and transcribing them into a structured JSON object. This structured object should contain the following information extracted from the email: \n\n1. The sender's email address titled 'sender'. The email's inception point, the protagonist ushering the electronic envelope into the world wide web.\n\n2. The recipient's email address titled 'recipient'. The fortunate or otherwise recipient standing on the receiving end of the electronic telegram.\n\n3. The subject of the email titled 'subject'. This is the quintessentially illuminating beacon that offers immediate context to the correspondence.\n\n4. The body of the email titled 'body'. This is the kernel of the communication, housing the purpose, context, and substantive materials that",
         "rating": 0.0
     },
     {
-        "prompt": "As an AI, your task is to break down a block of email text into the key components that compose it: the sender, recipient, subject, and body. The emails are formatted traditionally with 'From:', 'To:', and 'Subject:' fields in the beginning. The sender is identified after the 'From:' and before the 'To:', the recipient is identified after the 'To:' and before the 'Subject:', and the subject is identified after the 'Subject:' and before the email's body begins. Any text after the 'Subject:' is the email's body. You are to return these components in a JSON object with the key-value pairings of 'sender', 'recipient', 'subject', and 'body'. It's vital that you only return the requested information and no additions or assumptions are made about the content of the email.",
+        "prompt": "You are an advanced intelligent system with the job of dissecting the structure of an email, reliably identifying and extracting critical elements. The text of an email will be provided to you, and your task is to draw out the sender's email address, the recipient's email address, the subject of the email, and the body message. You must handle the information with utmost precision and deliver the processed result as a nicely structured JSON object. The JSON should have four properties respectively named as 'sender', 'recipient', 'subject', and 'body' which will hold the respective details from the email. Remember, the JSON object you generate has to be specific and meticulous, strictly adhering to the essential components derived from the email text. Your interpretation and representation should",
         "rating": 0.0
     },
     [
@@ -21,38 +21,11 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to analyze and extract vital information from an email text. You will be given a string of email, including senders, receivers, the subject, and the body of the email. Your function is as follows:\n\n1. Identify & extract the 'From:' field. This is the sender's email address.\n2. Identify & extract the 'To:' field. This is the recipient's email address.\n3. Identify & extract the 'Subject:' field. This is the subject of the email.\n4. Everything after the 'Subject:' field is considered the body of the email. Extract this as well.\n\nKeep in each components can include only one piece of data. Therefore, after 'From:', extract ONLY the email address; after 'To:', ONLY the recipient's address; after 'Subject:', ONLY the subject line; and the body should be everything else until the end of the input string.\n\nPlease encapsulate the data you extract into a JSON object, outputting the JSON object in the following order: 'sender', 'recipient', 'subject', 'body'. Each piece of extracted data should be the respective values of these fields. All characters in the input string should be treated as plain text with no special formatting. Do not provide any additional commentary or interpretation of the data, just parse and present it in the stipulated JSON format."
+                "prompt": "Your task is to analyze the contents of emails, extracting critical components and transcribing them into a structured JSON object. This structured object should contain the following information extracted from the email: \n\n1. The sender's email address titled 'sender'. The email's inception point, the protagonist ushering the electronic envelope into the world wide web.\n\n2. The recipient's email address titled 'recipient'. The fortunate or otherwise recipient standing on the receiving end of the electronic telegram.\n\n3. The subject of the email titled 'subject'. This is the quintessentially illuminating beacon that offers immediate context to the correspondence.\n\n4. The body of the email titled 'body'. This is the kernel of the communication, housing the purpose, context, and substantive materials that"
             },
             {
                 "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
-                "answer": "{\"sender\": \"juan@example.com\", \"recipient\": \"maria@example.com\", \"subject\": \"Team Meeting\", \"body\": \"Hi Maria,\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"}",
-                "ideal": {
-                    "sender": "juan@example.com",
-                    "recipient": "maria@example.com",
-                    "subject": "Team Meeting",
-                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
-                },
-                "result": true
-            },
-            {
-                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
-                "answer": "{\"sender\": \"contact@company.com\", \"recipient\": \"sales@customer.com\", \"subject\": \"Order Confirmation\", \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"}",
-                "ideal": {
-                    "sender": "contact@company.com",
-                    "recipient": "sales@customer.com",
-                    "subject": "Order Confirmation",
-                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
-                },
-                "result": false
-            }
-        ],
-        [
-            {
-                "prompt": "Imagine you are a sophisticated AI application capable of extracting key information from email content. You are asked to obtain the sender's email, the recipient's email, the subject of the email, and the body of the email. However, there are certain rules that you must follow:\n\n1. The sender's email can be found after the \"From:\" label. \n2. The recipient's email can be found after the \"To:\" label. \n3. The subject of the email can be found after the \"Subject:\" label. \n4. The body is the part that comes after the subject and begins with salutations (such as 'Hi', 'Dear', etc.).\n\nRemember, you are requested to provide your responses in JSON format. The format is expected to be as follows:\n\n{\n\"sender\": \"sender's email\",\n\"recipient\": \"recipient's email\",\n\"subject\": \"subject of the email\",\n\"body\": \"body of the email\"\n}\n\nThe email is well formatted, and the sender, recipient, subject, and body are distinguishable within the content. There will be cases where white lines divide sections of the email, but don't be disoriented. Always provide a JSON object as output, and ensure that the output contains nothing but the important details from the email."
-            },
-            {
-                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
-                "answer": "{\n\"sender\": \"juan@example.com\",\n\"recipient\": \"maria@example.com\",\n\"subject\": \"Team Meeting\",\n\"body\": \"Can we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"\n}",
+                "answer": "{\n  \"sender\": \"juan@example.com\",\n  \"recipient\": \"maria@example.com\",\n  \"subject\": \"Team Meeting\",\n  \"body\": \"Hi Maria,\\n\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\n\\nRegards,\\nJuan\"\n}",
                 "ideal": {
                     "sender": "juan@example.com",
                     "recipient": "maria@example.com",
@@ -63,7 +36,7 @@
             },
             {
                 "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
-                "answer": "{\n\"sender\": \"contact@company.com\",\n\"recipient\": \"sales@customer.com\",\n\"subject\": \"Order Confirmation\",\n\"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"\n}",
+                "answer": "{\n  \"sender\": \"contact@company.com\",\n  \"recipient\": \"sales@customer.com\",\n  \"subject\": \"Order Confirmation\",\n  \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely,\\nXYZ Company\"\n}",
                 "ideal": {
                     "sender": "contact@company.com",
                     "recipient": "sales@customer.com",
@@ -71,26 +44,169 @@
                     "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
                 },
                 "result": false
+            },
+            {
+                "test": "From: alice@example.com To: bob@example.com Subject: Dinner Plans Hey Bob,\nDo you want to grab dinner this weekend? Let me know your availability.\nRegards, Alice",
+                "answer": "{\n  \"sender\": \"alice@example.com\",\n  \"recipient\": \"bob@example.com\",\n  \"subject\": \"Dinner Plans\",\n  \"body\": \"Hey Bob,\\n\\nDo you want to grab dinner this weekend? Let me know your availability.\\n\\nRegards,\\nAlice\"\n}",
+                "ideal": {
+                    "sender": "alice@example.com",
+                    "recipient": "bob@example.com",
+                    "subject": "Dinner Plans",
+                    "body": "Hey Bob, Do you want to grab dinner this weekend? Let me know your availability. Regards, Alice"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@website.com To: user@example.com Subject: Password Reset Hi User,\nWe received a request to reset your password. Please click the link below to reset it:\n[Password Reset Link]\nIf you did not request this, please ignore this email.\nBest regards, Website Support",
+                "answer": "{\n  \"sender\": \"support@website.com\",\n  \"recipient\": \"user@example.com\",\n  \"subject\": \"Password Reset\",\n  \"body\": \"Hi User,\\n\\nWe received a request to reset your password. Please click the link below to reset it:\\n\\n[Password Reset Link]\\n\\nIf you did not request this, please ignore this email.\\n\\nBest regards,\\nWebsite Support\"\n}",
+                "ideal": {
+                    "sender": "support@website.com",
+                    "recipient": "user@example.com",
+                    "subject": "Password Reset",
+                    "body": "Hi User, We received a request to reset your password. Please click the link below to reset it: [Password Reset Link] If you did not request this, please ignore this email. Best regards, Website Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: sarah@example.com To: john@example.com Subject: Weekly Report Hi John,\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\nAttached: WeeklyReport.pdf\nRegards, Sarah",
+                "answer": "{\n  \"sender\": \"sarah@example.com\",\n  \"recipient\": \"john@example.com\",\n  \"subject\": \"Weekly Report\",\n  \"body\": \"Hi John,\\n\\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\\n\\nAttached: WeeklyReport.pdf\\n\\nRegards,\\nSarah\"\n}",
+                "ideal": {
+                    "sender": "sarah@example.com",
+                    "recipient": "john@example.com",
+                    "subject": "Weekly Report",
+                    "body": "Hi John, Here is the weekly report for our project. Please review it and let me know if you have any feedback. Attached: WeeklyReport.pdf Regards, Sarah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: marketing@company.com To: newsletter@subscribers.com Subject: Weekly Newsletter Hello Subscribers,\nWelcome to this week's newsletter! We have exciting updates and news to share.\nCheck out the latest articles, promotions, and events in this issue.\nBest regards, Marketing Team",
+                "answer": "{\n  \"sender\": \"marketing@company.com\",\n  \"recipient\": \"newsletter@subscribers.com\",\n  \"subject\": \"Weekly Newsletter\",\n  \"body\": \"Hello Subscribers,\\n\\nWelcome to this week's newsletter! We have exciting updates and news to share.\\nCheck out the latest articles, promotions, and events in this issue.\\n\\nBest regards,\\nMarketing Team\"\n}",
+                "ideal": {
+                    "sender": "marketing@company.com",
+                    "recipient": "newsletter@subscribers.com",
+                    "subject": "Weekly Newsletter",
+                    "body": "Hello Subscribers, Welcome to this week's newsletter! We have exciting updates and news to share. Check out the latest articles, promotions, and events in this issue. Best regards, Marketing Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: manager@projectteam.com To: team@example.com Subject: Project Status Update Hi Team,\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\nPlease review the attached report for more details.\nRegards, Project Manager",
+                "answer": "{\n  \"sender\": \"manager@projectteam.com\",\n  \"recipient\": \"team@example.com\",\n  \"subject\": \"Project Status Update\",\n  \"body\": \"Hi Team,\\n\\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\\n\\nPlease review the attached report for more details.\\n\\nRegards,\\nProject Manager\"\n}",
+                "ideal": {
+                    "sender": "manager@projectteam.com",
+                    "recipient": "team@example.com",
+                    "subject": "Project Status Update",
+                    "body": "Hi Team, Here's a quick update on the project's status. We're making good progress and are on track to meet our deadlines. Please review the attached report for more details. Regards, Project Manager"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@bank.com To: customer@example.com Subject: Account Statement Dear Customer,\nYour monthly account statement for September is now available. Please click the link below to view and download it.\n[Account Statement Link]\nIf you have any questions, feel free to contact our support team.\nBest regards, Bank Support",
+                "answer": "{\n  \"sender\": \"support@bank.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Account Statement\",\n  \"body\": \"Dear Customer,\\n\\nYour monthly account statement for September is now available. Please click the link below to view and download it.\\n\\n[Account Statement Link]\\n\\nIf you have any questions, feel free to contact our support team.\\n\\nBest regards,\\nBank Support\"\n}",
+                "ideal": {
+                    "sender": "support@bank.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Account Statement",
+                    "body": "Dear Customer, Your monthly account statement for September is now available. Please click the link below to view and download it. [Account Statement Link] If you have any questions, feel free to contact our support team. Best regards, Bank Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hannah@example.com To: david@example.com Subject: Travel Itinerary Hi David,\nHere is your travel itinerary for your upcoming trip:\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\nIf you need any changes or have questions, please let me know.\nSafe travels! Hannah",
+                "answer": "{\n  \"sender\": \"hannah@example.com\",\n  \"recipient\": \"david@example.com\",\n  \"subject\": \"Travel Itinerary\",\n  \"body\": \"Hi David,\\n\\nHere is your travel itinerary for your upcoming trip:\\n\\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM)\\nHotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023)\\nCar Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\\n\\nIf you need any changes or have questions, please let me know.\\n\\nSafe travels!\\nHannah\"\n}",
+                "ideal": {
+                    "sender": "hannah@example.com",
+                    "recipient": "david@example.com",
+                    "subject": "Travel Itinerary",
+                    "body": "Hi David, Here is your travel itinerary for your upcoming trip: Flight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023) If you need any changes or have questions, please let me know. Safe travels! Hannah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: techsupport@example.com To: customer@example.com Subject: Technical Support Ticket Update Dear Customer,\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\nThank you for choosing our services.\nSincerely, Tech Support",
+                "answer": "{\n  \"sender\": \"techsupport@example.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Technical Support Ticket Update\",\n  \"body\": \"Dear Customer,\\n\\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\\n\\nThank you for choosing our services.\\n\\nSincerely,\\nTech Support\"\n}",
+                "ideal": {
+                    "sender": "techsupport@example.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Technical Support Ticket Update",
+                    "body": "Dear Customer, Your technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us. Thank you for choosing our services. Sincerely, Tech Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: recruiter@company.com To: jobapplicant@example.com Subject: Job Interview Invitation Dear Applicant,\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\nDate: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters\nPlease confirm your attendance at your earliest convenience.\nBest regards, Recruiting Team",
+                "answer": "{\n  \"sender\": \"recruiter@company.com\",\n  \"recipient\": \"jobapplicant@example.com\",\n  \"subject\": \"Job Interview Invitation\",\n  \"body\": \"Dear Applicant,\\n\\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\\n\\nDate: October 5th, 2023\\nTime: 2:00 PM\\nLocation: Company Headquarters\\n\\nPlease confirm your attendance at your earliest convenience.\\n\\nBest regards,\\nRecruiting Team\"\n}",
+                "ideal": {
+                    "sender": "recruiter@company.com",
+                    "recipient": "jobapplicant@example.com",
+                    "subject": "Job Interview Invitation",
+                    "body": "Dear Applicant, We are pleased to invite you for an interview for the position of Software Engineer at our company. Date: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters Please confirm your attendance at your earliest convenience. Best regards, Recruiting Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@webhosting.com To: hostingcustomer@example.com Subject: Hosting Account Renewal Dear Customer,\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\nRenewal Amount: $120.00\nThank you for choosing our hosting services.\nSincerely, Hosting Support",
+                "answer": "{\n  \"sender\": \"support@webhosting.com\",\n  \"recipient\": \"hostingcustomer@example.com\",\n  \"subject\": \"Hosting Account Renewal\",\n  \"body\": \"Dear Customer,\\n\\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\\n\\nRenewal Amount: $120.00\\n\\nThank you for choosing our hosting services.\\n\\nSincerely,\\nHosting Support\"\n}",
+                "ideal": {
+                    "sender": "support@webhosting.com",
+                    "recipient": "hostingcustomer@example.com",
+                    "subject": "Hosting Account Renewal",
+                    "body": "Dear Customer, Your hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date. Renewal Amount: $120.00 Thank you for choosing our hosting services. Sincerely, Hosting Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: professor@example.com To: student@example.com Subject: Assignment Submission Hi Student,\nThis is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023.\nPlease submit it through the online portal.\nBest regards, Professor Smith",
+                "answer": "{\n  \"sender\": \"professor@example.com\",\n  \"recipient\": \"student@example.com\",\n  \"subject\": \"Assignment Submission\",\n  \"body\": \"Hi Student,\\n\\nThis is a reminder to submit your assignment on \\\"Topic: History of Ancient Civilizations\\\" by the due date, which is October 8th, 2023.\\n\\nPlease submit it through the online portal.\\n\\nBest regards,\\nProfessor Smith\"\n}",
+                "ideal": {
+                    "sender": "professor@example.com",
+                    "recipient": "student@example.com",
+                    "subject": "Assignment Submission",
+                    "body": "Hi Student, This is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023. Please submit it through the online portal. Best regards, Professor Smith"
+                },
+                "result": false
+            },
+            {
+                "test": "From: eventorganizer@example.com To: attendee@example.com Subject: Event Registration Confirmation Dear Attendee,\nThank you for registering for our upcoming conference, \"Tech Summit 2023.\"\nDate: October 20th-22nd, 2023 Location: Convention Center\nYour registration is confirmed. Please bring your confirmation email to the event.\nBest regards, Event Organizer",
+                "answer": "{\n  \"sender\": \"eventorganizer@example.com\",\n  \"recipient\": \"attendee@example.com\",\n  \"subject\": \"Event Registration Confirmation\",\n  \"body\": \"Dear Attendee,\\n\\nThank you for registering for our upcoming conference, \\\"Tech Summit 2023.\\\"\\n\\nDate: October 20th-22nd, 2023\\nLocation: Convention Center\\n\\nYour registration is confirmed. Please bring your confirmation email to the event.\\n\\nBest regards,\\nEvent Organizer\"\n}",
+                "ideal": {
+                    "sender": "eventorganizer@example.com",
+                    "recipient": "attendee@example.com",
+                    "subject": "Event Registration Confirmation",
+                    "body": "Dear Attendee, Thank you for registering for our upcoming conference, \"Tech Summit 2023.\" Date: October 20th-22nd, 2023 Location: Convention Center Your registration is confirmed. Please bring your confirmation email to the event. Best regards, Event Organizer"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hr@companyxyz.com To: employeexyz@example.com Subject: Benefits Enrollment Deadline Hi Employee,\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\nVisit the HR portal to make your selections.\nRegards, HR Department",
+                "answer": "{\n  \"sender\": \"hr@companyxyz.com\",\n  \"recipient\": \"employeexyz@example.com\",\n  \"subject\": \"Benefits Enrollment Deadline\",\n  \"body\": \"Hi Employee,\\n\\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\\n\\nVisit the HR portal to make your selections.\\n\\nRegards,\\nHR Department\"\n}",
+                "ideal": {
+                    "sender": "hr@companyxyz.com",
+                    "recipient": "employeexyz@example.com",
+                    "subject": "Benefits Enrollment Deadline",
+                    "body": "Hi Employee, This is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits. Visit the HR portal to make your selections. Regards, HR Department"
+                },
+                "result": false
             }
         ],
         [
             {
-                "prompt": "As an advanced AI intelligence, your task is to extract the most pertinent data from emails provided as input. Your program's response must be formatted as a JSON object.\n\nYou'll examine the details of each email, identifying and extracting elements such as the sender's email address (\"From:\"), recipient's email address (\"To:\"), email subject (\"Subject:\") and the body of the email. Be mindful of the precise boundaries of each element. The start and end of an email's body may not always be explicitly marked, so interpret the body text as extending from the end of the \"Subject:\" line to the final line of text.\n\nThe output JSON object should contain the following key-value pairs: \n- 'sender': the sender's email address,\n- 'recipient': the recipient's email address,\n- 'subject': the subject of the email,\n- 'body': the complete body of the email.\n\nEnsure the output consists solely of the JSON object. It requires no further explanation or elaboration, and should not be embedded within additional text or formatting."
+                "prompt": "You are an advanced intelligent system with the job of dissecting the structure of an email, reliably identifying and extracting critical elements. The text of an email will be provided to you, and your task is to draw out the sender's email address, the recipient's email address, the subject of the email, and the body message. You must handle the information with utmost precision and deliver the processed result as a nicely structured JSON object. The JSON should have four properties respectively named as 'sender', 'recipient', 'subject', and 'body' which will hold the respective details from the email. Remember, the JSON object you generate has to be specific and meticulous, strictly adhering to the essential components derived from the email text. Your interpretation and representation should"
             },
             {
                 "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
-                "answer": "{\"sender\": \"juan@example.com\", \"recipient\": \"maria@example.com\", \"subject\": \"Team Meeting\", \"body\": \"Hi Maria,\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"}",
+                "answer": "{\n  \"sender\": \"juan@example.com\",\n  \"recipient\": \"maria@example.com\",\n  \"subject\": \"Team Meeting\",\n  \"body\": \"Hi Maria,\\n\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\n\\nRegards,\\nJuan\"\n}",
                 "ideal": {
                     "sender": "juan@example.com",
                     "recipient": "maria@example.com",
                     "subject": "Team Meeting",
                     "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
                 },
-                "result": true
+                "result": false
             },
             {
                 "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
-                "answer": "{\"sender\": \"contact@company.com\", \"recipient\": \"sales@customer.com\", \"subject\": \"Order Confirmation\", \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"}",
+                "answer": "{\n  \"sender\": \"contact@company.com\",\n  \"recipient\": \"sales@customer.com\",\n  \"subject\": \"Order Confirmation\",\n  \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"\n}",
                 "ideal": {
                     "sender": "contact@company.com",
                     "recipient": "sales@customer.com",
@@ -98,11 +214,154 @@
                     "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
                 },
                 "result": false
+            },
+            {
+                "test": "From: alice@example.com To: bob@example.com Subject: Dinner Plans Hey Bob,\nDo you want to grab dinner this weekend? Let me know your availability.\nRegards, Alice",
+                "answer": "{\n  \"sender\": \"alice@example.com\",\n  \"recipient\": \"bob@example.com\",\n  \"subject\": \"Dinner Plans\",\n  \"body\": \"Hey Bob,\\n\\nDo you want to grab dinner this weekend? Let me know your availability.\\n\\nRegards,\\nAlice\"\n}",
+                "ideal": {
+                    "sender": "alice@example.com",
+                    "recipient": "bob@example.com",
+                    "subject": "Dinner Plans",
+                    "body": "Hey Bob, Do you want to grab dinner this weekend? Let me know your availability. Regards, Alice"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@website.com To: user@example.com Subject: Password Reset Hi User,\nWe received a request to reset your password. Please click the link below to reset it:\n[Password Reset Link]\nIf you did not request this, please ignore this email.\nBest regards, Website Support",
+                "answer": "{\n  \"sender\": \"support@website.com\",\n  \"recipient\": \"user@example.com\",\n  \"subject\": \"Password Reset\",\n  \"body\": \"Hi User,\\n\\nWe received a request to reset your password. Please click the link below to reset it:\\n\\n[Password Reset Link]\\n\\nIf you did not request this, please ignore this email.\\n\\nBest regards,\\nWebsite Support\"\n}",
+                "ideal": {
+                    "sender": "support@website.com",
+                    "recipient": "user@example.com",
+                    "subject": "Password Reset",
+                    "body": "Hi User, We received a request to reset your password. Please click the link below to reset it: [Password Reset Link] If you did not request this, please ignore this email. Best regards, Website Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: sarah@example.com To: john@example.com Subject: Weekly Report Hi John,\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\nAttached: WeeklyReport.pdf\nRegards, Sarah",
+                "answer": "{\n  \"sender\": \"sarah@example.com\",\n  \"recipient\": \"john@example.com\",\n  \"subject\": \"Weekly Report\",\n  \"body\": \"Hi John,\\n\\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\\n\\nAttached: WeeklyReport.pdf\\n\\nRegards,\\nSarah\"\n}",
+                "ideal": {
+                    "sender": "sarah@example.com",
+                    "recipient": "john@example.com",
+                    "subject": "Weekly Report",
+                    "body": "Hi John, Here is the weekly report for our project. Please review it and let me know if you have any feedback. Attached: WeeklyReport.pdf Regards, Sarah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: marketing@company.com To: newsletter@subscribers.com Subject: Weekly Newsletter Hello Subscribers,\nWelcome to this week's newsletter! We have exciting updates and news to share.\nCheck out the latest articles, promotions, and events in this issue.\nBest regards, Marketing Team",
+                "answer": "{\n  \"sender\": \"marketing@company.com\",\n  \"recipient\": \"newsletter@subscribers.com\",\n  \"subject\": \"Weekly Newsletter\",\n  \"body\": \"Hello Subscribers,\\n\\nWelcome to this week's newsletter! We have exciting updates and news to share.\\n\\nCheck out the latest articles, promotions, and events in this issue.\\n\\nBest regards,\\nMarketing Team\"\n}",
+                "ideal": {
+                    "sender": "marketing@company.com",
+                    "recipient": "newsletter@subscribers.com",
+                    "subject": "Weekly Newsletter",
+                    "body": "Hello Subscribers, Welcome to this week's newsletter! We have exciting updates and news to share. Check out the latest articles, promotions, and events in this issue. Best regards, Marketing Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: manager@projectteam.com To: team@example.com Subject: Project Status Update Hi Team,\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\nPlease review the attached report for more details.\nRegards, Project Manager",
+                "answer": "{\n  \"sender\": \"manager@projectteam.com\",\n  \"recipient\": \"team@example.com\",\n  \"subject\": \"Project Status Update\",\n  \"body\": \"Hi Team,\\n\\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\\n\\nPlease review the attached report for more details.\\n\\nRegards,\\nProject Manager\"\n}",
+                "ideal": {
+                    "sender": "manager@projectteam.com",
+                    "recipient": "team@example.com",
+                    "subject": "Project Status Update",
+                    "body": "Hi Team, Here's a quick update on the project's status. We're making good progress and are on track to meet our deadlines. Please review the attached report for more details. Regards, Project Manager"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@bank.com To: customer@example.com Subject: Account Statement Dear Customer,\nYour monthly account statement for September is now available. Please click the link below to view and download it.\n[Account Statement Link]\nIf you have any questions, feel free to contact our support team.\nBest regards, Bank Support",
+                "answer": "{\n  \"sender\": \"support@bank.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Account Statement\",\n  \"body\": \"Dear Customer,\\n\\nYour monthly account statement for September is now available. Please click the link below to view and download it.\\n\\n[Account Statement Link]\\n\\nIf you have any questions, feel free to contact our support team.\\n\\nBest regards,\\nBank Support\"\n}",
+                "ideal": {
+                    "sender": "support@bank.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Account Statement",
+                    "body": "Dear Customer, Your monthly account statement for September is now available. Please click the link below to view and download it. [Account Statement Link] If you have any questions, feel free to contact our support team. Best regards, Bank Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hannah@example.com To: david@example.com Subject: Travel Itinerary Hi David,\nHere is your travel itinerary for your upcoming trip:\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\nIf you need any changes or have questions, please let me know.\nSafe travels! Hannah",
+                "answer": "{\n  \"sender\": \"hannah@example.com\",\n  \"recipient\": \"david@example.com\",\n  \"subject\": \"Travel Itinerary\",\n  \"body\": \"Hi David,\\n\\nHere is your travel itinerary for your upcoming trip:\\n\\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM)\\nHotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023)\\nCar Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\\n\\nIf you need any changes or have questions, please let me know.\\n\\nSafe travels!\\nHannah\"\n}",
+                "ideal": {
+                    "sender": "hannah@example.com",
+                    "recipient": "david@example.com",
+                    "subject": "Travel Itinerary",
+                    "body": "Hi David, Here is your travel itinerary for your upcoming trip: Flight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023) If you need any changes or have questions, please let me know. Safe travels! Hannah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: techsupport@example.com To: customer@example.com Subject: Technical Support Ticket Update Dear Customer,\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\nThank you for choosing our services.\nSincerely, Tech Support",
+                "answer": "{\n  \"sender\": \"techsupport@example.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Technical Support Ticket Update\",\n  \"body\": \"Dear Customer,\\n\\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\\n\\nThank you for choosing our services.\\n\\nSincerely, Tech Support\"\n}",
+                "ideal": {
+                    "sender": "techsupport@example.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Technical Support Ticket Update",
+                    "body": "Dear Customer, Your technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us. Thank you for choosing our services. Sincerely, Tech Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: recruiter@company.com To: jobapplicant@example.com Subject: Job Interview Invitation Dear Applicant,\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\nDate: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters\nPlease confirm your attendance at your earliest convenience.\nBest regards, Recruiting Team",
+                "answer": "{\n  \"sender\": \"recruiter@company.com\",\n  \"recipient\": \"jobapplicant@example.com\",\n  \"subject\": \"Job Interview Invitation\",\n  \"body\": \"Dear Applicant,\\n\\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\\n\\nDate: October 5th, 2023\\nTime: 2:00 PM\\nLocation: Company Headquarters\\n\\nPlease confirm your attendance at your earliest convenience.\\n\\nBest regards,\\nRecruiting Team\"\n}",
+                "ideal": {
+                    "sender": "recruiter@company.com",
+                    "recipient": "jobapplicant@example.com",
+                    "subject": "Job Interview Invitation",
+                    "body": "Dear Applicant, We are pleased to invite you for an interview for the position of Software Engineer at our company. Date: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters Please confirm your attendance at your earliest convenience. Best regards, Recruiting Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@webhosting.com To: hostingcustomer@example.com Subject: Hosting Account Renewal Dear Customer,\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\nRenewal Amount: $120.00\nThank you for choosing our hosting services.\nSincerely, Hosting Support",
+                "answer": "{\n  \"sender\": \"support@webhosting.com\",\n  \"recipient\": \"hostingcustomer@example.com\",\n  \"subject\": \"Hosting Account Renewal\",\n  \"body\": \"Dear Customer,\\n\\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\\n\\nRenewal Amount: $120.00\\n\\nThank you for choosing our hosting services.\\n\\nSincerely, Hosting Support\"\n}",
+                "ideal": {
+                    "sender": "support@webhosting.com",
+                    "recipient": "hostingcustomer@example.com",
+                    "subject": "Hosting Account Renewal",
+                    "body": "Dear Customer, Your hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date. Renewal Amount: $120.00 Thank you for choosing our hosting services. Sincerely, Hosting Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: professor@example.com To: student@example.com Subject: Assignment Submission Hi Student,\nThis is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023.\nPlease submit it through the online portal.\nBest regards, Professor Smith",
+                "answer": "{\n  \"sender\": \"professor@example.com\",\n  \"recipient\": \"student@example.com\",\n  \"subject\": \"Assignment Submission\",\n  \"body\": \"Hi Student,\\n\\nThis is a reminder to submit your assignment on \\\"Topic: History of Ancient Civilizations\\\" by the due date, which is October 8th, 2023.\\n\\nPlease submit it through the online portal.\\n\\nBest regards,\\nProfessor Smith\"\n}",
+                "ideal": {
+                    "sender": "professor@example.com",
+                    "recipient": "student@example.com",
+                    "subject": "Assignment Submission",
+                    "body": "Hi Student, This is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023. Please submit it through the online portal. Best regards, Professor Smith"
+                },
+                "result": false
+            },
+            {
+                "test": "From: eventorganizer@example.com To: attendee@example.com Subject: Event Registration Confirmation Dear Attendee,\nThank you for registering for our upcoming conference, \"Tech Summit 2023.\"\nDate: October 20th-22nd, 2023 Location: Convention Center\nYour registration is confirmed. Please bring your confirmation email to the event.\nBest regards, Event Organizer",
+                "answer": "{\n  \"sender\": \"eventorganizer@example.com\",\n  \"recipient\": \"attendee@example.com\",\n  \"subject\": \"Event Registration Confirmation\",\n  \"body\": \"Dear Attendee,\\n\\nThank you for registering for our upcoming conference, \\\"Tech Summit 2023.\\\"\\n\\nDate: October 20th-22nd, 2023\\nLocation: Convention Center\\n\\nYour registration is confirmed. Please bring your confirmation email to the event.\\n\\nBest regards,\\nEvent Organizer\"\n}",
+                "ideal": {
+                    "sender": "eventorganizer@example.com",
+                    "recipient": "attendee@example.com",
+                    "subject": "Event Registration Confirmation",
+                    "body": "Dear Attendee, Thank you for registering for our upcoming conference, \"Tech Summit 2023.\" Date: October 20th-22nd, 2023 Location: Convention Center Your registration is confirmed. Please bring your confirmation email to the event. Best regards, Event Organizer"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hr@companyxyz.com To: employeexyz@example.com Subject: Benefits Enrollment Deadline Hi Employee,\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\nVisit the HR portal to make your selections.\nRegards, HR Department",
+                "answer": "{\n  \"sender\": \"hr@companyxyz.com\",\n  \"recipient\": \"employeexyz@example.com\",\n  \"subject\": \"Benefits Enrollment Deadline\",\n  \"body\": \"Hi Employee,\\n\\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\\n\\nVisit the HR portal to make your selections.\\n\\nRegards,\\nHR Department\"\n}",
+                "ideal": {
+                    "sender": "hr@companyxyz.com",
+                    "recipient": "employeexyz@example.com",
+                    "subject": "Benefits Enrollment Deadline",
+                    "body": "Hi Employee, This is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits. Visit the HR portal to make your selections. Regards, HR Department"
+                },
+                "result": false
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to break down a block of email text into the key components that compose it: the sender, recipient, subject, and body. The emails are formatted traditionally with 'From:', 'To:', and 'Subject:' fields in the beginning. The sender is identified after the 'From:' and before the 'To:', the recipient is identified after the 'To:' and before the 'Subject:', and the subject is identified after the 'Subject:' and before the email's body begins. Any text after the 'Subject:' is the email's body. You are to return these components in a JSON object with the key-value pairings of 'sender', 'recipient', 'subject', and 'body'. It's vital that you only return the requested information and no additions or assumptions are made about the content of the email."
+                "prompt": "Imagine you're a super-efficient, digital personal assistant, whose task is to neatly extract and structure key information from emails. For each email in form of a text input, you must identify the sender, recipient, subject, and body of the email. \n\nThe sender and recipient will always be located at the start of the email, denoted by the 'From:' and 'To:' labels respectively. The subject will be identified right after the 'Subject:' label. The body of the email consists of everything that comes after these preliminary elements.\n\nAll your output must be organized into a JSON object with clear labels for 'sender', 'recipient', 'subject', and 'body'. Do not include any additional information, comments, or explanations in your output."
             },
             {
                 "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
@@ -123,6 +382,319 @@
                     "recipient": "sales@customer.com",
                     "subject": "Order Confirmation",
                     "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            },
+            {
+                "test": "From: alice@example.com To: bob@example.com Subject: Dinner Plans Hey Bob,\nDo you want to grab dinner this weekend? Let me know your availability.\nRegards, Alice",
+                "answer": "{\n  \"sender\": \"alice@example.com\",\n  \"recipient\": \"bob@example.com\",\n  \"subject\": \"Dinner Plans\",\n  \"body\": \"Hey Bob,\\n\\nDo you want to grab dinner this weekend? Let me know your availability.\\n\\nRegards, Alice\"\n}",
+                "ideal": {
+                    "sender": "alice@example.com",
+                    "recipient": "bob@example.com",
+                    "subject": "Dinner Plans",
+                    "body": "Hey Bob, Do you want to grab dinner this weekend? Let me know your availability. Regards, Alice"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@website.com To: user@example.com Subject: Password Reset Hi User,\nWe received a request to reset your password. Please click the link below to reset it:\n[Password Reset Link]\nIf you did not request this, please ignore this email.\nBest regards, Website Support",
+                "answer": "{\n  \"sender\": \"support@website.com\",\n  \"recipient\": \"user@example.com\",\n  \"subject\": \"Password Reset\",\n  \"body\": \"Hi User,\\n\\nWe received a request to reset your password. Please click the link below to reset it:\\n\\n[Password Reset Link]\\n\\nIf you did not request this, please ignore this email.\\n\\nBest regards, Website Support\"\n}",
+                "ideal": {
+                    "sender": "support@website.com",
+                    "recipient": "user@example.com",
+                    "subject": "Password Reset",
+                    "body": "Hi User, We received a request to reset your password. Please click the link below to reset it: [Password Reset Link] If you did not request this, please ignore this email. Best regards, Website Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: sarah@example.com To: john@example.com Subject: Weekly Report Hi John,\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\nAttached: WeeklyReport.pdf\nRegards, Sarah",
+                "answer": "{\n  \"sender\": \"sarah@example.com\",\n  \"recipient\": \"john@example.com\",\n  \"subject\": \"Weekly Report\",\n  \"body\": \"Hi John,\\n\\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\\n\\nAttached: WeeklyReport.pdf\\n\\nRegards, Sarah\"\n}",
+                "ideal": {
+                    "sender": "sarah@example.com",
+                    "recipient": "john@example.com",
+                    "subject": "Weekly Report",
+                    "body": "Hi John, Here is the weekly report for our project. Please review it and let me know if you have any feedback. Attached: WeeklyReport.pdf Regards, Sarah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: marketing@company.com To: newsletter@subscribers.com Subject: Weekly Newsletter Hello Subscribers,\nWelcome to this week's newsletter! We have exciting updates and news to share.\nCheck out the latest articles, promotions, and events in this issue.\nBest regards, Marketing Team",
+                "answer": "{\n  \"sender\": \"marketing@company.com\",\n  \"recipient\": \"newsletter@subscribers.com\",\n  \"subject\": \"Weekly Newsletter\",\n  \"body\": \"Hello Subscribers,\\nWelcome to this week's newsletter! We have exciting updates and news to share.\\nCheck out the latest articles, promotions, and events in this issue.\\nBest regards, Marketing Team\"\n}",
+                "ideal": {
+                    "sender": "marketing@company.com",
+                    "recipient": "newsletter@subscribers.com",
+                    "subject": "Weekly Newsletter",
+                    "body": "Hello Subscribers, Welcome to this week's newsletter! We have exciting updates and news to share. Check out the latest articles, promotions, and events in this issue. Best regards, Marketing Team"
+                },
+                "result": true
+            },
+            {
+                "test": "From: manager@projectteam.com To: team@example.com Subject: Project Status Update Hi Team,\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\nPlease review the attached report for more details.\nRegards, Project Manager",
+                "answer": "{\n  \"sender\": \"manager@projectteam.com\",\n  \"recipient\": \"team@example.com\",\n  \"subject\": \"Project Status Update\",\n  \"body\": \"Hi Team,\\n\\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\\n\\nPlease review the attached report for more details.\\n\\nRegards,\\nProject Manager\"\n}",
+                "ideal": {
+                    "sender": "manager@projectteam.com",
+                    "recipient": "team@example.com",
+                    "subject": "Project Status Update",
+                    "body": "Hi Team, Here's a quick update on the project's status. We're making good progress and are on track to meet our deadlines. Please review the attached report for more details. Regards, Project Manager"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@bank.com To: customer@example.com Subject: Account Statement Dear Customer,\nYour monthly account statement for September is now available. Please click the link below to view and download it.\n[Account Statement Link]\nIf you have any questions, feel free to contact our support team.\nBest regards, Bank Support",
+                "answer": "{\n  \"sender\": \"support@bank.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Account Statement\",\n  \"body\": \"Dear Customer,\\n\\nYour monthly account statement for September is now available. Please click the link below to view and download it.\\n\\n[Account Statement Link]\\n\\nIf you have any questions, feel free to contact our support team.\\n\\nBest regards, Bank Support\"\n}",
+                "ideal": {
+                    "sender": "support@bank.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Account Statement",
+                    "body": "Dear Customer, Your monthly account statement for September is now available. Please click the link below to view and download it. [Account Statement Link] If you have any questions, feel free to contact our support team. Best regards, Bank Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hannah@example.com To: david@example.com Subject: Travel Itinerary Hi David,\nHere is your travel itinerary for your upcoming trip:\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\nIf you need any changes or have questions, please let me know.\nSafe travels! Hannah",
+                "answer": "{\n  \"sender\": \"hannah@example.com\",\n  \"recipient\": \"david@example.com\",\n  \"subject\": \"Travel Itinerary\",\n  \"body\": \"Hi David,\\n\\nHere is your travel itinerary for your upcoming trip:\\n\\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM)\\nHotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023)\\nCar Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\\n\\nIf you need any changes or have questions, please let me know.\\n\\nSafe travels! Hannah\"\n}",
+                "ideal": {
+                    "sender": "hannah@example.com",
+                    "recipient": "david@example.com",
+                    "subject": "Travel Itinerary",
+                    "body": "Hi David, Here is your travel itinerary for your upcoming trip: Flight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023) If you need any changes or have questions, please let me know. Safe travels! Hannah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: techsupport@example.com To: customer@example.com Subject: Technical Support Ticket Update Dear Customer,\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\nThank you for choosing our services.\nSincerely, Tech Support",
+                "answer": "{\n  \"sender\": \"techsupport@example.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Technical Support Ticket Update\",\n  \"body\": \"Dear Customer,\\n\\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\\n\\nThank you for choosing our services.\\n\\nSincerely, Tech Support\"\n}",
+                "ideal": {
+                    "sender": "techsupport@example.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Technical Support Ticket Update",
+                    "body": "Dear Customer, Your technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us. Thank you for choosing our services. Sincerely, Tech Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: recruiter@company.com To: jobapplicant@example.com Subject: Job Interview Invitation Dear Applicant,\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\nDate: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters\nPlease confirm your attendance at your earliest convenience.\nBest regards, Recruiting Team",
+                "answer": "{\n  \"sender\": \"recruiter@company.com\",\n  \"recipient\": \"jobapplicant@example.com\",\n  \"subject\": \"Job Interview Invitation\",\n  \"body\": \"Dear Applicant,\\n\\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\\n\\nDate: October 5th, 2023\\nTime: 2:00 PM\\nLocation: Company Headquarters\\n\\nPlease confirm your attendance at your earliest convenience.\\n\\nBest regards,\\nRecruiting Team\"\n}",
+                "ideal": {
+                    "sender": "recruiter@company.com",
+                    "recipient": "jobapplicant@example.com",
+                    "subject": "Job Interview Invitation",
+                    "body": "Dear Applicant, We are pleased to invite you for an interview for the position of Software Engineer at our company. Date: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters Please confirm your attendance at your earliest convenience. Best regards, Recruiting Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@webhosting.com To: hostingcustomer@example.com Subject: Hosting Account Renewal Dear Customer,\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\nRenewal Amount: $120.00\nThank you for choosing our hosting services.\nSincerely, Hosting Support",
+                "answer": "{\n  \"sender\": \"support@webhosting.com\",\n  \"recipient\": \"hostingcustomer@example.com\",\n  \"subject\": \"Hosting Account Renewal\",\n  \"body\": \"Dear Customer,\\n\\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\\n\\nRenewal Amount: $120.00\\n\\nThank you for choosing our hosting services.\\n\\nSincerely, Hosting Support\"\n}",
+                "ideal": {
+                    "sender": "support@webhosting.com",
+                    "recipient": "hostingcustomer@example.com",
+                    "subject": "Hosting Account Renewal",
+                    "body": "Dear Customer, Your hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date. Renewal Amount: $120.00 Thank you for choosing our hosting services. Sincerely, Hosting Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: professor@example.com To: student@example.com Subject: Assignment Submission Hi Student,\nThis is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023.\nPlease submit it through the online portal.\nBest regards, Professor Smith",
+                "answer": "{\n  \"sender\": \"professor@example.com\",\n  \"recipient\": \"student@example.com\",\n  \"subject\": \"Assignment Submission\",\n  \"body\": \"Hi Student,\\n\\nThis is a reminder to submit your assignment on \\\"Topic: History of Ancient Civilizations\\\" by the due date, which is October 8th, 2023.\\n\\nPlease submit it through the online portal.\\n\\nBest regards, Professor Smith\"\n}",
+                "ideal": {
+                    "sender": "professor@example.com",
+                    "recipient": "student@example.com",
+                    "subject": "Assignment Submission",
+                    "body": "Hi Student, This is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023. Please submit it through the online portal. Best regards, Professor Smith"
+                },
+                "result": false
+            },
+            {
+                "test": "From: eventorganizer@example.com To: attendee@example.com Subject: Event Registration Confirmation Dear Attendee,\nThank you for registering for our upcoming conference, \"Tech Summit 2023.\"\nDate: October 20th-22nd, 2023 Location: Convention Center\nYour registration is confirmed. Please bring your confirmation email to the event.\nBest regards, Event Organizer",
+                "answer": "{\n  \"sender\": \"eventorganizer@example.com\",\n  \"recipient\": \"attendee@example.com\",\n  \"subject\": \"Event Registration Confirmation\",\n  \"body\": \"Dear Attendee,\\n\\nThank you for registering for our upcoming conference, \\\"Tech Summit 2023.\\\"\\n\\nDate: October 20th-22nd, 2023\\nLocation: Convention Center\\n\\nYour registration is confirmed. Please bring your confirmation email to the event.\\n\\nBest regards,\\nEvent Organizer\"\n}",
+                "ideal": {
+                    "sender": "eventorganizer@example.com",
+                    "recipient": "attendee@example.com",
+                    "subject": "Event Registration Confirmation",
+                    "body": "Dear Attendee, Thank you for registering for our upcoming conference, \"Tech Summit 2023.\" Date: October 20th-22nd, 2023 Location: Convention Center Your registration is confirmed. Please bring your confirmation email to the event. Best regards, Event Organizer"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hr@companyxyz.com To: employeexyz@example.com Subject: Benefits Enrollment Deadline Hi Employee,\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\nVisit the HR portal to make your selections.\nRegards, HR Department",
+                "answer": "{\n  \"sender\": \"hr@companyxyz.com\",\n  \"recipient\": \"employeexyz@example.com\",\n  \"subject\": \"Benefits Enrollment Deadline\",\n  \"body\": \"Hi Employee,\\n\\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\\n\\nVisit the HR portal to make your selections.\\n\\nRegards,\\nHR Department\"\n}",
+                "ideal": {
+                    "sender": "hr@companyxyz.com",
+                    "recipient": "employeexyz@example.com",
+                    "subject": "Benefits Enrollment Deadline",
+                    "body": "Hi Employee, This is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits. Visit the HR portal to make your selections. Regards, HR Department"
+                },
+                "result": false
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI, your goal is to extract key pieces of information from the given email data. Your task is to identify and fetch the sender, recipient, subject matter, and the main body of the email and present this information as a JSON object. \n\nYou will be given a string representation of the email. From this, you need to carefully examine and parse out the sender's address (after \"From: \"), the recipient's address (after \"To: \"), the subject of the email (after \"Subject: \"), and the message body (the content following these initial headers). Note that the email and subject line declarations will always end in a space, and the body of the email begins after the \"Subject:\" line.\n\nFinally, formulate a JSON"
+            },
+            {
+                "test": "From: juan@example.com To: maria@example.com Subject: Team Meeting Hi Maria,\nCan we meet tomorrow at 10:00 AM to discuss the project?\nRegards, Juan",
+                "answer": "{\n  \"sender\": \"juan@example.com\",\n  \"recipient\": \"maria@example.com\",\n  \"subject\": \"Team Meeting\",\n  \"body\": \"Hi Maria,\\nCan we meet tomorrow at 10:00 AM to discuss the project?\\nRegards, Juan\"\n}",
+                "ideal": {
+                    "sender": "juan@example.com",
+                    "recipient": "maria@example.com",
+                    "subject": "Team Meeting",
+                    "body": "Hi Maria, Can we meet tomorrow at 10:00 AM to discuss the project? Regards, Juan"
+                },
+                "result": true
+            },
+            {
+                "test": "From: contact@company.com To: sales@customer.com Subject: Order Confirmation Dear Customer,\nWe confirm that your order has been successfully processed. The order number is #12345.\nThank you for your purchase.\nSincerely, XYZ Company",
+                "answer": "{\n  \"sender\": \"contact@company.com\",\n  \"recipient\": \"sales@customer.com\",\n  \"subject\": \"Order Confirmation\",\n  \"body\": \"Dear Customer,\\n\\nWe confirm that your order has been successfully processed. The order number is #12345.\\n\\nThank you for your purchase.\\n\\nSincerely, XYZ Company\"\n}",
+                "ideal": {
+                    "sender": "contact@company.com",
+                    "recipient": "sales@customer.com",
+                    "subject": "Order Confirmation",
+                    "body": "Dear Customer, We confirm that your order has been successfully processed. The order number is #12345. Thank you for your purchase. Sincerely, XYZ Company"
+                },
+                "result": false
+            },
+            {
+                "test": "From: alice@example.com To: bob@example.com Subject: Dinner Plans Hey Bob,\nDo you want to grab dinner this weekend? Let me know your availability.\nRegards, Alice",
+                "answer": "{\n  \"sender\": \"alice@example.com\",\n  \"recipient\": \"bob@example.com\",\n  \"subject\": \"Dinner Plans\",\n  \"body\": \"Hey Bob,\\nDo you want to grab dinner this weekend? Let me know your availability.\\nRegards, Alice\"\n}",
+                "ideal": {
+                    "sender": "alice@example.com",
+                    "recipient": "bob@example.com",
+                    "subject": "Dinner Plans",
+                    "body": "Hey Bob, Do you want to grab dinner this weekend? Let me know your availability. Regards, Alice"
+                },
+                "result": true
+            },
+            {
+                "test": "From: support@website.com To: user@example.com Subject: Password Reset Hi User,\nWe received a request to reset your password. Please click the link below to reset it:\n[Password Reset Link]\nIf you did not request this, please ignore this email.\nBest regards, Website Support",
+                "answer": "{\n  \"sender\": \"support@website.com\",\n  \"recipient\": \"user@example.com\",\n  \"subject\": \"Password Reset\",\n  \"body\": \"Hi User,\\n\\nWe received a request to reset your password. Please click the link below to reset it:\\n\\n[Password Reset Link]\\n\\nIf you did not request this, please ignore this email.\\n\\nBest regards, Website Support\"\n}",
+                "ideal": {
+                    "sender": "support@website.com",
+                    "recipient": "user@example.com",
+                    "subject": "Password Reset",
+                    "body": "Hi User, We received a request to reset your password. Please click the link below to reset it: [Password Reset Link] If you did not request this, please ignore this email. Best regards, Website Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: sarah@example.com To: john@example.com Subject: Weekly Report Hi John,\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\nAttached: WeeklyReport.pdf\nRegards, Sarah",
+                "answer": "{\n  \"sender\": \"sarah@example.com\",\n  \"recipient\": \"john@example.com\",\n  \"subject\": \"Weekly Report\",\n  \"body\": \"Hi John,\\n\\nHere is the weekly report for our project. Please review it and let me know if you have any feedback.\\n\\nAttached: WeeklyReport.pdf\\n\\nRegards, Sarah\"\n}",
+                "ideal": {
+                    "sender": "sarah@example.com",
+                    "recipient": "john@example.com",
+                    "subject": "Weekly Report",
+                    "body": "Hi John, Here is the weekly report for our project. Please review it and let me know if you have any feedback. Attached: WeeklyReport.pdf Regards, Sarah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: marketing@company.com To: newsletter@subscribers.com Subject: Weekly Newsletter Hello Subscribers,\nWelcome to this week's newsletter! We have exciting updates and news to share.\nCheck out the latest articles, promotions, and events in this issue.\nBest regards, Marketing Team",
+                "answer": "{\n  \"sender\": \"marketing@company.com\",\n  \"recipient\": \"newsletter@subscribers.com\",\n  \"subject\": \"Weekly Newsletter\",\n  \"body\": \"Hello Subscribers,\\nWelcome to this week's newsletter! We have exciting updates and news to share.\\nCheck out the latest articles, promotions, and events in this issue.\\nBest regards, Marketing Team\"\n}",
+                "ideal": {
+                    "sender": "marketing@company.com",
+                    "recipient": "newsletter@subscribers.com",
+                    "subject": "Weekly Newsletter",
+                    "body": "Hello Subscribers, Welcome to this week's newsletter! We have exciting updates and news to share. Check out the latest articles, promotions, and events in this issue. Best regards, Marketing Team"
+                },
+                "result": true
+            },
+            {
+                "test": "From: manager@projectteam.com To: team@example.com Subject: Project Status Update Hi Team,\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\nPlease review the attached report for more details.\nRegards, Project Manager",
+                "answer": "{\n  \"sender\": \"manager@projectteam.com\",\n  \"recipient\": \"team@example.com\",\n  \"subject\": \"Project Status Update\",\n  \"body\": \"Hi Team,\\n\\nHere's a quick update on the project's status. We're making good progress and are on track to meet our deadlines.\\n\\nPlease review the attached report for more details.\\n\\nRegards,\\nProject Manager\"\n}",
+                "ideal": {
+                    "sender": "manager@projectteam.com",
+                    "recipient": "team@example.com",
+                    "subject": "Project Status Update",
+                    "body": "Hi Team, Here's a quick update on the project's status. We're making good progress and are on track to meet our deadlines. Please review the attached report for more details. Regards, Project Manager"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@bank.com To: customer@example.com Subject: Account Statement Dear Customer,\nYour monthly account statement for September is now available. Please click the link below to view and download it.\n[Account Statement Link]\nIf you have any questions, feel free to contact our support team.\nBest regards, Bank Support",
+                "answer": "{\n  \"sender\": \"support@bank.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Account Statement\",\n  \"body\": \"Dear Customer,\\n\\nYour monthly account statement for September is now available. Please click the link below to view and download it.\\n\\n[Account Statement Link]\\n\\nIf you have any questions, feel free to contact our support team.\\n\\nBest regards, Bank Support\"\n}",
+                "ideal": {
+                    "sender": "support@bank.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Account Statement",
+                    "body": "Dear Customer, Your monthly account statement for September is now available. Please click the link below to view and download it. [Account Statement Link] If you have any questions, feel free to contact our support team. Best regards, Bank Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hannah@example.com To: david@example.com Subject: Travel Itinerary Hi David,\nHere is your travel itinerary for your upcoming trip:\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\nIf you need any changes or have questions, please let me know.\nSafe travels! Hannah",
+                "answer": "{\n  \"sender\": \"hannah@example.com\",\n  \"recipient\": \"david@example.com\",\n  \"subject\": \"Travel Itinerary\",\n  \"body\": \"Hi David,\\n\\nHere is your travel itinerary for your upcoming trip:\\n\\nFlight: ABC123 (Departure: 10/15/2023, 9:00 AM)\\nHotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023)\\nCar Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023)\\n\\nIf you need any changes or have questions, please let me know.\\n\\nSafe travels! Hannah\"\n}",
+                "ideal": {
+                    "sender": "hannah@example.com",
+                    "recipient": "david@example.com",
+                    "subject": "Travel Itinerary",
+                    "body": "Hi David, Here is your travel itinerary for your upcoming trip: Flight: ABC123 (Departure: 10/15/2023, 9:00 AM) Hotel: XYZ Hotel (Check-in: 10/15/2023, Check-out: 10/20/2023) Car Rental: RentalCo (Pick-up: 10/15/2023, Return: 10/20/2023) If you need any changes or have questions, please let me know. Safe travels! Hannah"
+                },
+                "result": false
+            },
+            {
+                "test": "From: techsupport@example.com To: customer@example.com Subject: Technical Support Ticket Update Dear Customer,\nYour technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\nThank you for choosing our services.\nSincerely, Tech Support",
+                "answer": "{\n  \"sender\": \"techsupport@example.com\",\n  \"recipient\": \"customer@example.com\",\n  \"subject\": \"Technical Support Ticket Update\",\n  \"body\": \"Your technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us.\\n\\nThank you for choosing our services.\\n\\nSincerely, Tech Support\"\n}",
+                "ideal": {
+                    "sender": "techsupport@example.com",
+                    "recipient": "customer@example.com",
+                    "subject": "Technical Support Ticket Update",
+                    "body": "Dear Customer, Your technical support ticket #56789 has been resolved. If you encounter any further issues, please don't hesitate to contact us. Thank you for choosing our services. Sincerely, Tech Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: recruiter@company.com To: jobapplicant@example.com Subject: Job Interview Invitation Dear Applicant,\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\nDate: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters\nPlease confirm your attendance at your earliest convenience.\nBest regards, Recruiting Team",
+                "answer": "{\n  \"sender\": \"recruiter@company.com\",\n  \"recipient\": \"jobapplicant@example.com\",\n  \"subject\": \"Job Interview Invitation\",\n  \"body\": \"Dear Applicant,\\n\\nWe are pleased to invite you for an interview for the position of Software Engineer at our company.\\n\\nDate: October 5th, 2023\\nTime: 2:00 PM\\nLocation: Company Headquarters\\n\\nPlease confirm your attendance at your earliest convenience.\\n\\nBest regards,\\nRecruiting Team\"\n}",
+                "ideal": {
+                    "sender": "recruiter@company.com",
+                    "recipient": "jobapplicant@example.com",
+                    "subject": "Job Interview Invitation",
+                    "body": "Dear Applicant, We are pleased to invite you for an interview for the position of Software Engineer at our company. Date: October 5th, 2023 Time: 2:00 PM Location: Company Headquarters Please confirm your attendance at your earliest convenience. Best regards, Recruiting Team"
+                },
+                "result": false
+            },
+            {
+                "test": "From: support@webhosting.com To: hostingcustomer@example.com Subject: Hosting Account Renewal Dear Customer,\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\nRenewal Amount: $120.00\nThank you for choosing our hosting services.\nSincerely, Hosting Support",
+                "answer": "{\n  \"sender\": \"support@webhosting.com\",\n  \"recipient\": \"hostingcustomer@example.com\",\n  \"subject\": \"Hosting Account Renewal\",\n  \"body\": \"Dear Customer,\\n\\nYour hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date.\\n\\nRenewal Amount: $120.00\\n\\nThank you for choosing our hosting services.\\n\\nSincerely, Hosting Support\"\n}",
+                "ideal": {
+                    "sender": "support@webhosting.com",
+                    "recipient": "hostingcustomer@example.com",
+                    "subject": "Hosting Account Renewal",
+                    "body": "Dear Customer, Your hosting account is up for renewal on October 10th, 2023. To ensure uninterrupted service, please make the payment before the due date. Renewal Amount: $120.00 Thank you for choosing our hosting services. Sincerely, Hosting Support"
+                },
+                "result": false
+            },
+            {
+                "test": "From: professor@example.com To: student@example.com Subject: Assignment Submission Hi Student,\nThis is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023.\nPlease submit it through the online portal.\nBest regards, Professor Smith",
+                "answer": "{\n  \"sender\": \"professor@example.com\",\n  \"recipient\": \"student@example.com\",\n  \"subject\": \"Assignment Submission\",\n  \"body\": \"Hi Student,\\n\\nThis is a reminder to submit your assignment on \\\"Topic: History of Ancient Civilizations\\\" by the due date, which is October 8th, 2023.\\n\\nPlease submit it through the online portal.\\n\\nBest regards, Professor Smith\"\n}",
+                "ideal": {
+                    "sender": "professor@example.com",
+                    "recipient": "student@example.com",
+                    "subject": "Assignment Submission",
+                    "body": "Hi Student, This is a reminder to submit your assignment on \"Topic: History of Ancient Civilizations\" by the due date, which is October 8th, 2023. Please submit it through the online portal. Best regards, Professor Smith"
+                },
+                "result": false
+            },
+            {
+                "test": "From: eventorganizer@example.com To: attendee@example.com Subject: Event Registration Confirmation Dear Attendee,\nThank you for registering for our upcoming conference, \"Tech Summit 2023.\"\nDate: October 20th-22nd, 2023 Location: Convention Center\nYour registration is confirmed. Please bring your confirmation email to the event.\nBest regards, Event Organizer",
+                "answer": "{\n  \"sender\": \"eventorganizer@example.com\",\n  \"recipient\": \"attendee@example.com\",\n  \"subject\": \"Event Registration Confirmation\",\n  \"body\": \"Dear Attendee,\\n\\nThank you for registering for our upcoming conference, \\\"Tech Summit 2023.\\\"\\n\\nDate: October 20th-22nd, 2023\\nLocation: Convention Center\\n\\nYour registration is confirmed. Please bring your confirmation email to the event.\\n\\nBest regards,\\nEvent Organizer\"\n}",
+                "ideal": {
+                    "sender": "eventorganizer@example.com",
+                    "recipient": "attendee@example.com",
+                    "subject": "Event Registration Confirmation",
+                    "body": "Dear Attendee, Thank you for registering for our upcoming conference, \"Tech Summit 2023.\" Date: October 20th-22nd, 2023 Location: Convention Center Your registration is confirmed. Please bring your confirmation email to the event. Best regards, Event Organizer"
+                },
+                "result": false
+            },
+            {
+                "test": "From: hr@companyxyz.com To: employeexyz@example.com Subject: Benefits Enrollment Deadline Hi Employee,\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\nVisit the HR portal to make your selections.\nRegards, HR Department",
+                "answer": "{\n  \"sender\": \"hr@companyxyz.com\",\n  \"recipient\": \"employeexyz@example.com\",\n  \"subject\": \"Benefits Enrollment Deadline\",\n  \"body\": \"Hi Employee,\\n\\nThis is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits.\\n\\nVisit the HR portal to make your selections.\\n\\nRegards,\\nHR Department\"\n}",
+                "ideal": {
+                    "sender": "hr@companyxyz.com",
+                    "recipient": "employeexyz@example.com",
+                    "subject": "Benefits Enrollment Deadline",
+                    "body": "Hi Employee, This is a reminder that the deadline for enrolling in our employee benefits program is October 15th, 2023. Don't miss out on these valuable benefits. Visit the HR portal to make your selections. Regards, HR Department"
                 },
                 "result": false
             }
