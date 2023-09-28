@@ -240,7 +240,7 @@ def run_evaluation(file, approximate_cost):
             else:
                 model_iteration = 'gpt-4'
                 model_iteration_max_tokens = 300
-                model_iteration_temperature = 1.2
+                model_iteration_temperature = 0.6
         if 'best_percentage' in yaml_content['prompts']['iterations']:
             best_percentage = yaml_content['prompts']['iterations']['best_percentage']
         if not 'best_percentage' in yaml_content['prompts']['iterations']:

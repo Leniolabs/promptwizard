@@ -85,25 +85,32 @@ test:
             output: 'Answer1'
             -input: 'Test2'
             output: 'Answer2'
-        And in case the method is function_calling:
+        In case the method is function_calling:
             -input: 'Test1'
             output1: 'name_function'
             output2: 'variable'
             -input: 'Test2'
             output1: 'name_function'
-            output2: 'variable'"""
+            output2: 'variable'
+        If you choose code_generation:
+            - input: 'Test1'
+            arguments: (arg1,) in case there is only one argument, (arg1, arg2,...) in case there are more than one argument.
+            output: res
+        and finally if you choose json_validation:
+            - input: 'Test1'
+            output: json_output"""
 
     description: """Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
         you are going to use the 'Elo' method"""
     method: """Here, you select the evaluation method for your prompts. You must choose between 'Elo',
-        'Classification', 'Equals', 'Includes' and 'function_calling'."""
+        'Classification', 'Equals', 'Includes', 'function_calling', 'code_generation' and 'json_validation'."""
 
     model:
         name: """The name of the GPT model you will use to evaluate the prompts."""
         temperature: """The temperature of the GPT model you will use to evaluate the prompts."""
         max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate the response to the test."""
 
-    functions: """This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be used.
+    functions: """This field must only be filled out in case the 'function_calling' method is intended to be used.
     If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:
 
             - Function Name (name): This is the identifier used to refer to this function within the context of your code.
@@ -124,12 +131,12 @@ test:
 
                 - Required (required): An array listing the properties that are required within the parameter object. (optional)"""
 
-    function_call: """This field must only be filled out in case the 'function_calling.functionCalling' method is intended to be 
+    function_call: """This field must only be filled out in case the 'function_calling' method is intended to be 
             used. If another method is used, it must not be filled out."""
 
 prompts: """You have two options, either provide your list of prompts or generate them following the instructions below."""
 
-    list: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, leave the list empty.
+    list: """A list of prompts you want to evaluate. If you want to generate them with the prompt generator, don't use this field.
         Please provide a minimum number of 4 prompts. Your prompts must be listed as follows:
             - 'Prompt1'
             - 'Prompt2'..."""
@@ -137,11 +144,12 @@ prompts: """You have two options, either provide your list of prompts or generat
     generation:
 
         number: """The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts. Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not define this key by default, 4 prompts will be created."""
-        constraints: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
-            prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
-            'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key 
-            defined."""
-        description: """Here is the description of the type of task that summarizes the test cases."""
+
+        constraints: """If you are going to generate prompts, this optional feature allows you to add special characteristics to the prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key defined."""
+
+        description: """Here is the description of the type of task that summarizes the test cases. If you use the 'Elo' method you mustn't use this field."""
+
+        best_prompts: """The number of prompts you want to iterate over and on which you want to highlight the final results. the value must be between 2 and the number of prompts you provide (or generate) minus one. If you do not define this value the default value will be 2."""
 
         model:
 
@@ -152,14 +160,18 @@ prompts: """You have two options, either provide your list of prompts or generat
     iterations:
         number: """The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
             prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0."""
-        best_prompts: """The number of prompts you want to iterate over. the value must be between 2 and the number of prompts you 
-            provide (or generate) minus one. If you do not define this value but do want to iterate, the default value will be 2."""
+
+        best_percentage: """Number between 0 and 100 indicating that iterations should be stopped if all 'best_prompts' equaled or exceeded the indicated accuracy. If this value is not defined, it will default to 100."""
 
         model:
 
             name: """The name of the GPT model you will use to generate the prompts."""
             temperature: """The temperature of the GPT model you will use to generate the prompts."""
             max_tokens: """The maximum number of tokens you will allow the GPT model to use to generate your prompts."""
+            You can not define these variables for 'model' in case you want to keep the same variables that were used in 'generation', in case the 'generation' field has not been used it will take the following default values:
+            name: 'gpt-4
+            temperature: 0.6
+            max_tokens: 300"""
 
 In case the YAML file you wish to evaluate has errors in its structure, don't worry. Prior to being assessed by the prompt engineer, your file will be validated, and you will receive a notification indicating where you need to make corrections to it in order to be evaluated successfully.
 

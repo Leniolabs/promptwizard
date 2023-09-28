@@ -1,11 +1,11 @@
 [
     {
-        "prompt": "Envision yourself as an advanced AI designed to generate functions in multiple programming languages, including but not limited to Python and JavaScript. You will be presented with a task description from which you need to create a function. The scope of your tasks is not confined to a particular domain; you might be asked to write functions for mathematics, string operations, list manipulations, among other things. \n\nThe task description would indicate the specific programming language to be used. Your output should be a properly structured function in the identified language that adheres to the task description provided. Every function you construct must accept one or more parameters, execute the specified actions, and deliver the correct output. Your function should not include any sample inputs or function calls. The sole output should be the function's code itself.",
-        "rating": 93.75
+        "prompt": "As a proficient AI, you are assigned the role of a code constructor. You will be given tasks to draft functions in various programming languages, such as JavaScript or Python. Your assignment is to write the source code for a function based on a given brief.\n\nThis function may require you to perform tasks as diverse as identifying numbers in a list that exceed a certain value, or executing simple arithmetic operations like adding two numbers.\n\nYour code should receive arguments as laid out in the given scenario and deliver results based on the logic encapsulated within the function. Ensure your code is accurate, efficient, and adheres to the syntax and structure of the related programming language.",
+        "rating": 50.0
     },
     {
-        "prompt": "Think of yourself as an advanced AI developer assistant capable of scripting functions in diverse programming languages such as Python and JavaScript. You will receive a task description, and based on that, you need to craft a function. You're not confined to a specific domain, you could be tasked with solving mathematical equations, manipulating strings, handling list operations, and more. \n\nThe task description will indicate the specific language to be utilized. Your response should be a properly structured function in the designated language that aligns with the task description provided. Each function you create should take one or more parameters, execute the specified operations, and yield the correct result. Your function should not include any example inputs or function calls. The only response should be the code of the function itself.",
-        "rating": 81.25
+        "prompt": "As a proficient AI, you are required to function as a code composer. You will be given specifications to devise functions in a variety of programming languages such as JavaScript or Python. The task will require you to craft a precise and structured code for a particular function.\n\nThe function may encompass diverse tasks like identifying numbers in an array that surpass a certain value, or conducting simple arithmetical operations like the addition of two numbers.\n\nYour function should be designed to accept parameters as outlined in the given specifications and return the expected result based on the logic encapsulated in the function. Ensure your function is accurate, optimized, and adheres to the syntax and conventions of the specified programming language.",
+        "rating": 0.0
     },
     [
         {
@@ -13,229 +13,41 @@
         },
         [
             {
-                "prompt": "Think of yourself as an advanced AI developer assistant capable of scripting functions in diverse programming languages such as Python and JavaScript. You will receive a task description, and based on that, you need to craft a function. You're not confined to a specific domain, you could be tasked with solving mathematical equations, manipulating strings, handling list operations, and more. \n\nThe task description will indicate the specific language to be utilized. Your response should be a properly structured function in the designated language that aligns with the task description provided. Each function you create should take one or more parameters, execute the specified operations, and yield the correct result. Your function should not include any example inputs or function calls. The only response should be the code of the function itself."
+                "prompt": "As a proficient AI, you are required to function as a code composer. You will be given specifications to devise functions in a variety of programming languages such as JavaScript or Python. The task will require you to craft a precise and structured code for a particular function.\n\nThe function may encompass diverse tasks like identifying numbers in an array that surpass a certain value, or conducting simple arithmetical operations like the addition of two numbers.\n\nYour function should be designed to accept parameters as outlined in the given specifications and return the expected result based on the logic encapsulated in the function. Ensure your function is accurate, optimized, and adheres to the syntax and conventions of the specified programming language."
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  let result = [];\n  for (let i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  return result;\n}",
+                "answer": "Here's a JavaScript function that lists the numbers above or equal to 3 from an array:\n\n```javascript\nfunction listNumbersAboveThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nThis function takes an array of numbers as a parameter and initializes an empty array called `result` to store the numbers that are above or equal to 3. It then iterates through each element in the `numbers` array using a `for` loop. If the current number is greater than or equal to 3, it is added to the `result` array using the `push` method. Finally, the `result` array is returned.\n\nYou can call this function with an array of numbers to get the list of numbers above or equal to 3. For example:\n\n```javascript\nvar numbers = [1, 2, 3, 4, 5];\nconsole.log(listNumbersAboveThree(numbers)); // Output: [3, 4, 5]\n```",
                 "ideal": [
                     3,
                     4
                 ],
-                "result": true
+                "result": "Not Javascript script."
+            },
+            {
+                "test": "Write a Python function that calculates the sum of two numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nIn this function, `a` and `b` are the parameters representing the two numbers to be added. The function simply returns the sum of `a` and `b` using the `+` operator.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ],
+        [
+            {
+                "prompt": "As a proficient AI, you are assigned the role of a code constructor. You will be given tasks to draft functions in various programming languages, such as JavaScript or Python. Your assignment is to write the source code for a function based on a given brief.\n\nThis function may require you to perform tasks as diverse as identifying numbers in a list that exceed a certain value, or executing simple arithmetic operations like adding two numbers.\n\nYour code should receive arguments as laid out in the given scenario and deliver results based on the logic encapsulated within the function. Ensure your code is accurate, efficient, and adheres to the syntax and structure of the related programming language."
+            },
+            {
+                "test": "Write a Javascript function that list the numbers above or equal 3.",
+                "answer": "Sure! Here's a JavaScript function that takes an array of numbers as input and returns a new array containing only the numbers that are greater than or equal to 3:\n\n```javascript\nfunction listNumbersAboveThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nYou can use this function by passing an array of numbers as an argument, like this:\n\n```javascript\nvar numbers = [1, 2, 3, 4, 5];\nvar filteredNumbers = listNumbersAboveThree(numbers);\nconsole.log(filteredNumbers); // Output: [3, 4, 5]\n```\n\nIn this example, the input array `[1, 2, 3, 4, 5]` is passed to the `listNumbersAboveThree` function, which returns a new array `[3, 4, 5]` containing only the numbers that are greater than or equal to 3.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Javascript script."
             },
             {
                 "test": "Write a Python function that calculates the sum of two numbers.",
                 "answer": "def calculate_sum(a, b):\n    return a + b",
                 "ideal": 5,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the area of a triangle.",
-                "answer": "def calculate_triangle_area(base, height):\n    area = (base * height) / 2\n    return area",
-                "ideal": 15.0,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that finds even numbers in a list.",
-                "answer": "function findEvenNumbers(list) {\n  // Create an empty array to store the even numbers\n  let evenNumbers = [];\n\n  // Iterate through each number in the list\n  for (let i = 0; i < list.length; i++) {\n    // Check if the number is even\n    if (list[i] % 2 === 0) {\n      // If it is even, add it to the evenNumbers array\n      evenNumbers.push(list[i]);\n    }\n  }\n\n  // Return the array of even numbers\n  return evenNumbers;\n}",
-                "ideal": [
-                    2,
-                    4,
-                    6
-                ],
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the average of a list of numbers.",
-                "answer": "def calculate_average(numbers):\n    total = sum(numbers)\n    count = len(numbers)\n    average = total / count\n    return average",
-                "ideal": 30,
-                "result": true
-            },
-            {
-                "test": "Write a JavaScript function that checks if a string is a palindrome.",
-                "answer": "function isPalindrome(str) {\n  // Remove all non-alphanumeric characters and convert to lowercase\n  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, '').toLowerCase();\n  \n  // Reverse the string\n  const reversedStr = cleanStr.split('').reverse().join('');\n  \n  // Check if the reversed string is equal to the original string\n  return cleanStr === reversedStr;\n}",
-                "ideal": true,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that finds the maximum number in a list.",
-                "answer": "def find_max_number(numbers):\n    max_number = numbers[0]\n    for number in numbers:\n        if number > max_number:\n            max_number = number\n    return max_number",
-                "ideal": 45,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that calculates the factorial of a number.",
-                "answer": "function factorial(num) {\n  if (num === 0 || num === 1) {\n    return 1;\n  } else {\n    return num * factorial(num - 1);\n  }\n}",
-                "ideal": 120,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that checks if a number is prime.",
-                "answer": "def is_prime(number):\n    if number <= 1:\n        return False\n    for i in range(2, int(number**0.5) + 1):\n        if number % i == 0:\n            return False\n    return True",
-                "ideal": true,
-                "result": true
-            },
-            {
-                "test": "Write a JavaScript function that concatenates two strings.",
-                "answer": "```javascript\nfunction concatenateStrings(str1, str2) {\n  return str1 + str2;\n}\n```",
-                "ideal": "HelloWorld",
-                "result": "Not Javascript script."
-            },
-            {
-                "test": "Write a Python function that counts the number of vowels in a string.",
-                "answer": "def count_vowels(string):\n    vowels = ['a', 'e', 'i', 'o', 'u']\n    count = 0\n    for char in string:\n        if char.lower() in vowels:\n            count += 1\n    return count",
-                "ideal": 3,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that reverses a list.",
-                "answer": "function reverseList(list) {\n  return list.reverse();\n}",
-                "ideal": [
-                    5,
-                    4,
-                    3,
-                    2,
-                    1
-                ],
-                "result": true
-            },
-            {
-                "test": "Write a Python function that divides two numbers.",
-                "answer": "Here's a Python function that divides two numbers:\n\n```python\ndef divide_numbers(a, b):\n    return a / b\n```\n\nThis function takes two parameters, `a` and `b`, and returns the result of dividing `a` by `b`.",
-                "ideal": 5,
-                "result": "Not Python script."
-            },
-            {
-                "test": "Write a JavaScript function that finds the length of a string.",
-                "answer": "function findStringLength(str) {\n  return str.length;\n}",
-                "ideal": 5,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the area of a circle.",
-                "answer": "def calculate_area_of_circle(radius):\n    area = 3.14159 * radius**2\n    return area",
-                "ideal": 78.54,
-                "result": "Final result incorrect."
-            },
-            {
-                "test": "Write a JavaScript function that finds the largest number in a 2D array.",
-                "answer": "function findLargestNumber(arr) {\n  let largestNumber = arr[0][0];\n  \n  for (let i = 0; i < arr.length; i++) {\n    for (let j = 0; j < arr[i].length; j++) {\n      if (arr[i][j] > largestNumber) {\n        largestNumber = arr[i][j];\n      }\n    }\n  }\n  \n  return largestNumber;\n}",
-                "ideal": 20,
-                "result": true
-            }
-        ],
-        [
-            {
-                "prompt": "Envision yourself as an advanced AI designed to generate functions in multiple programming languages, including but not limited to Python and JavaScript. You will be presented with a task description from which you need to create a function. The scope of your tasks is not confined to a particular domain; you might be asked to write functions for mathematics, string operations, list manipulations, among other things. \n\nThe task description would indicate the specific programming language to be used. Your output should be a properly structured function in the identified language that adheres to the task description provided. Every function you construct must accept one or more parameters, execute the specified actions, and deliver the correct output. Your function should not include any sample inputs or function calls. The sole output should be the function's code itself."
-            },
-            {
-                "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  let result = [];\n  for (let i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  return result;\n}",
-                "ideal": [
-                    3,
-                    4
-                ],
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "def calculate_sum(a, b):\n    \"\"\"\n    Calculates the sum of two numbers.\n\n    Parameters:\n    a (int or float): The first number.\n    b (int or float): The second number.\n\n    Returns:\n    int or float: The sum of the two numbers.\n    \"\"\"\n    return a + b",
-                "ideal": 5,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the area of a triangle.",
-                "answer": "def calculate_triangle_area(base, height):\n    area = (base * height) / 2\n    return area",
-                "ideal": 15.0,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that finds even numbers in a list.",
-                "answer": "function findEvenNumbers(list) {\n  let evenNumbers = [];\n  \n  for (let i = 0; i < list.length; i++) {\n    if (list[i] % 2 === 0) {\n      evenNumbers.push(list[i]);\n    }\n  }\n  \n  return evenNumbers;\n}",
-                "ideal": [
-                    2,
-                    4,
-                    6
-                ],
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the average of a list of numbers.",
-                "answer": "def calculate_average(numbers):\n    if len(numbers) == 0:\n        return 0\n    else:\n        return sum(numbers) / len(numbers)",
-                "ideal": 30,
-                "result": true
-            },
-            {
-                "test": "Write a JavaScript function that checks if a string is a palindrome.",
-                "answer": "function isPalindrome(str) {\n  // Remove all non-alphanumeric characters and convert to lowercase\n  const cleanStr = str.replace(/[^a-zA-Z0-9]/g, \"\").toLowerCase();\n  \n  // Reverse the string\n  const reversedStr = cleanStr.split(\"\").reverse().join(\"\");\n  \n  // Check if the reversed string is equal to the original string\n  return cleanStr === reversedStr;\n}",
-                "ideal": true,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that finds the maximum number in a list.",
-                "answer": "def find_max_number(lst):\n    max_num = lst[0]\n    for num in lst:\n        if num > max_num:\n            max_num = num\n    return max_num",
-                "ideal": 45,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that calculates the factorial of a number.",
-                "answer": "function factorial(num) {\n  if (num === 0 || num === 1) {\n    return 1;\n  } else {\n    return num * factorial(num - 1);\n  }\n}",
-                "ideal": 120,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that checks if a number is prime.",
-                "answer": "def is_prime(num):\n    if num < 2:\n        return False\n    for i in range(2, int(num ** 0.5) + 1):\n        if num % i == 0:\n            return False\n    return True",
-                "ideal": true,
-                "result": true
-            },
-            {
-                "test": "Write a JavaScript function that concatenates two strings.",
-                "answer": "function concatenateStrings(str1, str2) {\n  return str1 + str2;\n}",
-                "ideal": "HelloWorld",
-                "result": true
-            },
-            {
-                "test": "Write a Python function that counts the number of vowels in a string.",
-                "answer": "def count_vowels(string):\n    vowels = ['a', 'e', 'i', 'o', 'u']\n    count = 0\n    for char in string:\n        if char.lower() in vowels:\n            count += 1\n    return count",
-                "ideal": 3,
-                "result": true
-            },
-            {
-                "test": "Write a Javascript function that reverses a list.",
-                "answer": "function reverseList(list) {\n  return list.reverse();\n}",
-                "ideal": [
-                    5,
-                    4,
-                    3,
-                    2,
-                    1
-                ],
-                "result": true
-            },
-            {
-                "test": "Write a Python function that divides two numbers.",
-                "answer": "def divide_numbers(a, b):\n    \"\"\"\n    This function divides two numbers.\n\n    Parameters:\n    a (float or int): The dividend.\n    b (float or int): The divisor.\n\n    Returns:\n    float or int: The quotient of the division.\n    \"\"\"\n    return a / b",
-                "ideal": 5,
-                "result": true
-            },
-            {
-                "test": "Write a JavaScript function that finds the length of a string.",
-                "answer": "function findStringLength(str) {\n  return str.length;\n}",
-                "ideal": 5,
-                "result": true
-            },
-            {
-                "test": "Write a Python function that calculates the area of a circle.",
-                "answer": "def calculate_area_of_circle(radius):\n    \"\"\"\n    Calculates the area of a circle given its radius.\n\n    Parameters:\n    radius (float): The radius of the circle.\n\n    Returns:\n    float: The area of the circle.\n    \"\"\"\n    area = 3.14159 * radius**2\n    return area",
-                "ideal": 78.54,
-                "result": "Final result incorrect."
-            },
-            {
-                "test": "Write a JavaScript function that finds the largest number in a 2D array.",
-                "answer": "function findLargestNumber(arr) {\n  let largestNumber = arr[0][0];\n  \n  for (let i = 0; i < arr.length; i++) {\n    for (let j = 0; j < arr[i].length; j++) {\n      if (arr[i][j] > largestNumber) {\n        largestNumber = arr[i][j];\n      }\n    }\n  }\n  \n  return largestNumber;\n}",
-                "ideal": 20,
                 "result": true
             }
         ]

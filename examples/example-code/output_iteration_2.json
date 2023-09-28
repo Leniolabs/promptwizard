@@ -1,0 +1,55 @@
+[
+    {
+        "prompt": "Acting as an intelligent AI, your role is to function as a generator of source code, responding to programming tasks that are handed over to you. You'll receive an input outlining a certain function that needs to be created in a particular programming language, for instance, JavaScript or Python. Your output should be the source code of the function complying with the specifications given in the input. \n\nNote, the tasks might vary from fabricating a list of numbers higher than a specified value to calculating the sum of two digits. You'll be given a description of the function and the arguments it should take as inputs. Your output should include the source code, which should be well-structured and in compliance with the syntax of the programming language it is meant for. Remember to name the function and specify the parameters it accepts.",
+        "rating": 0.0
+    },
+    {
+        "prompt": "As a proficient AI, your role is to function as a code creator, generating source code based on given coding tasks. You will receive instructions to develop certain functions in specified programming languages, such as Python or JavaScript. Your output should be the source code which meets the conditions laid out in the task. \n\nThe task could involve various coding challenges, from creating a number series above a specific value to performing simple arithmetic operations like adding two numbers. The input will detail the function and the parameters it needs to accept, and your output should be the well-structured code, adhering to the correct syntax of the designated programming language. It's important to define the function and its parameters accurately.",
+        "rating": 0.0
+    },
+    [
+        {
+            "method": "code_generation"
+        },
+        [
+            {
+                "prompt": "Acting as an intelligent AI, your role is to function as a generator of source code, responding to programming tasks that are handed over to you. You'll receive an input outlining a certain function that needs to be created in a particular programming language, for instance, JavaScript or Python. Your output should be the source code of the function complying with the specifications given in the input. \n\nNote, the tasks might vary from fabricating a list of numbers higher than a specified value to calculating the sum of two digits. You'll be given a description of the function and the arguments it should take as inputs. Your output should include the source code, which should be well-structured and in compliance with the syntax of the programming language it is meant for. Remember to name the function and specify the parameters it accepts."
+            },
+            {
+                "test": "Write a Javascript function that list the numbers above or equal 3.",
+                "answer": "Sure! Here's a JavaScript function that lists the numbers above or equal to 3:\n\n```javascript\nfunction listNumbersAboveThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nIn this function, the `listNumbersAboveThree` function takes an array of numbers as input. It initializes an empty array called `result` to store the numbers that are above or equal to 3. Then, it iterates through each number in the input array using a `for` loop. If the current number is greater than or equal to 3, it is added to the `result` array using the `push` method. Finally, the `result` array is returned as the output of the function.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Javascript script."
+            },
+            {
+                "test": "Write a Python function that calculates the sum of two numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(num1, num2):\n    return num1 + num2\n```\n\nIn this function, `num1` and `num2` are the parameters that represent the two numbers to be added. The function simply returns the sum of `num1` and `num2` using the `+` operator.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ],
+        [
+            {
+                "prompt": "As a proficient AI, your role is to function as a code creator, generating source code based on given coding tasks. You will receive instructions to develop certain functions in specified programming languages, such as Python or JavaScript. Your output should be the source code which meets the conditions laid out in the task. \n\nThe task could involve various coding challenges, from creating a number series above a specific value to performing simple arithmetic operations like adding two numbers. The input will detail the function and the parameters it needs to accept, and your output should be the well-structured code, adhering to the correct syntax of the designated programming language. It's important to define the function and its parameters accurately."
+            },
+            {
+                "test": "Write a Javascript function that list the numbers above or equal 3.",
+                "answer": "Sure! Here's a JavaScript function that lists the numbers above or equal to 3:\n\n```javascript\nfunction listNumbers(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nIn this function, the `listNumbers` function takes an array of numbers as a parameter. It initializes an empty array called `result` to store the numbers that are above or equal to 3. \n\nThen, it loops through each element in the `numbers` array using a `for` loop. If the current number is greater than or equal to 3, it is added to the `result` array using the `push` method.\n\nFinally, the function returns the `result` array containing the numbers that are above or equal to 3.",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Javascript script."
+            },
+            {
+                "test": "Write a Python function that calculates the sum of two numbers.",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nIn this function, `a` and `b` are the parameters representing the two numbers to be added. The function returns the sum of `a` and `b` using the `+` operator.",
+                "ideal": 5,
+                "result": "Not Python script."
+            }
+        ]
+    ]
+]

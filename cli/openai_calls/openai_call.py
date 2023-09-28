@@ -8,8 +8,10 @@ from tenacity import (
 
 @backoff.on_exception(backoff.expo, openai.error.RateLimitError, max_time=60)
 def create_chat_completion(model, messages, max_tokens, temperature, number_of_prompts, logit_bias=None, functions=None, function_call=None):
-    if (logit_bias==None and functions==None):
-        try:
+    
+    try:
+        if (logit_bias==None and functions==None):
+
             respond = openai.ChatCompletion.create(
                 model=model,
                 messages=messages,
@@ -18,12 +20,9 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 temperature=temperature,
                 request_timeout=60,
             )
-        except openai.error.OpenAIError as e:
-            print(f"Error in request: {e}")
-            raise
 
-    elif functions!=None:
-        try:
+        elif functions!=None:
+                
             respond = openai.ChatCompletion.create(
                 model=model,
                 messages=messages,
@@ -34,12 +33,9 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 function_call=function_call,
                 request_timeout=60,
             )
-        except openai.error.OpenAIError as e:
-            print(f"Error in request: {e}")
-            raise
 
-    else:
-        try:
+        else:
+
             respond = openai.ChatCompletion.create(
                 model=model,
                 messages=messages,
@@ -49,8 +45,9 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 logit_bias=logit_bias,
                 request_timeout=60,
             )
-        except openai.error.OpenAIError as e:
-            print(f"Error in request: {e}")
-            raise
+    
+    except openai.error.OpenAIError as e:
+        print(f"Error in request: {e}")
+        raise
             
     return respond

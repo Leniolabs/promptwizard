@@ -294,7 +294,13 @@ prompts:
         name: 'gpt-4'
         temperature: 1.2
         max_tokens: 150
-      description: "Return a JSON with the important information of the email."
+      description: 'Return a JSON with the following format for the keys:
+                    {
+                        "sender": "content_1",
+                        "recipient": "content_2",
+                        "subject": "content_3",
+                        "body": "content_4"
+                    }'
     iterations:
       number: 2
       model:

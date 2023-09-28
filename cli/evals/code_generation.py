@@ -43,7 +43,7 @@ class codeGeneration:
 
         Specify in your prompts that you are going to generate that your task is to be a code generator, so the result to the prompt you are going to generate can only be a script in some programming language and the arguments you are going to use in your created function.
 
-        These are examples: "def count(l):\n return len(l)", "def suma_lista(lista):\n total = 0\n for elemento in lista:\n\n total += elemento\n return total", "def factorial(n):\n if n == 0:\n\n return 1\n else:\n\n return n * factorial(n - 1)", "def es_par(numero):\n return numero % 2 == 0", "def maximo_lista(lista):\n if len(lista) == 0:\n\n return None\n else:\n\n return max(lista)", That is the only valid output format for the prompt.".
+        These are examples: "def count(l):\n return len(l)", "def suma_lista(lista):\n total = 0\n for elemento in lista:\n\n total += elemento\n return total", "def factorial(n):\n if n == 0:\n\n return 1\n else:\n\n return n * factorial(n - 1)", "def es_par(numero):\n return numero % 2 == 0", "def maximo_lista(lista):\n if len(lista) == 0:\n\n return None\n else:\n\n return max(lista)", That is the only valid output format for the prompt.", Note you don't need to use print() or console.log().
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
         self.prompts = prompts
@@ -131,7 +131,7 @@ class codeGeneration:
                                 executable_function = builtins.__dict__[name_function]
 
                             
-                                result = executable_function(*eval(test_case['arguments'])) 
+                                result = executable_function(*ast.literal_eval(test_case['arguments'])) 
                             
                             
                             if result == ideal_output:
@@ -166,7 +166,7 @@ class codeGeneration:
                             for function_name in functions:
                                 
                                 js_function = context.eval(function_name)
-                                result = js_function(*eval(test_case['arguments']))
+                                result = js_function(*ast.literal_eval(test_case['arguments']))
                             
                                 def convert_to_native(js_object, target_type):
                                 
@@ -198,8 +198,8 @@ class codeGeneration:
                                 prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Final result incorrect."})
                                 prompt_results[prompt]['total'] += 1
 
-                        except:
-
+                        except Exception as e:
+                            print(e)
                             prompt_results[prompt]['total'] += 1
                             prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Javascript script."})
 
