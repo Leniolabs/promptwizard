@@ -2,10 +2,10 @@ from ..openai_calls import openai_call
 from ..cost import input, output
 import ast
 import concurrent.futures
-from ..evals import functions
 import builtins
 import js2py
 import re
+import os
 
 class codeGeneration:
     def __init__(self, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts, best_prompts=2):
@@ -105,7 +105,7 @@ class codeGeneration:
                         try:
                         
                             
-                            with open("cli/evals/functions.py", "w") as file:
+                            with open("functions.py", "w") as file:
                                 parsed_code = ast.parse(result_content)
                                 has_function = any(isinstance(stmt, ast.FunctionDef) for stmt in parsed_code.body)
                                 if has_function:
@@ -113,7 +113,7 @@ class codeGeneration:
                                     file.write(ast.unparse(parsed_code))
                             
                             
-                            with open("cli/evals/functions.py", "r") as file:
+                            with open("functions.py", "r") as file:
                                 function_code = file.read()
                         
                         
@@ -142,19 +142,19 @@ class codeGeneration:
                                 prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Final result incorrect."})
                                 prompt_results[prompt]['total'] += 1
 
-                        except:
-
+                        except Exception as e:
+    
                             prompt_results[prompt]['total'] += 1
                             prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Python script."})
                     
                     if 'javascript' in test_case['input'].lower():
                         
                         try:
-                            file = "cli/evals/functions.js"
-                            with open("cli/evals/functions.js", "w") as file:
+                            file = "functions.js"
+                            with open("functions.js", "w") as file:
                                 file.write(result_content)
 
-                            with open("cli/evals/functions.js", "r") as f:
+                            with open("functions.js", "r") as f:
                                 js_code = f.read()
                             
                             context = js2py.EvalJs()
@@ -199,7 +199,7 @@ class codeGeneration:
                                 prompt_results[prompt]['total'] += 1
 
                         except Exception as e:
-                            print(e)
+
                             prompt_results[prompt]['total'] += 1
                             prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": "Not Javascript script."})
 
@@ -237,5 +237,13 @@ class codeGeneration:
         Returns:
             tuple: A tuple containing the result data, best prompts, cost, input tokens used, and output tokens used.
         """
-        
-        return self.test_candidate_prompts()
+
+        result = self.test_candidate_prompts()
+        file_to_delete_python = "functions.py"
+        if os.path.isfile(file_to_delete_python):
+            os.unlink(file_to_delete_python)
+        file_to_delete_javascript = "functions.js"
+        if os.path.isfile(file_to_delete_javascript):
+            os.unlink(file_to_delete_javascript)
+
+        return result
