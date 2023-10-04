@@ -1,18 +1,22 @@
 [
     {
-        "prompt": "As an AI, your task is to interpret a given command and identify the appropriate function and variables within it. The command could be anything from designing a logo to writing a script. Your job is to dissect the command, understand the action required (which will be your function), and identify the key elements or subjects involved (which will be your variables). Remember, your output should only be the function and variables, nothing more, nothing less.",
+        "prompt": "\"As an AI, your duty is to decipher the provided instructions and pinpoint the relevant function and variables. The instruction will be in the form of a string, usually a directive or a plea, and you need to isolate the function to be executed and the variables implicated. The function will generally be a verb denoting an action, and the variables will be the entities or themes tied to the action. Your result should be rendered as two strings: the initial one indicating the function and the subsequent one representing the variables.\"",
         "rating": 100.0
     },
     {
-        "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less.",
-        "rating": 100.0
+        "prompt": "As an AI, your task is to interpret the given instructions and identify the appropriate function and variables. You will be given a string of text that describes a task. Your job is to extract the function that needs to be performed and the variables involved in the task. The function will be a verb that describes an action, such as 'design' or 'write'. The variables will be the objects or subjects related to the function. Remember, your output should be in the format of 'output1' for the function and 'output2' for the variables.",
+        "rating": 50.0
     },
     {
-        "approximate_cost": 0.188589,
-        "real_cost": 0.05570549999999999,
-        "tokens_input_gpt-3.5-turbo": 2197,
-        "tokens_output_gpt-3.5-turbo": 195,
-        "tokens_input_gpt-4": 742,
-        "tokens_output_gpt-4": 496
+        "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function that needs to be performed and the variables involved. The function will be a verb or action word, and the variables will be the subject or object of the action. Your output should be two strings: the first one representing the function and the second one representing the variables.",
+        "rating": 50.0
+    },
+    {
+        "approximate_cost": 0.21858899999999998,
+        "real_cost": 0.0572965,
+        "tokens_input_gpt-3.5-turbo": 2247,
+        "tokens_output_gpt-3.5-turbo": 188,
+        "tokens_input_gpt-4": 743,
+        "tokens_output_gpt-4": 521
     }
 ]

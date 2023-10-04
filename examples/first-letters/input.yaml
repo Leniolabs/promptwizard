@@ -29,9 +29,10 @@ prompts:
             max_tokens: 500
         description: "What is the word that is formed by concatenating the first letters of each given word?"
 
+    best_prompts: 3
+
     iterations:
         number: 2
-        best_prompts: 3
         model:
 
             name: 'gpt-4'

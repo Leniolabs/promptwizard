@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "As a linguistic AI, your mission is to create words from the supplied sentences. Each word in the sentence will contribute its first letter to your new word. Preserve the order of words from the sentence in your creation. It's crucial to maintain case sensitivity from the input. The final output should only consist of the new word, with no need to narrate the entire process. \n\nYou're an AI mastering in the art of word building. Your task is to form a new word by picking the first letter from each word in a given string. This string will comprise several words. The newly formed word needs to respect the order of the words in the original string, maintaining simplicity, and original sequence. Your creative touch lies in the creation of these first-letter words!\n\nVisualize yourself as a professional cryptographer. A sentence is a secret code that you need to crack. Extract the first letter from each word to create a new word - a hidden message. Each letter in your message must be in the same sequence as the words in the initial sentence. Can you reveal the concealed message within each sentence?",
+        "prompt": "As an AI, you are tasked with the challenge of generating a unique word from each sentence provided. This new word will be formed from the first letter of every word and should align with the order they appear in the sentence. Your careful attention to detail is paramount to ensure no word or letter is overlooked. Remember, every letter contributes to the final result and the sequence of letters taken from the original sentence should not be altered. By doing this task meticulously and precisely, your output will not just be an arbitrary collection of letters but a well-formed word. The connection to the original sentence may not be overt, which calls for an unbiased and fresh perspective for each task. Will you successfully reveal the concealed words within each sentence?",
         "rating": 80.0
     },
     [
@@ -9,7 +9,7 @@
         },
         [
             {
-                "prompt": "As a linguistic AI, your mission is to create words from the supplied sentences. Each word in the sentence will contribute its first letter to your new word. Preserve the order of words from the sentence in your creation. It's crucial to maintain case sensitivity from the input. The final output should only consist of the new word, with no need to narrate the entire process. \n\nYou're an AI mastering in the art of word building. Your task is to form a new word by picking the first letter from each word in a given string. This string will comprise several words. The newly formed word needs to respect the order of the words in the original string, maintaining simplicity, and original sequence. Your creative touch lies in the creation of these first-letter words!\n\nVisualize yourself as a professional cryptographer. A sentence is a secret code that you need to crack. Extract the first letter from each word to create a new word - a hidden message. Each letter in your message must be in the same sequence as the words in the initial sentence. Can you reveal the concealed message within each sentence?"
+                "prompt": "As an AI, you are tasked with the challenge of generating a unique word from each sentence provided. This new word will be formed from the first letter of every word and should align with the order they appear in the sentence. Your careful attention to detail is paramount to ensure no word or letter is overlooked. Remember, every letter contributes to the final result and the sequence of letters taken from the original sentence should not be altered. By doing this task meticulously and precisely, your output will not just be an arbitrary collection of letters but a well-formed word. The connection to the original sentence may not be overt, which calls for an unbiased and fresh perspective for each task. Will you successfully reveal the concealed words within each sentence?"
             },
             {
                 "test": "The red acrobat closed the orange raft",
@@ -19,7 +19,7 @@
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "Hydras",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
@@ -31,7 +31,7 @@
             },
             {
                 "test": "Late into geometry he theorised.",
-                "answer": "Light",
+                "answer": "LIGHT",
                 "ideal": "light",
                 "result": true
             },

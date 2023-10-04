@@ -1,10 +1,10 @@
 [
     {
-        "prompt": "As a proficient AI, you are assigned the role of a code constructor. You will be given tasks to draft functions in various programming languages, such as JavaScript or Python. Your assignment is to write the source code for a function based on a given brief.\n\nThis function may require you to perform tasks as diverse as identifying numbers in a list that exceed a certain value, or executing simple arithmetic operations like adding two numbers.\n\nYour code should receive arguments as laid out in the given scenario and deliver results based on the logic encapsulated within the function. Ensure your code is accurate, efficient, and adheres to the syntax and structure of the related programming language.",
+        "prompt": "As an artificial intelligence, you are tasked to fabricate efficient code in the guise of a function for a specified programming language. The principal duty of your function will vary based on the given scenario. For example, you might be requested to concoct a function that enumerates numbers equal to or surpassing a certain number in JavaScript, or a function that computes the sum of two digits in Python. Your response must strictly adhere to the correct format of the mentioned programming language. Bear in mind, there's no requirement to employ print() or console.log() in your results. The function you devise should merely return the necessary result when the relevant arguments are inputted.",
         "rating": 50.0
     },
     {
-        "prompt": "As a proficient AI, you are required to function as a code composer. You will be given specifications to devise functions in a variety of programming languages such as JavaScript or Python. The task will require you to craft a precise and structured code for a particular function.\n\nThe function may encompass diverse tasks like identifying numbers in an array that surpass a certain value, or conducting simple arithmetical operations like the addition of two numbers.\n\nYour function should be designed to accept parameters as outlined in the given specifications and return the expected result based on the logic encapsulated in the function. Ensure your function is accurate, optimized, and adheres to the syntax and conventions of the specified programming language.",
+        "prompt": "As an AI designed to write code, you are to generate a working function in a given programming language based on a certain task. The function's task will be determined by the case provided. For example, you might need to write a function that identifies numbers equal to or greater than a specific number in JavaScript, or a function that computes the sum of two numbers in Python. Your output must strictly adhere to the syntax of the specified programming language. There's no need for print() or console.log() statements in your results. The function you create should just return the expected result when the correct arguments are passed. \n\nAs a sophisticated AI for generating code, your assignment, should you choose to accept it, is to create a function in the specified programming language based on a given description and arguments. Whether it's Python, JavaScript or an extraterrestrial programming language, you need to rise to the challenge. \n\nFor instance, you might be asked to write a JavaScript function to list the numbers greater than or equal to 3 for a given list. Your function should take in a list as an input and return another list based on the given criteria. \n\nAlternatively, you might be tasked with creating a Python function that computes the sum of two numbers.",
         "rating": 0.0
     },
     [
@@ -13,31 +13,11 @@
         },
         [
             {
-                "prompt": "As a proficient AI, you are required to function as a code composer. You will be given specifications to devise functions in a variety of programming languages such as JavaScript or Python. The task will require you to craft a precise and structured code for a particular function.\n\nThe function may encompass diverse tasks like identifying numbers in an array that surpass a certain value, or conducting simple arithmetical operations like the addition of two numbers.\n\nYour function should be designed to accept parameters as outlined in the given specifications and return the expected result based on the logic encapsulated in the function. Ensure your function is accurate, optimized, and adheres to the syntax and conventions of the specified programming language."
+                "prompt": "As an artificial intelligence, you are tasked to fabricate efficient code in the guise of a function for a specified programming language. The principal duty of your function will vary based on the given scenario. For example, you might be requested to concoct a function that enumerates numbers equal to or surpassing a certain number in JavaScript, or a function that computes the sum of two digits in Python. Your response must strictly adhere to the correct format of the mentioned programming language. Bear in mind, there's no requirement to employ print() or console.log() in your results. The function you devise should merely return the necessary result when the relevant arguments are inputted."
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "Here's a JavaScript function that lists the numbers above or equal to 3 from an array:\n\n```javascript\nfunction listNumbersAboveThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nThis function takes an array of numbers as a parameter and initializes an empty array called `result` to store the numbers that are above or equal to 3. It then iterates through each element in the `numbers` array using a `for` loop. If the current number is greater than or equal to 3, it is added to the `result` array using the `push` method. Finally, the `result` array is returned.\n\nYou can call this function with an array of numbers to get the list of numbers above or equal to 3. For example:\n\n```javascript\nvar numbers = [1, 2, 3, 4, 5];\nconsole.log(listNumbersAboveThree(numbers)); // Output: [3, 4, 5]\n```",
-                "ideal": [
-                    3,
-                    4
-                ],
-                "result": "Not Javascript script."
-            },
-            {
-                "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nIn this function, `a` and `b` are the parameters representing the two numbers to be added. The function simply returns the sum of `a` and `b` using the `+` operator.",
-                "ideal": 5,
-                "result": "Not Python script."
-            }
-        ],
-        [
-            {
-                "prompt": "As a proficient AI, you are assigned the role of a code constructor. You will be given tasks to draft functions in various programming languages, such as JavaScript or Python. Your assignment is to write the source code for a function based on a given brief.\n\nThis function may require you to perform tasks as diverse as identifying numbers in a list that exceed a certain value, or executing simple arithmetic operations like adding two numbers.\n\nYour code should receive arguments as laid out in the given scenario and deliver results based on the logic encapsulated within the function. Ensure your code is accurate, efficient, and adheres to the syntax and structure of the related programming language."
-            },
-            {
-                "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "Sure! Here's a JavaScript function that takes an array of numbers as input and returns a new array containing only the numbers that are greater than or equal to 3:\n\n```javascript\nfunction listNumbersAboveThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nYou can use this function by passing an array of numbers as an argument, like this:\n\n```javascript\nvar numbers = [1, 2, 3, 4, 5];\nvar filteredNumbers = listNumbersAboveThree(numbers);\nconsole.log(filteredNumbers); // Output: [3, 4, 5]\n```\n\nIn this example, the input array `[1, 2, 3, 4, 5]` is passed to the `listNumbersAboveThree` function, which returns a new array `[3, 4, 5]` containing only the numbers that are greater than or equal to 3.",
+                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  return numbers.filter(num => num >= 3);\n}",
                 "ideal": [
                     3,
                     4
@@ -49,6 +29,26 @@
                 "answer": "def calculate_sum(a, b):\n    return a + b",
                 "ideal": 5,
                 "result": true
+            }
+        ],
+        [
+            {
+                "prompt": "As an AI designed to write code, you are to generate a working function in a given programming language based on a certain task. The function's task will be determined by the case provided. For example, you might need to write a function that identifies numbers equal to or greater than a specific number in JavaScript, or a function that computes the sum of two numbers in Python. Your output must strictly adhere to the syntax of the specified programming language. There's no need for print() or console.log() statements in your results. The function you create should just return the expected result when the correct arguments are passed. \n\nAs a sophisticated AI for generating code, your assignment, should you choose to accept it, is to create a function in the specified programming language based on a given description and arguments. Whether it's Python, JavaScript or an extraterrestrial programming language, you need to rise to the challenge. \n\nFor instance, you might be asked to write a JavaScript function to list the numbers greater than or equal to 3 for a given list. Your function should take in a list as an input and return another list based on the given criteria. \n\nAlternatively, you might be tasked with creating a Python function that computes the sum of two numbers."
+            },
+            {
+                "test": "Write a Javascript function that list the numbers above or equal 3.",
+                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  return numbers.filter(num => num >= 3);\n}",
+                "ideal": [
+                    3,
+                    4
+                ],
+                "result": "Not Javascript script."
+            },
+            {
+                "test": "Write a Python function that calculates the sum of two numbers.",
+                "answer": "```python\ndef calculate_sum(a, b):\n    return a + b\n```",
+                "ideal": 5,
+                "result": "Not Python script."
             }
         ]
     ]

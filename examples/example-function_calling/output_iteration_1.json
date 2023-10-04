@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less.",
+        "prompt": "\"As an AI, your duty is to decipher the provided instructions and pinpoint the relevant function and variables. The instruction will be in the form of a string, usually a directive or a plea, and you need to isolate the function to be executed and the variables implicated. The function will generally be a verb denoting an action, and the variables will be the entities or themes tied to the action. Your result should be rendered as two strings: the initial one indicating the function and the subsequent one representing the variables.\"",
         "rating": 100.0
     },
     [
@@ -9,7 +9,7 @@
         },
         [
             {
-                "prompt": "As an AI, your assignment is to assess the provided command, decipher its true meaning, and pinpoint the desired function and variables it includes. The command could range from creating a graphic design to authoring a screenplay. Your duty is to dissect the provided command, comprehend the action required (which is your function), and recognize the crucial elements or topics involved (which are your variables). Bear in mind, your responses should solely contain the function and variables, no more, no less."
+                "prompt": "\"As an AI, your duty is to decipher the provided instructions and pinpoint the relevant function and variables. The instruction will be in the form of a string, usually a directive or a plea, and you need to isolate the function to be executed and the variables implicated. The function will generally be a verb denoting an action, and the variables will be the entities or themes tied to the action. Your result should be rendered as two strings: the initial one indicating the function and the subsequent one representing the variables.\""
             },
             {
                 "test": "design a logo for AI meetings",

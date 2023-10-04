@@ -5,7 +5,7 @@ with open('cli/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='lenio-ai-prompt-engineer',
-    version='1.5.6',
+    version='1.6.0',
     packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml', 'cli.prompt_generation', 'cli.openai_calls'],
     python_requires='>=3.8',
     long_description=long_description,
@@ -26,7 +26,8 @@ setup(
         'tqdm',
         'python-dotenv',
         'backoff',
-        'js2py'
+        'js2py',
+        'scikit-learn'
     ],
     entry_points={
         'console_scripts': [

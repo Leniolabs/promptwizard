@@ -51,3 +51,18 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
         raise
             
     return respond
+
+@backoff.on_exception(backoff.expo, openai.error.RateLimitError, max_time=60)
+def create_embedding(model, input):
+
+    try:
+        embedding = openai.Embedding.create(
+            model=model,
+            input=input
+        )
+
+    except openai.error.OpenAIError as e:
+        print(f"Error in request: {e}")
+        raise
+
+    return embedding

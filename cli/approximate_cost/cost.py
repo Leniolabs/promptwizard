@@ -1,5 +1,5 @@
 import tiktoken
-from ..cost import input, output
+from ..cost import input, output, embeddings
 
 def num_tokens_from_string(string: str, encoding_name: str) -> int:
     """Returns the number of tokens in a text string."""
@@ -124,6 +124,17 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         Clarify in your prompts that you are going to believe that the result of the execution has to be a json object and nothing more, no explanation is necessary.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message.""" 
+           
+        if method == 'Semantic Similarity':
+            system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
+
+        In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative in with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
+
+        You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
+
+        Specify in the prompts you generate that the response must be text.
+
+        Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
 
         # Create a message list based on the prompt change requirement
@@ -144,9 +155,10 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
     cost = cost_input + cost_output
     return cost
 
-def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions):
+def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions, model_embedding):
     tokens_input = 0 # Initialize a variable to count input tokens
     tokens_output = 0 # Initialize a variable to count output tokens
+    tokens_embeddings = 0
 
     # Check the evaluation method to determine token counts
     if method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'code_generation' or method == 'json_validation':
@@ -155,6 +167,17 @@ def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens,
                 # Calculate input token count for classification, equals, or includes methods
                 tokens_input = tokens_input + 3 + model_generation_max_tokens + num_tokens_from_string(test_case[0], model_test) 
                 tokens_output = tokens_output + model_test_max_tokens
+
+    if method == 'Semantic Similarity':
+        for test_case in test_cases:
+            for i in range(number_of_prompts):
+                # Calculate input token count for Semantic Similarity methods
+                tokens_input = tokens_input + 3 + model_generation_max_tokens + num_tokens_from_string(test_case[0], model_test) 
+                tokens_output = tokens_output + model_test_max_tokens
+            if model_embedding != None:
+                tokens_embeddings = tokens_embeddings + num_tokens_from_string(test_case[0], model_embedding) 
+            
+
     if method == 'function_calling':
         tokens_functions = 150*len(functions) # Assuming a constant token count for function descriptions
         for test_case in test_cases:
@@ -185,8 +208,11 @@ def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens,
     # Calculate the cost of output tokens using the model's cost function
     cost_output = output.cost(tokens_output, model_test)
 
+    # Calculate the cost of embedding tokens using the model's cost function
+    cost_embedding = embeddings.cost(tokens_embeddings, model_embedding)
+
     # Calculate the total cost as the sum of input and output costs
-    cost = cost_input + cost_output
+    cost = cost_input + cost_output + cost_embedding
 
     return cost # Return the calculated cost
 
@@ -197,15 +223,22 @@ def approximate_cost_iterations(test_cases, method, model_test, model_test_max_t
     if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'function_calling' or method == 'code_generation' or method == 'json_validation':
         while iterations > 0:
             # Calculate the cost for the current iteration and add it to the accumulated cost
-            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - 2, 'None', model_iteration, model_iteration_max_tokens, iterations, functions) + cost
+            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None) + cost
             iterations = iterations - 1 # Decrement the iteration count
+
+    if method == 'Semantic Similarity':
+        while iterations > 0:
+            # Calculate the cost for the current iteration and add it to the accumulated cost
+            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None) + cost
+            iterations = iterations - 1 # Decrement the iteration count
+
     else:
         while iterations > 0:
             # Calculate the cost for the current iteration and add it to the accumulated cost
-            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions) + cost
+            cost = approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None) + cost
             iterations = iterations - 1 # Decrement the iteration count
 
     return cost # Return the total cost after all iterations
 
-def approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_change, description, model_iteration, model_iteration_max_tokens, best_prompts):
-    return approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions) + approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions, best_prompts)
+def approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_change, description, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding):
+    return approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions, model_embedding) + approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions, best_prompts)

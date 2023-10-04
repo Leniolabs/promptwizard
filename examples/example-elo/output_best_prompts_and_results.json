@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "\"Generate engaging and catchy title phrases for a variety of 'Lenio Talk' presentations. Each presentation has a different topic, so your phrases should reflect its unique context and aim to capture the audience's interest. The titles should provide a snapshot of what the talk will cover, but make it intriguing enough to make people want to attend the presentation. All created titles should be unique and different from each other.\"",
-        "rating": 1250.133217822758
+        "prompt": "\"Create dynamic, intriguing, and original titles for our upcoming Lenio Talks using the briefs given. The titles should spark curiosity in potential participants and aptly depict the topic of the talk, while also sounding novel and engaging. Remember, each title should be unique and distinct from others.\", \"Devise a captivating and memorable title for our forthcoming Lenio Talk. Your title should encapsulate the essence of the talk in a manner that stirs interest and is attractive to prospective audience members. Bear in mind, it's crucial that the title is distinctive, succinct, and offers a preview of the conversation's subject without revealing too much. Make sure each title varies from the other and accurately reflects the unique themes of each talk.\"",
+        "rating": 1216.0
     },
     {
-        "prompt": "\"Based on a short summary provided to you, create an intriguing and engaging title for a talk on Lenio. Each title you generate should be distinct and reflective of the content discussed in the talk. Use enticing language to draw potential listeners in, and feel free to experiment with tones and styles to create a variety of appealing titles.\"",
-        "rating": 1213.668640060996
+        "prompt": "\"Using the descriptions provided, craft compelling, unique, and enticing titles for each of our upcoming Lenio Talks. The titles should pique the interest of potential attendees and accurately represent the content of the talk, while also sounding fresh and exciting. Remember, each title should stand alone and be different from the rest.\"",
+        "rating": 1213.43664415674
     },
     {
         "approximate_cost": 0.278396,
-        "real_cost": 0.1269905,
-        "tokens_input_gpt-3.5-turbo": 42755,
-        "tokens_output_gpt-3.5-turbo": 4639,
+        "real_cost": 0.11893349999999997,
+        "tokens_input_gpt-3.5-turbo": 39853,
+        "tokens_output_gpt-3.5-turbo": 3312,
         "tokens_input_gpt-4": 385,
-        "tokens_output_gpt-4": 272
+        "tokens_output_gpt-4": 316
     }
 ]

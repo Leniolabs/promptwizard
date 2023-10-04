@@ -1,6 +1,6 @@
 [
     {
-        "prompt": "\"As an AI equipped with linguistic skills, your mission is to generate words from provided sentences. Accomplish this by utilizing the first letter of each word in the sentence to construct a unique word. Organize these acquired letters in their original sequence to produce your final word. It's important that the case sensitivity of the original sentence is observed in your output. Detail your method of arriving at your final word in a systematic manner. Your answer should consist solely of the final word, omitting any elaborate explanations of the process.\" \"As an AI specializing in language manipulation, your task is to form a word from a given string of multiple words. This is achieved by creating a distinct word utilizing the first letter from each word in the input string. Every word adds its opening letter to the formation of this new word. It's crucial to maintain a logical approach and ensure the new word reproduces the same sequence as the input words. The inclusion of extra characters or altering the original sequence is not permitted. Bear in mind that the beauty lies in preserving the simplicity and order of the sequence as you creatively generate these initial-letter words!\"",
+        "prompt": "For this task, you are an AI language analyst, focusing on the initial letters of each word within a given sentence. Your objective is to form a brand new word using these first letters, in the exact order they appear in the sentence. Take into account every word without fail, retrieving the first letter from each and assembling them to form a single word. Always remember the importance of accuracy, as the final word you construct will be a direct result of the sequence of these initial letters. It's crucial that you make every letter count.",
         "rating": 80.0
     },
     [
@@ -9,23 +9,23 @@
         },
         [
             {
-                "prompt": "\"As an AI equipped with linguistic skills, your mission is to generate words from provided sentences. Accomplish this by utilizing the first letter of each word in the sentence to construct a unique word. Organize these acquired letters in their original sequence to produce your final word. It's important that the case sensitivity of the original sentence is observed in your output. Detail your method of arriving at your final word in a systematic manner. Your answer should consist solely of the final word, omitting any elaborate explanations of the process.\" \"As an AI specializing in language manipulation, your task is to form a word from a given string of multiple words. This is achieved by creating a distinct word utilizing the first letter from each word in the input string. Every word adds its opening letter to the formation of this new word. It's crucial to maintain a logical approach and ensure the new word reproduces the same sequence as the input words. The inclusion of extra characters or altering the original sequence is not permitted. Bear in mind that the beauty lies in preserving the simplicity and order of the sequence as you creatively generate these initial-letter words!\""
+                "prompt": "For this task, you are an AI language analyst, focusing on the initial letters of each word within a given sentence. Your objective is to form a brand new word using these first letters, in the exact order they appear in the sentence. Take into account every word without fail, retrieving the first letter from each and assembling them to form a single word. Always remember the importance of accuracy, as the final word you construct will be a direct result of the sequence of these initial letters. It's crucial that you make every letter count."
             },
             {
                 "test": "The red acrobat closed the orange raft",
-                "answer": "Tractor",
+                "answer": "The resulting word formed by the initial letters of each word in the sentence \"The red acrobat closed the orange raft\" is: TRACTOR.",
                 "ideal": "tractor",
                 "result": true
             },
             {
                 "test": "Honey your daring rationale asserts typical ignorance or neglect.",
-                "answer": "Hydrating",
+                "answer": "HYDRATING",
                 "ideal": "hydration",
                 "result": false
             },
             {
                 "test": "Rare obnoxiousness searches elevation.",
-                "answer": "ROSE",
+                "answer": "The brand new word formed using the initial letters of each word in the sentence \"Rare obnoxiousness searches elevation\" is \"ROSE\".",
                 "ideal": "rose",
                 "result": true
             },
@@ -37,7 +37,7 @@
             },
             {
                 "test": "Dear Elena find irregular new energies.",
-                "answer": "Defining",
+                "answer": "The brand new word formed using the initial letters of each word in the sentence \"Dear Elena find irregular new energies\" is \"DEFINE\".",
                 "ideal": "define",
                 "result": true
             }

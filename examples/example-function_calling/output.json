@@ -1,19 +1,19 @@
 [
     {
-        "prompt": "As an AI, your task is to interpret a given command and identify the appropriate function and variables within it. The command could be anything from designing a logo to writing a script. Your job is to dissect the command, understand the action required (which will be your function), and identify the key elements or subjects involved (which will be your variables). Remember, your output should only be the function and variables, nothing more, nothing less.",
-        "rating": 100.0
-    },
-    {
-        "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and your job is to extract the function name and the variables from it. The function name will be a verb or action word, indicating what needs to be done. The variables will be the subject or object of the action, providing context or specifics for the function. Your output should be two strings: the first one being the function name and the second one being the variables.",
+        "prompt": "As an AI, your task is to interpret the given instructions and identify the appropriate function and variables. You will be given a string of text that describes a task. Your job is to extract the function that needs to be performed and the variables involved in the task. The function will be a verb that describes an action, such as 'design' or 'write'. The variables will be the objects or subjects related to the function. Remember, your output should be in the format of 'output1' for the function and 'output2' for the variables.",
         "rating": 50.0
     },
     {
-        "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function and the variable from it. The function is the action to be performed, and the variable is the subject or context of the action. Your output should be two strings: the first one representing the function and the second one representing the variable. Remember, your goal is to understand the essence of the request and translate it into a function and a variable.",
+        "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function that needs to be performed and the variables involved. The function will be a verb or action word, and the variables will be the subject or object of the action. Your output should be two strings: the first one representing the function and the second one representing the variables.",
         "rating": 50.0
     },
     {
-        "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function that needs to be performed and the variables involved. The function will be the action to be taken, and the variables will be the subject or context of the action. Your output should be two strings: the first one representing the function and the second one representing the variables.",
+        "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the action to be performed (the function) and the subject or context of the action (the variables). The function will be a verb or action word, and the variables will be the remaining significant words in the string. Your output should be two strings: the first one representing the function and the second one representing the variables.",
         "rating": 50.0
+    },
+    {
+        "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string containing a command or request. Your job is to dissect this string and identify two key elements: the action to be taken (the function) and the subject or context of the action (the variable). The function will be a verb or action word, and the variable will be the object or subject of the action. Your output should be two strings: the first one representing the function and the second one representing the variable.",
+        "rating": 0.0
     },
     [
         {
@@ -21,7 +21,7 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and your job is to extract the function name and the variables from it. The function name will be a verb or action word, indicating what needs to be done. The variables will be the subject or object of the action, providing context or specifics for the function. Your output should be two strings: the first one being the function name and the second one being the variables."
+                "prompt": "As an AI, your task is to interpret the given instructions and identify the appropriate function and variables. You will be given a string of text that describes a task. Your job is to extract the function that needs to be performed and the variables involved in the task. The function will be a verb that describes an action, such as 'design' or 'write'. The variables will be the objects or subjects related to the function. Remember, your output should be in the format of 'output1' for the function and 'output2' for the variables."
             },
             {
                 "test": "design a logo for AI meetings",
@@ -47,36 +47,30 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to interpret a given command and identify the appropriate function and variables within it. The command could be anything from designing a logo to writing a script. Your job is to dissect the command, understand the action required (which will be your function), and identify the key elements or subjects involved (which will be your variables). Remember, your output should only be the function and variables, nothing more, nothing less."
+                "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string containing a command or request. Your job is to dissect this string and identify two key elements: the action to be taken (the function) and the subject or context of the action (the variable). The function will be a verb or action word, and the variable will be the object or subject of the action. Your output should be two strings: the first one representing the function and the second one representing the variable."
             },
             {
                 "test": "design a logo for AI meetings",
-                "answer": {
-                    "function": "design_logo",
-                    "variable": "AI meetings"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "design_logo",
                     "variable": "AI meetings"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             },
             {
                 "test": "Write a Python script to analyze sales data.",
-                "answer": {
-                    "function": "write_script",
-                    "variable": "Python"
-                },
+                "answer": "not a function call",
                 "ideal": {
                     "function": "write_script",
                     "variable": "Python"
                 },
-                "result": true
+                "result": "Received text data instead of JSON."
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function and the variable from it. The function is the action to be performed, and the variable is the subject or context of the action. Your output should be two strings: the first one representing the function and the second one representing the variable. Remember, your goal is to understand the essence of the request and translate it into a function and a variable."
+                "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function that needs to be performed and the variables involved. The function will be a verb or action word, and the variables will be the subject or object of the action. Your output should be two strings: the first one representing the function and the second one representing the variables."
             },
             {
                 "test": "design a logo for AI meetings",
@@ -102,7 +96,7 @@
         ],
         [
             {
-                "prompt": "As an AI, your task is to interpret the given input and determine the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the function that needs to be performed and the variables involved. The function will be the action to be taken, and the variables will be the subject or context of the action. Your output should be two strings: the first one representing the function and the second one representing the variables."
+                "prompt": "As an AI, your task is to interpret the given input and identify the appropriate function and variables. The input will be a string, typically a command or request, and you need to extract the action to be performed (the function) and the subject or context of the action (the variables). The function will be a verb or action word, and the variables will be the remaining significant words in the string. Your output should be two strings: the first one representing the function and the second one representing the variables."
             },
             {
                 "test": "design a logo for AI meetings",

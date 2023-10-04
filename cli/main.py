@@ -3,7 +3,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 from cli.prompt_generation import generation, iteration
-from cli.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation
+from cli.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation, semantic_similarity
 from cli.approximate_cost import cost
 import yaml
 import textwrap
@@ -51,7 +51,7 @@ def valid_yaml(file_name):
             print({'prompts': {'iterations': {'best_prompts':['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}})
             return valid
     # Allowed test method names
-    allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo', 'code_generation', 'json_validation']
+    allowed_names = ['function_calling', 'Classification', 'Equals', 'Includes', 'Elo', 'code_generation', 'json_validation', 'Semantic Similarity']
 
     # Check if the selected 'method' is valid
     if 'method' in content['test']:
@@ -69,6 +69,9 @@ def valid_yaml(file_name):
 
         if content['test']['method'] == 'json_validation':
             config_schema = validation.ValidationJSON()
+
+        if content['test']['method'] == 'Semantic Similarity':
+            config_schema = validation.ValidationEmbeddings()
         
         # Check if the selected method is in the allowed names
         if content['test']['method'] not in allowed_names:
@@ -113,7 +116,7 @@ def approximate_cost(file):
     if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
-    if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'json_validation':
+    if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'json_validation' or method == 'Semantic Similarity':
         input_output_pairs = [(case['input'], case['output']) for case in test_cases]
         test_cases = input_output_pairs
     if method == 'function_calling':
@@ -122,6 +125,13 @@ def approximate_cost(file):
     if method == 'code_generation':
         result_list = [[case['input'], case['arguments'], case['output']] for case in test_cases]
         test_cases = result_list
+    if method == 'Semantic Similarity':
+        if 'embeddings' in yaml_content['test']:
+            model_embedding = yaml_content['test']['embeddings']['model_name']
+        if not 'embeddings' in yaml_content['test']:
+            model_embedding = "text-embedding-ada-002"
+    if not method == 'Semantic Similarity':
+        model_embedding = None
     model_test = yaml_content['test']['model']['name']
     model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
     if 'list' in yaml_content['prompts']:
@@ -155,8 +165,8 @@ def approximate_cost(file):
             model_iteration = yaml_content['prompts']['iterations']['model']['name']
             model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
         if not 'model' in yaml_content['prompts']['iterations']:
-            model_iteration = 'None'
-            model_iteration_max_tokens = 0
+            model_iteration = model_generation
+            model_iteration_max_tokens = model_generation_max_tokens
         if 'best_prompts' in yaml_content['prompts']['iterations']:
             best_prompts = yaml_content['prompts']['iterations']['best_prompts']
         if not 'best_prompts' in yaml_content['prompts']['iterations']:
@@ -169,9 +179,13 @@ def approximate_cost(file):
 
     # Calculate approximate cost based on the extracted information and the 'cost' module
     if method == 'function_calling':
-        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
+        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding)
     if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'code_generation' or method == 'json_validation':
-        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts)
+        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding)
+    
+    if method == 'Semantic Similarity':
+        approximate_cost = cost.approximate_cost(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, description, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding)
+
     return approximate_cost
 
 def run_evaluation(file, approximate_cost):
@@ -186,6 +200,13 @@ def run_evaluation(file, approximate_cost):
     if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
+
+    if method == 'Semantic Similarity':
+        if 'embeddings' in yaml_content['test']:
+            model_embedding = yaml_content['test']['embeddings']['model_name']
+        if not 'embeddings' in yaml_content['test']:
+            model_embedding = "text-embedding-ada-002"
+            print("model_embedding will be 'text-embedding-ada-002'.")
     
     model_test = yaml_content['test']['model']['name']
     model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
@@ -194,6 +215,7 @@ def run_evaluation(file, approximate_cost):
         best_prompts = yaml_content['prompts']['best_prompts']
     if not 'best_prompts' in yaml_content['prompts']:
         best_prompts = 2
+        print("best_prompts will be 2.")
     if 'list' in yaml_content['prompts']:
         prompts_value = yaml_content['prompts']['list']
         number_of_prompts = len(prompts_value)
@@ -237,14 +259,17 @@ def run_evaluation(file, approximate_cost):
                 model_iteration = model_generation
                 model_iteration_max_tokens = model_generation_max_tokens
                 model_iteration_temperature = model_generation_temperature
+                print("You will use the information from the model that you used for your first generation to generate your iteration prompts.")
             else:
                 model_iteration = 'gpt-4'
                 model_iteration_max_tokens = 300
                 model_iteration_temperature = 0.6
+                print("You will generate prompts with gpt-4, max_tokens = 300 and temperature = 0.6.")
         if 'best_percentage' in yaml_content['prompts']['iterations']:
             best_percentage = yaml_content['prompts']['iterations']['best_percentage']
-        if not 'best_percentage' in yaml_content['prompts']['iterations']:
+        if not ('best_percentage' in yaml_content['prompts']['iterations']) and (method != 'Elo' or method != 'Semantic Similarity'):
             best_percentage = 100
+            print("The percentage to be overcome by your best prompts to stop the iteration will be 100%.")
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
         best_percentage = 100
@@ -255,6 +280,7 @@ def run_evaluation(file, approximate_cost):
     tokens_output_gpt4 = 0
     tokens_input_gpt35 = 0
     tokens_output_gpt35 = 0
+    tokens_embeddings = 0
 
     # Determine the class corresponding to the selected method
     if method == 'Elo':
@@ -278,9 +304,16 @@ def run_evaluation(file, approximate_cost):
     if method == 'json_validation':
         class_method = json_validation.jsonValidation
 
+    if method == 'Semantic Similarity':
+        class_method = semantic_similarity.semanticSimilarity
+
     # Initialize an object of the class obtained from the 'method'
-    if method != 'function_calling' and method != 'Elo':
+    if method != 'function_calling' and method != 'Elo' and method != 'Semantic Similarity':
         object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, best_prompts)
+    
+    if method == 'Semantic Similarity':
+        object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, best_prompts, model_embedding)
+
     if method == 'function_calling':
         object_class = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, None, functions, function_call, best_prompts)
     if method == 'Elo':
@@ -314,7 +347,11 @@ def run_evaluation(file, approximate_cost):
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, functions, function_call, best_prompts)
     if method == 'Elo':
         evaluable_object = class_method(description, test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts)
-    if method != 'function_calling' and method != 'Elo':
+
+    if method == 'Semantic Similarity':
+        evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts, model_embedding)
+
+    if method != 'function_calling' and method != 'Elo' and method != 'Semantic Similarity':
         evaluable_object = class_method(test_cases, number_of_prompts, model_test, model_test_temperature, model_test_max_tokens, model_generation, model_generation_temperature, prompts_value, best_prompts)
 
     # Evaluate the prompts and gather results
@@ -327,6 +364,9 @@ def run_evaluation(file, approximate_cost):
         tokens_input_gpt35 = tokens_input_gpt35 + results[3]
         tokens_output_gpt35 = tokens_output_gpt35 + results[4]
     yaml_folder = os.path.dirname(file)
+
+    if method == 'Semantic Similarity':
+        tokens_embeddings = tokens_embeddings + results[5]
     if method == 'Elo':
         # Group "elo" values by prompt using a dictionary
         elos_by_prompt = defaultdict(list)
@@ -362,11 +402,11 @@ def run_evaluation(file, approximate_cost):
     # Make iterations if it's necessary
     old_prompts = results[1]
     number_of_iteration = 1
-    if method != 'Elo':
-        tokens_input_gen = 0
-        tokens_output_gen = 0
-        tokens_input_test = 0
-        tokens_output_test = 0
+    if method != 'Elo' and method != 'Semantic Similarity':
+        tokens_input_gen_iter = 0
+        tokens_output_gen_iter = 0
+        tokens_input_test_iter = 0
+        tokens_output_test_iter = 0
         all_have_rating_percentage = True
         # Iterate through the list of elements and check the 'rating' value.
         for element in old_prompts:
@@ -379,20 +419,19 @@ def run_evaluation(file, approximate_cost):
             json_file_path = os.path.join(yaml_folder, filename)
             combine_prompts = []
             if method == 'function_calling':
-                new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, functions, function_call, best_prompts)
-            if method == 'Elo':
-                new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, description, best_prompts)
+                new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, functions, function_call, None, best_prompts)
 
             if method != 'function_calling' and method != 'Elo':
-                new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, best_prompts)
+                new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, None, best_prompts)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
-            tokens_input_gen = tokens_input_gen + new_results_prompts_cost[2]
-            tokens_output_gen = tokens_output_gen + new_results_prompts_cost[4]
-            tokens_input_test = tokens_input_test + new_results_prompts_cost[3]
-            tokens_output_test = tokens_output_test + new_results_prompts_cost[5]
+            tokens_input_gen_iter = tokens_input_gen_iter + new_results_prompts_cost[2]
+            tokens_output_gen_iter = tokens_output_gen_iter + new_results_prompts_cost[4]
+            tokens_input_test_iter = tokens_input_test_iter + new_results_prompts_cost[3]
+            tokens_output_test_iter = tokens_output_test_iter + new_results_prompts_cost[5]
             with open(json_file_path, 'w') as file:
                 json.dump(new_results[0], file, indent=4)
+                print(f"Result saved in: {filename}")
             iterations = iterations - 1
             number_of_iteration = number_of_iteration + 1
             combine_prompts.append(old_prompts)
@@ -405,11 +444,43 @@ def run_evaluation(file, approximate_cost):
                 if element["rating"] < best_percentage:
                     all_have_rating_percentage = False
                     break  # If an element with a different rating is found, stop the iteration.
+
+    if method == 'Semantic Similarity':
+        tokens_input_gen_iter = 0
+        tokens_output_gen_iter = 0
+        tokens_input_test_iter = 0
+        tokens_output_test_iter = 0
+        tokens_embeddings_iter = 0
+        while (iterations > 0):
+            filename = f'output_iteration_{number_of_iteration}.json'
+            json_file_path = os.path.join(yaml_folder, filename)
+            combine_prompts = []
+
+            new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, old_prompts, method, None, None, None, best_prompts, model_embedding)
+            new_results = new_results_prompts_cost[0]
+            cost = cost + new_results_prompts_cost[1]
+            tokens_input_gen_iter = tokens_input_gen_iter + new_results_prompts_cost[2]
+            tokens_output_gen_iter = tokens_output_gen_iter + new_results_prompts_cost[4]
+            tokens_input_test_iter = tokens_input_test_iter + new_results_prompts_cost[3]
+            tokens_output_test_iter = tokens_output_test_iter + new_results_prompts_cost[5]
+            tokens_embeddings_iter = tokens_embeddings_iter + new_results_prompts_cost[6]
+            with open(json_file_path, 'w') as file:
+                json.dump(new_results[0], file, indent=4)
+                print(f"Result saved in: {filename}")
+            iterations = iterations - 1
+            number_of_iteration = number_of_iteration + 1
+            combine_prompts.append(old_prompts)
+            combine_prompts.append(new_results[1])
+            combined_data = [item for sublist in combine_prompts for item in sublist]
+            sorted_data = sorted(combined_data, key=lambda x: x['rating'], reverse=True)
+            old_prompts = sorted_data[:best_prompts]
+        tokens_embeddings = tokens_embeddings + tokens_embeddings_iter
+
     if method == 'Elo':
-        tokens_input_gen = 0
-        tokens_output_gen = 0
-        tokens_input_test = 0
-        tokens_output_test = 0
+        tokens_input_gen_iter = 0
+        tokens_output_gen_iter = 0
+        tokens_input_test_iter = 0
+        tokens_output_test_iter = 0
         while iterations > 0:
             print(f"Prompts from iteration number {number_of_iteration}")
             prompt_contents = [item['prompt'] for item in old_prompts]
@@ -419,12 +490,13 @@ def run_evaluation(file, approximate_cost):
             new_results_prompts_cost = iteration.iterations(test_cases, number_of_prompts - best_prompts, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, prompt_contents, method, None, None, description, best_prompts)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
-            tokens_input_gen = tokens_input_gen + new_results_prompts_cost[2]
-            tokens_output_gen = tokens_output_gen + new_results_prompts_cost[4]
-            tokens_input_test = tokens_input_test + new_results_prompts_cost[3]
-            tokens_output_test = tokens_output_test + new_results_prompts_cost[5]
+            tokens_input_gen_iter = tokens_input_gen_iter + new_results_prompts_cost[2]
+            tokens_output_gen_iter = tokens_output_gen_iter + new_results_prompts_cost[4]
+            tokens_input_test_iter = tokens_input_test_iter + new_results_prompts_cost[3]
+            tokens_output_test_iter = tokens_output_test_iter + new_results_prompts_cost[5]
             with open(json_file_path, 'w') as file:
                 json.dump(new_results[0], file, indent=4)
+                print(f"Result saved in: {filename}")
 
             elos_by_prompt = defaultdict(list)
             for item in new_results[0][number_of_prompts + 1]:
@@ -456,21 +528,32 @@ def run_evaluation(file, approximate_cost):
     # Ends the calculation of consumed tokens and stores this information
 
     if model_generation == 'gpt-4':
-        tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_gen
-        tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_gen
+        tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_gen_iter
+        tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_gen_iter
     if model_generation == 'gpt-3.5-turbo':
-        tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_gen
-        tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_gen
+        tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_gen_iter
+        tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_gen_iter
     if model_test == 'gpt-4':
-        tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_test
-        tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_test
+        tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_test_iter
+        tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_test_iter
     if model_test == 'gpt-3.5-turbo':
-        tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_test
-        tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_test
+        tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_test_iter
+        tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_test_iter
     
     filename = f'output_best_prompts_and_results.json'
     json_file_path = os.path.join(yaml_folder, filename)
-    tokens_and_cost = {
+    if method == 'Semantic Similarity':
+        tokens_and_cost = {
+        "approximate_cost": approximate_cost,
+        "real_cost": cost,
+        "tokens_input_gpt-3.5-turbo": tokens_input_gpt35,
+        "tokens_output_gpt-3.5-turbo": tokens_output_gpt35,
+        "tokens_input_gpt-4": tokens_input_gpt4,
+        "tokens_output_gpt-4": tokens_output_gpt4,
+        "tokens_embeddings": tokens_embeddings
+        }
+    if method != 'Semantic Similarity':
+        tokens_and_cost = {
         "approximate_cost": approximate_cost,
         "real_cost": cost,
         "tokens_input_gpt-3.5-turbo": tokens_input_gpt35,

@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to transcribe the specifications provided in the given test cases into actual code in the designated programming language. Your code should be meticulously crafted, ensuring that it carries out the outlined operations accurately.\n\nThe functions you create should accept the exact parameters specified in the 'arguments' field present in the test cases. This means your functions will sometimes have to work with multiple inputs, while other times they might require only a single argument. Format your functions to adhere to the language specific structuring. For example, in Python, functions should be defined using \"def\", while in Javascript, \"function\" initiates a function declaration.\n\nSome of the operations you will be asked to perform could be arithmetic calculations, manipulations of data structures,",
+        "prompt": "As an AI, your task is to generate viable code in the form of a function for a given programming language. The primary task of your function will depend on the provided case. For instance, you may be asked to create a function that lists numbers equal to or above a specific number in JavaScript, or a function that calculates the sum of two numbers in Python. Your output must strictly be in the correct format of the specified programming language. Note, there's no need to use print() or console.log() in your results. The function you create should simply return the required outcome when the corresponding arguments are passed in.",
         "rating": 100.0
     },
     {
-        "prompt": "As a code generator AI, your task is to create functional scripts in certain programming languages given a unique set of requirements. Your output should precisely adhere to the task at hand, which may involve concepts such as calculating mathematical results, manipulating and filtering data, or other logical functionalities. Ensure that your resulting code is well-structured and adheres to the syntax rules of the given programming language. Remember, the output shouldn't contain any print statements or console logs as your task is only to create a function for different use-cases. The structure of your response should solely contain the function code. It's your responsibility to present a cogent solution, one that would run flawlessly when invoked with the right parameters.",
-        "rating": 100.0
-    },
-    {
-        "prompt": "As an AI, your task is to synthesize custom pieces of code according to the programming language specified. The resulting function should adhere to the description provided and ensure it accepts the mentioned arguments correctly. Your output shall not include comments, print, or console log statements. Instead, it should be a clean, brief piece of runnable code that performs the desired action only. Each solution must be unique, adhering to the practices and idioms associated with the programming language in question. Remember, the purpose of this process is to create a well-formed, practical function according to the details given.",
+        "prompt": "As a magnificent code generator AI, your mission should you choose to accept it, is to take in a description and arguments, conjure up a function in the programming language specified, be it Python, Javascript or an unknown language of the outer cosmos!\n\nFor instance, when given an assertion that involves writing a Javascript function to list the numbers above or equal 3, for a given list, your creation should expect an input of a list and return another list based on the criteria.\n\nAlso, if the input description includes writing a Python function that calculates the sum of two numbers, the resulting function should accept two arguments, perform the addition operation and return the resulting value. The craft must be proficient for when two numbers are input, the function generated outputs the",
         "rating": 50.0
     },
     {
-        "prompt": "As a conversant AI, your mission is to interpret assigned tasks in different programming languages based on scattered inputs. As long as the requested task is a valid function in any coding language, you should be able to compose it. \n\nYour task could involve creating a function that filters or sorts a list in Javascript or even a function that performs arithmetic functions in Python. The architecture of your generated code will be in the form of a function with various parameters. The language of the function will be indicated by the input, and the name of the function along with its parameters will be indicated in the arguments. \n\nRemember the structure of a function: you will always start with the function keyword or \"def\" keyword in Python, then function's name followed by parameters",
+        "prompt": "Your task is to become a versatile code generator. You'll be given descriptions of function requirements in either Javascript or Python. You are to generate the corresponding function code based on the descriptions you receive. The functions may range in complexity and purpose, from simple arithmetic operations to more specific manipulations, such as filtering numbers from a list based on certain conditions. The arguments for these functions will be varied, so make sure your code is adaptable. The output of your generated function must meet the output described in the use-case. Stick to generating strict function code - no need for print statements or logs. The language requested will be explicitly stated in each task and all functions must follow proper syntax for that specific language. Good luck, Code Meister!",
+        "rating": 50.0
+    },
+    {
+        "prompt": "As an AI model, your task is to generate code for a function in a specific language according to the requirements of the use-case presented to you. The function should perform a defined operation, whether it's basic mathematical calculations, list manipulations, or any other operation that could be performed by the function. You should follow the syntax and standard programming practices of the language you're asked to write the function in. Make sure that the function accepts the correct number and type of arguments and produces the expected output. You're not required to use print() or console.log() functions for output.",
         "rating": 50.0
     },
     [
@@ -21,11 +21,11 @@
         },
         [
             {
-                "prompt": "As an AI, your task is to synthesize custom pieces of code according to the programming language specified. The resulting function should adhere to the description provided and ensure it accepts the mentioned arguments correctly. Your output shall not include comments, print, or console log statements. Instead, it should be a clean, brief piece of runnable code that performs the desired action only. Each solution must be unique, adhering to the practices and idioms associated with the programming language in question. Remember, the purpose of this process is to create a well-formed, practical function according to the details given."
+                "prompt": "As a magnificent code generator AI, your mission should you choose to accept it, is to take in a description and arguments, conjure up a function in the programming language specified, be it Python, Javascript or an unknown language of the outer cosmos!\n\nFor instance, when given an assertion that involves writing a Javascript function to list the numbers above or equal 3, for a given list, your creation should expect an input of a list and return another list based on the criteria.\n\nAlso, if the input description includes writing a Python function that calculates the sum of two numbers, the resulting function should accept two arguments, perform the addition operation and return the resulting value. The craft must be proficient for when two numbers are input, the function generated outputs the"
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  return numbers.filter(num => num >= 3);\n}",
+                "answer": "Sure! Here's a Javascript function that takes in a list of numbers and returns a new list containing only the numbers that are greater than or equal to 3:\n\n```javascript\nfunction listNumbersAboveOrEqualThree(numbers) {\n  var result = [];\n  \n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}\n```\n\nYou can use this function by passing in an array of numbers, like this:\n\n```javascript\nvar numbers = [1, 2, 3, 4, 5];\nvar filteredNumbers = listNumbersAboveOrEqualThree(numbers);\nconsole.log(filteredNumbers); // Output: [3, 4, 5]\n```\n\nHope this helps! Let me know if you have any other questions.",
                 "ideal": [
                     3,
                     4
@@ -34,18 +34,18 @@
             },
             {
                 "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "def calculate_sum(a, b):\n    return a + b",
+                "answer": "def sum_of_two_numbers(a, b):\n    return a + b",
                 "ideal": 5,
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As a conversant AI, your mission is to interpret assigned tasks in different programming languages based on scattered inputs. As long as the requested task is a valid function in any coding language, you should be able to compose it. \n\nYour task could involve creating a function that filters or sorts a list in Javascript or even a function that performs arithmetic functions in Python. The architecture of your generated code will be in the form of a function with various parameters. The language of the function will be indicated by the input, and the name of the function along with its parameters will be indicated in the arguments. \n\nRemember the structure of a function: you will always start with the function keyword or \"def\" keyword in Python, then function's name followed by parameters"
+                "prompt": "Your task is to become a versatile code generator. You'll be given descriptions of function requirements in either Javascript or Python. You are to generate the corresponding function code based on the descriptions you receive. The functions may range in complexity and purpose, from simple arithmetic operations to more specific manipulations, such as filtering numbers from a list based on certain conditions. The arguments for these functions will be varied, so make sure your code is adaptable. The output of your generated function must meet the output described in the use-case. Stick to generating strict function code - no need for print statements or logs. The language requested will be explicitly stated in each task and all functions must follow proper syntax for that specific language. Good luck, Code Meister!"
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "Sure! Here's a JavaScript function that filters out numbers less than 3 from an array:\n\n```javascript\nfunction filterNumbers(numbers) {\n  return numbers.filter(number => number >= 3);\n}\n```\n\nIn this function, the `filterNumbers` function takes an array of numbers as the `numbers` parameter. It uses the `filter` method to create a new array that only contains numbers greater than or equal to 3. Finally, it returns the filtered array.\n\nYou can call this function by passing an array of numbers to it, like this:\n\n```javascript\nconst numbers = [1, 2, 3, 4, 5];\nconst filteredNumbers = filterNumbers(numbers);\nconsole.log(filteredNumbers);\n```\n\nThis will output `[3, 4, 5]`, as those are the numbers in the original array that are greater than or equal to 3.",
+                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  return numbers.filter(number => number >= 3);\n}",
                 "ideal": [
                     3,
                     4
@@ -54,14 +54,14 @@
             },
             {
                 "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "def calculate_sum(a, b):\n    return a + b",
+                "answer": "def sum_numbers(a, b):\n    return a + b",
                 "ideal": 5,
                 "result": true
             }
         ],
         [
             {
-                "prompt": "As an AI, your task is to transcribe the specifications provided in the given test cases into actual code in the designated programming language. Your code should be meticulously crafted, ensuring that it carries out the outlined operations accurately.\n\nThe functions you create should accept the exact parameters specified in the 'arguments' field present in the test cases. This means your functions will sometimes have to work with multiple inputs, while other times they might require only a single argument. Format your functions to adhere to the language specific structuring. For example, in Python, functions should be defined using \"def\", while in Javascript, \"function\" initiates a function declaration.\n\nSome of the operations you will be asked to perform could be arithmetic calculations, manipulations of data structures,"
+                "prompt": "As an AI model, your task is to generate code for a function in a specific language according to the requirements of the use-case presented to you. The function should perform a defined operation, whether it's basic mathematical calculations, list manipulations, or any other operation that could be performed by the function. You should follow the syntax and standard programming practices of the language you're asked to write the function in. Make sure that the function accepts the correct number and type of arguments and produces the expected output. You're not required to use print() or console.log() functions for output."
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
@@ -74,18 +74,18 @@
             },
             {
                 "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "def calculate_sum(a, b):\n    return a + b",
+                "answer": "Here's a Python function that calculates the sum of two numbers:\n\n```python\ndef calculate_sum(a, b):\n    return a + b\n```\n\nYou can use this function by passing two numbers as arguments, and it will return their sum. For example:\n\n```python\nresult = calculate_sum(3, 5)\nprint(result)  # Output: 8\n```\n\nIn this example, the function `calculate_sum` takes two parameters `a` and `b`, and returns their sum using the `+` operator.",
                 "ideal": 5,
-                "result": true
+                "result": "Not Python script."
             }
         ],
         [
             {
-                "prompt": "As a code generator AI, your task is to create functional scripts in certain programming languages given a unique set of requirements. Your output should precisely adhere to the task at hand, which may involve concepts such as calculating mathematical results, manipulating and filtering data, or other logical functionalities. Ensure that your resulting code is well-structured and adheres to the syntax rules of the given programming language. Remember, the output shouldn't contain any print statements or console logs as your task is only to create a function for different use-cases. The structure of your response should solely contain the function code. It's your responsibility to present a cogent solution, one that would run flawlessly when invoked with the right parameters."
+                "prompt": "As an AI, your task is to generate viable code in the form of a function for a given programming language. The primary task of your function will depend on the provided case. For instance, you may be asked to create a function that lists numbers equal to or above a specific number in JavaScript, or a function that calculates the sum of two numbers in Python. Your output must strictly be in the correct format of the specified programming language. Note, there's no need to use print() or console.log() in your results. The function you create should simply return the required outcome when the corresponding arguments are passed in."
             },
             {
                 "test": "Write a Javascript function that list the numbers above or equal 3.",
-                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  let result = [];\n  \n  for (let i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  \n  return result;\n}",
+                "answer": "function listNumbersAboveOrEqualThree(numbers) {\n  var result = [];\n  for (var i = 0; i < numbers.length; i++) {\n    if (numbers[i] >= 3) {\n      result.push(numbers[i]);\n    }\n  }\n  return result;\n}",
                 "ideal": [
                     3,
                     4
@@ -94,7 +94,7 @@
             },
             {
                 "test": "Write a Python function that calculates the sum of two numbers.",
-                "answer": "def calculate_sum(a, b):\n    return a + b",
+                "answer": "def calculate_sum(num1, num2):\n    return num1 + num2",
                 "ideal": 5,
                 "result": true
             }

@@ -1,18 +1,18 @@
 [
     {
-        "prompt": "As an AI, your task is to transcribe the specifications provided in the given test cases into actual code in the designated programming language. Your code should be meticulously crafted, ensuring that it carries out the outlined operations accurately.\n\nThe functions you create should accept the exact parameters specified in the 'arguments' field present in the test cases. This means your functions will sometimes have to work with multiple inputs, while other times they might require only a single argument. Format your functions to adhere to the language specific structuring. For example, in Python, functions should be defined using \"def\", while in Javascript, \"function\" initiates a function declaration.\n\nSome of the operations you will be asked to perform could be arithmetic calculations, manipulations of data structures,",
+        "prompt": "As an AI, your task is to generate viable code in the form of a function for a given programming language. The primary task of your function will depend on the provided case. For instance, you may be asked to create a function that lists numbers equal to or above a specific number in JavaScript, or a function that calculates the sum of two numbers in Python. Your output must strictly be in the correct format of the specified programming language. Note, there's no need to use print() or console.log() in your results. The function you create should simply return the required outcome when the corresponding arguments are passed in.",
         "rating": 100.0
     },
     {
-        "prompt": "As a code generator AI, your task is to create functional scripts in certain programming languages given a unique set of requirements. Your output should precisely adhere to the task at hand, which may involve concepts such as calculating mathematical results, manipulating and filtering data, or other logical functionalities. Ensure that your resulting code is well-structured and adheres to the syntax rules of the given programming language. Remember, the output shouldn't contain any print statements or console logs as your task is only to create a function for different use-cases. The structure of your response should solely contain the function code. It's your responsibility to present a cogent solution, one that would run flawlessly when invoked with the right parameters.",
+        "prompt": "As an advanced AI, you are required to produce executable code in the form of a function for a designated programming language. The main function of your code will be determined by the supplied scenario. For example, you might be tasked with developing a function that compiles numbers greater than or equal to a certain number in JavaScript, or a function that determines the total of two numbers in Python. Your output should strictly adhere to the appropriate format of the given programming language. Please note that it's not necessary to incorporate print() or console.log() in your results. The function you devise should solely deliver the necessary output when the relevant arguments are introduced.",
         "rating": 100.0
     },
     {
         "approximate_cost": 0.13734399999999997,
-        "real_cost": 0.050249999999999996,
-        "tokens_input_gpt-3.5-turbo": 1308,
-        "tokens_output_gpt-3.5-turbo": 369,
-        "tokens_input_gpt-4": 469,
-        "tokens_output_gpt-4": 558
+        "real_cost": 0.116506,
+        "tokens_input_gpt-3.5-turbo": 2752,
+        "tokens_output_gpt-3.5-turbo": 674,
+        "tokens_input_gpt-4": 1333,
+        "tokens_output_gpt-4": 1184
     }
 ]

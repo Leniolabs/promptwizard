@@ -55,6 +55,11 @@ class JSONTestCaseSchema(Schema):
     input = fields.String(required=True)
     output = fields.Dict(required=True)
 
+class EmbeddingsTestCaseSchema(Schema):
+
+    input = fields.String(required=True)
+    output = fields.String(required=True)
+
 class ClaEqInFormatTestCaseSchema(Schema):
         # Schema for test cases formatted for 'Classification', 'Equals', and 'Includes' methods
         cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
@@ -85,6 +90,20 @@ class JSONFormatTestCaseSchema(Schema):
         cases = fields.List(fields.Nested(JSONTestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
+
+class EmbeddingsModel(Schema):
+     model_name = fields.Str()
+     @validates("model_name")
+     def validate_method(self, value):
+            expected_methods = ['text-embedding-ada-002', 'text-similarity-ada-001', 'text-search-ada-query-001', 'code-search-ada-code-001', 'code-search-ada-text-001', 'text-similarity-babbage-001', 'text-search-babbage-doc-001', 'text-search-babbage-query-001', 'code-search-babbage-code-001', 'code-search-babbage-text-001', 'text-similarity-curie-001', 'text-search-curie-doc-001', 'text-search-curie-query-001', 'text-similarity-davinci-001', 'text-search-davinci-doc-001', 'text-search-davinci-query-001']
+            if value not in expected_methods:
+                raise ValidationError(f"Method must be one of those '{expected_methods}'.")
+
+class EmbeddingsFormatTestCaseSchema(Schema):
+    cases = fields.List(fields.Nested(EmbeddingsTestCaseSchema), required=True)
+    method = fields.Str(required=True)
+    model = fields.Nested(ModelSchema)
+    embeddings = fields.Nested(EmbeddingsModel)
 
 class FunctionCallingFormatFunctionSchema(Schema):
         name = fields.Str(required=True)
@@ -216,4 +235,9 @@ class ValidationCode(Schema):
 class ValidationJSON(Schema):
     # Schema for validating 'json_validation' test cases and prompts
     test = fields.Nested(JSONFormatTestCaseSchema, required=True)
+    prompts = fields.Nested(PromptSchema, required=True)
+
+class ValidationEmbeddings(Schema):
+    # Schema for validating 'semantic_validation' test cases and prompts
+    test = fields.Nested(EmbeddingsFormatTestCaseSchema, required=True)
     prompts = fields.Nested(PromptSchema, required=True)

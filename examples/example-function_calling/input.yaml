@@ -41,9 +41,10 @@ prompts:
       temperature: 0.8
       max_tokens: 500
     description: 'You should select the correct function and variables.'
+  best_prompts: 3
   iterations:
     number: 1
-    best_prompts: 3
+    
     model:
       name: 'gpt-4'
       temperature: 0.9
