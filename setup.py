@@ -1,12 +1,12 @@
 from setuptools import setup
 
-with open('cli/doc/doc.md', 'r', encoding='utf-8') as f:
+with open('promptwizard/doc/doc.md', 'r', encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='lenio-ai-prompt-engineer',
-    version='1.6.0',
-    packages=['cli', 'cli.evals', 'cli.cost', 'cli.approximate_cost', 'cli.validation_yaml', 'cli.prompt_generation', 'cli.openai_calls'],
+    name='promptwizard',
+    version='0.0.1',
+    packages=['promptwizard', 'promptwizard.evals', 'promptwizard.cost', 'promptwizard.approximate_cost', 'promptwizard.validation_yaml', 'promptwizard.prompt_generation', 'promptwizard.openai_calls'],
     python_requires='>=3.8',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -25,16 +25,16 @@ setup(
         'certifi',
         'tqdm',
         'python-dotenv',
-        'backoff',
         'js2py',
         'scikit-learn'
     ],
     entry_points={
         'console_scripts': [
-            'lenio-ai-prompt-engineer=cli.main:main',
+            'promptwizard=promptwizard.main:main',
         ],
     },
     package_data={'': ['doc/doc.md']},
     include_package_data=True,
-    description='Prompt Engineer (lenio-ai-prompt-engineer) is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.',
+    description='Prompt Wizard is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.',
+    license='MIT',
 )
