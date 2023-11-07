@@ -1,5 +1,6 @@
 import tiktoken
 from ..cost import input, output, embeddings
+from typing import Union, List, Dict
 
 def num_tokens_from_string(string: str, encoding_name: str) -> int:
     """Returns the number of tokens in a text string."""
@@ -28,6 +29,8 @@ def num_tokens_from_messages(messages, model):
         tokens_per_message = 4  # every message follows <|start|>{role/name}\n{content}<|end|>\n
         tokens_per_name = -1  # if there's a name, the role is omitted
     elif "gpt-3.5-turbo" in model:
+        return num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613")
+    elif "gpt-3.5-turbo-instruct" in model:
         return num_tokens_from_messages(messages, model="gpt-3.5-turbo-0613")
     elif "gpt-4" in model:
         return num_tokens_from_messages(messages, model="gpt-4-0613")
@@ -135,6 +138,17 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
         Specify in the prompts you generate that the response must be text.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
+            
+        if method == 'LogProbs':
+            system_gen_system_prompt = """Your job is to generate system prompts for GPT, given a description of the use-case and some test cases.
+
+        In your generated prompt, you should describe how the AI should behave in plain English. Include what it will see, and what it's allowed to output. Be creative in with prompts to get the best possible results. The AI knows it's an AI -- you don't need to tell it this.
+
+        You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
+
+        Specify in your prompts that the response has to be with the token with the highest logprobs.
+
+        Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
 
 
         # Create a message list based on the prompt change requirement
@@ -161,9 +175,11 @@ def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens,
     tokens_embeddings = 0
 
     # Check the evaluation method to determine token counts
-    if method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'Code Generation' or method == 'JSON Validation':
+    if method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'Code Generation' or method == 'JSON Validation' or method == 'LogProbs':
         for test_case in test_cases:
             for i in range(number_of_prompts):
+                if method == 'LogProbs' and model_test == 'gpt-3.5-turbo-instruct':
+                    model_test = 'gpt-3.5-turbo'
                 # Calculate input token count for classification, equals, or includes methods
                 tokens_input = tokens_input + 3 + model_generation_max_tokens + num_tokens_from_string(test_case[0], model_test) 
                 tokens_output = tokens_output + model_test_max_tokens
@@ -220,7 +236,7 @@ def approximate_cost_iterations(test_cases, method, model_test, model_test_max_t
     cost = 0 # Initialize a variable to store the total cost
 
     # Check the evaluation method to determine the cost calculation strategy
-    if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'Function Calling' or method == 'Code Generation' or method == 'JSON Validation':
+    if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'Function Calling' or method == 'Code Generation' or method == 'JSON Validation' or method == 'LogProbs':
         # Calculate the cost for the iterations.
         cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
 
@@ -234,5 +250,5 @@ def approximate_cost_iterations(test_cases, method, model_test, model_test_max_t
 
     return cost # Return the total cost after all iterations
 
-def approximate_cost(test_cases, method, prompts_value, model_test='gpt-3.5-turbo', model_test_max_tokens=1000, number_of_prompts=4, model_generation='gpt-4', model_generation_max_tokens=500, iterations=0, functions=None, prompt_change=None, model_iteration='gpt-4', model_iteration_max_tokens=500, best_prompts=2, model_embedding="text-embedding-ada-002"):
+def approximate_cost(test_cases: Union[List[str], List[Dict]], method: str, prompts_value: List[str], model_test: str='gpt-3.5-turbo', model_test_max_tokens: int=1000, number_of_prompts: int=4, model_generation: str='gpt-4', model_generation_max_tokens: int=500, iterations: int=0, functions: List[dict]=None, prompt_change: str=None, model_iteration: str='gpt-4', model_iteration_max_tokens: int=500, best_prompts: int=2, model_embedding: str="text-embedding-ada-002"):
     return approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_generation, model_generation_max_tokens, iterations, functions, model_embedding) + approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions, best_prompts)

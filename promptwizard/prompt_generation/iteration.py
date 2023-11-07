@@ -1,8 +1,8 @@
 from . import generation
-from promptwizard.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation, semantic_similarity
+from promptwizard.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation, semantic_similarity, logprobs
+from typing import List, Dict
 
-
-def iterations(test_cases, method, old_prompts_and_rating, new_number_of_prompts, functions=None, model_test='gpt-3.5-turbo', model_test_temperature=1.2, model_test_max_tokens=1000, model_generation='gpt-4', model_generation_temperature=0.6, model_generation_max_tokens=500, function_call='auto', description=None, best_prompts=2, model_embeddings=None, timeout=10, n_retries=5):
+def iterations(test_cases: List[Dict], method: str, old_prompts_and_rating: List[str], new_number_of_prompts: int, functions: Dict=None, model_test: str='gpt-3.5-turbo', model_test_temperature: float=1.2, model_test_max_tokens: int=1000, model_generation: str='gpt-4', model_generation_temperature: float=0.6, model_generation_max_tokens: int=500, function_call: str='auto', description: str=None, best_prompts: int=2, model_embeddings: str=None, timeout: int=10, n_retries: int=5):
 
     # Initialize cost and token variables
     cost = 0
@@ -29,6 +29,8 @@ def iterations(test_cases, method, old_prompts_and_rating, new_number_of_prompts
 
     if method == 'Semantic Similarity':
          class_method = semantic_similarity.semanticSimilarity
+    if method == 'LogProbs':
+         class_method = logprobs.LogProbs
 
     # Generate new prompts if the method is not 'Elo'
     if method != 'Elo' and method != 'Semantic Similarity':
@@ -89,7 +91,7 @@ def iterations(test_cases, method, old_prompts_and_rating, new_number_of_prompts
             tokens_embeddings = results[5]
 
     # If the method is 'Elo', generate new prompts differently
-    elif method=='Elo':
+    if method=='Elo':
             new_prompts = []
             candidate_prompts = []
             # Generate candidate prompts for the next iteration

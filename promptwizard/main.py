@@ -3,7 +3,7 @@ import os
 import json
 import matplotlib.pyplot as plt
 from promptwizard.prompt_generation import generation, iteration
-from promptwizard.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation, semantic_similarity
+from promptwizard.evals import elovalue, classification, equals, includes, function_calling, code_generation, json_validation, semantic_similarity, logprobs
 from promptwizard.approximate_cost import cost
 import yaml
 import textwrap
@@ -51,7 +51,7 @@ def valid_yaml(file_name):
             print({'prompts': {'iterations': {'best_prompts':['best_prompts has to be greater than or equal to 2 and strictly less than number_of_prompts.']}}})
             return valid
     # Allowed test method names
-    allowed_names = ['Function Calling', 'Classification', 'Equals', 'Includes', 'Elo', 'Code Generation', 'JSON Validation', 'Semantic Similarity']
+    allowed_names = ['Function Calling', 'Classification', 'Equals', 'Includes', 'Elo', 'Code Generation', 'JSON Validation', 'Semantic Similarity', 'LogProbs']
 
     # Check if the selected 'method' is valid
     if 'method' in content['test']:
@@ -59,7 +59,7 @@ def valid_yaml(file_name):
             config_schema = validation.ValidationFunctionCalling()
 
         if content['test']['method'] == 'Classification' or content['test']['method'] == 'Equals' or content['test']['method'] == 'Includes':
-            config_schema = validation.ValidationClaEqIn()
+            config_schema = validation.ValidationClaEqInLog()
 
         if content['test']['method'] == 'Elo':
             config_schema = validation.ValidationElo()
@@ -72,6 +72,9 @@ def valid_yaml(file_name):
 
         if content['test']['method'] == 'Semantic Similarity':
             config_schema = validation.ValidationEmbeddings()
+
+        if content['test']['method'] == 'LogProbs':
+            config_schema = validation.ValidationLogProbs()
         
         # Check if the selected method is in the allowed names
         if content['test']['method'] not in allowed_names:
@@ -180,7 +183,7 @@ def approximate_cost(file):
     # Calculate approximate cost based on the extracted information and the 'cost' module
     if method == 'Function Calling':
         approximate_cost = cost.approximate_cost(test_cases, method, prompts_value, model_test, model_test_max_tokens, number_of_prompts, model_generation, model_generation_max_tokens, iterations, functions, prompt_constrainst, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding)
-    if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'Code Generation' or method == 'JSON Validation':
+    if method == 'Elo' or method == 'Classification' or method == 'Equals' or method == 'Includes' or method == 'Code Generation' or method == 'JSON Validation' or method =='LogProbs':
         approximate_cost = cost.approximate_cost(test_cases, method, prompts_value, model_test, model_test_max_tokens, number_of_prompts, model_generation, model_generation_max_tokens, iterations, None, prompt_constrainst, model_iteration, model_iteration_max_tokens, best_prompts, model_embedding)
     
     if method == 'Semantic Similarity':
@@ -317,6 +320,9 @@ def run_evaluation(file, approximate_cost):
     if method == 'Semantic Similarity':
         class_method = semantic_similarity.semanticSimilarity
 
+    if method == 'LogProbs':
+        class_method = logprobs.LogProbs
+
     # Initialize an object of the class obtained from the 'method'
     if method != 'Function Calling' and method != 'Elo' and method != 'Semantic Similarity':
         object_class = class_method(test_cases, None, model_test, model_test_temperature, model_test_max_tokens, best_prompts, timeout, n_retries)
@@ -372,6 +378,9 @@ def run_evaluation(file, approximate_cost):
         tokens_input_gpt4 = tokens_input_gpt4 + results[3]
         tokens_output_gpt4 = tokens_output_gpt4 + results[4]
     if model_test == 'gpt-3.5-turbo':
+        tokens_input_gpt35 = tokens_input_gpt35 + results[3]
+        tokens_output_gpt35 = tokens_output_gpt35 + results[4]
+    if model_test == 'gpt-3.5-turbo-instruct':
         tokens_input_gpt35 = tokens_input_gpt35 + results[3]
         tokens_output_gpt35 = tokens_output_gpt35 + results[4]
     yaml_folder = os.path.dirname(file)
@@ -548,6 +557,9 @@ def run_evaluation(file, approximate_cost):
         tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_test_iter
         tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_test_iter
     if model_test == 'gpt-3.5-turbo':
+        tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_test_iter
+        tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_test_iter
+    if model_test == 'gpt-3.5-turbo-instruct':
         tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_test_iter
         tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_test_iter
     

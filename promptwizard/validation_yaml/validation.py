@@ -9,7 +9,7 @@ class ModelSchema(Schema):
         @validates('name')
         def validate_name(self, model):
             # Validate the 'name' field against a list of allowed names
-            allowed_names = ['gpt-3.5-turbo', 'gpt-4']
+            allowed_names = ['gpt-3.5-turbo', 'gpt-4', 'gpt-3.5-turbo-instruct']
             if model not in allowed_names:
                 raise ValidationError(f"'name' must be one of the following: {', '.join(allowed_names)}")
             
@@ -32,10 +32,16 @@ class EloFormatTestCaseSchema(Schema):
     model = fields.Nested(ModelSchema)
     description = fields.Str(required=True)
 
+class LogProbsFormatTestCaseSchema(Schema):
+    # Schema for test cases with the 'LogProbs' method
+    cases = fields.List(fields.Str(required=True))
+    method = fields.Str(required=True)
+    model = fields.Nested(ModelSchema)
+
     @validates("method")
     def validate_method(self, value):
-        # Validate the 'method' field to be 'Elo'
-        expected_method = "Elo"
+        # Validate the 'method' field to be 'LogProbs'
+        expected_method = "LogProbs"
         if value != expected_method:
             raise ValidationError(f"Method must be '{expected_method}'.")
         
@@ -46,7 +52,7 @@ class CodeTestCaseSchema(Schema):
     output = fields.Raw(required=True)
 
 class ClaEqInTestCaseSchema(Schema):
-    # Schema for individual test cases with 'Classification', 'Equals', and 'Includes' methods
+    # Schema for individual test cases with 'Classification', 'Equals', 'Includes' and 'LogProbs' methods
     input = fields.String(required=True)
     output = fields.String(required=True)
 
@@ -61,7 +67,7 @@ class EmbeddingsTestCaseSchema(Schema):
     output = fields.String(required=True)
 
 class ClaEqInFormatTestCaseSchema(Schema):
-        # Schema for test cases formatted for 'Classification', 'Equals', and 'Includes' methods
+        # Schema for test cases formatted for 'Classification', 'Equals', 'Includes' and 'LogProbs' methods
         cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
@@ -72,8 +78,9 @@ class ClaEqInFormatTestCaseSchema(Schema):
             expected_method1 = "Classification"
             expected_method2 = "Equals"
             expected_method3 = "Includes"
-            if value != expected_method1 and value != expected_method2 and value != expected_method3:
-                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' or '{expected_method3}'.")
+            expected_method4 = "LogProbs"
+            if value != expected_method1 and value != expected_method2 and value != expected_method3 and value != expected_method4:
+                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' '{expected_method3}' or '{expected_method4}'.")
 
 class CodeFormatTestCaseSchema(Schema):
         cases = fields.List(fields.Nested(CodeTestCaseSchema), required=True)
@@ -220,7 +227,7 @@ class ValidationFunctionCalling(Schema):
         timeout = fields.Integer()
 
 class ValidationClaEqIn(Schema):
-        # Schema for validating 'Classification', 'Equals', and 'Includes' test cases and prompts
+        # Schema for validating 'Classification', 'Equals', 'Includes' and 'LogProbs' test cases and prompts
         test = fields.Nested(ClaEqInFormatTestCaseSchema, required=True)
         prompts = fields.Nested(PromptSchema, required=True)
         n_retries = fields.Integer()
@@ -250,6 +257,12 @@ class ValidationJSON(Schema):
 class ValidationEmbeddings(Schema):
     # Schema for validating 'semantic_validation' test cases and prompts
     test = fields.Nested(EmbeddingsFormatTestCaseSchema, required=True)
+    prompts = fields.Nested(PromptSchema, required=True)
+    n_retries = fields.Integer()
+    timeout = fields.Integer()
+
+class ValidationLogProbs(Schema):
+    test = fields.Nested(LogProbsFormatTestCaseSchema, required=True)
     prompts = fields.Nested(PromptSchema, required=True)
     n_retries = fields.Integer()
     timeout = fields.Integer()

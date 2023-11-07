@@ -2,13 +2,13 @@ from tqdm import tqdm
 import itertools
 from ..cost import input, output
 from ..openai_calls import openai_call
-
+from typing import List
 
 # K is a constant factor that determines how much ratings change
 K = 32
 
 class Elo:
-    def __init__(self, test_cases, prompts, description, model_test='gpt-3.5-turbo', model_test_temperature=0.6, model_test_max_tokens=1000, best_prompts=2, timeout=10, n_retries=5):
+    def __init__(self, test_cases: List[str], prompts: List[str], description: str, model_test: str='gpt-3.5-turbo', model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
 
         """
         Initialize an Elo instance.

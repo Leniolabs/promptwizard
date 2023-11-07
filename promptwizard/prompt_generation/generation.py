@@ -1,7 +1,8 @@
 from promptwizard.cost import input, output
 from ..openai_calls import openai_call
+from typing import List, Dict
 
-def generate_candidate_prompts(system_gen_system_prompt, test_cases, description, model_generation='gpt-4', model_generation_temperature=1.2, model_generation_max_tokens=500, number_of_prompts=4, prompt_features=None, timeout=10, n_retries=5):
+def generate_candidate_prompts(system_gen_system_prompt: str, test_cases: List[Dict], description: str, model_generation: str='gpt-4', model_generation_temperature: float=1.2, model_generation_max_tokens: int=500, number_of_prompts: int=4, prompt_features: str=None, timeout: int=10, n_retries: int=5):
         
         # Check if additional prompt features are provided
         if prompt_features is not None:

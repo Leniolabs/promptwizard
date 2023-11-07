@@ -5,10 +5,11 @@ from tenacity import (
     wait_random_exponential,
     retry_if_not_exception_type,
 )
+from typing import List
 
 
 
-def create_chat_completion(model, messages, max_tokens, temperature, number_of_prompts, logit_bias=None, functions=None, function_call=None, timeout=10, n_retries=5):
+def create_chat_completion(model: str, messages :List[dict], max_tokens: int, temperature: float, number_of_prompts: int, logit_bias: dict=None, functions: dict=None, function_call: str=None, timeout: int=10, n_retries: int=5):
     @retry(wait=wait_random_exponential(min=1, max=timeout), stop=stop_after_attempt(n_retries), retry=retry_if_not_exception_type(openai.InvalidRequestError))
     def create_chat_completion_retry():
     
@@ -55,7 +56,8 @@ def create_chat_completion(model, messages, max_tokens, temperature, number_of_p
                 
         return respond
     return create_chat_completion_retry()
-def create_embedding(model, input, timeout, n_retries):
+
+def create_embedding(model: str, input: str, timeout: int, n_retries: int):
     @retry(wait=wait_random_exponential(min=1, max=timeout), stop=stop_after_attempt(n_retries), retry=retry_if_not_exception_type(openai.InvalidRequestError))
     def create_embedding_retries():
 
@@ -71,3 +73,26 @@ def create_embedding(model, input, timeout, n_retries):
 
         return embedding
     return create_embedding_retries()
+
+def create_completion(model: str, messages: str, max_tokens: int, temperature: float, number_of_prompts: int, timeout: int=10, n_retries: int=5):
+    @retry(wait=wait_random_exponential(min=1, max=timeout), stop=stop_after_attempt(n_retries), retry=retry_if_not_exception_type(openai.InvalidRequestError))
+    def create_completion_retry():
+    
+        try:
+
+            respond = openai.Completion.create(
+                model=model,
+                prompt=messages,
+                max_tokens=max_tokens,
+                n = number_of_prompts,
+                temperature=temperature,
+                request_timeout=timeout,
+                logprobs=5,
+            )
+        
+        except openai.error.OpenAIError as e:
+            print(f"Error in request: {e}")
+            raise
+                
+        return respond
+    return create_completion_retry()

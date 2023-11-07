@@ -1,5 +1,7 @@
 # Prompt Wizard
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iW2y43923vECOhKPuhoGENwY1y81Rw8i?usp=sharing)
+
 ## Description
 
 Prompt Wizard is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.

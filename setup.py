@@ -5,7 +5,7 @@ with open('promptwizard/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='promptwizard',
-    version='0.0.1',
+    version='0.0.2',
     packages=['promptwizard', 'promptwizard.evals', 'promptwizard.cost', 'promptwizard.approximate_cost', 'promptwizard.validation_yaml', 'promptwizard.prompt_generation', 'promptwizard.openai_calls'],
     python_requires='>=3.8',
     long_description=long_description,
