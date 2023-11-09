@@ -28,21 +28,16 @@ def generate_candidate_prompts(system_gen_system_prompt: str, test_cases: List[D
             max_tokens=model_generation_max_tokens
             # Generate prompts using OpenAI's ChatCompletion API
             outputs = openai_call.create_chat_completion(model, messages, max_tokens, temperature, n, timeout=timeout, n_retries=n_retries)
-            messages = []
-            for choice in outputs["choices"]:
-                messages.append(choice["message"])
 
         # Extract tokens input and tokens output usage
-        tokens_input = outputs["usage"]["prompt_tokens"]
-        tokens_output = outputs["usage"]["completion_tokens"]
+        tokens_input = outputs.usage.prompt_tokens
+        tokens_output = outputs.usage.completion_tokens
 
         # Calculate the cost based on token usage
         cost_input = input.cost(tokens_input, model_generation)
         cost_output = output.cost(tokens_output, model_generation)
         cost = cost_input + cost_output
 
-        prompts = []
         # Extract the generated prompts
-        for i in outputs.choices:
-            prompts.append(i.message.content)
+        prompts = [choice.message.content for choice in outputs.choices]
         return prompts, cost, tokens_input, tokens_output

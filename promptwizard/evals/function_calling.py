@@ -54,8 +54,9 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
             {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, functions=functions, function_call=function_call, timeout=self.timeout, n_retries=self.n_retries)
-        partial_tokens_input = response["usage"]["prompt_tokens"]
-        partial_tokens_output = response["usage"]["completion_tokens"]
+        partial_tokens_input = response.usage.prompt_tokens
+        partial_tokens_output = response.usage.completion_tokens
+        print(response)
         response_content = response
         
         return partial_tokens_input, partial_tokens_output, response_content, test_case['output1'], test_case['output2']
@@ -99,9 +100,9 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                     tokens_input += partial_tokens_input
                     tokens_output += partial_tokens_output
 
-                    if "function_call" in response['choices'][0]['message']:
+                    if "function_call" in response.choices[0].message:
                     # Update model results
-                        json_object = json.loads(str(response['choices'][0]['message']['function_call']['arguments']))
+                        json_object = json.loads(str(response.choices[0].message.function_call.arguments))
 
                         def extract_keys_and_values(json_list):
                             all_keys = list(json_object.keys())
@@ -120,7 +121,7 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                         if not (ideal_output1 == response.choices[0].message.function_call.name) and (not ideal_output2 == extract_keys_and_values(json_object)[1]):
                             a = 'function and variable error'
                         prompt_and_results.append({"test": test_case['input'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": a})
-                    if "function_call" not in response['choices'][0]['message']:
+                    if "function_call" not in response.choices[0].message:
                         prompt_and_results.append({"test": test_case['input'], "answer": 'not a function call', "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": 'Received text data instead of JSON.'})
                         prompt_results[prompt]['total'] += 1
 

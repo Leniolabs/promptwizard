@@ -49,8 +49,8 @@ class jsonValidation:
             {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, timeout=self.timeout, n_retries=self.n_retries)
-        partial_tokens_input = response["usage"]["prompt_tokens"]
-        partial_tokens_output = response["usage"]["completion_tokens"]
+        partial_tokens_input = response.usage.prompt_tokens
+        partial_tokens_output = response.usage.completion_tokens
         result_content = response.choices[0].message.content
         
         return partial_tokens_input, partial_tokens_output, result_content, test_case['output']

@@ -43,12 +43,18 @@ class LogProbs:
         self.n_retries = n_retries
 
     def process_prompt(self, prompt, test_case, model, model_max_tokens, model_temperature):
-        messages = prompt + ' ' + test_case
+        messages = prompt + ' ' + test_case['input']
         response = openai_call.create_completion(model, messages, model_max_tokens, model_temperature, 1, timeout=self.timeout, n_retries=self.n_retries)
-        partial_tokens_input = response["usage"]["prompt_tokens"]
-        partial_tokens_output = response["usage"]["completion_tokens"]
+        partial_tokens_input = response.usage.prompt_tokens
+        partial_tokens_output = response.usage.completion_tokens
         result_content = response.choices[0].text
-        top_logprobs = next(iter(response.choices[0].logprobs.top_logprobs[1]))
+        result_content = result_content.strip().replace('\n', '')
+        top_logprobs = ''
+        i = 0
+        while (i < len(response.choices[0].logprobs.top_logprobs)):
+            top_logprobs = top_logprobs + next(iter(response.choices[0].logprobs.top_logprobs[i]))
+            i = i + 1
+        top_logprobs = top_logprobs.strip().replace('\n', '')
         return partial_tokens_input, partial_tokens_output, result_content, top_logprobs
 
     def test_candidate_prompts(self):
@@ -90,11 +96,11 @@ class LogProbs:
                     tokens_input += partial_tokens_input
                     tokens_output += partial_tokens_output
                     
-                    if logprobs in result_content:
+                    if logprobs == result_content and result_content == test_case["output"]:
                         prompt_results[prompt]['correct'] += 1
                     prompt_results[prompt]['total'] += 1
 
-                    prompt_and_results.append({"test": test_case, "answer": result_content, "ideal": logprobs, "result": logprobs in result_content})
+                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": test_case["output"], "logprobs": logprobs, "result": logprobs == result_content and result_content == test_case["output"]})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []

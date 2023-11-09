@@ -233,20 +233,25 @@ def approximate_cost_test(test_cases, method, model_test, model_test_max_tokens,
     return cost # Return the calculated cost
 
 def approximate_cost_iterations(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations, functions, best_prompts):
-    cost = 0 # Initialize a variable to store the total cost
 
-    # Check the evaluation method to determine the cost calculation strategy
-    if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'Function Calling' or method == 'Code Generation' or method == 'JSON Validation' or method == 'LogProbs':
-        # Calculate the cost for the iterations.
-        cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
+    if iterations == 0:
 
-    elif method == 'Semantic Similarity':
-        # Calculate the cost for the iterations.
-        cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
+        cost = 0
 
     else:
-        # Calculate the cost for the iterations
-        cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
+
+        # Check the evaluation method to determine the cost calculation strategy
+        if method == 'Equals' or method == 'Includes' or method == 'Classification' or method == 'Function Calling' or method == 'Code Generation' or method == 'JSON Validation' or method == 'LogProbs':
+            # Calculate the cost for the iterations.
+            cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts - best_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
+
+        elif method == 'Semantic Similarity':
+            # Calculate the cost for the iterations.
+            cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts -  best_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
+
+        else:
+            # Calculate the cost for the iterations
+            cost = (approximate_cost_generation(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, prompt_change, model_iteration, model_iteration_max_tokens, iterations) + approximate_cost_test(test_cases, method, model_test, model_test_max_tokens, prompts_value, number_of_prompts, 'None', model_iteration, model_iteration_max_tokens, iterations, functions, None))*iterations
 
     return cost # Return the total cost after all iterations
 

@@ -59,7 +59,7 @@ def valid_yaml(file_name):
             config_schema = validation.ValidationFunctionCalling()
 
         if content['test']['method'] == 'Classification' or content['test']['method'] == 'Equals' or content['test']['method'] == 'Includes':
-            config_schema = validation.ValidationClaEqInLog()
+            config_schema = validation.ValidationClaEqIn()
 
         if content['test']['method'] == 'Elo':
             config_schema = validation.ValidationElo()
@@ -119,7 +119,7 @@ def approximate_cost(file):
     if method == 'Elo':
         description = yaml_content['test']['description']
     test_cases = yaml_content.get('test', {}).get('cases', [])
-    if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'JSON Validation' or method == 'Semantic Similarity':
+    if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'JSON Validation' or method == 'Semantic Similarity' or method == 'LogProbs':
         input_output_pairs = [(case['input'], case['output']) for case in test_cases]
         test_cases = input_output_pairs
     if method == 'Function Calling':
@@ -441,7 +441,7 @@ def run_evaluation(file, approximate_cost):
             if method == 'Function Calling':
                 new_results_prompts_cost = iteration.iterations(test_cases, method, old_prompts, number_of_prompts - best_prompts, functions, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, function_call, None, best_prompts, timeout, n_retries)
 
-            if method != 'Function Calling' and method != 'Elo':
+            if method != 'Function Calling':
                 new_results_prompts_cost = iteration.iterations(test_cases, method, old_prompts, number_of_prompts - best_prompts, None, model_test, model_test_temperature, model_test_max_tokens, model_iteration, model_iteration_temperature, model_iteration_max_tokens, None, None, best_prompts, timeout, n_retries)
             new_results = new_results_prompts_cost[0]
             cost = cost + new_results_prompts_cost[1]
@@ -594,99 +594,7 @@ def run_evaluation(file, approximate_cost):
 def main():
     
     parser = argparse.ArgumentParser(description="Read YAML file and get key values.")
-    parser.add_argument("yaml_file", help="Path of the YAML file to read.\n The following is the structure that your YAML files should have.\n"
-
-"""test:\n"""
-
-    """cases: Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the
-        Elo method to evaluate them, it should be just a list of strings. If you are going to use the methods classification, 
-        equal or includes, it should be a list of tuples with two elements, where the first element is the test case and the 
-        second element is the correct response to the test. Remember that if you decide to use classification, only a boolean
-        value is allowed as a response. the form of your test cases has to be, in case of selecting the Elo method:\n
-            -'Test1'\n
-            -'Test2'...\n
-        If you choose the methods Classification, Equals, Includes they must be of the form:\n
-            -input: 'Test1'\n
-            output: 'Answer1'\n
-            -input: 'Test2'\n
-            output: 'Answer2'\n
-        And in case the method is Function Calling:\n
-            -input: 'Test1'\n
-            output1: 'name_function'\n
-            output2: 'variable'\n
-            -input: 'Test2'\n
-            output1: 'name_function'\n
-            output2: 'variable'\n"""
-
-    """description: Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
-        you are going to use the 'Elo' method.\n"""
-    """method: Here, you select the evaluation method for your prompts. You must choose between 'Elo',
-        'Classification', 'Equals', 'includes' and 'Function Calling'.\n"""
-
-    """model:\n"""
-        """name: The name of the GPT model you will use to evaluate the prompts.\n"""
-        """temperature: The temperature of the GPT model you will use to evaluate the prompts.\n"""
-        """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate the response to the test.\n"""
-
-    """functions: This field must only be filled out in case the 'Function Calling' method is intended to be used.
-    If another method is used, it must not be filled out. The structure is a JSON object. Let's break down the different components:\n
-
-            - Function Name (name): This is the identifier used to refer to this function within the context of your code.\n
-
-            - Function Description (description): A brief description of what the function does.\n
-
-            - Function Parameters (parameters): This section defines the input parameters that the function accepts.\n
-
-                - Type (type): The type of the parameter being defined.\n
-
-                - Properties (properties): This is an object containing properties that the input parameter object should have.\n
-
-                    - File Type (file_type): This is a property of the parameter object.\n
-
-                    - Enum (enum): An enumeration of allowed values for the 'file_type' property. (optional)\n
-
-                    - Description (description): A description of what the 'file_type' property represents.\n
-
-                - Required (required): An array listing the properties that are required within the parameter object. (optional)\n"""
-
-    """function_call: This field must only be filled out in case the 'Function Calling' method is intended to be 
-        used. If another method is used, it must not be filled out.\n"""
-
-"""prompts: You have two options, either provide your list of prompts or generate them following the instructions below.\n"""
-
-    """list: A list of prompts you want to evaluate. If you want to generate them with the prompt generator, don't put this key in 
-        your YAML file. Please provide a minimum number of 4 prompts. Your prompts must be listed as follows:\n
-            - 'Prompt1'\n
-            - 'Prompt2'...\n"""
-
-    """generation:\n"""
-
-        """number: The number of prompts you are going to evaluate. You need to provide this key value only if you are going to generate the prompts.
-            Indicate the quantity of prompts you want to generate. Please provide a minimum number of 4 prompts. If you do not 
-            define this key by default, 4 prompts will be created.\n"""
-        """constraints: If you are going to generate prompts, this optional feature allows you to add special characteristics to the 
-            prompts that will be generated. For example, if you want prompts with a maximum length of 50 characters, simply complete with 
-            'Generate prompts with a maximum length of 50 characters'. If you don't want to use it, you don't need to have this key 
-            defined.\n"""
-        """description: Here is the description of the type of task that summarizes the test cases.\n"""
-
-        """model:\n"""
-
-            """name: The name of the GPT model you will use to generate the prompts.\n"""
-            """temperature: The temperature of the GPT model you will use to generate the prompts.\n"""
-            """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.\n"""
-
-    """iterations:\n (optional)"""
-        """number: The number of iterations you want to perform on the best prompts obtained in your initial testing to arrive at 
-            prompts with better final results. If you don't want to try alternatives combining your best prompts just put 0.\n"""
-        """best_prompts: The number of prompts you want to iterate over. the value must be between 2 and the number of prompts you 
-            provide (or generate) minus one. If you do not define this value but do want to iterate, the default value will be 2.\n"""
-
-        """model:\n"""
-
-            """name: The name of the GPT model you will use to generate the prompts.\n"""
-            """temperature: The temperature of the GPT model you will use to generate the prompts.\n"""
-            """max_tokens: The maximum number of tokens you will allow the GPT model to use to generate your prompts.""")
+    parser.add_argument("yaml_file", help="Path of the YAML file to read.")
     
     parser.add_argument("--env_path", help="Path to the .env file.", default=None)
     args = parser.parse_args()

@@ -31,19 +31,6 @@ class EloFormatTestCaseSchema(Schema):
     method = fields.Str(required=True)
     model = fields.Nested(ModelSchema)
     description = fields.Str(required=True)
-
-class LogProbsFormatTestCaseSchema(Schema):
-    # Schema for test cases with the 'LogProbs' method
-    cases = fields.List(fields.Str(required=True))
-    method = fields.Str(required=True)
-    model = fields.Nested(ModelSchema)
-
-    @validates("method")
-    def validate_method(self, value):
-        # Validate the 'method' field to be 'LogProbs'
-        expected_method = "LogProbs"
-        if value != expected_method:
-            raise ValidationError(f"Method must be '{expected_method}'.")
         
 class CodeTestCaseSchema(Schema):
 
@@ -67,7 +54,7 @@ class EmbeddingsTestCaseSchema(Schema):
     output = fields.String(required=True)
 
 class ClaEqInFormatTestCaseSchema(Schema):
-        # Schema for test cases formatted for 'Classification', 'Equals', 'Includes' and 'LogProbs' methods
+        # Schema for test cases formatted for 'Classification', 'Equals', and 'Includes' methods
         cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
@@ -78,9 +65,8 @@ class ClaEqInFormatTestCaseSchema(Schema):
             expected_method1 = "Classification"
             expected_method2 = "Equals"
             expected_method3 = "Includes"
-            expected_method4 = "LogProbs"
-            if value != expected_method1 and value != expected_method2 and value != expected_method3 and value != expected_method4:
-                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' '{expected_method3}' or '{expected_method4}'.")
+            if value != expected_method1 and value != expected_method2 and value != expected_method3:
+                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' '{expected_method3}'.")
 
 class CodeFormatTestCaseSchema(Schema):
         cases = fields.List(fields.Nested(CodeTestCaseSchema), required=True)
@@ -97,6 +83,19 @@ class JSONFormatTestCaseSchema(Schema):
         cases = fields.List(fields.Nested(JSONTestCaseSchema), required=True)
         method = fields.Str(required=True)
         model = fields.Nested(ModelSchema)
+
+class LogProbsFormatTestCaseSchema(Schema):
+    # Schema for test cases with the 'LogProbs' method
+    cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
+    method = fields.Str(required=True)
+    model = fields.Nested(ModelSchema)
+
+    @validates("method")
+    def validate_method(self, value):
+        # Validate the 'method' field to be 'LogProbs'
+        expected_method = "LogProbs"
+        if value != expected_method:
+            raise ValidationError(f"Method must be '{expected_method}'.")
 
 class EmbeddingsModel(Schema):
      model_name = fields.Str()

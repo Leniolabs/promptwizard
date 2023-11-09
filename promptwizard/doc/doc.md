@@ -1,5 +1,7 @@
 # Prompt Wizard
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1iW2y43923vECOhKPuhoGENwY1y81Rw8i?usp=sharing)
+
 ## Description
 
 Prompt Wizard is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.
@@ -77,7 +79,7 @@ And use the various functions that PromptWizard can provide you with, such as fo
 
 ```bash
 # Example of using PromptWizard
-import promptwizard
+from promptwizard import prompt_generation
 
 test_cases = [
     {'input': 'How do you make a classic spaghetti carbonara?', 'output': 'REPLY'},
@@ -110,7 +112,7 @@ results = iteration.iterations(test_cases, method='Elo', prompts=old_prompts, nu
 We provide you an explanation of the valid structure of your YAML files and certain limitations for some variables within it. We recommend that you read it carefully before running an evaluation.
 
 The following is the structure that your YAML files should have.
-
+```bash
 test:
 
     cases: """ Here, you have to put the test cases you are going to use to evaluate your prompts. If you are going to use the
@@ -120,7 +122,7 @@ test:
         value is allowed as a response. the form of your test cases has to be, in case of selecting the Elo method:
             -'Test1'
             -'Test2'...
-        If you choose the methods Classification, Equals, Includes they must be of the form:
+        If you choose the methods Classification, Equals, Includes, Semantic Similarity or LogProbs they must be of the form:
             -input: 'Test1'
             output: 'Answer1'
             -input: 'Test2'
@@ -143,7 +145,7 @@ test:
     description: """Here is the description of the type of task that summarizes the test cases. You only have to use this field if 
         you are going to use the 'Elo' method"""
     method: """Here, you select the evaluation method for your prompts. You must choose between 'Elo',
-        'Classification', 'Equals', 'Includes', 'Function Calling', 'Code Generation' and 'JSON Validation'."""
+        'Classification', 'Equals', 'Includes', 'Function Calling', 'Code Generation' 'JSON Validation', 'Semantic Similarity' and 'LogProbs'."""
 
     model:
         name: """The name of the GPT model you will use to evaluate the prompts."""
@@ -212,7 +214,10 @@ prompts: """You have two options, either provide your list of prompts or generat
             name: 'gpt-4
             temperature: 0.6
             max_tokens: 300"""
+timeout: """Timeout set for an API request. This time limit indicates how long the client should wait to receive a response before the request expires."""
 
+n_retries: """Number of attempts that will be automatically made to resend an API request in case the initial request fails."""
+```
 In case the YAML file you wish to evaluate has errors in its structure, don't worry. Prior to being assessed by the prompt engineer, your file will be validated, and you will receive a notification indicating where you need to make corrections to it in order to be evaluated successfully.
 
 ## Special features
@@ -245,4 +250,4 @@ If you want to see usage examples, we provide the following Colab notebook for y
 
 ## Creators
 
-promptwizard is crafted with love by [Leniolabs](https://www.leniolabs.com/) and a growing community of contributors. We build digital experiences with your ideas. [Get in touch](https://www.leniolabs.com/services/team-augmentation/?utm_source=promptree&utm_medium=banner&utm_campaign=leniolabs&utm_content=promptree_github)! Also, if you have any questions or feedback about the promptwizard, please feel free to contact us at info@leniolabs.com. We'd love to hear from you!
+promptwizard is crafted with love by [Leniolabs](https://www.leniolabs.com/) and a growing community of contributors. We build digital experiences with your ideas. [Get in touch](https://www.leniolabs.com/services/team-augmentation/?utm_source=promptree&utm_medium=banner&utm_campaign=leniolabs&utm_content=promptree_github)! Also, if you have any questions or feedback about promptwizard, please feel free to contact us at info@leniolabs.com. We'd love to hear from you!

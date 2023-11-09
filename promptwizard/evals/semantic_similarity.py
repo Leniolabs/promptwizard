@@ -52,15 +52,16 @@ class semanticSimilarity:
             {"role": "user", "content": f"{test_case['input']}"}
         ]
         response = openai_call.create_chat_completion(model, messages, model_max_tokens, model_temperature, 1, timeout=self.timeout, n_retries=self.n_retries)
-        partial_tokens_input = response["usage"]["prompt_tokens"]
-        partial_tokens_output = response["usage"]["completion_tokens"]
+        partial_tokens_input = response.usage.prompt_tokens
+        partial_tokens_output = response.usage.completion_tokens
         result_content = response.choices[0].message.content
         
         return partial_tokens_input, partial_tokens_output, result_content, test_case['output']
     
     def calculate_embedding(self, test_case):
-        test_case['embedding'] = openai_call.create_embedding(self.model_embedding, test_case['output'], self.timeout, self.n_retries)
-        tokens_embedding = test_case['embedding']["usage"]["total_tokens"]
+        response_embedding = openai_call.create_embedding(self.model_embedding, test_case['output'], self.timeout, self.n_retries)
+        test_case['embedding'] = response_embedding.data[0].embedding
+        tokens_embedding = response_embedding.usage.total_tokens
         return tokens_embedding
     
     def test_candidate_prompts(self):
@@ -121,10 +122,10 @@ class semanticSimilarity:
                     tokens_output += partial_tokens_output
                     embedding_response = openai_call.create_embedding(self.model_embedding, result_content, self.timeout, self.n_retries)
                     embedding_test_case = test_case['embedding']
-                    similarity_score = cosine_similarity(np.array(embedding_response['data'][0]['embedding']).reshape(1, -1) , np.array(embedding_test_case['data'][0]['embedding']).reshape(1, -1))[0, 0]
+                    similarity_score = cosine_similarity(np.array(embedding_response.data[0].embedding).reshape(1, -1) , np.array(embedding_test_case).reshape(1, -1))[0, 0]
                     
                     prompt_results[prompt]['score'] = prompt_results[prompt]['score'] + similarity_score
-                    tokens_embedding = tokens_embedding + embedding_response["usage"]["total_tokens"] 
+                    tokens_embedding = tokens_embedding + embedding_response.usage.total_tokens
 
                     prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": ideal_output, "result": similarity_score})
                 

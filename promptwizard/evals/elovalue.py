@@ -125,8 +125,8 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
         score = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, logit_bias=logit_bias,timeout=self.timeout, n_retries=self.n_retries)
 
-        tokens_input = score["usage"]["prompt_tokens"]
-        tokens_output = score["usage"]["completion_tokens"]
+        tokens_input = score.usage.prompt_tokens
+        tokens_output = score.usage.completion_tokens
         cost_input = input.cost(tokens_input, self.model_test)
         cost_output = output.cost(tokens_output, self.model_test)
         cost = cost_input + cost_output
@@ -155,8 +155,8 @@ Respond with your ranking, and nothing else. Be fair and unbiased in your judgem
 
         generation = openai_call.create_chat_completion(model, messages, max_tokens, temperature, 1, timeout=self.timeout, n_retries=self.n_retries)
 
-        tokens_input = generation["usage"]["prompt_tokens"]
-        tokens_output = generation["usage"]["completion_tokens"]
+        tokens_input = generation.usage.prompt_tokens
+        tokens_output = generation.usage.completion_tokens
         cost_input = input.cost(tokens_input, self.model_test)
         cost_output = output.cost(tokens_output, self.model_test)
         cost = cost_input + cost_output

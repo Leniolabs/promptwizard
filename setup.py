@@ -5,13 +5,13 @@ with open('promptwizard/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='promptwizard',
-    version='0.0.2',
+    version='0.0.6',
     packages=['promptwizard', 'promptwizard.evals', 'promptwizard.cost', 'promptwizard.approximate_cost', 'promptwizard.validation_yaml', 'promptwizard.prompt_generation', 'promptwizard.openai_calls'],
     python_requires='>=3.8',
     long_description=long_description,
     long_description_content_type='text/markdown',
     install_requires=[
-        'openai>=0.27.0',
+        'openai==1.1.1',
         'PyYAML>=5.4',
         'matplotlib',
         'numpy',
