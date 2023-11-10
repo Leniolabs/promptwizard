@@ -1,10 +1,11 @@
 from ..openai_calls import openai_call
 from ..cost import input, output
 import concurrent.futures
-from typing import List
+from typing import List, Dict
+import math
 
 class LogProbs:
-    def __init__(self, test_cases: List[str], prompts: List[str], model_test: str="gpt-3.5-turbo", model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
+    def __init__(self, test_cases: List[Dict], prompts: List[str], model_test: str="gpt-3.5-instruct", model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
 
         """
         Initialize a LogProbs instance.
@@ -34,7 +35,7 @@ class LogProbs:
 
         You will be graded based on the performance of your prompt... but don't cheat! You cannot include specifics about the test cases in your prompt. Any prompts with examples will be disqualified.
 
-        Specify in your prompts that the response has to be with the token with the highest logprobs.
+        Specify in your prompts that the response has to be with the token with the highest logprobs and the response should noy have \n at the beginning.
 
         Most importantly, output NOTHING but the prompt. Do not include anything else in your message."""
         self.prompts = prompts
@@ -47,15 +48,9 @@ class LogProbs:
         response = openai_call.create_completion(model, messages, model_max_tokens, model_temperature, 1, timeout=self.timeout, n_retries=self.n_retries)
         partial_tokens_input = response.usage.prompt_tokens
         partial_tokens_output = response.usage.completion_tokens
-        result_content = response.choices[0].text
-        result_content = result_content.strip().replace('\n', '')
-        top_logprobs = ''
-        i = 0
-        while (i < len(response.choices[0].logprobs.top_logprobs)):
-            top_logprobs = top_logprobs + next(iter(response.choices[0].logprobs.top_logprobs[i]))
-            i = i + 1
-        top_logprobs = top_logprobs.strip().replace('\n', '')
-        return partial_tokens_input, partial_tokens_output, result_content, top_logprobs
+        top_logprobs = response.choices[0].logprobs.top_logprobs
+        
+        return partial_tokens_input, partial_tokens_output, top_logprobs
 
     def test_candidate_prompts(self):
 
@@ -74,7 +69,7 @@ class LogProbs:
         cost = 0
         tokens_input = 0
         tokens_output = 0
-        prompt_results = {prompt: {'correct': 0, 'total': 0} for prompt in self.prompts}
+        prompt_results = {prompt: {'total': 0} for prompt in self.prompts}
         results = [{"method": "LogProbs"}]
 
         with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
@@ -92,15 +87,83 @@ class LogProbs:
                         self.model_test_temperature
                     )
                     futures.append(future)
-                    partial_tokens_input, partial_tokens_output, result_content, logprobs = future.result()
+                    partial_tokens_input, partial_tokens_output, logprobs = future.result()
                     tokens_input += partial_tokens_input
                     tokens_output += partial_tokens_output
                     
-                    if logprobs == result_content and result_content == test_case["output"]:
-                        prompt_results[prompt]['correct'] += 1
-                    prompt_results[prompt]['total'] += 1
+                    def remove_empty_keys_first_dictionary(arrays):
+                        if arrays:
+                            first_dictionary = arrays[0]
+                            keys_to_remove = [key for key in first_dictionary.keys() if '\n' in key or key == '' or (key == ' ') or (key == '|endoftext|')]
+                            for key in keys_to_remove:
+                                del first_dictionary[key]
+                            return first_dictionary
+                        
+                    def remove_whitespace_from_keys(dictionary):
+                        modified_dictionary = {}
 
-                    prompt_and_results.append({"test": test_case['input'], "answer": result_content, "ideal": test_case["output"], "logprobs": logprobs, "result": logprobs == result_content and result_content == test_case["output"]})
+                        for key, value in dictionary.items():
+                            if key.startswith(' '):
+                                new_key = key.lstrip(' ')
+
+                                if new_key in modified_dictionary:
+                                    modified_dictionary[new_key] = math.log(math.exp(modified_dictionary[new_key])*math.exp(value))
+                                else:
+                                    modified_dictionary[new_key] = value
+                            elif key.lstrip(' ') in modified_dictionary:
+                                modified_dictionary[key.lstrip(' ')] += value
+                            else:
+                                modified_dictionary[key] = value
+                        return modified_dictionary
+                    
+                    first_dictionary1 = remove_empty_keys_first_dictionary(logprobs)
+                    first_dictionary = remove_whitespace_from_keys(first_dictionary1)
+
+                    def generate_combinations(dictionaries, index=0, current_combination="", current_percentage=1, memo={}):
+                        if index == len(dictionaries):
+                            return [{current_combination: current_percentage}]
+
+                        if (index, current_combination) in memo:
+                            return memo[(index, current_combination)]
+
+                        results = []
+                        for key, value in dictionaries[index].items():
+                            new_combination = current_combination + key
+                            new_percentage = current_percentage * math.exp(value)
+                            results += generate_combinations(dictionaries, index + 1, new_combination, new_percentage, memo)
+
+                        memo[(index, current_combination)] = results
+                        return results
+                    
+                    combinations_tokens = generate_combinations(logprobs[1:])
+                    combined_dict = {}
+                    for dict in combinations_tokens:
+                        combined_dict.update(dict)
+                    
+                    def multiply_dictionaries(dict1, dict2):
+                        result = {}
+
+                        for key1, value1 in dict1.items():
+                            for key2, value2 in dict2.items():
+                                new_key = key1 + key2
+                                new_value = math.exp(value1) * math.exp(value2)
+                                result[new_key] = new_value
+
+                        return result
+
+                    if len(first_dictionary)>0:
+                        combination = multiply_dictionaries(first_dictionary, combined_dict)
+
+                    combinations = {**combined_dict, **combination}
+
+                    if test_case['output'] in combinations:
+                        probability = combinations[test_case['output']]
+                    
+                    if not(test_case['output'] in combinations):
+                        probability = 0
+
+                    prompt_results[prompt]['total'] = prompt_results[prompt]['total'] + probability
+                    prompt_and_results.append({"test": test_case['input'], "probability": probability, "answer": test_case["output"]})
                 
                 results.append(prompt_and_results)
                 prompt_and_results = []
@@ -110,21 +173,14 @@ class LogProbs:
         cost = cost + cost_input + cost_output
 
         
-        best_prompt = self.prompts[0]
-        best_logprobs = 0
+        # Sort the prompts by score.
         data_list = []
         for i, prompt in enumerate(self.prompts):
-            correct = prompt_results[prompt]['correct']
-            total = prompt_results[prompt]['total']
-            percentage = (correct / total) * 100
-            data_list.append({"prompt": prompt, "rating": percentage})
-            print(f"Prompt {i+1} got {percentage:.2f}% correct.")
-            if percentage >= best_logprobs:
-                best_logprobs = percentage
-                best_prompt = prompt
+            score = prompt_results[prompt]['total']/len(self.test_cases)
+            data_list.append({"prompt": prompt, "rating": score})
+
         sorted_data = sorted(data_list, key=lambda x: x['rating'], reverse=True)
         best_prompts = sorted_data[:self.best_prompts]
-        print(f"The best prompt was '{best_prompt}' with a correctness of {best_logprobs:.2f}%.")
         sorted_data.append(results)
         return sorted_data, best_prompts, cost, tokens_input, tokens_output
     

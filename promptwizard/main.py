@@ -272,7 +272,7 @@ def run_evaluation(file, approximate_cost):
             best_percentage = yaml_content['prompts']['iterations']['best_percentage']
         if not ('best_percentage' in yaml_content['prompts']['iterations']) and (method != 'Elo' or method != 'Semantic Similarity'):
             best_percentage = 100
-            if method != 'Elo' and method != 'Semantic Similarity':
+            if method != 'Elo' and method != 'Semantic Similarity' and method != 'LogProbs':
                 print("The percentage to be overcome by your best prompts to stop the iteration will be 100%.")
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
