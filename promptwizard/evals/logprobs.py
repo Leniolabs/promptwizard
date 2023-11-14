@@ -5,7 +5,7 @@ from typing import List, Dict
 import math
 
 class LogProbs:
-    def __init__(self, test_cases: List[Dict], prompts: List[str], model_test: str="gpt-3.5-instruct", model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
+    def __init__(self, test_cases: List[Dict], prompts: List[str], model_test: str="gpt-3.5-turbo-instruct", model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
 
         """
         Initialize a LogProbs instance.
@@ -89,35 +89,8 @@ class LogProbs:
                     futures.append(future)
                     partial_tokens_input, partial_tokens_output, logprobs = future.result()
                     tokens_input += partial_tokens_input
-                    tokens_output += partial_tokens_output
-                    
-                    def remove_empty_keys_first_dictionary(arrays):
-                        if arrays:
-                            first_dictionary = arrays[0]
-                            keys_to_remove = [key for key in first_dictionary.keys() if '\n' in key or key == '' or (key == ' ') or (key == '|endoftext|')]
-                            for key in keys_to_remove:
-                                del first_dictionary[key]
-                            return first_dictionary
-                        
-                    def remove_whitespace_from_keys(dictionary):
-                        modified_dictionary = {}
-
-                        for key, value in dictionary.items():
-                            if key.startswith(' '):
-                                new_key = key.lstrip(' ')
-
-                                if new_key in modified_dictionary:
-                                    modified_dictionary[new_key] = math.log(math.exp(modified_dictionary[new_key])*math.exp(value))
-                                else:
-                                    modified_dictionary[new_key] = value
-                            elif key.lstrip(' ') in modified_dictionary:
-                                modified_dictionary[key.lstrip(' ')] += value
-                            else:
-                                modified_dictionary[key] = value
-                        return modified_dictionary
-                    
-                    first_dictionary1 = remove_empty_keys_first_dictionary(logprobs)
-                    first_dictionary = remove_whitespace_from_keys(first_dictionary1)
+                    if type(partial_tokens_output) == int:
+                        tokens_output += partial_tokens_output
 
                     def generate_combinations(dictionaries, index=0, current_combination="", current_percentage=1, memo={}):
                         if index == len(dictionaries):
@@ -135,31 +108,42 @@ class LogProbs:
                         memo[(index, current_combination)] = results
                         return results
                     
-                    combinations_tokens = generate_combinations(logprobs[1:])
-                    combined_dict = {}
-                    for dict in combinations_tokens:
-                        combined_dict.update(dict)
+                    def clean_keys(array):
+                        for dictionary in array:
+                            original_keys = list(dictionary.keys())
+                            for key in original_keys:
+                                new_key = key.replace('\n', '').replace('', '').replace('"', '').replace("'", '').replace(',', '').replace('<|endoftext|>', '').replace(':', '').lstrip()
+                                dictionary[new_key] = dictionary.pop(key)
+                        return array
                     
-                    def multiply_dictionaries(dict1, dict2):
-                        result = {}
+                    def sum_repeated_values(array):
+                        result_dictionary = {}
 
-                        for key1, value1 in dict1.items():
-                            for key2, value2 in dict2.items():
-                                new_key = key1 + key2
-                                new_value = math.exp(value1) * math.exp(value2)
-                                result[new_key] = new_value
+                        for dictionary in array:
+                            for key, value in dictionary.items():
+                                key_lower = key.lower()
+                                if key_lower in result_dictionary:
+                                    result_dictionary[key_lower] += value
+                                else:
+                                    result_dictionary[key_lower] = value
 
+                        result = [{'{}'.format(key): value} for key, value in result_dictionary.items()]
                         return result
-
-                    if len(first_dictionary)>0:
-                        combination = multiply_dictionaries(first_dictionary, combined_dict)
-
-                    combinations = {**combined_dict, **combination}
-
-                    if test_case['output'] in combinations:
-                        probability = combinations[test_case['output']]
                     
-                    if not(test_case['output'] in combinations):
+                    all_combinations = generate_combinations(logprobs)
+
+                    clean_combinations = clean_keys(all_combinations)
+
+                    combinations = sum_repeated_values(clean_combinations)
+
+                    for diccionario in combinations:
+                        for key, value in diccionario.items():
+                            if test_case['output'].lower() == key:
+                                probability = value
+                                break
+
+                    
+                    if not(any(test_case['output'].lower() in diccionario for diccionario in combinations)):
                         probability = 0
 
                     prompt_results[prompt]['total'] = prompt_results[prompt]['total'] + probability

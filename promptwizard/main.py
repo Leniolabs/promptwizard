@@ -118,6 +118,7 @@ def approximate_cost(file):
     method = yaml_content['test']['method']
     if method == 'Elo':
         description = yaml_content['test']['description']
+
     test_cases = yaml_content.get('test', {}).get('cases', [])
     if method == 'Classification' or method == 'Includes' or method == 'Equals' or method == 'JSON Validation' or method == 'Semantic Similarity' or method == 'LogProbs':
         input_output_pairs = [(case['input'], case['output']) for case in test_cases]
@@ -128,6 +129,7 @@ def approximate_cost(file):
     if method == 'Code Generation':
         result_list = [[case['input'], case['arguments'], case['output']] for case in test_cases]
         test_cases = result_list
+
     if method == 'Semantic Similarity':
         if 'embeddings' in yaml_content['test']:
             model_embedding = yaml_content['test']['embeddings']['model_name']
@@ -135,45 +137,100 @@ def approximate_cost(file):
             model_embedding = "text-embedding-ada-002"
     if not method == 'Semantic Similarity':
         model_embedding = None
-    model_test = yaml_content['test']['model']['name']
-    model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+
+    if not 'model' in yaml_content['test'] and method != "LogProbs":
+        model_test = 'gpt-3.5-turbo'
+        model_test_max_tokens = 1000
+    if not 'model' in yaml_content['test'] and method == "LogProbs":
+        model_test = 'gpt-3.5-turbo-instruct'
+        model_test_max_tokens = 4
+    
+    if 'model' in yaml_content['test'] and 'max_tokens' not in yaml_content['test']['model'] and ('name' in yaml_content['test']['model']) and method != "LogProbs":
+        model_test_max_tokens = 1000
+        model_test = yaml_content['test']['model']['name']
+    if 'model' in yaml_content['test'] and 'max_tokens' not in yaml_content['test']['model'] and method == "LogProbs":
+        model_test_max_tokens = 4
+        model_test = yaml_content['test']['model']['name']
+    if 'model' in yaml_content['test'] and 'max_tokens' in yaml_content['test']['model'] and ('name' not in yaml_content['test']['model']) and method != "LogProbs":
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test = 'gpt-3.5-turbo'
+    if 'model' in yaml_content['test'] and 'max_tokens' in yaml_content['test']['model'] and ('name' not in yaml_content['test']['model']) and method == "LogProbs":
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test = 'gpt-3.5-turbo-instruct'
+        
+    if 'model' in yaml_content['test'] and 'name' in yaml_content['test']['model'] and 'max_tokens' in yaml_content['test']['model']:
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+
     if 'list' in yaml_content['prompts']:
         prompts_value = yaml_content['prompts']['list']
         number_of_prompts = len(prompts_value)
     if not 'list' in yaml_content['prompts']:
         prompts_value = []
+
     if 'generation' in yaml_content['prompts']:
+
         if 'number' in yaml_content['prompts']['generation']:
             number_of_prompts = int(yaml_content['prompts']['generation']['number'])
         if not 'number' in yaml_content['prompts']['generation']:
             number_of_prompts = 4
+
         if 'constraints' in yaml_content['prompts']['generation']:
             prompt_constrainst = yaml_content['prompts']['generation']['constraints']
         if not 'constraints' in yaml_content['prompts']['generation']:
             prompt_constrainst = 'None'
-        model_generation = yaml_content['prompts']['generation']['model']['name']
-        model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+
+        if 'name' not in yaml_content['prompts']['generation']['model'] and ('max_tokens' not in yaml_content['prompts']['generation']['model']):
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = 300
+
+        if 'name' in yaml_content['prompts']['generation']['model'] and ('max_tokens' not in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = 300
+
+        if 'name' in yaml_content['prompts']['generation']['model'] and ('max_tokens' in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+
+        if not 'name' in yaml_content['prompts']['generation']['model'] and ('max_tokens' in yaml_content['prompts']['generation']['model']):
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+
         if method != 'Elo':
             description = yaml_content['prompts']['generation']['description']
+
     if not 'generation' in yaml_content['prompts']:
         model_generation = 'gpt-4'
         model_generation_max_tokens = 0
         prompt_constrainst = 'None'
         description = None
+
     if 'functions' in yaml_content['test']:
         functions = yaml_content['test']['functions']
+
     if 'iterations' in yaml_content['prompts']:
         iterations = int(yaml_content['prompts']['iterations']['number'])
+
         if 'model' in yaml_content['prompts']['iterations']:
-            model_iteration = yaml_content['prompts']['iterations']['model']['name']
-            model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+            if 'name' in yaml_content['prompts']['iterations']['model'] and ('max_tokens' in yaml_content['prompts']['iterations']['model']):
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+            if 'name' not in yaml_content['prompts']['iterations']['model'] and ('max_tokens' in yaml_content['prompts']['iterations']['model']):
+                model_iteration = model_generation
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+            if 'name' in yaml_content['prompts']['iterations']['model'] and ('max_tokens' not in yaml_content['prompts']['iterations']['model']):
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_max_tokens = model_generation_max_tokens
+
         if not 'model' in yaml_content['prompts']['iterations']:
             model_iteration = model_generation
             model_iteration_max_tokens = model_generation_max_tokens
+
         if 'best_prompts' in yaml_content['prompts']['iterations']:
             best_prompts = yaml_content['prompts']['iterations']['best_prompts']
         if not 'best_prompts' in yaml_content['prompts']['iterations']:
             best_prompts = 2
+
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
         model_iteration = 'None'
@@ -211,33 +268,162 @@ def run_evaluation(file, approximate_cost):
             model_embedding = "text-embedding-ada-002"
             print("model_embedding will be 'text-embedding-ada-002'.")
     
-    model_test = yaml_content['test']['model']['name']
-    model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
-    model_test_temperature = int(yaml_content['test']['model']['temperature'])
+    if not 'model' in yaml_content['test'] and method != 'LogProbs':
+        model_test = 'gpt-3.5-turbo'
+        model_test_max_tokens = 1000
+        model_test_temperature = 0.6
+        print("model_test will be gpt-3.5-turbo \nmax_tokens will be 1000 \ntemperature will be 0.6")
+
+    if not 'model' in yaml_content['test'] and method == 'LogProbs':
+        model_test = 'gpt-3.5-turbo-instruct'
+        model_test_max_tokens = 4
+        model_test_temperature = 0.6
+        print("model_test will be gpt-3.5-turbo-instruct \nmax_tokens will be 4 \ntemperature will be 0.6")
+    
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method != 'LogProbs') and ('max_tokens' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo'
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("model_test will be gpt-3.5-turbo.")
+
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method == 'LogProbs') and ('max_tokens' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo-instruct'
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("model_test will be gpt-3.5-turbo-instruct.")
+    
+    if 'model' in yaml_content['test'] and (not 'max_tokens' in yaml_content['test']['model'] and method != 'LogProbs') and ('name' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = 1000
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("max_tokens will be 1000.")
+
+    if 'model' in yaml_content['test'] and (not 'max_tokens' in yaml_content['test']['model'] and method == 'LogProbs') and ('name' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = 4
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("max_tokens will be 4.")
+
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method != 'LogProbs') and (not 'max_tokens' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo'
+        model_test_max_tokens = 1000
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("model_test will be gpt-3.5-turbo \nmodel_test_max_tokens will be 1000.")
+
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method == 'LogProbs') and (not 'max_tokens' in yaml_content['test']['model']) and ('temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo-instruct'
+        model_test_max_tokens = 4
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+        print("model_test will be gpt-3.5-turbo-instruct \nmodel_test_max_tokens will be 4.")
+
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method != 'LogProbs') and ('max_tokens' in yaml_content['test']['model']) and (not 'temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo'
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = 0.6
+        print("model_test will be gpt-3.5-turbo \nmodel_test_temperature will be 0.6.")
+
+    if 'model' in yaml_content['test'] and (not 'name' in yaml_content['test']['model'] and method == 'LogProbs') and ('max_tokens' in yaml_content['test']['model']) and (not 'temperature' in yaml_content['test']['model']):
+        model_test = 'gpt-3.5-turbo-instruct'
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = 0.6
+        print("model_test will be gpt-3.5-turbo-instruct \nmodel_test_temperature will be 0.6.")
+
+    if 'model' in yaml_content['test'] and ('name' in yaml_content['test']['model'] and method != 'LogProbs') and (not 'max_tokens' in yaml_content['test']['model']) and (not 'temperature' in yaml_content['test']['model']):
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = 1000
+        model_test_temperature = 0.6
+        print("model_test_max_tokens will be 1000 \nmodel_test_temperature will be 0.6.")
+
+    if 'model' in yaml_content['test'] and ('name' in yaml_content['test']['model'] and method == 'LogProbs') and (not 'max_tokens' in yaml_content['test']['model']) and (not 'temperature' in yaml_content['test']['model']):
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = 4
+        model_test_temperature = 0.6
+        print("model_test_max_tokens will be 4 \nmodel_test_temperature will be 0.6.")
+    
+    if 'model' in yaml_content['test'] and (not 'temperature' in yaml_content['test']['model']) and ('name' in yaml_content['test']['model']) and ('max_tokens' in yaml_content['test']['model']):
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = 0.6
+        print("temperature will be 0.6.")
+    
+    if 'model' in yaml_content['test'] and 'name' in yaml_content['test']['model'] and 'max_tokens' in yaml_content['test']['model'] and 'temperature' in yaml_content['test']['model']:
+        model_test = yaml_content['test']['model']['name']
+        model_test_max_tokens = int(yaml_content['test']['model']['max_tokens'])
+        model_test_temperature = int(yaml_content['test']['model']['temperature'])
+
     if 'best_prompts' in yaml_content['prompts']:
         best_prompts = yaml_content['prompts']['best_prompts']
     if not 'best_prompts' in yaml_content['prompts']:
         best_prompts = 2
-        print("best_prompts will be 2.")
+
     if 'list' in yaml_content['prompts']:
         prompts_value = yaml_content['prompts']['list']
         number_of_prompts = len(prompts_value)
     if not 'list' in yaml_content['prompts']:
         prompts_value = []
+
     if 'generation' in yaml_content['prompts']:
+
         if 'number' in yaml_content['prompts']['generation']:
             number_of_prompts = int(yaml_content['prompts']['generation']['number'])
         if not 'number' in yaml_content['prompts']['generation']:
             number_of_prompts = 4
+
         if 'constraints' in yaml_content['prompts']['generation']:
             prompt_constrainst = yaml_content['prompts']['generation']['constraints']
         if not 'constraints' in yaml_content['prompts']['generation']:
             prompt_constrainst = 'None'
-        model_generation = yaml_content['prompts']['generation']['model']['name']
-        model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
-        model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
+
+        if not 'model' in yaml_content['prompts']['generation']:
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = 300
+            model_generation_temperature = 1.2
+            print("model_generation will be gpt-4 \nmodel_generation_max_tokens will be 300 \nmodel_generation_temperature will be 1.2")
+
+        if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+            model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
+            print("model_generation will be gpt-4")
+
+        if 'model' in yaml_content['prompts']['generation'] and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and ('name' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = 300
+            model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
+            print("model_generation_max_tokens will be 300")
+
+        if 'model' in yaml_content['prompts']['generation'] and (not 'temperature' in yaml_content['prompts']['generation']['model']) and ('name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+            model_generation_temperature = 1.2
+            print("model_generation_temperature will be 1.2")
+
+        if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = 300
+            model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
+            print("model_generation will be gpt-4 \nmodel_generation_max_tokens will be 300")
+
+        if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']) and (not 'temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = 'gpt-4'
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+            model_generation_temperature = 1.2
+            print("model_generation will be gpt-4 \nmodel_generation_temperature will be 1.2")
+
+        if 'model' in yaml_content['prompts']['generation'] and ('name' in yaml_content['prompts']['generation']['model']) and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and (not 'temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = 300
+            model_generation_temperature = 1.2
+            print("model_generation_max_tokens will be 300 \nmodel_generation_temperature will be 1.2")
+        
+        if 'model' in yaml_content['prompts']['generation'] and ('name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
+            model_generation = yaml_content['prompts']['generation']['model']['name']
+            model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
+            model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
+
         if method != 'Elo':
             description = yaml_content['prompts']['generation']['description']
+
     if not 'generation' in yaml_content['prompts']:
         model_generation = 'gpt-4'
         model_generation_max_tokens = 0
@@ -245,35 +431,67 @@ def run_evaluation(file, approximate_cost):
         if method != 'Elo':
             description = None
         model_generation_temperature = 0
+
     if 'functions' in yaml_content['test']:
         functions = yaml_content['test']['functions']
         if 'function_call' in yaml_content['test']:
             function_call = yaml_content['test']['function_call']
         else:
             function_call = 'auto'
+
     if 'iterations' in yaml_content['prompts']:
+
         iterations = int(yaml_content['prompts']['iterations']['number'])
+
         if 'model' in yaml_content['prompts']['iterations']:
-            model_iteration = yaml_content['prompts']['iterations']['model']['name']
-            model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
-            model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
-        if not 'model' in yaml_content['prompts']['iterations']:
-            if 'generation' in yaml_content['prompts']:
+            if not 'name' in yaml_content['prompts']['iterations']['model'] and ('max_tokens' in yaml_content['prompts']['iterations']['model']) and ('temperature' in yaml_content['prompts']['iterations']['model']):
+                model_iteration = model_generation
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+                model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
+
+            elif not 'max_tokens' in yaml_content['prompts']['iterations']['model'] and ('name' in yaml_content['prompts']['iterations']['model']) and ('temperature' in yaml_content['prompts']['iterations']['model']):
+                model_iteration_max_tokens = model_generation_max_tokens
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
+
+            elif not 'temperature' in yaml_content['prompts']['iterations']['model'] and ('name' in yaml_content['prompts']['iterations']['model']) and ('max_tokens' in yaml_content['prompts']['iterations']['model']):
+                model_iteration_temperature = model_generation_temperature
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+            
+            elif not 'name' in yaml_content['prompts']['iterations']['model'] and (not 'max_tokens' in yaml_content['prompts']['iterations']['model']) and ('temperature' in yaml_content['prompts']['iterations']['model']):
                 model_iteration = model_generation
                 model_iteration_max_tokens = model_generation_max_tokens
+                model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
+
+            elif not 'name' in yaml_content['prompts']['iterations']['model'] and (not 'temperature' in yaml_content['prompts']['iterations']['model']) and ('max_tokens' in yaml_content['prompts']['iterations']['model']):
+                model_iteration = model_generation
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
                 model_iteration_temperature = model_generation_temperature
-                print("You will use the information from the model that you used for your first generation to generate your iteration prompts.")
+
+            elif not 'max_tokens' in yaml_content['prompts']['iterations']['model'] and (not 'temperature' in yaml_content['prompts']['iterations']['model']) and ('name' in yaml_content['prompts']['iterations']['model']):
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_max_tokens = model_generation_max_tokens
+                model_iteration_temperature = model_generation_temperature
+
             else:
-                model_iteration = 'gpt-4'
-                model_iteration_max_tokens = 300
-                model_iteration_temperature = 0.6
-                print("You will generate prompts with gpt-4, max_tokens = 300 and temperature = 0.6.")
+                model_iteration = yaml_content['prompts']['iterations']['model']['name']
+                model_iteration_max_tokens = yaml_content['prompts']['iterations']['model']['max_tokens']
+                model_iteration_temperature = yaml_content['prompts']['iterations']['model']['temperature']
+
+        if not 'model' in yaml_content['prompts']['iterations']:
+            model_iteration = model_generation
+            model_iteration_max_tokens = model_generation_max_tokens
+            model_iteration_temperature = model_generation_temperature
+
         if 'best_percentage' in yaml_content['prompts']['iterations']:
             best_percentage = yaml_content['prompts']['iterations']['best_percentage']
+
         if not ('best_percentage' in yaml_content['prompts']['iterations']) and (method != 'Elo' or method != 'Semantic Similarity'):
             best_percentage = 100
             if method != 'Elo' and method != 'Semantic Similarity' and method != 'LogProbs':
                 print("The percentage to be overcome by your best prompts to stop the iteration will be 100%.")
+
     if not 'iterations' in yaml_content['prompts']:
         iterations = 0
         best_percentage = 100

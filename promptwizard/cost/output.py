@@ -21,4 +21,6 @@ def cost (tokens, model):
         cost = (0.12/1000) * tokens
     if model == 'gpt-3.5-turbo-instruct':
         cost = (0.002 /1000) * tokens
+    if model == 'gpt-4-turbo':
+        cost = (0.03/1000) * tokens
     return cost

@@ -12,9 +12,13 @@ client = OpenAI()
 
 
 def create_chat_completion(model: str, messages :List[dict], max_tokens: int, temperature: float, number_of_prompts: int, logit_bias: dict=None, functions: dict=None, function_call: str=None, timeout: int=10, n_retries: int=5):
+
+    if model == 'gpt-4-turbo':
+            model = 'gpt-4-1106-preview'
+            
     @retry(wait=wait_random_exponential(min=1, max=timeout), stop=stop_after_attempt(n_retries), retry=retry_if_not_exception_type(openai.BadRequestError))
     def create_chat_completion_retry():
-    
+            
         try:
             if (logit_bias==None and functions==None):
 

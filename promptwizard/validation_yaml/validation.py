@@ -2,14 +2,14 @@ from marshmallow import Schema, fields, ValidationError, validates
 
 class ModelSchema(Schema):
         # Schema for defining the GPT model attributes
-        name = fields.Str(required=True)
-        temperature = fields.Float(required=True)
-        max_tokens = fields.Integer(required=True, strict=True)
+        name = fields.Str()
+        temperature = fields.Float()
+        max_tokens = fields.Integer(strict=True)
 
         @validates('name')
         def validate_name(self, model):
             # Validate the 'name' field against a list of allowed names
-            allowed_names = ['gpt-3.5-turbo', 'gpt-4', 'gpt-3.5-turbo-instruct']
+            allowed_names = ['gpt-3.5-turbo', 'gpt-4', 'gpt-4-turbo']
             if model not in allowed_names:
                 raise ValidationError(f"'name' must be one of the following: {', '.join(allowed_names)}")
             
@@ -24,6 +24,30 @@ class ModelSchema(Schema):
             # Validate the 'max_tokens' field to be greater than 0
             if not (1 <= value):
                 raise ValidationError("'max_tokens' must be an integer greater than 0.")
+            
+class ModelLogProbsSchema(Schema):
+    name = fields.Str()
+    temperature = fields.Float()
+    max_tokens = fields.Integer(strict=True)
+
+    @validates('name')
+    def validate_name(self, model):
+        # Validate the 'name' field against a list of allowed names
+        allowed_names = ['gpt-3.5-turbo-instruct']
+        if model != allowed_names[0]:
+            raise ValidationError(f"'name' must be one of the following: {', '.join(allowed_names)}")
+        
+    @validates("temperature")
+    def validate_temperature_range(self, value):
+        # Validate the 'temperature' field to be within a specified range
+        if not (0 <= value <= 2):
+            raise ValidationError("'temperature' must be a float between 0 and 2.")
+        
+    @validates("max_tokens")
+    def validate_max_tokens(self, value):
+        # Validate the 'max_tokens' field to be greater than 0
+        if not (1 <= value <= 4):
+            raise ValidationError("'max_tokens' must be an integer greater than 0 and less than or equal to 4.")
 
 class EloFormatTestCaseSchema(Schema):
     # Schema for test cases with the 'Elo' method
@@ -88,7 +112,7 @@ class LogProbsFormatTestCaseSchema(Schema):
     # Schema for test cases with the 'LogProbs' method
     cases = fields.List(fields.Nested(ClaEqInTestCaseSchema), required=True)
     method = fields.Str(required=True)
-    model = fields.Nested(ModelSchema)
+    model = fields.Nested(ModelLogProbsSchema)
 
     @validates("method")
     def validate_method(self, value):

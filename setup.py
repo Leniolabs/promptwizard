@@ -5,7 +5,7 @@ with open('promptwizard/doc/doc.md', 'r', encoding='utf-8') as f:
 
 setup(
     name='promptwizard',
-    version='0.0.7',
+    version='0.0.8',
     packages=['promptwizard', 'promptwizard.evals', 'promptwizard.cost', 'promptwizard.approximate_cost', 'promptwizard.validation_yaml', 'promptwizard.prompt_generation', 'promptwizard.openai_calls'],
     python_requires='>=3.8',
     long_description=long_description,
@@ -15,9 +15,9 @@ setup(
         'PyYAML>=5.4',
         'matplotlib',
         'numpy',
-        'marshmallow',
+        'marshmallow>=3.20.1',
         'tiktoken>=0.4.0',
-        'tenacity',
+        'tenacity>=8.2.3',
         'zipp',
         'six',
         'aiohttp',
@@ -26,7 +26,8 @@ setup(
         'tqdm',
         'python-dotenv',
         'js2py',
-        'scikit-learn'
+        'scikit-learn',
+        'cohere==4.34'
     ],
     entry_points={
         'console_scripts': [
@@ -35,6 +36,6 @@ setup(
     },
     package_data={'': ['doc/doc.md']},
     include_package_data=True,
-    description='Prompt Wizard is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file.',
+    description='Prompt Wizard is a package for evaluating custom prompts using various evaluation methods. It allows you to provide your own prompts or generate them automatically and then obtain the results in a JSON file. You can also use the library for your Python projects.',
     license='MIT',
 )
