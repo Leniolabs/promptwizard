@@ -5,7 +5,7 @@ from typing import List, Dict
 import math
 
 class LogProbs:
-    def __init__(self, test_cases: List[Dict], prompts: List[str], model_test: str="gpt-3.5-turbo-instruct", model_test_temperature: float=0.6, model_test_max_tokens: int=1000, best_prompts: int=2, timeout: int=10, n_retries: int=5):
+    def __init__(self, test_cases: List[Dict], prompts: List[str], model_test: str="gpt-3.5-turbo-instruct", model_test_temperature: float=0.6, model_test_max_tokens: int=4, best_prompts: int=2, timeout: int=10, n_retries: int=5):
 
         """
         Initialize a LogProbs instance.
