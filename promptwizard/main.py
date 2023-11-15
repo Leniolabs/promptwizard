@@ -181,7 +181,7 @@ def approximate_cost(file):
             prompt_constrainst = 'None'
 
         if 'name' not in yaml_content['prompts']['generation']['model'] and ('max_tokens' not in yaml_content['prompts']['generation']['model']):
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = 300
 
         if 'name' in yaml_content['prompts']['generation']['model'] and ('max_tokens' not in yaml_content['prompts']['generation']['model']):
@@ -193,14 +193,14 @@ def approximate_cost(file):
             model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
 
         if not 'name' in yaml_content['prompts']['generation']['model'] and ('max_tokens' in yaml_content['prompts']['generation']['model']):
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
 
         if method != 'Elo':
             description = yaml_content['prompts']['generation']['description']
 
     if not 'generation' in yaml_content['prompts']:
-        model_generation = 'gpt-4'
+        model_generation = 'gpt-4-turbo'
         model_generation_max_tokens = 0
         prompt_constrainst = 'None'
         description = None
@@ -375,16 +375,16 @@ def run_evaluation(file, approximate_cost):
             prompt_constrainst = 'None'
 
         if not 'model' in yaml_content['prompts']['generation']:
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = 300
             model_generation_temperature = 1.2
-            print("model_generation will be gpt-4 \nmodel_generation_max_tokens will be 300 \nmodel_generation_temperature will be 1.2")
+            print("model_generation will be gpt-4-turbo \nmodel_generation_max_tokens will be 300 \nmodel_generation_temperature will be 1.2")
 
         if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
             model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
-            print("model_generation will be gpt-4")
+            print("model_generation will be gpt-4-turbo")
 
         if 'model' in yaml_content['prompts']['generation'] and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and ('name' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
             model_generation = yaml_content['prompts']['generation']['model']['name']
@@ -399,16 +399,16 @@ def run_evaluation(file, approximate_cost):
             print("model_generation_temperature will be 1.2")
 
         if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and ('temperature' in yaml_content['prompts']['generation']['model']):
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = 300
             model_generation_temperature = int(yaml_content['prompts']['generation']['model']['temperature'])
-            print("model_generation will be gpt-4 \nmodel_generation_max_tokens will be 300")
+            print("model_generation will be gpt-4-turbo \nmodel_generation_max_tokens will be 300")
 
         if 'model' in yaml_content['prompts']['generation'] and (not 'name' in yaml_content['prompts']['generation']['model']) and ('max_tokens' in yaml_content['prompts']['generation']['model']) and (not 'temperature' in yaml_content['prompts']['generation']['model']):
-            model_generation = 'gpt-4'
+            model_generation = 'gpt-4-turbo'
             model_generation_max_tokens = int(yaml_content['prompts']['generation']['model']['max_tokens'])
             model_generation_temperature = 1.2
-            print("model_generation will be gpt-4 \nmodel_generation_temperature will be 1.2")
+            print("model_generation will be gpt-4-turbo \nmodel_generation_temperature will be 1.2")
 
         if 'model' in yaml_content['prompts']['generation'] and ('name' in yaml_content['prompts']['generation']['model']) and (not 'max_tokens' in yaml_content['prompts']['generation']['model']) and (not 'temperature' in yaml_content['prompts']['generation']['model']):
             model_generation = yaml_content['prompts']['generation']['model']['name']
@@ -424,8 +424,8 @@ def run_evaluation(file, approximate_cost):
         if method != 'Elo':
             description = yaml_content['prompts']['generation']['description']
 
-    if not 'generation' in yaml_content['prompts']:
-        model_generation = 'gpt-4'
+    if not 'generation' in yaml_content['prompts'] and (not 'list' in yaml_content['prompts']):
+        model_generation = 'gpt-4-turbo'
         model_generation_max_tokens = 0
         prompt_constrainst = None
         if method != 'Elo':
@@ -497,11 +497,11 @@ def run_evaluation(file, approximate_cost):
         best_percentage = 100
 
     if 'timeout' in yaml_content:
-        timeout = yaml_content['timeout']
+        timeout = int(yaml_content['timeout'])
     if not 'timeout' in yaml_content:
         timeout = 10
     if 'n_retries' in yaml_content:
-        n_retries = yaml_content['n_retries']
+        n_retries = int(yaml_content['n_retries'])
     if not 'n_retries' in yaml_content:
         n_retries = 5
 
@@ -562,7 +562,7 @@ def run_evaluation(file, approximate_cost):
             if model_generation == 'gpt-3.5-turbo':
                 tokens_input_gpt35 = tokens_input_gpt35 + prompts_generation_cost[2]
                 tokens_output_gpt35 = tokens_output_gpt35 + prompts_generation_cost[3]
-            elif model_generation == 'gpt-4':
+            elif model_generation == 'gpt-4' or model_generation == 'gpt-4-turbo' or model_generation == 'gpt-4-1106-preview':
                 tokens_input_gpt4 = tokens_input_gpt4 + prompts_generation_cost[2]
                 tokens_output_gpt4 = tokens_output_gpt4 + prompts_generation_cost[3]
         else:
@@ -572,7 +572,7 @@ def run_evaluation(file, approximate_cost):
             if model_generation == 'gpt-3.5-turbo':
                 tokens_input_gpt35 = tokens_input_gpt35 + prompts_generation_cost[2]
                 tokens_output_gpt35 = tokens_output_gpt35 + prompts_generation_cost[3]
-            elif model_generation == 'gpt-4':
+            elif model_generation == 'gpt-4' or model_generation == 'gpt-4-turbo' or model_generation == 'gpt-4-1106-preview':
                 tokens_input_gpt4 = tokens_input_gpt4 + prompts_generation_cost[2]
                 tokens_output_gpt4 = tokens_output_gpt4 + prompts_generation_cost[3]
 
@@ -592,7 +592,7 @@ def run_evaluation(file, approximate_cost):
     # Evaluate the prompts and gather results
     results = evaluable_object.evaluate_optimal_prompt()
     cost = cost + results[2]
-    if model_test == 'gpt-4':
+    if model_test == 'gpt-4' or model_test == 'gpt-4-1106-preview' or model_test == 'gpt-4-turbo':
         tokens_input_gpt4 = tokens_input_gpt4 + results[3]
         tokens_output_gpt4 = tokens_output_gpt4 + results[4]
     if model_test == 'gpt-3.5-turbo':
@@ -765,13 +765,13 @@ def run_evaluation(file, approximate_cost):
             old_prompts = new_results[1]
     # Ends the calculation of consumed tokens and stores this information
 
-    if model_generation == 'gpt-4':
+    if model_generation == 'gpt-4' or model_generation == 'gpt-4-turbo' or model_generation == 'gpt-4-1106-preview':
         tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_gen_iter
         tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_gen_iter
     if model_generation == 'gpt-3.5-turbo':
         tokens_input_gpt35 = tokens_input_gpt35 + tokens_input_gen_iter
         tokens_output_gpt35 = + tokens_output_gpt35 + tokens_output_gen_iter
-    if model_test == 'gpt-4':
+    if model_test == 'gpt-4' or model_test == 'gpt-4-turbo' or model_test == 'gpt-4-1106-preview':
         tokens_input_gpt4 = tokens_input_gpt4 + tokens_input_test_iter
         tokens_output_gpt4 = + tokens_output_gpt4 + tokens_output_test_iter
     if model_test == 'gpt-3.5-turbo':

@@ -113,14 +113,14 @@ Most importantly, output NOTHING but the prompt. Do not include anything else in
                             prompt_results[prompt]['correct'] += 1
                         prompt_results[prompt]['total'] += 1
                         if ideal_output1 == response.choices[0].message.function_call.name and ideal_output2 == extract_keys_and_values(json_object)[1]:
-                            a = True
+                            result = True
                         if ideal_output1 == response.choices[0].message.function_call.name and not (ideal_output2 == extract_keys_and_values(json_object)[1]):
-                            a = 'variable error'
+                            result = 'variable error'
                         if not (ideal_output1 == response.choices[0].message.function_call.name) and ideal_output2 == extract_keys_and_values(json_object)[1]:
-                            a = 'function error'
+                            result = 'function error'
                         if not (ideal_output1 == response.choices[0].message.function_call.name) and (not ideal_output2 == extract_keys_and_values(json_object)[1]):
-                            a = 'function and variable error'
-                        prompt_and_results.append({"test": test_case['input'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": a})
+                            result = 'function and variable error'
+                        prompt_and_results.append({"test": test_case['input'], "answer": {"function": f"{response.choices[0].message.function_call.name}", "variable": f"{extract_keys_and_values(json_object)[1]}"}, "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": result})
                     if "function_call" not in response.choices[0].message:
                         prompt_and_results.append({"test": test_case['input'], "answer": 'not a function call', "ideal": {"function": f"{ideal_output1}", "variable": f"{ideal_output2}"}, "result": 'Received text data instead of JSON.'})
                         prompt_results[prompt]['total'] += 1

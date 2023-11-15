@@ -9,7 +9,7 @@ class ModelSchema(Schema):
         @validates('name')
         def validate_name(self, model):
             # Validate the 'name' field against a list of allowed names
-            allowed_names = ['gpt-3.5-turbo', 'gpt-4', 'gpt-4-turbo']
+            allowed_names = ['gpt-3.5-turbo', 'gpt-4', 'gpt-4-turbo', 'gpt-4-1106-preview']
             if model not in allowed_names:
                 raise ValidationError(f"'name' must be one of the following: {', '.join(allowed_names)}")
             
