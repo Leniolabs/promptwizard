@@ -64,8 +64,8 @@ class CodeTestCaseSchema(Schema):
 
 class ClaEqInTestCaseSchema(Schema):
     # Schema for individual test cases with 'Classification', 'Equals', 'Includes' and 'LogProbs' methods
-    input = fields.String(required=True)
-    output = fields.String(required=True)
+    input = fields.Raw(required=True)
+    output = fields.Raw(required=True)
 
 class JSONTestCaseSchema(Schema):
 
@@ -89,8 +89,9 @@ class ClaEqInFormatTestCaseSchema(Schema):
             expected_method1 = "Classification"
             expected_method2 = "Equals"
             expected_method3 = "Includes"
-            if value != expected_method1 and value != expected_method2 and value != expected_method3:
-                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' '{expected_method3}'.")
+            expected_method4 = "Assistants"
+            if value != expected_method1 and value != expected_method2 and value != expected_method3 and value != expected_method4:
+                raise ValidationError(f"Method must be '{expected_method1}', '{expected_method2}' '{expected_method3}' or '{expected_method4}'.")
 
 class CodeFormatTestCaseSchema(Schema):
         cases = fields.List(fields.Nested(CodeTestCaseSchema), required=True)
@@ -286,6 +287,12 @@ class ValidationEmbeddings(Schema):
 
 class ValidationLogProbs(Schema):
     test = fields.Nested(LogProbsFormatTestCaseSchema, required=True)
+    prompts = fields.Nested(PromptSchema, required=True)
+    n_retries = fields.Integer()
+    timeout = fields.Integer()
+
+class ValidationAssistants(Schema):
+    test = fields.Nested(ClaEqInFormatTestCaseSchema, required=True)
     prompts = fields.Nested(PromptSchema, required=True)
     n_retries = fields.Integer()
     timeout = fields.Integer()

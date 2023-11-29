@@ -9,9 +9,7 @@ from typing import List
 from openai import OpenAI
 import httpx
 
-
-
-
+client = OpenAI()
 
 def create_chat_completion(model: str, messages :List[dict], max_tokens: int, temperature: float, number_of_prompts: int, logit_bias: dict=None, functions: dict=None, function_call: str=None, timeout: int=10, n_retries: int=5):
 
@@ -114,3 +112,83 @@ def create_completion(model: str, messages: str, max_tokens: int, temperature: f
                 
         return respond
     return create_completion_retry()
+
+def create_assistant(model: str, instructions: str, tools: List[dict]):
+
+    if model == 'gpt-4-turbo':
+            model = 'gpt-4-1106-preview'
+
+    try:
+        assistant = client.beta.assistants.create(
+            instructions=instructions,
+            model=model,
+            tools=tools
+        )
+
+    except openai.OpenAIError as e:
+            print(f"Error in request: {e}")
+            raise
+    
+    return assistant
+
+def create_thread():
+
+    thread = client.beta.threads.create()
+
+    return thread
+
+def create_message(thread_id, role: str, content: str):
+    try:
+        message = client.beta.threads.messages.create(
+            thread_id=thread_id,
+            role=role,
+            content=content
+        )
+
+    except openai.OpenAIError as e:
+            print(f"Error in request: {e}")
+            raise
+    
+    return message
+
+def create_run(thread_id, assistant_id):
+    try:
+        run = client.beta.threads.runs.create(
+            thread_id=thread_id,
+            assistant_id=assistant_id,
+        )
+
+    except openai.OpenAIError as e:
+            print(f"Error in request: {e}")
+            raise
+    
+    return run
+
+def retrieve(thread_id, run_id):
+    try:
+        retribed_run = client.beta.threads.runs.retrieve(
+            thread_id=thread_id,
+            run_id=run_id
+        )
+
+    except openai.OpenAIError as e:
+        print(f"Error in request: {e}")
+        raise
+    
+    return retribed_run
+
+def thread_messages(thread_id):
+    
+    try:
+
+        thread_messages = client.beta.threads.messages.list(thread_id)
+    
+    except openai.OpenAIError as e:
+        print(f"Error in request: {e}")
+        raise
+    
+    return thread_messages
+
+def delete_assistant(assistant_id):
+
+    client.beta.assistants.delete(assistant_id)

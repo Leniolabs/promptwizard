@@ -250,4 +250,4 @@ If you want to see usage examples, we provide the following Colab notebook for y
 
 ## Creators
 
-promptwizard is crafted with love by [Leniolabs](https://www.leniolabs.com/) and a growing community of contributors. We build digital experiences with your ideas. [Get in touch](https://www.leniolabs.com/services/team-augmentation/?utm_source=promptree&utm_medium=banner&utm_campaign=leniolabs&utm_content=promptree_github)! Also, if you have any questions or feedback about promptwizard, please feel free to contact us at info@leniolabs.com. We'd love to hear from you!
+promptwizard is crafted with love by [Leniolabs](https://www.leniolabs.com/) and a growing community of contributors. We build digital experiences with your ideas. [Get in touch](https://www.leniolabs.com/services/team-augmentation/?utm_source=promptwizard&utm_medium=banner&utm_campaign=leniolabs&utm_content=promptwizard_github)! Also, if you have any questions or feedback about promptwizard, please feel free to contact us at info@leniolabs.com. We'd love to hear from you!
